@@ -1,0 +1,1135 @@
+{
+ "cookies-n-cream-cupcakes": {
+  "confirmedAt": "2026-11-17T16:37:13.140Z",
+  "createdAt": "2026-11-17T13:45:00.000Z",
+  "historyCount": 2,
+  "ingredients": [
+   {
+    "heading": "Nasse Zutaten"
+   },
+   {
+    "amount": "240",
+    "name": "Sojamilch",
+    "note": "1 Cup",
+    "unit": "ml"
+   },
+   {
+    "amount": "1",
+    "name": "Apfelessig",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "150",
+    "name": "Zucker",
+    "note": "¾ Cup",
+    "unit": "g"
+   },
+   {
+    "amount": "80",
+    "name": "Rapsöl",
+    "note": "⅓ Cup",
+    "unit": "ml"
+   },
+   {
+    "amount": "1",
+    "name": "Vanilleextrakt",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "Mandelextrakt",
+    "note": "oder Schokoladenextrakt oder mehr Vanilleextrakt",
+    "unit": "TL"
+   },
+   {
+    "heading": "Trockene Zutaten"
+   },
+   {
+    "amount": "125",
+    "name": "Weissmehl",
+    "note": "1 Cup",
+    "unit": "g"
+   },
+   {
+    "amount": "30",
+    "name": "Kakaopulver",
+    "note": "⅓ Cup, holländische Art oder normal",
+    "unit": "g"
+   },
+   {
+    "amount": "¾",
+    "name": "Natron",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "Backpulver",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "¼",
+    "name": "Salz",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "heading": "Teig fertigstellen"
+   },
+   {
+    "amount": "10",
+    "name": "vegane Schoko-Sandwichkekse",
+    "note": "mit Cremefüllung, grob gehackt (ca. 1 Cup)",
+    "unit": ""
+   },
+   {
+    "heading": "Für das Frosting"
+   },
+   {
+    "amount": "1",
+    "name": "vegane Buttercreme",
+    "note": "Rezept antippen zum Öffnen",
+    "recipeId": "vegane-buttercreme",
+    "unit": "Portion"
+   },
+   {
+    "amount": "50",
+    "name": "vegane Schoko-Sandwichkekse",
+    "note": "fein zerbröselt (ca. ½ Cup)",
+    "unit": "g"
+   },
+   {
+    "heading": "Zum Verzieren"
+   },
+   {
+    "amount": "6",
+    "name": "vegane Schoko-Sandwichkekse",
+    "note": "halbiert",
+    "unit": ""
+   }
+  ],
+  "intro": "Schoko-Cupcakes mit gehackten Schoko-Sandwichkeksen im Teig und im Frosting.",
+  "parentId": "schoko-cupcakes",
+  "servings": 12,
+  "source": "Vegan Cupcakes Take Over the World, Variante «Cookies 'n' Cream Cupcakes», S. 38–39",
+  "status": "bestaetigt",
+  "steps": [
+   "## Vorbereiten",
+   "Ofen auf 175 °C vorheizen. Muffinblech mit Papier- oder Alu-Förmchen auslegen.",
+   "Die 10 Teig fertigstellen grob hacken, erst danach abmessen (ca. 1 Cup).",
+   "## Nasse Zutaten",
+   "In einer grossen Schüssel Sojamilch und Apfelessig verquirlen und einige Minuten stehen lassen, bis die Milch gerinnt.",
+   "Zucker, Öl, Vanilleextrakt und den zweiten Extrakt dazugeben und schaumig schlagen.",
+   "## Trockene Zutaten",
+   "In einer zweiten Schüssel Mehl, Kakao, Natron, Backpulver und Salz zusammen sieben.",
+   "## Teig fertigstellen",
+   "Die trockenen Zutaten in zwei Portionen zu den nassen geben und rühren, bis keine grossen Klümpchen mehr da sind. Ein paar kleine sind in Ordnung.",
+   "Die gehackten Kekse unterheben.",
+   "## Backen",
+   "Den Teig in die Förmchen füllen, jeweils zu drei Vierteln.",
+   "18 bis 20 Minuten backen, bis ein Zahnstocher in der Mitte sauber herauskommt.",
+   "Auf ein Kuchengitter setzen und vollständig auskühlen lassen.",
+   "## Frosting",
+   "Die vegane Buttercreme zubereiten und die fein zerbröselten Kekse unterrühren.",
+   "## Verzieren",
+   "Die Cupcakes grosszügig mit dem Frosting bestreichen und jeden mit einer Kekshälfte verzieren."
+  ],
+  "time": "30 Min + 18–20 Min Backen",
+  "tips": "Im Buch werden Newman-O's verwendet, es gehen aber alle veganen Schoko-Sandwichkekse mit Cremefüllung.\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).",
+  "title": "Cookies-'n'-Cream-Cupcakes",
+  "topics": [
+   "Dessert",
+   "Gebäck",
+   "Cupcakes"
+  ],
+  "updatedAt": "2026-11-17T16:45:00.000Z",
+  "variantNote": "10 grob gehackte Schoko-Sandwichkekse im Teig, Frosting aus veganer Buttercreme mit zerbröselten Keksen, je eine Kekshälfte obendrauf.",
+  "yieldUnit": "Stück"
+ },
+ "grundmilch": {
+  "confirmedAt": "2026-11-17T16:38:06.057Z",
+  "createdAt": "2026-11-17T12:35:00.000Z",
+  "historyCount": 1,
+  "ingredients": [
+   {
+    "amount": "54",
+    "name": "Kokosraspeln",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "36",
+    "name": "Cashews",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "18",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Dattel",
+    "note": "",
+    "unit": ""
+   },
+   {
+    "amount": "0,7",
+    "name": "Salz",
+    "note": "1 Prise",
+    "unit": "g"
+   },
+   {
+    "amount": "",
+    "name": "Wasser",
+    "note": "bis zur 1,2-l-Markierung im Miomat",
+    "unit": ""
+   }
+  ],
+  "intro": "",
+  "servings": 12,
+  "source": "Mit ChatGPT erarbeitet",
+  "status": "bestaetigt",
+  "steps": [
+   "Alle Zutaten in den Miomat geben.",
+   "Wasser bis zur 1,2-l-Markierung auffüllen.",
+   "Das Rohmilchprogramm starten.",
+   "Den Satz auffangen und für ein Satz-Rezept verwenden (siehe unten)."
+  ],
+  "time": "",
+  "tips": "",
+  "title": "Grundmilch",
+  "topics": [
+   "Pflanzenmilch"
+  ],
+  "updatedAt": "2026-11-17T16:38:06.057Z",
+  "yieldUnit": "dl"
+ },
+ "kokosmilch": {
+  "confirmedAt": "2026-11-17T16:25:59.900Z",
+  "createdAt": "2026-11-17T12:35:00.000Z",
+  "historyCount": 1,
+  "ingredients": [
+   {
+    "amount": "96",
+    "name": "Kokosraspeln",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "30",
+    "name": "Cashews",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Dattel",
+    "note": "",
+    "unit": ""
+   },
+   {
+    "amount": "0,7",
+    "name": "Salz",
+    "note": "1 Prise",
+    "unit": "g"
+   },
+   {
+    "amount": "",
+    "name": "Wasser",
+    "note": "bis zur 1,2-l-Markierung im Miomat",
+    "unit": ""
+   }
+  ],
+  "intro": "",
+  "parentId": "grundmilch",
+  "servings": 12,
+  "source": "Mit ChatGPT erarbeitet",
+  "status": "bestaetigt",
+  "steps": [
+   "Alle Zutaten in den Miomat geben.",
+   "Wasser bis zur 1,2-l-Markierung auffüllen.",
+   "Das Rohmilchprogramm starten.",
+   "Den Satz auffangen und für ein Satz-Rezept verwenden (siehe unten)."
+  ],
+  "time": "",
+  "tips": "",
+  "title": "Kokosmilch",
+  "topics": [
+   "Pflanzenmilch"
+  ],
+  "updatedAt": "2026-11-17T16:25:59.900Z",
+  "variantNote": "Mehr Kokosraspeln (96 g statt 54 g), weniger Cashews (30 g statt 36 g), ohne Hafer.",
+  "yieldUnit": "dl"
+ },
+ "nussige-milch": {
+  "confirmedAt": "2026-11-17T16:38:18.639Z",
+  "createdAt": "2026-11-17T12:35:00.000Z",
+  "historyCount": 1,
+  "ingredients": [
+   {
+    "amount": "54",
+    "name": "Kokosraspeln",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "34",
+    "name": "Cashews",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "14",
+    "name": "Barunüsse",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "11",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Dattel",
+    "note": "",
+    "unit": ""
+   },
+   {
+    "amount": "0,7",
+    "name": "Salz",
+    "note": "1 Prise",
+    "unit": "g"
+   },
+   {
+    "amount": "",
+    "name": "Wasser",
+    "note": "bis zur 1,2-l-Markierung im Miomat",
+    "unit": ""
+   }
+  ],
+  "intro": "",
+  "parentId": "grundmilch",
+  "servings": 12,
+  "source": "Mit ChatGPT erarbeitet",
+  "status": "bestaetigt",
+  "steps": [
+   "Alle Zutaten in den Miomat geben.",
+   "Wasser bis zur 1,2-l-Markierung auffüllen.",
+   "Das Rohmilchprogramm starten.",
+   "Den Satz auffangen und für ein Satz-Rezept verwenden (siehe unten)."
+  ],
+  "time": "",
+  "tips": "",
+  "title": "Nussige Milch",
+  "topics": [
+   "Pflanzenmilch"
+  ],
+  "updatedAt": "2026-11-17T16:38:18.639Z",
+  "variantNote": "Zusätzlich 14 g Barunüsse, dafür etwas weniger Cashews (34 g statt 36 g) und Haferflocken (11 g statt 18 g).",
+  "yieldUnit": "dl"
+ },
+ "satz-baru-kakao-cookies": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der nussigen Milch",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "20",
+    "name": "Mehl",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "5",
+    "name": "weisser Zucker",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Backkakao",
+    "note": "gehäuft",
+    "unit": "TL"
+   },
+   {
+    "amount": "1",
+    "name": "Kokosfett",
+    "note": "geschmolzen",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   },
+   {
+    "amount": "",
+    "name": "Vanille",
+    "note": "optional",
+    "unit": ""
+   }
+  ],
+  "intro": "Kokosig, cremig und röstig-nussig",
+  "restVon": "nussige-milch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 7 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Teig mischen und formen",
+   "Satz, Haferflocken, Mehl, Honig, Zucker, Kakao, Kokosfett und Salz vermischen. Nach Wunsch Vanille zugeben.",
+   "Kleine Cookies formen und auf Backpapier setzen. Kakao bindet Flüssigkeit, deshalb zusätzliches Mehl nur bei tatsächlich zu nassem Teig zugeben.",
+   "## Backen und auskühlen",
+   "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+   "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+   "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Baru-Kakao-Cookies",
+  "topics": [
+   "Reste-Verwertung",
+   "Gebäck"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-baru-zimt-knusper": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der nussigen Milch",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "15",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Kokosfett",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "gemahlener Zimt",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   }
+  ],
+  "intro": "Kokosig, cremig und röstig-nussig",
+  "restVon": "nussige-milch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 8 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Mischen und verteilen",
+   "Satz, Haferflocken, Honig, Kokosfett, Zimt und Salz vermischen.",
+   "Mit den Fingern zu groben Streuseln zupfen und in einer dünnen Schicht auf Backpapier verteilen.",
+   "## Backen und auskühlen",
+   "Im vorgeheizten Ofen bei 150 °C Umluft 25–35 Minuten backen. Die Streusel zwischendurch ein- bis zweimal wenden.",
+   "Auf dem Blech vollständig auskühlen lassen. Grössere Stücke nach Wunsch auseinanderbrechen."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Baru-Zimt-Knusper",
+  "topics": [
+   "Reste-Verwertung"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-honig-hafer-cookies": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der Grundmilch",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "20",
+    "name": "Mehl",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "5",
+    "name": "weisser Zucker",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Kokosfett",
+    "note": "geschmolzen",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   },
+   {
+    "amount": "",
+    "name": "Vanille oder Zimt",
+    "note": "optional",
+    "unit": ""
+   }
+  ],
+  "intro": "Mild, cremig, leicht haferig und gut bindend",
+  "restVon": "grundmilch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 4 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Teig mischen und formen",
+   "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+   "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+   "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+   "## Backen und auskühlen",
+   "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+   "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+   "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Honig-Hafer-Cookies",
+  "topics": [
+   "Reste-Verwertung",
+   "Gebäck"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-kokos-bananen-bites": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der Kokosmilch",
+    "unit": "g"
+   },
+   {
+    "amount": "50–60",
+    "name": "sehr reife Banane",
+    "note": "geschält",
+    "unit": "g"
+   },
+   {
+    "amount": "35",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "10–15",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   },
+   {
+    "amount": "",
+    "name": "Zimt",
+    "note": "optional",
+    "unit": ""
+   }
+  ],
+  "intro": "Kokosreich, mild und cremig",
+  "restVon": "kokosmilch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 2 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Mischen und formen",
+   "Banane zerdrücken. Mit Satz, Haferflocken, Honig und Salz gründlich vermengen. Nach Wunsch Zimt zugeben.",
+   "Kleine Taler auf Backpapier setzen und leicht flach drücken.",
+   "## Backen und auskühlen",
+   "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–18 Minuten backen.",
+   "Die Taler kurz auf dem Blech ruhen lassen, vorsichtig lösen und auskühlen lassen."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Kokos-Bananen-Bites",
+  "topics": [
+   "Reste-Verwertung"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-kokos-baru-energy-balls": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der nussigen Milch",
+    "unit": "g"
+   },
+   {
+    "amount": "35–45",
+    "name": "weiche Datteln",
+    "note": "entsteint",
+    "unit": "g"
+   },
+   {
+    "amount": "20–25",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Backkakao",
+    "note": "optional",
+    "unit": "TL"
+   },
+   {
+    "amount": "10",
+    "name": "Kokosflocken",
+    "note": "optional",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   }
+  ],
+  "intro": "Kokosig, cremig und röstig-nussig",
+  "restVon": "nussige-milch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 9 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Mischen und formen",
+   "Datteln sehr fein hacken oder pürieren. Mit Satz, zunächst 20 g Haferflocken und Salz verkneten. Nach Wunsch Kakao und Kokosflocken einarbeiten.",
+   "Bei zu weicher Masse die restlichen Haferflocken, bei Bedarf noch etwas mehr zugeben. Ist sie trocken oder bröselig, mehr Dattel einarbeiten.",
+   "Kleine Kugeln formen.",
+   "## Kalt stellen",
+   "Die Kugeln abgedeckt 30–60 Minuten kaltstellen, bei Bedarf länger, bis sie fest genug sind."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Kokos-Baru-Energy-Balls",
+  "topics": [
+   "Reste-Verwertung"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-kokos-fruehstuecksriegel": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der Kokosmilch",
+    "unit": "g"
+   },
+   {
+    "amount": "45",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "20",
+    "name": "Datteln oder Rosinen",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   },
+   {
+    "amount": "½",
+    "name": "gemahlener Zimt",
+    "note": "optional",
+    "unit": "TL"
+   }
+  ],
+  "intro": "Kokosreich, mild und cremig",
+  "restVon": "kokosmilch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 3 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Mischen und pressen",
+   "Datteln oder Rosinen fein hacken. Mit Satz, Haferflocken, Honig und Salz vermengen. Nach Wunsch Zimt zugeben.",
+   "Eine kleine Form mit Backpapier auslegen. Die Masse hineingeben und 1–1,5 cm dick festdrücken.",
+   "## Backen und schneiden",
+   "Im vorgeheizten Ofen bei 170 °C Umluft ca. 18–22 Minuten backen.",
+   "In der Form auskühlen lassen. Mithilfe des Backpapiers herausheben und in Riegel schneiden."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Kokos-Frühstücksriegel",
+  "topics": [
+   "Reste-Verwertung"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-kokos-honig-cookies": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der Kokosmilch",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "20",
+    "name": "Mehl",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "5",
+    "name": "weisser Zucker",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Kokosfett",
+    "note": "geschmolzen",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   },
+   {
+    "amount": "",
+    "name": "Vanille oder Zimt",
+    "note": "optional",
+    "unit": ""
+   }
+  ],
+  "intro": "Kokosreich, mild und cremig",
+  "restVon": "kokosmilch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 1 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Teig mischen und formen",
+   "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+   "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+   "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+   "## Backen und auskühlen",
+   "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+   "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+   "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Kokos-Honig-Cookies",
+  "topics": [
+   "Reste-Verwertung",
+   "Gebäck"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-pancakes": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "heading": "Für den Teig"
+   },
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der Grundmilch",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Ei",
+    "note": "",
+    "unit": ""
+   },
+   {
+    "amount": "25–30",
+    "name": "Mehl",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "30–50",
+    "name": "Pflanzenmilch",
+    "note": "",
+    "unit": "ml"
+   },
+   {
+    "amount": "½",
+    "name": "Backpulver",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "1",
+    "name": "Honig",
+    "note": "optional",
+    "unit": "TL"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   },
+   {
+    "heading": "Zum Ausbacken"
+   },
+   {
+    "amount": "",
+    "name": "Kokosfett",
+    "note": "etwas, zum Ausbacken",
+    "unit": ""
+   }
+  ],
+  "intro": "Mild, cremig, leicht haferig und gut bindend",
+  "restVon": "grundmilch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 6 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Teig",
+   "Satz, Ei, zunächst 25 g Mehl, 30 ml Pflanzenmilch, Backpulver und Salz verrühren. Nach Wunsch Honig zugeben.",
+   "Die restliche Pflanzenmilch oder das übrige Mehl nach Bedarf einarbeiten, bis ein dicker Pancaketeig entsteht.",
+   "## Ausbacken",
+   "Kokosfett bei mittlerer Hitze in einer Pfanne schmelzen. Kleine Teigportionen mit etwas Abstand hineingeben.",
+   "Sobald die Ränder fest werden und sich die Unterseite gut löst, wenden. Die zweite Seite goldbraun backen, bis die Mitte durchgegart ist."
+  ],
+  "time": "",
+  "tips": "Zum Ausbacken ist neutrales Pflanzenöl üblich. Hier verwendest du nach deiner Vorliebe Kokosfett.\n\nMesslöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Kleine Satz-Pancakes",
+  "topics": [
+   "Reste-Verwertung"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "satz-weiche-fruehstuecksriegel": {
+  "createdAt": "2026-11-17T13:00:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Satz",
+    "note": "von der Grundmilch",
+    "unit": "g"
+   },
+   {
+    "amount": "35",
+    "name": "Haferflocken",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "25",
+    "name": "Honig",
+    "note": "",
+    "unit": "g"
+   },
+   {
+    "amount": "20",
+    "name": "Datteln",
+    "note": "fein gehackt",
+    "unit": "g"
+   },
+   {
+    "amount": "10",
+    "name": "Kokosflocken",
+    "note": "optional",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "Salz",
+    "note": "",
+    "unit": "kleine Prise"
+   }
+  ],
+  "intro": "Mild, cremig, leicht haferig und gut bindend",
+  "restVon": "grundmilch",
+  "servings": 100,
+  "source": "Die kleine Satzküche (PDF), Rezept 5 von 9",
+  "status": "entwurf",
+  "steps": [
+   "## Mischen und pressen",
+   "Satz, Haferflocken, Honig, Datteln und Salz gut vermengen. Nach Wunsch Kokosflocken einarbeiten.",
+   "Die Masse fest in eine kleine, mit Backpapier ausgelegte Form drücken.",
+   "## Backen und schneiden",
+   "Im vorgeheizten Ofen bei 170 °C Umluft ca. 18–22 Minuten backen.",
+   "Vollständig auskühlen lassen. Aus der Form heben und erst danach schneiden."
+  ],
+  "time": "",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "title": "Weiche Frühstücksriegel",
+  "topics": [
+   "Reste-Verwertung"
+  ],
+  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "yieldUnit": "g Satz"
+ },
+ "schoko-cupcakes": {
+  "createdAt": "2026-11-17T13:45:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "heading": "Nasse Zutaten"
+   },
+   {
+    "amount": "240",
+    "name": "Sojamilch",
+    "note": "1 Cup",
+    "unit": "ml"
+   },
+   {
+    "amount": "1",
+    "name": "Apfelessig",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "150",
+    "name": "Zucker",
+    "note": "¾ Cup",
+    "unit": "g"
+   },
+   {
+    "amount": "80",
+    "name": "Rapsöl",
+    "note": "⅓ Cup",
+    "unit": "ml"
+   },
+   {
+    "amount": "1",
+    "name": "Vanilleextrakt",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "Mandelextrakt",
+    "note": "oder Schokoladenextrakt oder mehr Vanilleextrakt",
+    "unit": "TL"
+   },
+   {
+    "heading": "Trockene Zutaten"
+   },
+   {
+    "amount": "125",
+    "name": "Weissmehl",
+    "note": "1 Cup",
+    "unit": "g"
+   },
+   {
+    "amount": "30",
+    "name": "Kakaopulver",
+    "note": "⅓ Cup, holländische Art oder normal",
+    "unit": "g"
+   },
+   {
+    "amount": "¾",
+    "name": "Natron",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "Backpulver",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "¼",
+    "name": "Salz",
+    "note": "",
+    "unit": "TL"
+   }
+  ],
+  "intro": "Einfacher, zarter und rundum gelungener Schokoladen-Cupcake. Die Basis für viele Varianten.",
+  "servings": 12,
+  "source": "Vegan Cupcakes Take Over the World, «Your Basic Chocolate Cupcake», S. 37–38",
+  "status": "entwurf",
+  "steps": [
+   "## Vorbereiten",
+   "Ofen auf 175 °C vorheizen. Muffinblech mit Papier- oder Alu-Förmchen auslegen.",
+   "## Nasse Zutaten",
+   "In einer grossen Schüssel Sojamilch und Apfelessig verquirlen und einige Minuten stehen lassen, bis die Milch gerinnt.",
+   "Zucker, Öl, Vanilleextrakt und den zweiten Extrakt dazugeben und schaumig schlagen.",
+   "## Trockene Zutaten",
+   "In einer zweiten Schüssel Mehl, Kakao, Natron, Backpulver und Salz zusammen sieben.",
+   "## Zusammenführen und backen",
+   "Die trockenen Zutaten in zwei Portionen zu den nassen geben und rühren, bis keine grossen Klümpchen mehr da sind. Ein paar kleine sind in Ordnung.",
+   "Den Teig in die Förmchen füllen, jeweils zu drei Vierteln.",
+   "18 bis 20 Minuten backen, bis ein Zahnstocher in der Mitte sauber herauskommt.",
+   "Auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+  ],
+  "time": "15 Min + 18–20 Min Backen",
+  "tips": "Die Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).\n\nFür dunklere Cupcakes Kakao nach holländischer Art verwenden, oder eine Mischung aus schwarzem und normalem Kakao.\n\nLässt sich mit jedem Frosting, jeder Glasur oder Füllung kombinieren. Pur schmecken sie mit einem Glas kalter Sojamilch.",
+  "title": "Schokoladen-Cupcakes (Grundrezept)",
+  "topics": [
+   "Dessert",
+   "Gebäck",
+   "Cupcakes"
+  ],
+  "updatedAt": "2026-11-17T13:45:00.000Z",
+  "yieldUnit": "Stück"
+ },
+ "vegane-buttercreme": {
+  "confirmedAt": "2026-11-17T16:39:14.029Z",
+  "createdAt": "2026-11-17T13:50:00.000Z",
+  "historyCount": 3,
+  "ingredients": [
+   {
+    "amount": "95",
+    "name": "pflanzliches Backfett",
+    "note": "ungehärtet, ½ Cup",
+    "unit": "g"
+   },
+   {
+    "amount": "115",
+    "name": "vegane Margarine",
+    "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
+    "unit": "g"
+   },
+   {
+    "amount": "420",
+    "name": "Puderzucker",
+    "note": "gesiebt, falls klumpig, 3½ Cups",
+    "unit": "g"
+   },
+   {
+    "amount": "1½",
+    "name": "Vanilleextrakt",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "60",
+    "name": "Sojamilch oder Soja-Rahm",
+    "note": "ungesüsst, ¼ Cup",
+    "unit": "ml"
+   }
+  ],
+  "intro": "Das Allzweck-Frosting: zum Aufspritzen in üppigen Wirbeln und genauso gut zum Bestreichen.",
+  "servings": 12,
+  "source": "Vegan Cupcakes Take Over the World, «Vegan Fluffy Buttercream Frosting», S. 142",
+  "status": "bestaetigt",
+  "steps": [
+   "Backfett und Margarine zusammen schlagen, bis sie gut verbunden und luftig sind.",
+   "Den Puderzucker dazugeben und etwa 3 Minuten weiterschlagen.",
+   "Vanilleextrakt und Sojamilch dazugeben und nochmals 5 bis 7 Minuten schlagen, bis die Creme luftig ist."
+  ],
+  "time": "15 Min",
+  "tips": "Ergibt ca. 1 l (4 Cups), genug, um 12 Cupcakes grosszügig zu verzieren. Wenn du das Frosting nur aufstreichst statt aufspritzt, reicht die halbe Menge (Rechner auf 6 stellen).\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Gramm sind Richtwerte. TL = genormter Messlöffel (5 ml).",
+  "title": "Vegane Buttercreme (Frosting)",
+  "topics": [
+   "Dessert",
+   "Frosting"
+  ],
+  "updatedAt": "2026-11-17T16:46:00.000Z",
+  "yieldUnit": "Cupcakes"
+ }
+}

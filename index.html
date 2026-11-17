@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F4F5EF">
+<title>Unser Kochbuch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
+<style>
+/* Layout: a calm recipe shelf. Cards on the overview; on the recipe page ingredients sit beside the steps on wide screens and stack on the phone. */
+:root {
+  --bg: #F4F5EF;
+  --surface: #FFFFFF;
+  --ink: #1E2621;
+  --muted: #5B675F;
+  --line: #DCE1D8;
+  --accent: #9A5300;
+  --accent-soft: #F5E6D0;
+  --ok: #2C6A52;
+  --ok-soft: #DCEDE4;
+  --warn: #7E5A00;
+  --warn-soft: #FAEFCB;
+  --danger: #A3302A;
+  --danger-soft: #F8E0DD;
+  --add: #2C6A52;
+  --del: #A3302A;
+  --t1: #C07A1A; --t2: #3E7FA8; --t3: #B23B3B; --t4: #6A8F3A; --t5: #8A6A4A; --t6: #B0558C; --t7: #2E8A86;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(30, 38, 33, .06), 0 4px 14px rgba(30, 38, 33, .05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131714; --surface: #1B201C; --ink: #E7ECE5; --muted: #9AA79E; --line: #2D352F;
+    --accent: #E9A24C; --accent-soft: #3A2A16; --ok: #7CC4A4; --ok-soft: #1D3328;
+    --warn: #E8C463; --warn-soft: #383015; --danger: #F08C84; --danger-soft: #3B1F1D;
+    --add: #7CC4A4; --del: #F08C84;
+    --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3;
+    --shadow: 0 1px 2px rgba(0,0,0,.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131714; --surface: #1B201C; --ink: #E7ECE5; --muted: #9AA79E; --line: #2D352F;
+  --accent: #E9A24C; --accent-soft: #3A2A16; --ok: #7CC4A4; --ok-soft: #1D3328;
+  --warn: #E8C463; --warn-soft: #383015; --danger: #F08C84; --danger-soft: #3B1F1D;
+  --add: #7CC4A4; --del: #F08C84;
+  --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3;
+  --shadow: 0 1px 2px rgba(0,0,0,.3);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 700; letter-spacing: -.01em; }
+h2 { font-size: 1.3rem; font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+a { color: inherit; }
+button, input, textarea, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.muted { color: var(--muted); }
+.eyebrow { font-size: .78rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); font-weight: 700; }
+
+/* top bar */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-block: 14px; border-bottom: 1px solid var(--line); margin-bottom: 24px;
+}
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+.brand-mark svg { width: 16px; height: 16px; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); cursor: pointer; text-decoration: none; font-weight: 700; font-size: .95rem;
+}
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn.accent { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.btn.ok { background: var(--ok); color: var(--surface); border-color: var(--ok); }
+.btn.danger { color: var(--danger); }
+.btn.danger.solid { background: var(--danger); color: var(--surface); border-color: var(--danger); }
+.btn:disabled { opacity: .55; cursor: wait; }
+.btn.small { min-height: 36px; padding: 0 12px; font-size: .88rem; }
+.linkish { background: none; border: 0; padding: 0; color: var(--accent); font-weight: 700; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* overview */
+.intro { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.intro p { margin: 6px 0 0; }
+.search { flex: 1 1 280px; max-width: 420px; position: relative; }
+.search input {
+  width: 100%; min-height: 48px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); padding: 0 18px 0 44px;
+}
+.search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); }
+.filters { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px;
+  border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: .95rem;
+}
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip .n { font-variant-numeric: tabular-nums; color: var(--muted); font-size: .85rem; }
+.chip[aria-pressed="true"] .n { color: inherit; opacity: .75; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--dot, var(--muted)); flex: none; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 3px; gap: 2px; }
+.seg button { border: 0; background: none; min-height: 34px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-size: .9rem; }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 16px; }
+.card {
+  display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); text-decoration: none; box-shadow: var(--shadow);
+  min-width: 0; transition: border-color .15s, transform .15s;
+}
+.card:hover { border-color: var(--muted); transform: translateY(-1px); }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .85rem; }
+.card .meta { font-size: .85rem; color: var(--muted); margin-top: auto; padding-top: 4px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 2px 10px; font-size: .8rem; font-weight: 700; letter-spacing: .02em; }
+.pill.draft { background: var(--warn-soft); color: var(--warn); }
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.var { background: var(--accent-soft); color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: .88rem; }
+.tag { display: inline-flex; align-items: center; gap: 6px; }
+.tag .dot { width: 8px; height: 8px; }
+.empty { padding: 36px 24px; border: 1.5px dashed var(--line); border-radius: var(--radius); text-align: center; color: var(--muted); }
+.empty h2 { color: var(--ink); margin-bottom: 8px; }
+.empty p { max-width: 52ch; margin: 0 auto 16px; }
+.foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; font-size: .9rem; color: var(--muted); }
+
+/* recipe page */
+.crumbs { margin-bottom: 16px; }
+.crumbs a { text-decoration: none; color: var(--muted); font-weight: 700; }
+.crumbs a:hover { color: var(--ink); }
+.recipe-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+.recipe-head .lede { margin: 0; font-size: 1.1rem; color: var(--muted); max-width: 62ch; }
+.status-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .9rem; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 4px 0 0; }
+.facts div { display: flex; flex-direction: column; }
+.facts dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); font-weight: 700; }
+.facts dd { margin: 0; font-weight: 700; }
+.note-box { border-radius: var(--radius); padding: 14px 18px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.note-box p { margin: 0; flex: 1 1 320px; }
+.note-box.draft { background: var(--warn-soft); color: var(--ink); }
+.note-box.variant { background: var(--accent-soft); }
+.note-box b { display: block; }
+.cols { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 760px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; min-width: 0; }
+.panel h2 { margin-bottom: 12px; }
+.ing-panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px); }
+@media (max-width: 760px) { .ing-panel { position: static; } }
+.stepper { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.stepper button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 1.3rem; line-height: 1; }
+.stepper .val { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.15rem; min-width: 2ch; text-align: center; }
+.stepper .reset { margin-left: auto; font-size: .85rem; }
+.ing-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ing-list li { border-bottom: 1px dotted var(--line); }
+.ing-list li:last-child { border-bottom: 0; }
+.ing-list label { display: grid; grid-template-columns: 22px 5.2rem minmax(0, 1fr); gap: 8px; align-items: baseline; padding: 8px 0; cursor: pointer; }
+.ing-list input { accent-color: var(--accent); width: 18px; height: 18px; transform: translateY(3px); }
+.ing-list .amt { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); }
+.ing-list .nm small { color: var(--muted); }
+.ing-list li.done .amt, .ing-list li.done .nm { text-decoration: line-through; opacity: .5; }
+.ing-list li.hd { border-bottom: 0; padding: 14px 0 2px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+.ing-list li.hd:first-child { padding-top: 0; }
+.ing-list li.hd.has { display: flex; align-items: center; gap: 8px; }
+.ing-list li.hd.has::before { content: ""; width: 4px; height: 1.1em; border-radius: 2px; background: var(--sec); flex: none; }
+.steps-wrap { counter-reset: s; display: flex; flex-direction: column; gap: 14px; }
+.step-sec.has { border-left: 4px solid var(--sec); background: color-mix(in srgb, var(--sec) 8%, transparent); border-radius: 0 12px 12px 0; padding: 12px 16px 14px 14px; }
+.step-sec.plain { border-left: 4px solid var(--line); padding: 2px 0 2px 14px; }
+.step-sec h3 { font-size: 1.02rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.steps-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.steps-list li { counter-increment: s; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: 10px; }
+.steps-list li::before { content: counter(s); font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; color: var(--sec, var(--accent)); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.steps-list li p { margin: 0; max-width: 65ch; }
+.tips { margin-top: 20px; }
+.tips p { margin: 0 0 8px; max-width: 70ch; white-space: pre-wrap; }
+.source { margin-top: 14px; font-size: .9rem; color: var(--muted); overflow-wrap: anywhere; }
+.related { margin-top: 28px; }
+.related h2 { margin-bottom: 12px; }
+.rel-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+.rel-list .card { padding: 14px; gap: 6px; }
+.actions { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.confirm-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--danger-soft); padding: 10px 14px; border-radius: 12px; }
+.wake { display: inline-flex; gap: 8px; align-items: center; font-size: .9rem; color: var(--muted); cursor: pointer; }
+.wake input { accent-color: var(--accent); width: 18px; height: 18px; }
+
+/* editor */
+.form { display: flex; flex-direction: column; gap: 22px; max-width: 820px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label, .field .lbl { font-weight: 700; font-size: .95rem; }
+.field .hint { font-size: .85rem; color: var(--muted); margin: 0; }
+.field input, .field textarea, .ing-row input {
+  width: 100%; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 10px 12px; min-height: 44px;
+}
+.field textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+.row2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 14px; }
+.ing-rows { display: flex; flex-direction: column; gap: 8px; }
+.ing-row { display: grid; grid-template-columns: 5rem 5rem minmax(0, 1fr) minmax(0, 1fr) 40px; gap: 6px; align-items: center; }
+.ing-row.heading { grid-template-columns: minmax(0, 1fr) 40px; }
+.ing-row.heading input { font-weight: 700; background: var(--bg); }
+.ing-row button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; color: var(--muted); font-size: 1.1rem; }
+@media (max-width: 620px) {
+  .ing-row { grid-template-columns: 4.2rem 4.2rem minmax(0, 1fr) 40px; }
+  .ing-row .i-note { grid-column: 1 / 4; grid-row: 2; }
+  .ing-row:not(.heading) { padding-bottom: 8px; border-bottom: 1px dotted var(--line); }
+}
+.ing-tools { display: flex; flex-wrap: wrap; gap: 8px; }
+details.bulk { border: 1px dashed var(--line); border-radius: 10px; padding: 10px 14px; }
+details.bulk summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+details.bulk textarea { margin-top: 10px; min-height: 110px; width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--surface); }
+.form-msg { color: var(--danger); font-weight: 700; margin: 0; }
+.form-msg:empty { display: none; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 10px; position: sticky; bottom: 0; background: var(--bg); padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); }
+.callout { background: var(--accent-soft); border-radius: var(--radius); padding: 14px 18px; }
+.callout p { margin: 0; }
+
+/* history */
+.timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.entry { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.entry-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; }
+.entry-head time { font-variant-numeric: tabular-nums; color: var(--muted); font-size: .9rem; }
+.entry .why { margin: 0; font-style: italic; }
+.diff { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: .95rem; }
+.diff li { display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: 6px; }
+.diff .mk { font-weight: 700; text-align: center; }
+.diff .add .mk { color: var(--add); }
+.diff .del .mk { color: var(--del); }
+.diff .chg .mk { color: var(--accent); }
+.diff del { color: var(--del); text-decoration-thickness: 1px; }
+.diff ins { color: var(--add); text-decoration: none; font-weight: 700; }
+.diff .lb { color: var(--muted); }
+.loading { padding: 40px 0; color: var(--muted); text-align: center; }
+.key-dialog { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; max-width: min(460px, calc(100vw - 32px)); background: var(--surface); color: var(--ink); }
+.key-dialog::backdrop { background: rgba(0,0,0,.35); }
+.key-dialog form { display: flex; flex-direction: column; gap: 12px; }
+.key-dialog h2, .key-dialog p { margin: 0; }
+.key-dialog input { width: 100%; }
+.site-foot { text-align: center; padding: 32px 0 24px; }
+.linkbtn { background: none; border: 0; color: var(--muted); text-decoration: underline; font: inherit; font-size: .88rem; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 11h16a8 8 0 0 1-16 0Z"/><path d="M9 7c0-1.5 1-2 1-3.5M14 7c0-1.5 1-2 1-3.5"/></svg></span>
+      Unser Kochbuch
+    </a>
+    <a class="btn primary small" href="#neu">+ Neues Rezept</a>
+  </header>
+  <main id="app"><p class="loading">Rezepte werden geladen …</p></main>
+  <footer class="site-foot"><button type="button" class="linkbtn" id="key-open">GitHub-Schlüssel für dieses Gerät</button></footer>
+</div>
+
+<script>
+/* ---------- Speicher: Rezepte als JSON-Dateien im GitHub-Repo ----------
+   Lesen geht ohne Schlüssel (öffentliche Website). Zum Speichern braucht jedes Gerät
+   einmal einen GitHub-Schlüssel (fine-grained token, nur dieses Repo, "Contents: Read and write").
+   Gleiche Schnittstelle wie die Claude-Datenbank: collection().add/where/limit/get/onSnapshot, doc().update/delete. */
+const GH = { owner: "KiraDarth", repo: "Family-cookbook", branch: "main", dir: "data" };
+const TOKEN_KEY = "kochbuch-github-schluessel";
+function ghToken() { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch { return ""; } }
+function setGhToken(t) { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch {} }
+
+function makeGitHubDb() {
+  const cache = {};      // name -> { docs: {id: data}, sha }
+  const listeners = {};  // name -> Set of fn
+  let queue = Promise.resolve();
+  const api = path => `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.dir}/${path}`;
+  const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), c => c.charCodeAt(0)));
+  const b64enc = s => { const b = new TextEncoder().encode(s); let out = ""; for (let i = 0; i < b.length; i += 0x8000) out += String.fromCharCode(...b.subarray(i, i + 0x8000)); return btoa(out); };
+  const headers = () => { const h = { Accept: "application/vnd.github+json" }; const t = ghToken(); if (t) h.Authorization = "Bearer " + t; return h; };
+
+  async function fetchCol(name) {
+    let res;
+    if (ghToken()) {
+      res = await fetch(api(name + ".json") + "?ref=" + GH.branch + "&t=" + Date.now(), { headers: headers(), cache: "no-store" });
+      if (res.status === 401) { setGhToken(""); throw new Error("Der GitHub-Schlüssel ist ungültig oder abgelaufen"); }
+      if (res.status === 404) return { docs: {}, sha: null };
+      if (!res.ok) throw new Error("GitHub antwortet nicht (" + res.status + ")");
+      const j = await res.json();
+      let text = j.content ? b64dec(j.content) : "";
+      if (!text && j.download_url) text = await (await fetch(j.download_url, { cache: "no-store" })).text();
+      return { docs: text ? JSON.parse(text) : {}, sha: j.sha };
+    }
+    // ohne Schlüssel: Datei der Website lesen (kann bis zu ~1 Min. hinterherhinken)
+    res = await fetch(`${GH.dir}/${name}.json?t=${Date.now()}`, { cache: "no-store" });
+    if (res.status === 404) return { docs: {}, sha: null };
+    if (!res.ok) throw new Error("Rezepte nicht erreichbar (" + res.status + ")");
+    return { docs: await res.json(), sha: null };
+  }
+  function notify(name) { (listeners[name] || new Set()).forEach(fn => fn()); }
+  async function refresh(name) {
+    const fresh = await fetchCol(name);
+    const changed = JSON.stringify(fresh.docs) !== JSON.stringify(cache[name]?.docs);
+    cache[name] = fresh;
+    if (changed) notify(name);
+  }
+  function write(name, mutate, message) {
+    const run = async () => {
+      if (!ghToken()) { openKeyDialog(); throw new Error("Zum Speichern fehlt auf diesem Gerät der GitHub-Schlüssel"); }
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const cur = await fetchCol(name);
+        const docs = structuredClone(cur.docs);
+        const result = mutate(docs);
+        const body = { message, branch: GH.branch, content: b64enc(JSON.stringify(docs, null, 1) + "\n") };
+        if (cur.sha) body.sha = cur.sha;
+        const res = await fetch(api(name + ".json"), { method: "PUT", headers: { ...headers(), "Content-Type": "application/json" }, body: JSON.stringify(body) });
+        if (res.status === 409 || res.status === 422) continue; // jemand anderes hat gerade gespeichert: neu laden und nochmal
+        if (res.status === 401 || res.status === 403) { openKeyDialog(); throw new Error("Der GitHub-Schlüssel darf nicht speichern"); }
+        if (!res.ok) throw new Error("Speichern bei GitHub fehlgeschlagen (" + res.status + ")");
+        const j = await res.json();
+        cache[name] = { docs, sha: j.content?.sha || null };
+        notify(name);
+        return result;
+      }
+      throw new Error("Speichern kollidierte mehrmals, bitte nochmal versuchen");
+    };
+    const p = queue.then(run, run);
+    queue = p.catch(() => {});
+    return p;
+  }
+  const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  const snapOf = (name, filters) => ({
+    docs: Object.entries(cache[name]?.docs || {})
+      .filter(([, d]) => filters.every(([f, , v]) => d[f] === v))
+      .map(([id, d]) => ({ id, data: () => structuredClone(d) }))
+  });
+  function query(name, filters = []) {
+    return {
+      where: (f, op, v) => query(name, [...filters, [f, op, v]]),
+      limit: () => query(name, filters),
+      async get() { if (!cache[name]) await refresh(name); return snapOf(name, filters); },
+      onSnapshot(next, err) {
+        const fn = () => next(snapOf(name, filters));
+        (listeners[name] ||= new Set()).add(fn);
+        if (cache[name]) fn(); else refresh(name).then(fn, e => err?.(e));
+        return () => listeners[name].delete(fn);
+      },
+      add: data => write(name, docs => { const id = newId(); docs[id] = data; return { id }; }, `${name}: neu – ${data.title || data.type || ""}`.trim())
+    };
+  }
+  const label = (name, id, docs) => docs[id]?.title || id;
+  return {
+    collection: name => query(name),
+    doc(path) {
+      const [name, id] = path.split("/");
+      return {
+        update: data => write(name, docs => { docs[id] = { ...(docs[id] || {}), ...data }; }, `${name}: geändert – ${data.title || id}`),
+        delete: () => write(name, docs => { delete docs[id]; }, `${name}: gelöscht – ${id}`)
+      };
+    },
+    // andere Geräte: regelmässig und beim Zurückkehren in die App nachladen
+    startSync() {
+      const tick = () => { if (document.visibilityState === "visible") Object.keys(cache).forEach(n => refresh(n).catch(() => {})); };
+      setInterval(tick, 60000);
+      document.addEventListener("visibilitychange", tick);
+    }
+  };
+}
+
+function openKeyDialog() {
+  let d = document.getElementById("key-dialog");
+  if (!d) {
+    document.body.insertAdjacentHTML("beforeend", `
+      <dialog id="key-dialog" class="key-dialog">
+        <form method="dialog">
+          <h2>Speichern auf diesem Gerät</h2>
+          <p>Damit dieses Handy Rezepte speichern darf, braucht es einmal euren GitHub-Schlüssel. Er bleibt nur auf diesem Gerät.</p>
+          <label class="field"><span>GitHub-Schlüssel</span><input id="key-input" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label>
+          <p class="muted" id="key-state"></p>
+          <div class="form-actions" style="position:static;border:0;padding:0">
+            <button class="btn primary" value="save">Speichern</button>
+            <button class="btn" value="remove">Schlüssel entfernen</button>
+            <button class="btn" value="cancel">Abbrechen</button>
+          </div>
+        </form>
+      </dialog>`);
+    d = document.getElementById("key-dialog");
+    d.addEventListener("close", () => {
+      if (d.returnValue === "save") { const v = document.getElementById("key-input").value.trim(); if (v) setGhToken(v); }
+      if (d.returnValue === "remove") setGhToken("");
+      document.getElementById("key-input").value = "";
+    });
+  }
+  document.getElementById("key-state").textContent = ghToken() ? "Auf diesem Gerät ist bereits ein Schlüssel gespeichert." : "Auf diesem Gerät ist noch kein Schlüssel gespeichert (nur Lesen).";
+  d.showModal();
+}
+
+const TOPICS = ["Verdauung", "Erkältung", "Chinesisch", "Pflanzenmilch", "Reste-Verwertung", "Dessert", "Gebäck"];
+const UNITS = ["g","kg","mg","ml","l","dl","cl","EL","TL","Msp","Prise","Prisen","Stück","Stk","Tasse","Tassen","Bund","Zehe","Zehen","Scheibe","Scheiben","Dose","Dosen","Päckchen","Pck","Handvoll","cm","Becher","Glas","Blatt","Blätter","Zweig","Zweige"];
+const app = document.getElementById("app");
+let db = null, recipes = [], loaded = false, loadErr = null;
+const state = { q: "", topics: new Set(), status: "alle" };
+const servingsFor = {};
+const checked = {};
+let builtRoute = null;
+let historyUnsub = null, historyFor = null, historyEntries = [], historyLoaded = false;
+let wakeLock = null;
+let confirmDelete = false;
+
+/* ---------- helpers ---------- */
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const byId = id => recipes.find(r => r.id === id);
+function topicColor(t) { const i = TOPICS.indexOf(t); return i >= 0 ? `var(--t${i + 1})` : "var(--muted)"; }
+function tagsHtml(topics) { return (topics || []).map(t => `<span class="tag"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)}</span>`).join(""); }
+function statusPill(r) { return r.status === "bestaetigt" ? `<span class="pill ok">Bestätigt</span>` : `<span class="pill draft">Entwurf</span>`; }
+function fmtDate(iso) { try { return new Date(iso).toLocaleString("de-CH", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }); } catch { return iso; } }
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (!h) return { view: "list" };
+  if (h === "neu") return { view: "edit", mode: "new" };
+  let m;
+  if ((m = h.match(/^r-(.+)$/))) return { view: "detail", id: m[1] };
+  if ((m = h.match(/^edit-(.+)$/))) return { view: "edit", mode: "edit", id: m[1] };
+  if ((m = h.match(/^variante-(.+)$/))) return { view: "edit", mode: "variant", id: m[1] };
+  if ((m = h.match(/^verlauf-(.+)$/))) return { view: "history", id: m[1] };
+  return { view: "list" };
+}
+const FRAC = { "½": " 1/2", "¼": " 1/4", "¾": " 3/4", "⅓": " 1/3", "⅔": " 2/3", "⅛": " 1/8" };
+function parseOne(s) {
+  const parts = s.trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return NaN;
+  let sum = 0;
+  for (const p of parts) {
+    if (/^\d+\/\d+$/.test(p)) { const [a, b] = p.split("/").map(Number); if (!b) return NaN; sum += a / b; }
+    else if (/^\d+(\.\d+)?$/.test(p)) sum += Number(p);
+    else return NaN;
+  }
+  return sum;
+}
+function parseAmount(raw) {
+  if (raw == null) return null;
+  let s = String(raw).trim();
+  if (!s) return null;
+  s = s.replace(/[½¼¾⅓⅔⅛]/g, c => FRAC[c]).replace(/,/g, ".");
+  const range = s.split(/\s*[-–]\s*/);
+  if (range.length > 2) return null;
+  const vals = range.map(parseOne);
+  if (vals.some(v => isNaN(v))) return null;
+  return vals;
+}
+function fmtNum(n) {
+  if (n >= 10) return String(Math.round(n));
+  const whole = Math.floor(n), frac = n - whole;
+  const fr = [[0, ""], [0.25, "¼"], [1 / 3, "⅓"], [0.5, "½"], [2 / 3, "⅔"], [0.75, "¾"], [1, ""]];
+  for (const [v, g] of fr) {
+    if (Math.abs(frac - v) < 0.04) {
+      const w = v === 1 ? whole + 1 : whole;
+      if (!g) return String(w);
+      return (w ? String(w) : "") + g;
+    }
+  }
+  return String(Math.round(n * 10) / 10).replace(".", ",");
+}
+function scaledAmount(amount, factor) {
+  if (factor === 1) return amount || "";
+  const v = parseAmount(amount);
+  if (!v) return amount || "";
+  return v.map(x => fmtNum(x * factor)).join("–");
+}
+function snap(r) {
+  return {
+    title: r.title || "", intro: r.intro || "", servings: Number(r.servings) || 0, yieldUnit: r.yieldUnit || "Portionen",
+    time: r.time || "", topics: [...(r.topics || [])], ingredients: (r.ingredients || []).map(i => ({ ...i })),
+    steps: [...(r.steps || [])], tips: r.tips || "", source: r.source || ""
+  };
+}
+const isHead = s => /^##\s*/.test(s);
+const headText = s => s.replace(/^##\s*/, "");
+const normHead = t => String(t).toLowerCase().replace(/^(für\s+(den|die|das)|zum|zur|für)\s+/, "").trim();
+function secColor(k) { return `var(--t${[2, 4, 6, 1, 5, 3][k % 6]})`; }
+function ingText(i) { return [i.amount, i.unit, i.name].filter(Boolean).join(" ") + (i.note ? `, ${i.note}` : ""); }
+
+/* ---------- diff ---------- */
+function diff(a, b) {
+  const out = [];
+  const simple = [["title", "Titel"], ["intro", "Beschreibung"], ["servings", "Menge"], ["yieldUnit", "Einheit der Menge"], ["time", "Zeit"], ["tips", "Tipps & Notizen"], ["source", "Quelle"]];
+  for (const [k, label] of simple) if (String(a[k] ?? "") !== String(b[k] ?? "")) out.push({ kind: "chg", label, from: a[k], to: b[k] });
+  for (const t of b.topics) if (!a.topics.includes(t)) out.push({ kind: "add", label: "Thema", to: t });
+  for (const t of a.topics) if (!b.topics.includes(t)) out.push({ kind: "del", label: "Thema", from: t });
+  const key = i => i.heading != null ? "#" + i.heading.toLowerCase().trim() : (i.name || "").toLowerCase().trim();
+  const am = new Map(a.ingredients.map(i => [key(i), i])), bm = new Map(b.ingredients.map(i => [key(i), i]));
+  for (const [k, i] of bm) {
+    const o = am.get(k);
+    if (!o) out.push({ kind: "add", label: i.heading != null ? "Abschnitt" : "Zutat", to: i.heading ?? ingText(i) });
+    else if (i.heading == null && (String(o.amount || "") !== String(i.amount || "") || (o.unit || "") !== (i.unit || "") || (o.note || "") !== (i.note || "")))
+      out.push({ kind: "chg", label: i.name, from: ingText(o), to: ingText(i) });
+  }
+  for (const [k, o] of am) if (!bm.has(k)) out.push({ kind: "del", label: o.heading != null ? "Abschnitt" : "Zutat", from: o.heading ?? ingText(o) });
+  if (a.steps.length === b.steps.length) {
+    a.steps.forEach((s, idx) => { if (s !== b.steps[idx]) out.push({ kind: "chg", label: `Schritt ${idx + 1}`, from: s, to: b.steps[idx] }); });
+  } else {
+    b.steps.forEach((s, idx) => { if (!a.steps.includes(s)) out.push({ kind: "add", label: `Schritt ${idx + 1}`, to: s }); });
+    a.steps.forEach((s, idx) => { if (!b.steps.includes(s)) out.push({ kind: "del", label: `Schritt ${idx + 1} (alt)`, from: s }); });
+  }
+  return out;
+}
+function diffHtml(list) {
+  if (!list.length) return `<p class="muted" style="margin:0">Keine inhaltlichen Unterschiede.</p>`;
+  return `<ul class="diff">${list.map(d => {
+    if (d.kind === "add") return `<li class="add"><span class="mk">+</span><span><span class="lb">${esc(d.label)}:</span> <ins>${esc(d.to)}</ins></span></li>`;
+    if (d.kind === "del") return `<li class="del"><span class="mk">−</span><span><span class="lb">${esc(d.label)}:</span> <del>${esc(d.from)}</del></span></li>`;
+    return `<li class="chg"><span class="mk">~</span><span><span class="lb">${esc(d.label)}:</span> <del>${esc(d.from || "leer")}</del> → <ins>${esc(d.to || "leer")}</ins></span></li>`;
+  }).join("")}</ul>`;
+}
+
+/* ---------- rendering ---------- */
+function render(force) {
+  const r = route();
+  const key = location.hash || "#";
+  if (r.view !== "history" && historyUnsub) { historyUnsub(); historyUnsub = null; historyFor = null; }
+  if (r.view !== "detail") releaseWake();
+  if (r.view === "edit" && builtRoute === key && !force) return;
+  if (loadErr && !loaded) { app.innerHTML = errorHtml(); return; }
+  if (!loaded) { app.innerHTML = `<p class="loading">Rezepte werden geladen …</p>`; return; }
+  if (r.view === "list") return renderList();
+  if (r.view === "detail") return renderDetail(r.id);
+  if (r.view === "edit") return renderEditor(r, key);
+  if (r.view === "history") return renderHistory(r.id);
+}
+function errorHtml() {
+  const msg = loadErr === "nodb"
+    ? "Die Rezeptsammlung ist gerade nicht erreichbar. Lade die Seite neu."
+    : "Die Rezepte konnten gerade nicht geladen werden. Prüfe die Internetverbindung und lade die Seite neu.";
+  return `<div class="empty"><h2>Keine Verbindung zur Rezeptsammlung</h2><p>${esc(msg)}</p></div>`;
+}
+function notFound() { app.innerHTML = `<div class="empty"><h2>Rezept nicht gefunden</h2><p>Vielleicht wurde es gelöscht.</p><a class="btn" href="#">Zur Übersicht</a></div>`; }
+
+function allTopics() {
+  const s = new Set(TOPICS);
+  recipes.forEach(r => (r.topics || []).forEach(t => s.add(t)));
+  return [...s];
+}
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  return recipes.filter(r => {
+    if (state.status === "entwurf" && r.status === "bestaetigt") return false;
+    if (state.status === "bestaetigt" && r.status !== "bestaetigt") return false;
+    for (const t of state.topics) if (!(r.topics || []).includes(t)) return false;
+    if (q) {
+      const hay = [r.title, r.intro, r.tips, ...(r.topics || []), ...(r.ingredients || []).map(i => i.name || i.heading)].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }).sort((a, b) => (a.title || "").localeCompare(b.title || "", "de"));
+}
+function cardHtml(r) {
+  const parent = r.parentId ? byId(r.parentId) : null;
+  const kids = recipes.filter(x => x.parentId === r.id).length;
+  const meta = [];
+  if (parent) meta.push(`Variante von ${esc(parent.title)}`);
+  const milk = r.restVon ? byId(r.restVon) : null;
+  if (milk) meta.push(`Aus dem Satz von ${esc(milk.title)}`);
+  const satz = recipes.filter(x => x.restVon === r.id).length;
+  if (satz) meta.push(`${satz} ${satz === 1 ? "Rezept" : "Rezepte"} für den Satz`);
+  if (kids) meta.push(`${kids} ${kids === 1 ? "Variante" : "Varianten"}`);
+  return `<a class="card" href="#r-${esc(r.id)}">
+    <div class="card-top">${statusPill(r)}<span class="muted">${esc(r.time || "")}</span></div>
+    <h3>${esc(r.title || "Ohne Titel")}</h3>
+    ${r.intro ? `<p>${esc(r.intro)}</p>` : ""}
+    <div class="tags">${tagsHtml(r.topics)}</div>
+    ${meta.length ? `<div class="meta">${meta.join(" · ")}</div>` : ""}
+  </a>`;
+}
+function renderList() {
+  if (!document.getElementById("list-shell")) {
+    app.innerHTML = `<div id="list-shell">
+      <section class="intro">
+        <div><h1>Unsere Rezepte</h1><p class="muted" id="count"></p></div>
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr" hidden>Suche</span><input id="q" type="search" placeholder="Rezept oder Zutat suchen" autocomplete="off"></label>
+      </section>
+      <div class="filters">
+        <div class="chips" id="topic-chips" role="group" aria-label="Nach Thema filtern"></div>
+        <div class="filter-row">
+          <div class="seg" id="status-seg" role="group" aria-label="Status">
+            <button data-status="alle">Alle</button><button data-status="entwurf">Entwürfe</button><button data-status="bestaetigt">Bestätigt</button>
+          </div>
+          <button class="linkish" id="reset-filters" hidden>Filter zurücksetzen</button>
+        </div>
+      </div>
+      <div id="grid"></div>
+      <footer class="foot"><span>Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</span>
+        <button class="btn small" id="backup">Sicherung herunterladen</button></footer>
+    </div>`;
+    document.getElementById("q").value = state.q;
+  }
+  const chips = document.getElementById("topic-chips");
+  chips.innerHTML = allTopics().map(t => {
+    const n = recipes.filter(r => (r.topics || []).includes(t)).length;
+    return `<button class="chip" data-topic="${esc(t)}" aria-pressed="${state.topics.has(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)} <span class="n">${n}</span></button>`;
+  }).join("");
+  document.querySelectorAll("#status-seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.status === state.status));
+  document.getElementById("reset-filters").hidden = !(state.topics.size || state.q || state.status !== "alle");
+  renderGrid();
+}
+function renderGrid() {
+  const list = filtered();
+  const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
+  document.getElementById("count").textContent = `${recipes.length} ${recipes.length === 1 ? "Rezept" : "Rezepte"}${drafts ? `, davon ${drafts} noch zu prüfen` : ""}`;
+  const grid = document.getElementById("grid");
+  if (!recipes.length) {
+    grid.innerHTML = `<div class="empty"><h2>Noch keine Rezepte</h2><p>Schick Claude im Projekt deine Rezepte als Text, Link oder Foto. Oder leg das erste selbst an.</p><a class="btn primary" href="#neu">+ Neues Rezept</a></div>`;
+    return;
+  }
+  if (!list.length) { grid.innerHTML = `<div class="empty"><h2>Nichts gefunden</h2><p>Kein Rezept passt zu allen gewählten Filtern.</p><button class="btn" data-action="reset">Filter zurücksetzen</button></div>`; return; }
+  grid.innerHTML = `<div class="grid">${list.map(cardHtml).join("")}</div>`;
+}
+
+function renderDetail(id) {
+  const r = byId(id);
+  if (!r) return notFound();
+  const base = Number(r.servings) || 0;
+  const cur = servingsFor[id] || base;
+  const factor = base ? cur / base : 1;
+  const done = checked[id] || (checked[id] = new Set());
+  const parent = r.parentId ? byId(r.parentId) : null;
+  const kids = recipes.filter(x => x.parentId === id);
+  const siblings = parent ? recipes.filter(x => x.parentId === parent.id && x.id !== id) : [];
+  const milk = r.restVon ? byId(r.restVon) : null;
+  const satzKids = recipes.filter(x => x.restVon === id).sort((a, b) => (a.title || "").localeCompare(b.title || "", "de"));
+  const uses = [...new Set((r.ingredients || []).map(i => i.recipeId).filter(Boolean))].map(byId).filter(Boolean);
+  const usedIn = recipes.filter(x => x.id !== id && (x.ingredients || []).some(i => i.recipeId === id));
+  const related = [...new Set([...(parent ? [parent] : []), ...siblings, ...kids, ...(milk ? [milk] : []), ...uses, ...usedIn])];
+  const secs = []; let curSec = null;
+  for (const s of r.steps || []) {
+    if (isHead(s)) { curSec = { title: headText(s), items: [] }; secs.push(curSec); }
+    else { if (!curSec) { curSec = { title: "", items: [] }; secs.push(curSec); } curSec.items.push(s); }
+  }
+  const ingHeads = new Set((r.ingredients || []).filter(i => i.heading != null).map(i => normHead(i.heading)));
+  const colorOf = new Map();
+  secs.filter(x => x.title && ingHeads.has(normHead(x.title))).forEach(x => { if (!colorOf.has(normHead(x.title))) colorOf.set(normHead(x.title), secColor(colorOf.size)); });
+  const ings = (r.ingredients || []).map((i, idx) => i.heading != null
+    ? (colorOf.get(normHead(i.heading)) ? `<li class="hd has" style="--sec:${colorOf.get(normHead(i.heading))}">${esc(i.heading)}</li>` : `<li class="hd">${esc(i.heading)}</li>`)
+    : `<li class="${done.has(idx) ? "done" : ""}"><label><input type="checkbox" data-ing="${idx}" ${done.has(idx) ? "checked" : ""}>
+        <span class="amt">${esc([scaledAmount(i.amount, factor), i.unit].filter(Boolean).join(" "))}</span>
+        <span class="nm">${i.recipeId && byId(i.recipeId) ? `<a href="#r-${esc(i.recipeId)}">${esc(i.name)}</a>` : esc(i.name)}${i.note ? ` <small>${esc(i.note)}</small>` : ""}</span></label></li>`).join("");
+  const linkIngs = (r.ingredients || []).filter(i => i.recipeId && i.name && byId(i.recipeId));
+  const linkStep = s => {
+    let h = esc(s);
+    for (const i of linkIngs) {
+      const re = new RegExp(esc(i.name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+      h = h.replace(re, m => `<a href="#r-${esc(i.recipeId)}">${m}</a>`);
+    }
+    return h;
+  };
+  const steps = secs.map(x => {
+    const c = x.title ? colorOf.get(normHead(x.title)) : null;
+    return `<section class="step-sec${c ? " has" : x.title ? " plain" : ""}"${c ? ` style="--sec:${c}"` : ""}>${x.title ? `<h3>${esc(x.title)}</h3>` : ""}${x.items.length ? `<ol class="steps-list">${x.items.map(s => `<li><p>${linkStep(s)}</p></li>`).join("")}</ol>` : ""}</section>`;
+  }).join("");
+  app.innerHTML = `
+    <nav class="crumbs"><a href="#">← Alle Rezepte</a></nav>
+    <article>
+      <header class="recipe-head">
+        <div class="status-row">${statusPill(r)}${parent ? `<span class="pill var">Variante</span><span class="muted">von <a href="#r-${esc(parent.id)}">${esc(parent.title)}</a></span>` : ""}${milk ? `<span class="pill var">Satz-Rezept</span><span class="muted">aus dem Satz von <a href="#r-${esc(milk.id)}">${esc(milk.title)}</a></span>` : ""}</div>
+        <h1>${esc(r.title || "Ohne Titel")}</h1>
+        ${r.intro ? `<p class="lede">${esc(r.intro)}</p>` : ""}
+        <div class="tags">${tagsHtml(r.topics)}</div>
+        <dl class="facts">
+          ${r.time ? `<div><dt>Zeit</dt><dd>${esc(r.time)}</dd></div>` : ""}
+          ${base ? `<div><dt>Ergibt</dt><dd>${base} ${esc(r.yieldUnit || "Portionen")}</dd></div>` : ""}
+          ${r.status === "bestaetigt" && r.confirmedAt ? `<div><dt>Bestätigt am</dt><dd>${esc(new Date(r.confirmedAt).toLocaleDateString("de-CH"))}</dd></div>` : ""}
+        </dl>
+      </header>
+      ${r.variantNote ? `<div class="note-box variant"><p><b>Anders als im Grundrezept</b>${esc(r.variantNote)}</p></div>` : ""}
+      ${r.status !== "bestaetigt" ? `<div class="note-box draft"><p><b>Noch ein Entwurf</b>Prüf Mengen und Schritte und korrigiere, was nicht stimmt. Korrekturen im Entwurf landen nicht im Verlauf. Sobald du das Rezept bestätigst, wird jede weitere Änderung festgehalten.</p>
+        <button class="btn ok" data-action="confirm">Als korrekt bestätigen</button></div>` : ""}
+      <div class="cols">
+        <section class="panel ing-panel">
+          <h2>Zutaten</h2>
+          ${base ? `<div class="stepper"><button data-action="less" aria-label="Weniger">−</button><span class="val">${cur}</span><button data-action="more" aria-label="Mehr">+</button><span>${esc(r.yieldUnit || "Portionen")}</span>${cur !== base ? `<button class="linkish reset" data-action="base">Original (${base})</button>` : ""}</div>` : ""}
+          <ul class="ing-list">${ings || `<li class="muted">Noch keine Zutaten eingetragen.</li>`}</ul>
+        </section>
+        <section class="panel">
+          <h2>Zubereitung</h2>
+          ${steps ? `<div class="steps-wrap">${steps}</div>` : `<p class="muted">Noch keine Schritte eingetragen.</p>`}
+          ${r.tips ? `<div class="tips"><h3>Tipps &amp; Notizen</h3>${r.tips.split(/\n{2,}/).map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
+          ${r.source ? `<p class="source">Quelle: ${/^https?:\/\//.test(r.source) ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</p>` : ""}
+        </section>
+      </div>
+      ${satzKids.length ? `<section class="related"><h2>Was du mit dem Satz machen kannst</h2><div class="rel-list">${satzKids.map(x => cardHtml(x)).join("")}</div></section>` : ""}
+      <section class="related">
+        <h2>Verwandte Rezepte</h2>
+        ${related.length ? `<div class="rel-list">${related.map(x => cardHtml(x)).join("")}</div>` : `<p class="muted">Noch keine Varianten. Mit „Variante erstellen“ machst du aus diesem Rezept eine Abwandlung, z.B. mit einer zusätzlichen Zutat.</p>`}
+      </section>
+      <div class="actions">
+        <a class="btn primary" href="#edit-${esc(id)}">Bearbeiten</a>
+        <a class="btn" href="#variante-${esc(id)}">Variante erstellen</a>
+        ${r.status === "bestaetigt" ? `<a class="btn" href="#verlauf-${esc(id)}">Verlauf${r.historyCount ? ` (${r.historyCount})` : ""}</a>` : ""}
+        ${"wakeLock" in navigator ? `<label class="wake"><input type="checkbox" id="wake" ${wakeLock ? "checked" : ""}> Bildschirm beim Kochen anlassen</label>` : ""}
+        <span style="flex:1"></span>
+        ${confirmDelete
+          ? `<div class="confirm-row"><span>Rezept wirklich löschen?${r.status === "bestaetigt" ? " Der Verlauf wird mit gelöscht." : ""}</span><button class="btn danger solid small" data-action="delete-yes">Ja, löschen</button><button class="btn small" data-action="delete-no">Abbrechen</button></div>`
+          : `<button class="btn danger" data-action="delete">Löschen</button>`}
+      </div>
+    </article>`;
+}
+
+/* ---------- editor ---------- */
+function ingRowHtml(i = {}) {
+  if (i.heading != null) return `<div class="ing-row heading"><input class="i-heading" value="${esc(i.heading)}" placeholder="Zwischenüberschrift, z.B. Für den Teig" aria-label="Zwischenüberschrift"><button type="button" data-action="rm-ing" aria-label="Entfernen">×</button></div>`;
+  return `<div class="ing-row" data-rid="${esc(i.recipeId || "")}">
+    <input class="i-amount" value="${esc(i.amount)}" placeholder="200" aria-label="Menge" inputmode="decimal">
+    <input class="i-unit" value="${esc(i.unit)}" placeholder="g" aria-label="Einheit" list="units">
+    <input class="i-name" value="${esc(i.name)}" placeholder="Zutat" aria-label="Zutat">
+    <input class="i-note" value="${esc(i.note)}" placeholder="Hinweis, z.B. eingeweicht" aria-label="Hinweis">
+    <button type="button" data-action="rm-ing" aria-label="Zutat entfernen">×</button></div>`;
+}
+function renderEditor(r, key) {
+  let src = null, title = "Neues Rezept";
+  if (r.mode !== "new") {
+    src = byId(r.id);
+    if (!src) return notFound();
+    title = r.mode === "edit" ? "Rezept bearbeiten" : "Variante erstellen";
+  }
+  builtRoute = key;
+  const d = src ? snap(src) : snap({});
+  if (r.mode === "variant") d.title = d.title + " (Variante)";
+  const isConfirmedEdit = r.mode === "edit" && src.status === "bestaetigt";
+  const topics = allTopics();
+  const ings = d.ingredients.length ? d.ingredients : [{}, {}, {}];
+  app.innerHTML = `
+    <nav class="crumbs"><a href="${src ? `#r-${esc(src.id)}` : "#"}">← Abbrechen</a></nav>
+    <h1 style="margin-bottom:18px">${title}</h1>
+    <form class="form" id="editor" novalidate>
+      ${r.mode === "variant" ? `<div class="callout"><p>Die Variante übernimmt alles aus <b>${esc(src.title)}</b>. Ändere, was anders ist, und beschreib den Unterschied unten. Beide Rezepte erscheinen danach gegenseitig unter „Verwandte Rezepte“.</p></div>` : ""}
+      ${isConfirmedEdit ? `<div class="callout"><p>Dieses Rezept ist bestätigt. Deine Änderung wird im Verlauf gespeichert, damit ihr später seht, was sich wann geändert hat.</p></div>` : ""}
+      <div class="field"><label for="f-title">Titel</label><input id="f-title" value="${esc(d.title)}" required></div>
+      <div class="field"><label for="f-intro">Kurzbeschreibung</label><input id="f-intro" value="${esc(d.intro)}" placeholder="Ein Satz, wofür das Rezept gut ist"></div>
+      <div class="row2">
+        <div class="field"><label for="f-servings">Ergibt (Anzahl)</label><input id="f-servings" type="number" min="0" step="1" value="${d.servings || ""}" placeholder="4"></div>
+        <div class="field"><label for="f-yield">Einheit</label><input id="f-yield" value="${esc(d.yieldUnit)}" placeholder="Portionen, Stück, Liter …"></div>
+        <div class="field"><label for="f-time">Zeit</label><input id="f-time" value="${esc(d.time)}" placeholder="30 Min + 8 Std Einweichen"></div>
+      </div>
+      <div class="field"><span class="lbl">Themen</span>
+        <div class="chips" id="f-topics">${topics.map(t => `<button type="button" class="chip" data-tgl="${esc(t)}" aria-pressed="${d.topics.includes(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)}</button>`).join("")}</div>
+        <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap"><input id="f-newtopic" placeholder="Eigenes Thema hinzufügen" style="flex:1 1 200px;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 12px;background:var(--surface)"><button type="button" class="btn small" data-action="add-topic">Hinzufügen</button></div>
+      </div>
+      <div class="field"><span class="lbl">Zutaten</span>
+        <p class="hint">Mengen wie 200, 1/2, 1,5 oder 2–3 werden beim Ändern der Portionen automatisch umgerechnet.</p>
+        <div class="ing-rows" id="f-ings">${ings.map(ingRowHtml).join("")}</div>
+        <div class="ing-tools"><button type="button" class="btn small" data-action="add-ing">+ Zutat</button><button type="button" class="btn small" data-action="add-head">+ Zwischenüberschrift</button></div>
+        <details class="bulk"><summary>Mehrere Zutaten auf einmal einfügen</summary>
+          <p class="hint" style="margin-top:8px">Eine Zutat pro Zeile, z.B. „200 g Cashews, eingeweicht“. Zeilen mit Doppelpunkt am Ende werden Zwischenüberschriften.</p>
+          <textarea id="f-bulk" placeholder="200 g Cashews, eingeweicht&#10;1 l Wasser&#10;1 Prise Salz"></textarea>
+          <button type="button" class="btn small" data-action="bulk" style="margin-top:8px">Übernehmen</button>
+        </details>
+      </div>
+      <div class="field"><label for="f-steps">Zubereitung</label><p class="hint">Ein Schritt pro Zeile. Eine Zeile mit Doppelpunkt am Ende wird zur farbigen Zwischenüberschrift, z.B. „Trockene Zutaten:“. Heisst eine Zwischenüberschrift bei den Zutaten gleich (z.B. „Für das Frosting“ und „Frosting:“), bekommen beide dieselbe Farbe.</p><textarea id="f-steps" rows="10">${esc(d.steps.map(s => isHead(s) ? headText(s) + ":" : s).join("\n"))}</textarea></div>
+      <div class="field"><label for="f-tips">Tipps &amp; Notizen</label><textarea id="f-tips" rows="4">${esc(d.tips)}</textarea></div>
+      <div class="field"><label for="f-restvon">Aus dem Satz (Rest) von</label><p class="hint">Für Reste-Rezepte: wähle das Rezept, bei dem der Rest anfällt. Beide Rezepte verweisen dann aufeinander.</p>
+        <select id="f-restvon" style="min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:var(--surface)"><option value="">Kein Reste-Rezept</option>${recipes.filter(x => !src || x.id !== src.id || r.mode === "variant").sort((a, b) => (a.title || "").localeCompare(b.title || "", "de")).map(x => `<option value="${esc(x.id)}" ${(src?.restVon || "") === x.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-source">Quelle</label><input id="f-source" value="${esc(d.source)}" placeholder="Buch und Seite, Link oder „von Oma“"></div>
+      ${r.mode === "variant" ? `<div class="field"><label for="f-variant">Was ist bei dieser Variante anders?</label><textarea id="f-variant" rows="3" placeholder="z.B. 50 g Kokosraspeln in den Teig, dafür 20 g weniger Mehl"></textarea></div>` : ""}
+      ${r.mode === "edit" && src.parentId ? `<div class="field"><label for="f-variant">Unterschied zum Grundrezept</label><textarea id="f-variant" rows="3">${esc(src.variantNote || "")}</textarea></div>` : ""}
+      ${isConfirmedEdit ? `<div class="field"><label for="f-why">Was hast du geändert und warum?</label><textarea id="f-why" rows="3" placeholder="z.B. weniger Zucker, war zu süß"></textarea></div>` : ""}
+      <p class="form-msg" id="form-msg"></p>
+      <div class="form-actions"><button type="submit" class="btn primary" id="save">${r.mode === "edit" ? "Änderungen speichern" : "Rezept speichern"}</button><a class="btn" href="${src ? `#r-${esc(src.id)}` : "#"}">Abbrechen</a></div>
+    </form>
+    <datalist id="units">${UNITS.map(u => `<option value="${u}">`).join("")}</datalist>`;
+}
+function parseIngLine(line) {
+  const t = line.trim();
+  if (!t) return null;
+  if (/:$/.test(t)) return { heading: t.replace(/:$/, "").trim() };
+  const m = t.match(/^([\d½¼¾⅓⅔⅛][\d½¼¾⅓⅔⅛.,/\s–-]*)?\s*(?:([A-Za-zÄÖÜäöü]+)\.?\s+)?(.*)$/);
+  let amount = "", unit = "", rest = t;
+  if (m) {
+    amount = (m[1] || "").trim();
+    if (m[2] && UNITS.some(u => u.toLowerCase() === m[2].toLowerCase())) { unit = UNITS.find(u => u.toLowerCase() === m[2].toLowerCase()); rest = m[3]; }
+    else rest = ((m[2] ? m[2] + " " : "") + m[3]).trim();
+  }
+  const [name, ...note] = rest.split(",");
+  return { amount, unit, name: name.trim(), note: note.join(",").trim() };
+}
+function collectForm() {
+  const v = id => (document.getElementById(id)?.value || "").trim();
+  const ingredients = [...document.querySelectorAll("#f-ings .ing-row")].map(row => {
+    if (row.classList.contains("heading")) { const h = row.querySelector(".i-heading").value.trim(); return h ? { heading: h } : null; }
+    const g = c => row.querySelector(c).value.trim();
+    const i = { amount: g(".i-amount"), unit: g(".i-unit"), name: g(".i-name"), note: g(".i-note") };
+    if (row.dataset.rid) i.recipeId = row.dataset.rid;
+    return i.name || i.amount ? i : null;
+  }).filter(Boolean);
+  return {
+    title: v("f-title"), intro: v("f-intro"), servings: Number(v("f-servings")) || 0, yieldUnit: v("f-yield") || "Portionen",
+    time: v("f-time"), topics: [...document.querySelectorAll("#f-topics [aria-pressed=true]")].map(b => b.dataset.tgl),
+    ingredients, steps: v("f-steps").split("\n").map(s => s.trim()).filter(Boolean).map(s => /:$/.test(s) && s.length < 60 ? "## " + s.replace(/:$/, "").trim() : s), tips: v("f-tips"), source: v("f-source"),
+    restVon: v("f-restvon")
+  };
+}
+async function saveForm() {
+  const r = route();
+  const msg = document.getElementById("form-msg");
+  const btn = document.getElementById("save");
+  const data = collectForm();
+  const why = (document.getElementById("f-why")?.value || "").trim();
+  const variantNote = document.getElementById("f-variant") ? document.getElementById("f-variant").value.trim() : null;
+  if (!data.title) { msg.textContent = "Bitte gib dem Rezept einen Titel."; document.getElementById("f-title").focus(); return; }
+  if (r.mode === "variant" && !variantNote) { msg.textContent = "Beschreib kurz, was bei der Variante anders ist."; document.getElementById("f-variant").focus(); return; }
+  const src = r.mode !== "new" ? byId(r.id) : null;
+  const confirmedEdit = r.mode === "edit" && src?.status === "bestaetigt";
+  if (confirmedEdit && !why) { msg.textContent = "Schreib kurz auf, was du geändert hast. Das erscheint im Verlauf."; document.getElementById("f-why").focus(); return; }
+  msg.textContent = ""; btn.disabled = true; btn.textContent = "Speichert …";
+  const now = new Date().toISOString();
+  try {
+    if (r.mode === "edit") {
+      const changes = diff(snap(src), snap(data));
+      const upd = { ...data, updatedAt: now };
+      if (variantNote !== null) upd.variantNote = variantNote;
+      if (confirmedEdit && changes.length) {
+        await db.collection("history").add({ recipeId: src.id, at: now, type: "aenderung", note: why, prev: snap(src), snapshot: snap(data) });
+        upd.historyCount = (src.historyCount || 0) + 1;
+      }
+      await db.doc("recipes/" + src.id).update(upd);
+      location.hash = "r-" + src.id;
+    } else {
+      const doc = { ...data, status: "entwurf", createdAt: now, updatedAt: now, historyCount: 0 };
+      if (r.mode === "variant") { doc.parentId = src.id; doc.variantNote = variantNote; }
+      const ref = await db.collection("recipes").add(doc);
+      location.hash = "r-" + ref.id;
+    }
+  } catch (e) {
+    btn.disabled = false; btn.textContent = "Erneut speichern";
+    msg.textContent = "Speichern hat nicht geklappt (" + (e?.message || e?.code || "unbekannter Fehler") + "). Deine Eingaben sind noch da, versuch es gleich nochmal.";
+  }
+}
+
+/* ---------- history ---------- */
+function renderHistory(id) {
+  const r = byId(id);
+  if (!r) return notFound();
+  if (historyFor !== id) {
+    if (historyUnsub) historyUnsub();
+    historyFor = id; historyLoaded = false; historyEntries = [];
+    historyUnsub = db.collection("history").where("recipeId", "==", id).limit(500).onSnapshot(s => {
+      historyEntries = s.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (b.at || "").localeCompare(a.at || ""));
+      historyLoaded = true;
+      if (route().view === "history" && route().id === id) renderHistory(id);
+    }, () => { historyLoaded = true; renderHistory(id); });
+  }
+  const label = { bestaetigt: "Als korrekt bestätigt", aenderung: "Geändert", wiederhergestellt: "Älteren Stand wiederhergestellt" };
+  const baseline = [...historyEntries].reverse().find(e => e.type === "bestaetigt");
+  const total = baseline ? diff(baseline.snapshot, snap(r)) : [];
+  const entries = historyEntries.map((e, idx) => `<li class="entry">
+      <div class="entry-head"><h3>${esc(label[e.type] || "Änderung")}</h3><time datetime="${esc(e.at)}">${esc(fmtDate(e.at))}</time></div>
+      ${e.note ? `<p class="why">„${esc(e.note)}“</p>` : ""}
+      ${e.type === "bestaetigt" ? `<p class="muted" style="margin:0">Ausgangsversion mit ${e.snapshot.ingredients.filter(i => i.heading == null).length} Zutaten und ${e.snapshot.steps.length} Schritten. Ab hier beginnt der Verlauf.</p>` : diffHtml(diff(e.prev, e.snapshot))}
+      ${idx > 0 ? `<div><button class="btn small" data-action="restore" data-entry="${esc(e.id)}">Diesen Stand wiederherstellen</button></div>` : `<div><span class="pill ok">Aktueller Stand</span></div>`}
+    </li>`).join("");
+  app.innerHTML = `
+    <nav class="crumbs"><a href="#r-${esc(id)}">← ${esc(r.title)}</a></nav>
+    <header class="recipe-head"><span class="eyebrow">Verlauf</span><h1>${esc(r.title)}</h1>
+      <p class="lede">Alle Änderungen seit der Bestätigung, die neueste zuerst.</p></header>
+    ${!historyLoaded ? `<p class="loading">Verlauf wird geladen …</p>` : `
+      ${baseline && historyEntries.length > 1 ? `<section class="panel" style="margin-bottom:20px"><h2>Insgesamt seit der Bestätigung</h2>${diffHtml(total)}</section>` : ""}
+      ${entries ? `<ol class="timeline">${entries}</ol>` : `<div class="empty"><p>Noch keine Einträge.</p></div>`}`}`;
+}
+async function restore(entryId) {
+  const r = byId(historyFor); const e = historyEntries.find(x => x.id === entryId);
+  if (!r || !e) return;
+  const now = new Date().toISOString();
+  await db.collection("history").add({ recipeId: r.id, at: now, type: "wiederhergestellt", note: `Stand vom ${fmtDate(e.at)}`, prev: snap(r), snapshot: snap(e.snapshot) });
+  await db.doc("recipes/" + r.id).update({ ...snap(e.snapshot), updatedAt: now, historyCount: (r.historyCount || 0) + 1 });
+}
+
+/* ---------- actions ---------- */
+async function confirmRecipe(id) {
+  const r = byId(id); if (!r) return;
+  const now = new Date().toISOString();
+  await db.collection("history").add({ recipeId: id, at: now, type: "bestaetigt", note: "", snapshot: snap(r) });
+  await db.doc("recipes/" + id).update({ status: "bestaetigt", confirmedAt: now, updatedAt: now, historyCount: 1 });
+}
+async function deleteRecipe(id) {
+  const hs = await db.collection("history").where("recipeId", "==", id).limit(1000).get();
+  for (const d of hs.docs) await db.doc("history/" + d.id).delete();
+  await db.doc("recipes/" + id).delete();
+  confirmDelete = false; location.hash = "";
+}
+async function backup(btn) {
+  btn.disabled = true; const old = btn.textContent; btn.textContent = "Wird erstellt …";
+  try {
+    const hs = await db.collection("history").limit(1000).get();
+    const data = { exportiert: new Date().toISOString(), rezepte: recipes, verlauf: hs.docs.map(d => ({ id: d.id, ...d.data() })) };
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
+    a.download = `kochbuch-sicherung-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    btn.textContent = old;
+  } catch (e) { btn.textContent = e?.code === "declined" ? old : "Download fehlgeschlagen"; }
+  finally { btn.disabled = false; }
+}
+async function setWake(on) {
+  try {
+    if (on) { wakeLock = await navigator.wakeLock.request("screen"); wakeLock.addEventListener?.("release", () => { wakeLock = null; const c = document.getElementById("wake"); if (c) c.checked = false; }); }
+    else releaseWake();
+  } catch { const c = document.getElementById("wake"); if (c) c.checked = false; wakeLock = null; }
+}
+function releaseWake() { try { wakeLock?.release(); } catch {} wakeLock = null; }
+
+app.addEventListener("click", async ev => {
+  const t = ev.target.closest("button, [data-action]");
+  if (!t) return;
+  const r = route();
+  if (t.dataset.topic) { const x = t.dataset.topic; state.topics.has(x) ? state.topics.delete(x) : state.topics.add(x); return renderList(); }
+  if (t.dataset.status) { state.status = t.dataset.status; return renderList(); }
+  if (t.id === "reset-filters" || t.dataset.action === "reset") { state.topics.clear(); state.q = ""; state.status = "alle"; const q = document.getElementById("q"); if (q) q.value = ""; return renderList(); }
+  if (t.id === "backup") return backup(t);
+  if (t.dataset.tgl) { t.setAttribute("aria-pressed", t.getAttribute("aria-pressed") !== "true"); return; }
+  const a = t.dataset.action;
+  if (!a) return;
+  const rec = r.id ? byId(r.id) : null;
+  if (a === "less" || a === "more" || a === "base") {
+    const base = Number(rec.servings) || 1, cur = servingsFor[r.id] || base;
+    const step = base >= 50 ? 10 : 1;
+    servingsFor[r.id] = a === "base" ? base : Math.max(step, cur + (a === "more" ? step : -step));
+    return renderDetail(r.id);
+  }
+  if (a === "confirm") { t.disabled = true; t.textContent = "Wird bestätigt …"; try { await confirmRecipe(r.id); } catch (e) { t.disabled = false; t.textContent = "Nochmal versuchen"; } return; }
+  if (a === "delete") { confirmDelete = true; return renderDetail(r.id); }
+  if (a === "delete-no") { confirmDelete = false; return renderDetail(r.id); }
+  if (a === "delete-yes") { t.disabled = true; t.textContent = "Wird gelöscht …"; try { await deleteRecipe(r.id); } catch { t.disabled = false; t.textContent = "Nochmal versuchen"; } return; }
+  if (a === "restore") { t.disabled = true; t.textContent = "Wird wiederhergestellt …"; try { await restore(t.dataset.entry); } catch { t.disabled = false; t.textContent = "Nochmal versuchen"; } return; }
+  if (a === "rm-ing") { t.closest(".ing-row").remove(); return; }
+  if (a === "add-ing" || a === "add-head") {
+    document.getElementById("f-ings").insertAdjacentHTML("beforeend", ingRowHtml(a === "add-head" ? { heading: "" } : {}));
+    document.querySelector("#f-ings .ing-row:last-child input").focus(); return;
+  }
+  if (a === "bulk") {
+    const ta = document.getElementById("f-bulk");
+    const rows = ta.value.split("\n").map(parseIngLine).filter(Boolean);
+    const box = document.getElementById("f-ings");
+    [...box.querySelectorAll(".ing-row:not(.heading)")].forEach(row => { if (![...row.querySelectorAll("input")].some(i => i.value.trim())) row.remove(); });
+    box.insertAdjacentHTML("beforeend", rows.map(ingRowHtml).join(""));
+    ta.value = ""; t.closest("details").open = false; return;
+  }
+  if (a === "add-topic") {
+    const inp = document.getElementById("f-newtopic"); const v = inp.value.trim(); if (!v) return;
+    const box = document.getElementById("f-topics");
+    const ex = [...box.querySelectorAll("[data-tgl]")].find(b => b.dataset.tgl.toLowerCase() === v.toLowerCase());
+    if (ex) ex.setAttribute("aria-pressed", "true");
+    else box.insertAdjacentHTML("beforeend", `<button type="button" class="chip" data-tgl="${esc(v)}" aria-pressed="true"><span class="dot"></span>${esc(v)}</button>`);
+    inp.value = ""; return;
+  }
+});
+app.addEventListener("change", ev => {
+  const t = ev.target;
+  if (t.dataset.ing != null) {
+    const id = route().id; const s = checked[id] || (checked[id] = new Set()); const i = Number(t.dataset.ing);
+    t.checked ? s.add(i) : s.delete(i); t.closest("li").classList.toggle("done", t.checked);
+  }
+  if (t.id === "wake") setWake(t.checked);
+});
+app.addEventListener("input", ev => { if (ev.target.id === "q") { state.q = ev.target.value; document.getElementById("reset-filters").hidden = !(state.topics.size || state.q || state.status !== "alle"); renderGrid(); } });
+app.addEventListener("submit", ev => { ev.preventDefault(); saveForm(); });
+app.addEventListener("keydown", ev => { if (ev.target.id === "f-newtopic" && ev.key === "Enter") { ev.preventDefault(); document.querySelector("[data-action=add-topic]").click(); } });
+
+window.addEventListener("hashchange", () => { builtRoute = null; confirmDelete = false; render(); window.scrollTo(0, 0); });
+
+/* ---------- boot ---------- */
+(async () => {
+  const timer = setTimeout(() => { if (!loaded) { loadErr = "timeout"; render(); } }, 10000);
+  db = makeGitHubDb();
+  db.startSync();
+  document.getElementById("key-open").addEventListener("click", openKeyDialog);
+  db.collection("recipes").limit(1000).onSnapshot(s => {
+    clearTimeout(timer); loaded = true; loadErr = null;
+    recipes = s.docs.map(d => ({ id: d.id, ...d.data() }));
+    render();
+  }, e => { clearTimeout(timer); loadErr = e?.message || e?.code || "error"; render(); });
+})();
+</script>
+</body>
+</html>
