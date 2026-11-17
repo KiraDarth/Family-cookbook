@@ -887,5 +887,112 @@
    "yieldUnit": "Cupcakes"
   },
   "type": "aenderung"
+ },
+ "tags3-vegane-buttercreme": {
+  "recipeId": "vegane-buttercreme",
+  "at": "2026-11-17T20:21:00.000Z",
+  "type": "aenderung",
+  "note": "Thema Cupcakes wieder dazu",
+  "prev": {
+   "ingredients": [
+    {
+     "amount": "95",
+     "name": "pflanzliches Backfett",
+     "note": "ungehärtet, ½ Cup",
+     "unit": "g"
+    },
+    {
+     "amount": "115",
+     "name": "vegane Margarine",
+     "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
+     "unit": "g"
+    },
+    {
+     "amount": "420",
+     "name": "Puderzucker",
+     "note": "gesiebt, falls klumpig, 3½ Cups",
+     "unit": "g"
+    },
+    {
+     "amount": "1½",
+     "name": "Vanilleextrakt",
+     "note": "",
+     "unit": "TL"
+    },
+    {
+     "amount": "60",
+     "name": "Sojamilch oder Soja-Rahm",
+     "note": "ungesüsst, ¼ Cup",
+     "unit": "ml"
+    }
+   ],
+   "intro": "Das Allzweck-Frosting: zum Aufspritzen in üppigen Wirbeln und genauso gut zum Bestreichen.",
+   "servings": 12,
+   "source": "Vegan Cupcakes Take Over the World, «Vegan Fluffy Buttercream Frosting», S. 142",
+   "steps": [
+    "Backfett und Margarine zusammen schlagen, bis sie gut verbunden und luftig sind.",
+    "Den Puderzucker dazugeben und etwa 3 Minuten weiterschlagen.",
+    "Vanilleextrakt und Sojamilch dazugeben und nochmals 5 bis 7 Minuten schlagen, bis die Creme luftig ist."
+   ],
+   "time": "15 Min",
+   "tips": "Ergibt ca. 1 l (4 Cups), genug, um 12 Cupcakes grosszügig zu verzieren. Wenn du das Frosting nur aufstreichst statt aufspritzt, reicht die halbe Menge (Rechner auf 6 stellen).\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Gramm sind Richtwerte. TL = genormter Messlöffel (5 ml).",
+   "title": "Vegane Buttercreme (Frosting)",
+   "topics": [
+    "Dessert",
+    "Frosting"
+   ],
+   "yieldUnit": "Cupcakes"
+  },
+  "snapshot": {
+   "ingredients": [
+    {
+     "amount": "95",
+     "name": "pflanzliches Backfett",
+     "note": "ungehärtet, ½ Cup",
+     "unit": "g"
+    },
+    {
+     "amount": "115",
+     "name": "vegane Margarine",
+     "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
+     "unit": "g"
+    },
+    {
+     "amount": "420",
+     "name": "Puderzucker",
+     "note": "gesiebt, falls klumpig, 3½ Cups",
+     "unit": "g"
+    },
+    {
+     "amount": "1½",
+     "name": "Vanilleextrakt",
+     "note": "",
+     "unit": "TL"
+    },
+    {
+     "amount": "60",
+     "name": "Sojamilch oder Soja-Rahm",
+     "note": "ungesüsst, ¼ Cup",
+     "unit": "ml"
+    }
+   ],
+   "intro": "Das Allzweck-Frosting: zum Aufspritzen in üppigen Wirbeln und genauso gut zum Bestreichen.",
+   "servings": 12,
+   "source": "Vegan Cupcakes Take Over the World, «Vegan Fluffy Buttercream Frosting», S. 142",
+   "steps": [
+    "Backfett und Margarine zusammen schlagen, bis sie gut verbunden und luftig sind.",
+    "Den Puderzucker dazugeben und etwa 3 Minuten weiterschlagen.",
+    "Vanilleextrakt und Sojamilch dazugeben und nochmals 5 bis 7 Minuten schlagen, bis die Creme luftig ist."
+   ],
+   "time": "15 Min",
+   "tips": "Ergibt ca. 1 l (4 Cups), genug, um 12 Cupcakes grosszügig zu verzieren. Wenn du das Frosting nur aufstreichst statt aufspritzt, reicht die halbe Menge (Rechner auf 6 stellen).\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Gramm sind Richtwerte. TL = genormter Messlöffel (5 ml).",
+   "title": "Vegane Buttercreme (Frosting)",
+   "topics": [
+    "Dessert",
+    "Cupcakes",
+    "Frosting"
+   ],
+   "yieldUnit": "Cupcakes"
+  }
  }
 }
