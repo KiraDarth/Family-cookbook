@@ -494,10 +494,9 @@ function ingText(i) { return [i.amount, i.unit, i.name].filter(Boolean).join(" "
 /* ---------- diff ---------- */
 function diff(a, b) {
   const out = [];
-  const simple = [["title", "Titel"], ["intro", "Beschreibung"], ["servings", "Menge"], ["yieldUnit", "Einheit der Menge"], ["time", "Zeit"], ["tips", "Tipps & Notizen"], ["source", "Quelle"]];
+  // Nur Rezeptinhalt zählt für den Verlauf; Themen und Quelle sind Formalien und erscheinen dort nicht.
+  const simple = [["title", "Titel"], ["intro", "Beschreibung"], ["servings", "Menge"], ["yieldUnit", "Einheit der Menge"], ["time", "Zeit"], ["tips", "Tipps & Notizen"]];
   for (const [k, label] of simple) if (String(a[k] ?? "") !== String(b[k] ?? "")) out.push({ kind: "chg", label, from: a[k], to: b[k] });
-  for (const t of b.topics) if (!a.topics.includes(t)) out.push({ kind: "add", label: "Thema", to: t });
-  for (const t of a.topics) if (!b.topics.includes(t)) out.push({ kind: "del", label: "Thema", from: t });
   const key = i => i.heading != null ? "#" + i.heading.toLowerCase().trim() : (i.name || "").toLowerCase().trim();
   const am = new Map(a.ingredients.map(i => [key(i), i])), bm = new Map(b.ingredients.map(i => [key(i), i]));
   for (const [k, i] of bm) {
@@ -773,7 +772,7 @@ function renderEditor(r, key) {
       <div class="field"><label for="f-source">Quelle</label><input id="f-source" value="${esc(d.source)}" placeholder="Buch und Seite, Link oder „von Oma“"></div>
       ${r.mode === "variant" ? `<div class="field"><label for="f-variant">Was ist bei dieser Variante anders?</label><textarea id="f-variant" rows="3" placeholder="z.B. 50 g Kokosraspeln in den Teig, dafür 20 g weniger Mehl"></textarea></div>` : ""}
       ${r.mode === "edit" && src.parentId ? `<div class="field"><label for="f-variant">Unterschied zum Grundrezept</label><textarea id="f-variant" rows="3">${esc(src.variantNote || "")}</textarea></div>` : ""}
-      ${isConfirmedEdit ? `<div class="field"><label for="f-why">Was hast du geändert und warum?</label><textarea id="f-why" rows="3" placeholder="z.B. weniger Zucker, war zu süß"></textarea></div>` : ""}
+      ${isConfirmedEdit ? `<div class="field"><label for="f-why">Was hast du geändert und warum? <span class="muted">(nur bei Änderungen am Rezept nötig, nicht bei Themen)</span></label><textarea id="f-why" rows="3" placeholder="z.B. weniger Zucker, war zu süß"></textarea></div>` : ""}
       <p class="form-msg" id="form-msg"></p>
       <div class="form-actions"><button type="submit" class="btn primary" id="save">${r.mode === "edit" ? "Änderungen speichern" : "Rezept speichern"}</button><a class="btn" href="${src ? `#r-${esc(src.id)}` : "#"}">Abbrechen</a></div>
     </form>
@@ -820,7 +819,8 @@ async function saveForm() {
   if (r.mode === "variant" && !variantNote) { msg.textContent = "Beschreib kurz, was bei der Variante anders ist."; document.getElementById("f-variant").focus(); return; }
   const src = r.mode !== "new" ? byId(r.id) : null;
   const confirmedEdit = r.mode === "edit" && src?.status === "bestaetigt";
-  if (confirmedEdit && !why) { msg.textContent = "Schreib kurz auf, was du geändert hast. Das erscheint im Verlauf."; document.getElementById("f-why").focus(); return; }
+  const contentChanged = confirmedEdit && diff(snap(src), snap(data)).length > 0;
+  if (contentChanged && !why) { msg.textContent = "Schreib kurz auf, was du geändert hast. Das erscheint im Verlauf."; document.getElementById("f-why").focus(); return; }
   msg.textContent = ""; btn.disabled = true; btn.textContent = "Speichert …";
   const now = new Date().toISOString();
   try {
@@ -881,7 +881,7 @@ async function restore(entryId) {
   if (!r || !e) return;
   const now = new Date().toISOString();
   await db.collection("history").add({ recipeId: r.id, at: now, type: "wiederhergestellt", note: `Stand vom ${fmtDate(e.at)}`, prev: snap(r), snapshot: snap(e.snapshot) });
-  await db.doc("recipes/" + r.id).update({ ...snap(e.snapshot), updatedAt: now, historyCount: (r.historyCount || 0) + 1 });
+  await db.doc("recipes/" + r.id).update({ ...snap(e.snapshot), topics: [...(r.topics || [])], source: r.source || "", updatedAt: now, historyCount: (r.historyCount || 0) + 1 });
 }
 
 /* ---------- actions ---------- */
