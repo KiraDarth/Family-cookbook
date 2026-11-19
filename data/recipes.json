@@ -149,6 +149,161 @@
   "variantNote": "10 grob gehackte Schoko-Sandwichkekse im Teig, Frosting aus veganer Buttercreme mit zerbröselten Keksen, je eine Kekshälfte obendrauf.",
   "yieldUnit": "Stück"
  },
+ "cremige-tofu-nudeln": {
+  "createdAt": "2026-11-19T10:20:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "heading": "Für die cremige Sauce"
+   },
+   {
+    "amount": "200",
+    "name": "Tofu",
+    "note": "weich oder Seidentofu wird am cremigsten",
+    "unit": "g"
+   },
+   {
+    "amount": "2",
+    "name": "Sojasauce",
+    "note": "Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Reisessig",
+    "note": "Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Zucker",
+    "note": "Menge ergänzt",
+    "unit": "TL"
+   },
+   {
+    "amount": "1–2",
+    "name": "Chiliöl",
+    "note": "je nach Schärfe, Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "2–4",
+    "name": "Wasser",
+    "note": "nur bei Bedarf, zum Verdünnen, ergänzt",
+    "unit": "EL"
+   },
+   {
+    "heading": "Für das Tofu-Topping"
+   },
+   {
+    "amount": "200",
+    "name": "fester Tofu",
+    "note": "Natur",
+    "unit": "g"
+   },
+   {
+    "amount": "1",
+    "name": "neutrales Öl",
+    "note": "zum Braten, ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Sojasauce",
+    "note": "Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Tomatenmark",
+    "note": "Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Zucker",
+    "note": "Menge ergänzt",
+    "unit": "TL"
+   },
+   {
+    "amount": "3",
+    "name": "Wasser",
+    "note": "Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "2",
+    "name": "Hefeflocken",
+    "note": "oder geriebener Parmesan, Menge ergänzt",
+    "unit": "EL"
+   },
+   {
+    "amount": "½",
+    "name": "Knoblauchpulver",
+    "note": "Menge ergänzt",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "Paprikapulver",
+    "note": "Menge ergänzt",
+    "unit": "TL"
+   },
+   {
+    "amount": "",
+    "name": "schwarzer Pfeffer",
+    "note": "nach Geschmack",
+    "unit": ""
+   },
+   {
+    "heading": "Für die Nudeln & zum Anrichten"
+   },
+   {
+    "amount": "200",
+    "name": "Nudeln",
+    "note": "z.B. Spaghetti oder Weizennudeln, Menge ergänzt",
+    "unit": "g"
+   },
+   {
+    "amount": "",
+    "name": "Petersilie",
+    "note": "gehackt, eine Handvoll",
+    "unit": ""
+   },
+   {
+    "amount": "1",
+    "name": "Sesamsamen",
+    "note": "Menge ergänzt",
+    "unit": "TL"
+   }
+  ],
+  "intro": "Nudeln in einer cremigen, scharf-säuerlichen Tofusauce, darüber knusprig-würzige Tofubrösel. Zweimal Tofu, ganz ohne Rahm.",
+  "servings": 2,
+  "source": "TikTok-Video (per Sprachnotiz beschrieben)",
+  "status": "entwurf",
+  "steps": [
+   "## Cremige Sauce",
+   "Tofu, Sojasauce, Reisessig, Zucker und Chiliöl im Mixer oder mit dem Stabmixer zu einer glatten, cremigen Sauce mixen. Ist sie zu dick, löffelweise Wasser dazugeben. Abschmecken und beiseitestellen.",
+   "## Tofu-Topping",
+   "Den festen Tofu in ein sauberes Küchentuch wickeln und mit etwas Schwerem darauf ein paar Minuten (ca. 10 Min) pressen, damit die Flüssigkeit austritt.",
+   "Öl in einer Bratpfanne erhitzen. Den Tofu hineingeben und mit einer Gabel oder dem Bratenwender in kleine Brösel zerdrücken. Bei mittlerer bis hoher Hitze ca. 5–7 Minuten anbraten, bis er leicht goldig ist.",
+   "In einer kleinen Schüssel Sojasauce, Tomatenmark, Zucker, Wasser, Hefeflocken, Knoblauchpulver, Paprikapulver und Pfeffer verrühren. Das ergibt eine ziemlich flüssige Würzmasse.",
+   "Die Würzmasse über den Tofu in der Pfanne giessen, gut vermischen und unter Rühren weiterbraten, bis die Flüssigkeit verkocht ist und die Brösel wieder trocken und leicht knusprig sind (ca. 3–5 Minuten).",
+   "## Nudeln & Anrichten",
+   "Inzwischen die Nudeln in reichlich Salzwasser nach Packungsangabe kochen und abgiessen.",
+   "Die heissen Nudeln in der cremigen Sauce wenden, bis sie rundum überzogen sind.",
+   "Die Nudeln auf Teller verteilen, das Tofu-Topping darüberstreuen und mit Petersilie und Sesam garnieren."
+  ],
+  "time": "30 Min",
+  "tips": "Rezept nach einem TikTok-Video. Die mit «Menge ergänzt» markierten Mengen stammen nicht aus dem Video, sondern sind plausible Richtwerte: bitte beim Nachkochen anpassen.\n\n«Gemahlener Käse» im Video: hier als Hefeflocken (vegan, würzig-käsig) umgesetzt. Geriebener Parmesan funktioniert genauso.\n\nMesslöffel: EL = 15 ml, TL = 5 ml. Genormte Messlöffel verwenden und glatt abstreichen.",
+  "title": "Cremige Tofu-Nudeln mit Tofu-Topping",
+  "topics": [
+   "Chinesisch",
+   "Nudeln"
+  ],
+  "updatedAt": "2026-11-19T10:20:00.000Z",
+  "yieldUnit": "Portionen"
+ },
  "grundmilch": {
   "confirmedAt": "2026-11-17T16:38:06.057Z",
   "createdAt": "2026-11-17T12:35:00.000Z",
