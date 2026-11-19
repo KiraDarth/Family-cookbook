@@ -181,10 +181,10 @@
     "unit": "TL"
    },
    {
-    "amount": "1–2",
+    "amount": "1–1½",
     "name": "Chiliöl",
-    "note": "je nach Schärfe, Menge ergänzt",
-    "unit": "EL"
+    "note": "mit Chili-Stückchen (Chili Crisp); im Video ein gehäufter Besteck-Teelöffel",
+    "unit": "TL"
    },
    {
     "amount": "2–4",
@@ -210,19 +210,19 @@
    {
     "amount": "1",
     "name": "Sojasauce",
-    "note": "Menge ergänzt",
+    "note": "",
     "unit": "EL"
    },
    {
     "amount": "1",
     "name": "Tomatenmark",
-    "note": "Menge ergänzt",
+    "note": "",
     "unit": "EL"
    },
    {
     "amount": "1",
     "name": "Zucker",
-    "note": "Menge ergänzt",
+    "note": "",
     "unit": "TL"
    },
    {
@@ -232,10 +232,10 @@
     "unit": "EL"
    },
    {
-    "amount": "2",
+    "amount": "2–3",
     "name": "Hefeflocken",
-    "note": "oder geriebener Parmesan, Menge ergänzt",
-    "unit": "EL"
+    "note": "oder geriebener Parmesan; grosszügig, im Video ca. 1 Besteck-Tee- bis fast -Esslöffel",
+    "unit": "TL"
    },
    {
     "amount": "½",
@@ -244,16 +244,16 @@
     "unit": "TL"
    },
    {
-    "amount": "½",
+    "amount": "1",
     "name": "Paprikapulver",
-    "note": "Menge ergänzt",
+    "note": "gut gefüllt",
     "unit": "TL"
    },
    {
-    "amount": "",
+    "amount": "¼",
     "name": "schwarzer Pfeffer",
-    "note": "nach Geschmack",
-    "unit": ""
+    "note": "deutlich weniger als Paprika, Menge ergänzt",
+    "unit": "TL"
    },
    {
     "heading": "Für die Nudeln & zum Anrichten"
@@ -295,7 +295,7 @@
    "Die Nudeln auf Teller verteilen, das Tofu-Topping darüberstreuen und mit Petersilie und Sesam garnieren."
   ],
   "time": "30 Min",
-  "tips": "Rezept nach einem TikTok-Video. Die mit «Menge ergänzt» markierten Mengen stammen nicht aus dem Video, sondern sind plausible Richtwerte: bitte beim Nachkochen anpassen.\n\n«Gemahlener Käse» im Video: hier als Hefeflocken (vegan, würzig-käsig) umgesetzt. Geriebener Parmesan funktioniert genauso.\n\nMesslöffel: EL = 15 ml, TL = 5 ml. Genormte Messlöffel verwenden und glatt abstreichen.",
+  "tips": "Rezept nach einem TikTok-Video. Die mit «Menge ergänzt» markierten Mengen stammen nicht aus dem Video, sondern sind plausible Richtwerte: bitte beim Nachkochen anpassen.\n\nAngaben aus dem Video in Besteck-Löffeln sind in genormte Messlöffel umgerechnet (gehäufter Besteck-Teelöffel ≈ 1–1½ TL).\n\n«Gemahlener Käse» im Video: hier als Hefeflocken (vegan, würzig-käsig) umgesetzt. Geriebener Parmesan funktioniert genauso.\n\nMesslöffel: EL = 15 ml, TL = 5 ml. Genormte Messlöffel verwenden und glatt abstreichen.",
   "title": "Cremige Tofu-Nudeln mit Tofu-Topping",
   "topics": [
    "Chinesisch",
