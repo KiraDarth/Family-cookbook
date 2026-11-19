@@ -304,6 +304,100 @@
   "updatedAt": "2026-11-19T10:20:00.000Z",
   "yieldUnit": "Portionen"
  },
+ "eifreie-waffeln": {
+  "createdAt": "2026-11-19T19:05:00.000Z",
+  "historyCount": 0,
+  "ingredients": [
+   {
+    "heading": "Nasse Zutaten"
+   },
+   {
+    "amount": "480",
+    "name": "Vollmilch",
+    "note": "2 Cups, zimmerwarm",
+    "unit": "ml"
+   },
+   {
+    "amount": "55",
+    "name": "ungesalzene Butter",
+    "note": "geschmolzen",
+    "unit": "g"
+   },
+   {
+    "amount": "2",
+    "name": "neutrales Öl",
+    "note": "z.B. Avocado- oder Rapsöl",
+    "unit": "EL"
+   },
+   {
+    "amount": "2",
+    "name": "Vanilleextrakt",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "heading": "Trockene Zutaten"
+   },
+   {
+    "amount": "260",
+    "name": "Weissmehl",
+    "note": "2 Cups",
+    "unit": "g"
+   },
+   {
+    "amount": "4",
+    "name": "Backpulver",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "2",
+    "name": "Zucker",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "½",
+    "name": "Salz",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "heading": "Zum Backen"
+   },
+   {
+    "amount": "",
+    "name": "Backtrennspray oder Öl",
+    "note": "für das Waffeleisen",
+    "unit": ""
+   }
+  ],
+  "intro": "Schnelle, fluffige Waffeln ganz ohne Ei: aussen leicht knusprig, innen weich. In 15 Minuten auf dem Tisch.",
+  "servings": 8,
+  "source": "https://oursliceofhome.com/egg-free-waffles/",
+  "status": "entwurf",
+  "steps": [
+   "## Nasse Zutaten",
+   "In einer grossen Schüssel die zimmerwarme Milch, die geschmolzene Butter, das Öl und den Vanilleextrakt verrühren.",
+   "## Trockene Zutaten",
+   "In einer kleineren Schüssel Mehl, Backpulver, Zucker und Salz vermischen.",
+   "Die trockenen Zutaten zu den nassen geben und nur so lange rühren, bis alles knapp verbunden ist. Kleine Klümpchen sind in Ordnung. Den Teig 3–4 Minuten ruhen lassen, damit er etwas eindickt. Währenddessen das Waffeleisen vorheizen.",
+   "## Backen",
+   "Das Waffeleisen mit Backtrennspray einsprühen oder dünn mit Öl bestreichen. Pro kleine Waffel 60 ml Teig (¼ Cup) in die Mitte des Eisens giessen, bei grösseren Eisen entsprechend mehr.",
+   "Nach Angabe des Waffeleisens backen (bei einem kleinen Eisen etwa 2–3 Minuten), bis die Waffeln goldbraun und aussen leicht knusprig sind.",
+   "Heiss servieren, z.B. mit Ahornsirup, Butter, Beeren, Puderzucker oder Nussmus."
+  ],
+  "time": "15 Min",
+  "tips": "Zimmerwarme Milch verwenden: so wird die geschmolzene Butter beim Mischen nicht wieder fest.\n\nMilchfrei: Soja-, Mandel- oder Hafermilch statt Vollmilch, vegane Butter oder neutrales Öl statt Butter. Kokosmilch wird im Originalrezept nicht empfohlen.\n\nStatt Zucker gehen auch Honig oder Ahornsirup. Mit gesalzener Butter das Salz weglassen.\n\nWerden die Waffeln kompakt: frisches Backpulver verwenden, das Mehl locker abwiegen und den Teig nicht zu lange rühren.\n\nAufbewahren: ganz auskühlen lassen, luftdicht im Kühlschrank bis 4 Tage. Zum Einfrieren mit Backpapier zwischen den Lagen in einen Gefrierbeutel geben. Im Toaster aufbacken, auch direkt aus dem Tiefkühler.\n\nUS-Mengen umgerechnet: 1 Cup = 240 ml, 4 EL Butter = 55 g. Messlöffel: EL = 15 ml, TL = 5 ml, glatt abstreichen.",
+  "title": "Fluffige Waffeln ohne Ei",
+  "topics": [
+   "Frühstück",
+   "Dessert",
+   "Waffeln"
+  ],
+  "updatedAt": "2026-11-19T19:05:00.000Z",
+  "yieldUnit": "kleine Waffeln"
+ },
  "grundmilch": {
   "confirmedAt": "2026-11-17T16:38:06.057Z",
   "createdAt": "2026-11-17T12:35:00.000Z",
