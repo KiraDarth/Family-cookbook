@@ -139,18 +139,18 @@
   ],
   "tips": "Im Buch werden Newman-O's verwendet, es gehen aber alle veganen Schoko-Sandwichkekse mit Cremefüllung.\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).",
   "title": "Cookies-'n'-Cream-Cupcakes",
-  "topics": [
-   "Dessert",
-   "Gebäck",
-   "Cupcakes"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-17T16:45:00.000Z",
   "variantNote": "10 grob gehackte Schoko-Sandwichkekse im Teig, Frosting aus veganer Buttercreme mit zerbröselten Keksen, je eine Kekshälfte obendrauf.",
   "yieldUnit": "Stück",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Cupcakes",
   "prepTime": "30 Min",
-  "cookTime": "18–20 Min"
+  "cookTime": "18–20 Min",
+  "keywords": [
+   "Dessert",
+   "Gebäck"
+  ]
  },
  "cremige-tofu-nudeln": {
   "createdAt": "2026-11-19T10:20:00.000Z",
@@ -301,8 +301,7 @@
   "tips": "Rezept nach einem TikTok-Video. Die mit «Menge ergänzt» markierten Mengen stammen nicht aus dem Video, sondern sind plausible Richtwerte: bitte beim Nachkochen anpassen.\n\nAngaben aus dem Video in Besteck-Löffeln sind in genormte Messlöffel umgerechnet.\n\n«Gemahlener Käse» im Video: hier als Hefeflocken (vegan, würzig-käsig) umgesetzt. Geriebener Parmesan funktioniert genauso.\n\nMesslöffel: EL = 15 ml, TL = 5 ml. Genormte Messlöffel verwenden und glatt abstreichen.",
   "title": "Nudeln an cremiger Chili-Tofusauce mit Tofu-Crisp",
   "topics": [
-   "Chinesisch",
-   "Nudeln"
+   "Chinesisch"
   ],
   "updatedAt": "2026-11-19T10:20:00.000Z",
   "yieldUnit": "Portionen",
@@ -395,15 +394,15 @@
   "time": "15 Min",
   "tips": "Zimmerwarme Milch verwenden: so wird die geschmolzene Butter beim Mischen nicht wieder fest.\n\nMilchfrei: Soja-, Mandel- oder Hafermilch statt Vollmilch, vegane Butter oder neutrales Öl statt Butter. Kokosmilch wird im Originalrezept nicht empfohlen.\n\nStatt Zucker gehen auch Honig oder Ahornsirup. Mit gesalzener Butter das Salz weglassen.\n\nWerden die Waffeln kompakt: frisches Backpulver verwenden, das Mehl locker abwiegen und den Teig nicht zu lange rühren.\n\nAufbewahren: ganz auskühlen lassen, luftdicht im Kühlschrank bis 4 Tage. Zum Einfrieren mit Backpapier zwischen den Lagen in einen Gefrierbeutel geben. Im Toaster aufbacken, auch direkt aus dem Tiefkühler.\n\nUS-Mengen umgerechnet: 1 Cup = 240 ml, 4 EL Butter = 55 g. Messlöffel: EL = 15 ml, TL = 5 ml, glatt abstreichen.",
   "title": "Fluffige Waffeln ohne Ei",
-  "topics": [
-   "Frühstück",
-   "Dessert",
-   "Waffeln"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-19T19:05:00.000Z",
   "yieldUnit": "kleine Waffeln",
   "chapter": "Frühstück",
-  "subchapter": "Pancakes & Waffeln"
+  "subchapter": "Pancakes & Waffeln",
+  "keywords": [
+   "Dessert",
+   "Waffeln"
+  ]
  },
  "grundmilch": {
   "confirmedAt": "2026-11-17T16:38:06.057Z",
@@ -460,9 +459,7 @@
   "time": "",
   "tips": "",
   "title": "Grundmilch",
-  "topics": [
-   "Pflanzenmilch"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-17T16:38:06.057Z",
   "yieldUnit": "dl",
   "chapter": "Grundrezepte",
@@ -518,9 +515,7 @@
   "time": "",
   "tips": "",
   "title": "Kokosmilch",
-  "topics": [
-   "Pflanzenmilch"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-17T16:25:59.900Z",
   "variantNote": "Mehr Kokosraspeln (96 g statt 54 g), weniger Cashews (30 g statt 36 g), ohne Hafer.",
   "yieldUnit": "dl",
@@ -589,9 +584,7 @@
   "time": "",
   "tips": "",
   "title": "Nussige Milch",
-  "topics": [
-   "Pflanzenmilch"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-17T16:38:18.639Z",
   "variantNote": "Zusätzlich 14 g Barunüsse, dafür etwas weniger Cashews (34 g statt 36 g) und Haferflocken (11 g statt 18 g).",
   "yieldUnit": "dl",
@@ -675,13 +668,15 @@
   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Baru-Kakao-Cookies",
   "topics": [
-   "Reste-Verwertung",
-   "Gebäck"
+   "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
-  "subchapter": "Cookies"
+  "subchapter": "Cookies",
+  "keywords": [
+   "Gebäck"
+  ]
  },
  "satz-baru-zimt-knusper": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -820,13 +815,15 @@
   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Honig-Hafer-Cookies",
   "topics": [
-   "Reste-Verwertung",
-   "Gebäck"
+   "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
-  "subchapter": "Cookies"
+  "subchapter": "Cookies",
+  "keywords": [
+   "Gebäck"
+  ]
  },
  "satz-kokos-bananen-bites": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1095,13 +1092,15 @@
   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Kokos-Honig-Cookies",
   "topics": [
-   "Reste-Verwertung",
-   "Gebäck"
+   "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
-  "subchapter": "Cookies"
+  "subchapter": "Cookies",
+  "keywords": [
+   "Gebäck"
+  ]
  },
  "satz-pancakes": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1348,17 +1347,17 @@
   ],
   "tips": "Die Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).\n\nFür dunklere Cupcakes Kakao nach holländischer Art verwenden, oder eine Mischung aus schwarzem und normalem Kakao.\n\nLässt sich mit jedem Frosting, jeder Glasur oder Füllung kombinieren. Pur schmecken sie mit einem Glas kalter Sojamilch.",
   "title": "Schokoladen-Cupcakes (Grundrezept)",
-  "topics": [
-   "Dessert",
-   "Gebäck",
-   "Cupcakes"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-17T13:45:00.000Z",
   "yieldUnit": "Stück",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Cupcakes",
   "prepTime": "15 Min",
-  "cookTime": "18–20 Min"
+  "cookTime": "18–20 Min",
+  "keywords": [
+   "Dessert",
+   "Gebäck"
+  ]
  },
  "vegane-buttercreme": {
   "confirmedAt": "2026-11-17T16:39:14.029Z",
@@ -1408,14 +1407,15 @@
   "time": "15 Min",
   "tips": "Ergibt ca. 1 l (4 Cups), genug, um 12 Cupcakes grosszügig zu verzieren. Wenn du das Frosting nur aufstreichst statt aufspritzt, reicht die halbe Menge (Rechner auf 6 stellen).\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Gramm sind Richtwerte. TL = genormter Messlöffel (5 ml).",
   "title": "Vegane Buttercreme (Frosting)",
-  "topics": [
-   "Dessert",
-   "Cupcakes",
-   "Frosting"
-  ],
+  "topics": [],
   "updatedAt": "2026-11-17T20:21:00.000Z",
   "yieldUnit": "Cupcakes",
   "chapter": "Grundrezepte",
-  "subchapter": "Cremes & Frostings"
+  "subchapter": "Cremes & Frostings",
+  "keywords": [
+   "Dessert",
+   "Cupcakes",
+   "Frosting"
+  ]
  }
 }

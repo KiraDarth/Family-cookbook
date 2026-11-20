@@ -26,7 +26,7 @@
   --danger-soft: #F8E0DD;
   --add: #2C6A52;
   --del: #A3302A;
-  --t1: #C07A1A; --t2: #3E7FA8; --t3: #B23B3B; --t4: #6A8F3A; --t5: #8A6A4A; --t6: #B0558C; --t7: #2E8A86;
+  --t1: #C07A1A; --t2: #3E7FA8; --t3: #B23B3B; --t4: #6A8F3A; --t5: #8A6A4A; --t6: #B0558C; --t7: #2E8A86; --t8: #6B5FA8;
   --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
   --radius: 14px;
@@ -38,7 +38,7 @@
     --accent: #E9A24C; --accent-soft: #3A2A16; --ok: #7CC4A4; --ok-soft: #1D3328;
     --warn: #E8C463; --warn-soft: #383015; --danger: #F08C84; --danger-soft: #3B1F1D;
     --add: #7CC4A4; --del: #F08C84;
-    --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3;
+    --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3; --t8: #A99CE8;
     --shadow: 0 1px 2px rgba(0,0,0,.3);
     color-scheme: dark;
   }
@@ -48,7 +48,7 @@
   --accent: #E9A24C; --accent-soft: #3A2A16; --ok: #7CC4A4; --ok-soft: #1D3328;
   --warn: #E8C463; --warn-soft: #383015; --danger: #F08C84; --danger-soft: #3B1F1D;
   --add: #7CC4A4; --del: #F08C84;
-  --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3;
+  --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3; --t8: #A99CE8;
   --shadow: 0 1px 2px rgba(0,0,0,.3);
   color-scheme: dark;
 }
@@ -262,22 +262,145 @@ details.bulk textarea { margin-top: 10px; min-height: 110px; width: 100%; border
 .key-dialog input { width: 100%; }
 .site-foot { text-align: center; padding: 32px 0 24px; }
 .linkbtn { background: none; border: 0; color: var(--muted); text-decoration: underline; font: inherit; font-size: .88rem; cursor: pointer; }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* ---------- Navigation: Leiste unten (Handy) / Seitenleiste (Computer) ---------- */
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); }
+.tab { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; font-size: .74rem; color: var(--muted); text-decoration: none; border-radius: 10px; }
+.tab svg { width: 24px; height: 24px; }
+.tab.on { color: var(--accent); font-weight: 700; }
+body { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+body.editing { padding-bottom: 0; }
+body.editing .tabbar { display: none; }
+.side { display: none; }
+.plusbtn { width: 44px; height: 44px; border-radius: 14px; background: var(--accent); color: var(--surface); display: grid; place-items: center; text-decoration: none; flex: none; }
+.plusbtn svg { width: 20px; height: 20px; }
+@media (min-width: 900px) {
+  .tabbar, .top { display: none; }
+  body { padding-bottom: 48px; }
+  .side { display: flex; flex-direction: column; gap: 4px; position: fixed; top: 0; bottom: 0; left: 0; width: 236px; z-index: 8;
+    background: var(--surface); border-right: 1px solid var(--line); padding: calc(20px + env(safe-area-inset-top, 0px)) 14px 20px max(14px, env(safe-area-inset-left, 0px)); overflow-y: auto; }
+  .side .brand { margin: 0 6px 18px; }
+  .side a, .side button.navlink { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: .98rem; background: none; border: 0; cursor: pointer; text-align: left; width: 100%; }
+  .side a svg, .side button.navlink svg { width: 20px; height: 20px; color: var(--muted); flex: none; }
+  .side a:hover, .side button.navlink:hover { background: var(--bg); }
+  .side a.on { background: var(--accent-soft); color: var(--accent); }
+  .side a.on svg { color: var(--accent); }
+  .side .new { background: var(--accent); color: var(--surface); justify-content: center; margin-bottom: 14px; }
+  .side .new:hover { background: var(--accent); filter: brightness(1.08); }
+  .side .new svg { color: var(--surface); }
+  .side .sep { border-top: 1px solid var(--line); margin: 14px 6px; }
+  .side .small, .side button.navlink.small { font-weight: 400; font-size: .92rem; color: var(--muted); }
+  .wrap { margin-left: 236px; padding: 28px 0 0 32px; max-width: calc(1080px + 268px); }
+}
+.view-in { animation: viewIn .22s ease-out both; }
+@keyframes viewIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.grow { position: fixed; z-index: 30; border-radius: 16px; pointer-events: none; transition: left .28s cubic-bezier(.2,.8,.2,1), top .28s cubic-bezier(.2,.8,.2,1), width .28s cubic-bezier(.2,.8,.2,1), height .28s cubic-bezier(.2,.8,.2,1), border-radius .28s, opacity .2s; }
+
+/* Startseite */
+.start { display: flex; flex-direction: column; gap: 26px; }
+.searchbar { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); padding: 0 16px; color: var(--muted); text-align: left; cursor: pointer; font-size: 1rem; }
+.searchbar svg { width: 20px; height: 20px; flex: none; }
+.sec-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.sec-h a, .sec-h button { font-size: .9rem; color: var(--accent); font-weight: 700; text-decoration: none; background: none; border: 0; cursor: pointer; }
+.recent { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px; padding: 2px 16px 6px; scrollbar-width: none; }
+.recent::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { .recent { margin: 0; padding: 2px 0 6px; } }
+.rc { flex: 0 0 158px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 8px; padding: 10px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; }
+.rc b { font-size: .9rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.thumb { border-radius: 10px; background: color-mix(in srgb, var(--cc) 18%, var(--surface)); color: var(--cc); display: grid; place-items: center; overflow: hidden; flex: none; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rc .thumb { height: 72px; }
+.thumb svg { width: 26px; height: 26px; }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 700px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.tile { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-height: 104px; padding: 14px; border-radius: 16px; text-decoration: none;
+  background: color-mix(in srgb, var(--cc) 15%, var(--surface)); border: 1px solid color-mix(in srgb, var(--cc) 30%, transparent); transition: transform .15s; }
+.tile:active { transform: scale(.97); }
+.tile svg { width: 28px; height: 28px; color: var(--cc); }
+.tile b { font-family: var(--font-display); font-size: 1.05rem; line-height: 1.2; display: block; }
+.tile small { color: var(--muted); font-size: .85rem; }
+.todo { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; background: var(--warn-soft); text-decoration: none; }
+.todo .big { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; color: var(--warn); min-width: 2ch; text-align: center; font-variant-numeric: tabular-nums; }
+.todo span { font-size: .95rem; }
+
+/* Listen von Rezepten */
+.rows { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+@media (min-width: 900px) { .rows { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.rrow { display: flex; align-items: center; gap: 14px; padding: 10px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; min-width: 0; }
+.rrow:hover { border-color: var(--muted); }
+.rrow .thumb { width: 56px; height: 56px; }
+.rrow .tx { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.rrow b { font-size: 1rem; line-height: 1.3; }
+.rrow small { color: var(--muted); font-size: .85rem; }
+.rrow .pill { margin-left: 6px; vertical-align: 2px; font-size: .72rem; }
+.group { margin-top: 22px; scroll-margin-top: 130px; }
+.group:first-child { margin-top: 0; }
+.group > h2 { font-family: var(--font-body); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+
+/* Kopf von Unterseiten */
+.vhead { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.vhead h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+.vhead .sub { color: var(--muted); font-size: .92rem; }
+.backbtn { width: 44px; height: 44px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; cursor: pointer; flex: none; color: var(--ink); text-decoration: none; }
+.backbtn svg { width: 20px; height: 20px; }
+.band { border-radius: 18px; padding: 16px; margin-bottom: 18px; background: color-mix(in srgb, var(--cc) 12%, var(--surface)); }
+.band .vhead { margin-bottom: 12px; }
+.jump { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
+.jump::-webkit-scrollbar { display: none; }
+.jump .chip { flex: none; }
+.band .jump { margin: 0; padding: 0; flex-wrap: wrap; }
+
+/* Suche */
+.sbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4; background: var(--bg); display: flex; align-items: center; gap: 10px; padding-block: 12px; margin-bottom: 8px; }
+.sfield { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; min-height: 50px; border-radius: 14px; border: 1.5px solid var(--accent); background: var(--surface); padding: 0 14px; }
+.sfield svg { width: 20px; height: 20px; color: var(--muted); flex: none; }
+.sfield input { flex: 1; min-width: 0; border: 0; background: none; outline: none; font-size: 1.02rem; min-height: 46px; }
+.sfield input::-webkit-search-cancel-button { cursor: pointer; }
+.ktree { display: grid; gap: 10px; }
+@media (min-width: 900px) { .ktree { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+.kt { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.kt > button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 14px; background: none; border: 0; cursor: pointer; text-align: left; min-height: 52px; }
+.kt > button > svg:first-child { width: 22px; height: 22px; color: var(--cc); flex: none; }
+.kt > button b { flex: 1; }
+.kt > button small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.kt .chev { width: 18px; height: 18px; color: var(--muted); transition: transform .22s; flex: none; }
+.kt.open .chev { transform: rotate(90deg); }
+.kt .subs { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+.kt.open .subs { grid-template-rows: 1fr; }
+.kt .subs > div { overflow: hidden; }
+.kt .subs .chips { padding: 0 14px 14px; }
+.kt .subs .chip { text-decoration: none; }
+.chip { text-decoration: none; }
+.chip.dim { opacity: .5; }
+.hit-type { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+.browse-sec { margin-top: 24px; }
+.browse-sec h2 { margin-bottom: 12px; font-size: 1.1rem; }
+.morelist { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 18px; }
+.morelist a, .morelist button { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 14px 16px; border: 0; border-bottom: 1px solid var(--line); background: none; text-align: left; text-decoration: none; cursor: pointer; font-weight: 700; width: 100%; }
+.morelist > :last-child { border-bottom: 0; }
+.morelist small { font-weight: 400; color: var(--muted); font-size: .85rem; }
+.morehead { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; margin: 0 4px 8px; }
+.crumbs { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.crumbs .path { color: var(--muted); font-size: .92rem; }
+.crumbs .path a { font-weight: 700; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
 
+<nav class="side" id="side" aria-label="Hauptmenü"></nav>
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#">
       <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 11h16a8 8 0 0 1-16 0Z"/><path d="M9 7c0-1.5 1-2 1-3.5M14 7c0-1.5 1-2 1-3.5"/></svg></span>
       Unser Kochbuch
     </a>
-    <a class="btn primary small" href="#neu">+ Neues Rezept</a>
+    <a class="plusbtn" href="#neu" aria-label="Neues Rezept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></a>
   </header>
   <main id="app"><p class="loading">Rezepte werden geladen …</p></main>
-  <footer class="site-foot"><button type="button" class="linkbtn" id="key-open">GitHub-Schlüssel für dieses Gerät</button></footer>
 </div>
+<nav class="tabbar" id="tabbar" aria-label="Hauptmenü"></nav>
 
 <script>
 /* ---------- Speicher: Rezepte als JSON-Dateien im GitHub-Repo ----------
@@ -423,16 +546,31 @@ function openKeyDialog() {
   d.showModal();
 }
 
-const TOPICS = ["Verdauung", "Erkältung", "Chinesisch", "Pflanzenmilch", "Reste-Verwertung", "Dessert", "Gebäck"];
+// Themen: feste, kurze Liste in Gruppen. Gerichtsarten stehen im Kapitel, freie Suchwörter in den Stichwörtern.
+const THEME_GROUPS = [["Gut für", ["Verdauung", "Erkältung"]], ["Küche", ["Chinesisch"]], ["Besonderes", ["Reste-Verwertung"]]];
+const TOPICS = THEME_GROUPS.flatMap(g => g[1]);
 // Kapitel fürs Buch (Hauptkategorien, in dieser Reihenfolge); Unterkapitel sind frei wählbar
 const CHAPTERS = ["Grundrezepte", "Frühstück", "Vorspeisen & Salate", "Suppen", "Hauptgerichte", "Beilagen", "Süsses & Gebäck", "Getränke"];
+// Symbol und Farbe je Kapitel (ersetzt das Foto, solange keins da ist)
+const CH_LOOK = {
+  "Grundrezepte": ["--t5", "M5 20h14M7 20V9l5-5 5 5v11M10 20v-5h4v5"],
+  "Frühstück": ["--t1", "M12 3v2M5.6 5.6l1.4 1.4M3 12h2M19 12h2M17 7l1.4-1.4M7 16a5 5 0 0 1 10 0M3 19h18"],
+  "Vorspeisen & Salate": ["--t4", "M4 12h16a8 8 0 0 1-16 0ZM9 9c1-3 4-4 6-3M12 9c0-2 1-4 3-5"],
+  "Suppen": ["--t2", "M4 11h16a8 8 0 0 1-16 0ZM9 7c0-1.5 1-2 1-3.5M14 7c0-1.5 1-2 1-3.5"],
+  "Hauptgerichte": ["--t3", "M12 5a7 7 0 1 0 0 14a7 7 0 1 0 0-14M12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6"],
+  "Beilagen": ["--t7", "M5 15c0-4 3-8 7-8s7 4 7 8M3 15h18M8 19h8"],
+  "Süsses & Gebäck": ["--t6", "M6 11h12l-1.5 9h-9ZM6 11a6 6 0 0 1 12 0M12 5V3"],
+  "Getränke": ["--t8", "M7 3h10l-1.5 17h-7ZM7.5 8h9"]
+};
+const NO_CHAPTER = "Noch ohne Kapitel";
+const RECENT_KEY = "kochbuch-zuletzt";
 const NOTE_POS = [["unten-rechts", "unten rechts"], ["unten-links", "unten links"], ["oben-rechts", "oben rechts"], ["oben-links", "oben links"]];
 const localPhotos = {}; // frisch hochgeladene Fotos, bis die Website sie ausliefert
 let pendingPhoto = null; // { dataUrl, base64 } oder "remove"
 const UNITS = ["g","kg","mg","ml","l","dl","cl","EL","TL","Msp","Prise","Prisen","Stück","Stk","Tasse","Tassen","Bund","Zehe","Zehen","Scheibe","Scheiben","Dose","Dosen","Päckchen","Pck","Handvoll","cm","Becher","Glas","Blatt","Blätter","Zweig","Zweige"];
 const app = document.getElementById("app");
 let db = null, recipes = [], loaded = false, loadErr = null;
-const state = { q: "", topics: new Set(), status: "alle" };
+const state = { q: "", focusSearch: false, lastTab: "start" };
 const servingsFor = {};
 const checked = {};
 let builtRoute = null;
@@ -443,20 +581,72 @@ let confirmDelete = false;
 /* ---------- helpers ---------- */
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const byId = id => recipes.find(r => r.id === id);
-function topicColor(t) { const i = TOPICS.indexOf(t); return i >= 0 ? `var(--t${i + 1})` : "var(--muted)"; }
+function topicColor(t) { const i = TOPICS.indexOf(t); return i >= 0 ? `var(--t${[1, 2, 3, 5][i] || i + 1})` : "var(--muted)"; }
+const slugify = s => String(s || "").toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const chapterOf = r => r.chapter || NO_CHAPTER;
+const lookOf = ch => CH_LOOK[ch] || ["--muted", "M6 4h12v16H6ZM9 8h6M9 12h6"];
+const icon = (d, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+const ICONS = {
+  search: "M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14M20 20l-3.5-3.5",
+  home: "M4 10l8-6 8 6v10h-5v-6h-6v6H4Z",
+  more: "M4 12a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0-3.2 0M10.4 12a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0-3.2 0M16.8 12a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0-3.2 0",
+  back: "M15 5l-7 7 7 7",
+  chev: "M9 5l7 7-7 7",
+  plus: "M12 5v14M5 12h14",
+  pdf: "M7 3h7l5 5v13H7ZM14 3v5h5",
+  save: "M12 4v11M7 10l5 5 5-5M5 20h14",
+  key: "M15 7a4 4 0 1 1-3.5 6L5 19.5V16h3v-3h2.5",
+  list: "M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01",
+  check: "M5 12l5 5 9-10"
+};
+const chapterBySlug = slug => [...CHAPTERS, NO_CHAPTER].find(c => slugify(c) === slug);
+const chapterHref = (ch, sub) => "#kapitel-" + slugify(ch) + (sub ? "/" + slugify(sub) : "");
+const usedChapters = () => [...CHAPTERS, NO_CHAPTER].filter(c => recipes.some(r => chapterOf(r) === c));
+const subsOf = ch => [...new Set(recipes.filter(r => chapterOf(r) === ch).map(r => r.subchapter || "Weitere"))].sort((a, b) => a === "Weitere" ? 1 : b === "Weitere" ? -1 : a.localeCompare(b, "de"));
+const byTitle = (a, b) => (a.title || "").localeCompare(b.title || "", "de");
+function thumbHtml(r) {
+  const [c, d] = lookOf(chapterOf(r));
+  const ph = localPhotos[r.id] || r.photo;
+  return `<span class="thumb" style="--cc:var(${c})">${ph ? `<img src="${esc(ph)}" alt="" loading="lazy">` : icon(d)}</span>`;
+}
+function rowHtml(r) {
+  const meta = [r.subchapter, r.time].filter(Boolean).join(" · ");
+  return `<a class="rrow" href="#r-${esc(r.id)}">${thumbHtml(r)}<span class="tx"><b>${esc(r.title || "Ohne Titel")}${r.status !== "bestaetigt" ? `<span class="pill draft">Entwurf</span>` : ""}</b>${meta ? `<small>${esc(meta)}</small>` : ""}</span></a>`;
+}
+function recentIds() { try { return JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); } catch { return []; } }
+function pushRecent(id) { try { localStorage.setItem(RECENT_KEY, JSON.stringify([id, ...recentIds().filter(x => x !== id)].slice(0, 8))); } catch {} }
+const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Fläche wächst vom angetippten Element auf den Inhaltsbereich, dann wechselt die Ansicht
+function growTo(el, hash, bg) {
+  if (!el || reducedMotion()) { location.hash = hash; return; }
+  const r = el.getBoundingClientRect();
+  const wrap = document.querySelector(".wrap").getBoundingClientRect();
+  const desk = matchMedia("(min-width: 900px)").matches;
+  const g = document.createElement("div"); g.className = "grow";
+  Object.assign(g.style, { left: r.left + "px", top: r.top + "px", width: r.width + "px", height: r.height + "px", background: bg });
+  document.body.appendChild(g); g.getBoundingClientRect();
+  Object.assign(g.style, desk ? { left: wrap.left + "px", top: "0px", width: wrap.width + "px", height: "100vh", borderRadius: "0px" } : { left: "0px", top: "0px", width: "100vw", height: "100vh", borderRadius: "0px" });
+  setTimeout(() => { location.hash = hash; requestAnimationFrame(() => { g.style.opacity = "0"; setTimeout(() => g.remove(), 220); }); }, 280);
+}
 function tagsHtml(topics) { return (topics || []).map(t => `<span class="tag"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)}</span>`).join(""); }
 function statusPill(r) { return r.status === "bestaetigt" ? `<span class="pill ok">Bestätigt</span>` : `<span class="pill draft">Entwurf</span>`; }
 function fmtDate(iso) { try { return new Date(iso).toLocaleString("de-CH", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }); } catch { return iso; } }
 function route() {
   const h = decodeURIComponent(location.hash.slice(1));
-  if (!h) return { view: "list" };
+  if (!h) return { view: "start" };
   if (h === "neu") return { view: "edit", mode: "new" };
+  if (h === "rezepte") return { view: "browse" };
+  if (h === "mehr") return { view: "more" };
+  if (h === "pruefen") return { view: "drafts" };
+  if (h === "alle") return { view: "all" };
   let m;
+  if ((m = h.match(/^kapitel-([^/]+)(?:\/(.+))?$/))) return { view: "chapter", slug: m[1], sub: m[2] || "" };
+  if ((m = h.match(/^thema-(.+)$/))) return { view: "theme", slug: m[1] };
   if ((m = h.match(/^r-(.+)$/))) return { view: "detail", id: m[1] };
   if ((m = h.match(/^edit-(.+)$/))) return { view: "edit", mode: "edit", id: m[1] };
   if ((m = h.match(/^variante-(.+)$/))) return { view: "edit", mode: "variant", id: m[1] };
   if ((m = h.match(/^verlauf-(.+)$/))) return { view: "history", id: m[1] };
-  return { view: "list" };
+  return { view: "start" };
 }
 const FRAC = { "½": " 1/2", "¼": " 1/4", "¾": " 3/4", "⅓": " 1/3", "⅔": " 2/3", "⅛": " 1/8" };
 function parseOne(s) {
@@ -551,10 +741,20 @@ function render(force) {
   const key = location.hash || "#";
   if (r.view !== "history" && historyUnsub) { historyUnsub(); historyUnsub = null; historyFor = null; }
   if (r.view !== "detail") releaseWake();
+  document.body.classList.toggle("editing", r.view === "edit");
+  const tabOf = { start: "start", browse: "rezepte", all: "rezepte", chapter: "rezepte", theme: "rezepte", more: "mehr", drafts: "mehr" };
+  if (tabOf[r.view]) state.lastTab = tabOf[r.view];
+  renderNav();
   if (r.view === "edit" && builtRoute === key && !force) return;
   if (loadErr && !loaded) { app.innerHTML = errorHtml(); return; }
   if (!loaded) { app.innerHTML = `<p class="loading">Rezepte werden geladen …</p>`; return; }
-  if (r.view === "list") return renderList();
+  if (r.view === "start") return renderStart();
+  if (r.view === "browse") return renderBrowse();
+  if (r.view === "chapter") return renderChapter(r);
+  if (r.view === "theme") return renderTheme(r);
+  if (r.view === "drafts") return renderSimple("Zu prüfen", "Entwürfe, die noch jemand kontrollieren sollte", recipes.filter(x => x.status !== "bestaetigt").sort(byTitle));
+  if (r.view === "all") return renderSimple("Alle Rezepte", "Von A bis Z", [...recipes].sort(byTitle));
+  if (r.view === "more") return renderMore();
   if (r.view === "detail") return renderDetail(r.id);
   if (r.view === "edit") return renderEditor(r, key);
   if (r.view === "history") return renderHistory(r.id);
@@ -565,25 +765,12 @@ function errorHtml() {
     : "Die Rezepte konnten gerade nicht geladen werden. Prüfe die Internetverbindung und lade die Seite neu.";
   return `<div class="empty"><h2>Keine Verbindung zur Rezeptsammlung</h2><p>${esc(msg)}</p></div>`;
 }
-function notFound() { app.innerHTML = `<div class="empty"><h2>Rezept nicht gefunden</h2><p>Vielleicht wurde es gelöscht.</p><a class="btn" href="#">Zur Übersicht</a></div>`; }
+function notFound(what = "Rezept") { app.innerHTML = `<div class="empty"><h2>${what} nicht gefunden</h2><p>Vielleicht wurde es gelöscht oder umbenannt.</p><a class="btn" href="#">Zur Startseite</a></div>`; }
 
 function allTopics() {
   const s = new Set(TOPICS);
   recipes.forEach(r => (r.topics || []).forEach(t => s.add(t)));
   return [...s];
-}
-function filtered() {
-  const q = state.q.trim().toLowerCase();
-  return recipes.filter(r => {
-    if (state.status === "entwurf" && r.status === "bestaetigt") return false;
-    if (state.status === "bestaetigt" && r.status !== "bestaetigt") return false;
-    for (const t of state.topics) if (!(r.topics || []).includes(t)) return false;
-    if (q) {
-      const hay = [r.title, r.intro, r.tips, ...(r.topics || []), ...(r.ingredients || []).map(i => i.name || i.heading)].join(" ").toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  }).sort((a, b) => (a.title || "").localeCompare(b.title || "", "de"));
 }
 function cardHtml(r) {
   const parent = r.parentId ? byId(r.parentId) : null;
@@ -603,54 +790,129 @@ function cardHtml(r) {
     ${meta.length ? `<div class="meta">${meta.join(" · ")}</div>` : ""}
   </a>`;
 }
-function renderList() {
-  if (!document.getElementById("list-shell")) {
-    app.innerHTML = `<div id="list-shell">
-      <section class="intro">
-        <div><h1>Unsere Rezepte</h1><p class="muted" id="count"></p></div>
-        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <span class="sr" hidden>Suche</span><input id="q" type="search" placeholder="Rezept oder Zutat suchen" autocomplete="off"></label>
-      </section>
-      <div class="filters">
-        <div class="chips" id="topic-chips" role="group" aria-label="Nach Thema filtern"></div>
-        <div class="filter-row">
-          <div class="seg" id="status-seg" role="group" aria-label="Status">
-            <button data-status="alle">Alle</button><button data-status="entwurf">Entwürfe</button><button data-status="bestaetigt">Bestätigt</button>
-          </div>
-          <button class="linkish" id="reset-filters" hidden>Filter zurücksetzen</button>
-        </div>
-      </div>
-      <div id="grid"></div>
-      <footer class="foot"><span>Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</span>
-        <span style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn small" href="buch.html">Kochbuch als PDF</a><button class="btn small" id="backup">Sicherung herunterladen</button></span></footer>
-    </div>`;
-    document.getElementById("q").value = state.q;
-  }
-  const chips = document.getElementById("topic-chips");
-  chips.innerHTML = allTopics().map(t => {
-    const n = recipes.filter(r => (r.topics || []).includes(t)).length;
-    return `<button class="chip" data-topic="${esc(t)}" aria-pressed="${state.topics.has(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)} <span class="n">${n}</span></button>`;
-  }).join("");
-  document.querySelectorAll("#status-seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.status === state.status));
-  document.getElementById("reset-filters").hidden = !(state.topics.size || state.q || state.status !== "alle");
-  renderGrid();
-}
-function renderGrid() {
-  const list = filtered();
+/* ---------- Navigation ---------- */
+function renderNav() {
+  const t = state.lastTab;
+  const tabs = [["start", "#", "Start", ICONS.home], ["rezepte", "#rezepte", "Rezepte", ICONS.search], ["mehr", "#mehr", "Mehr", ICONS.more]];
+  document.getElementById("tabbar").innerHTML = tabs.map(([k, h, l, d]) => `<a class="tab${t === k ? " on" : ""}" href="${h}"${t === k ? ' aria-current="page"' : ""}>${icon(d)}<span>${l}</span></a>`).join("");
   const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
-  document.getElementById("count").textContent = `${recipes.length} ${recipes.length === 1 ? "Rezept" : "Rezepte"}${drafts ? `, davon ${drafts} noch zu prüfen` : ""}`;
-  const grid = document.getElementById("grid");
+  document.getElementById("side").innerHTML = `
+    <a class="brand" href="#" style="padding:0;font-size:1.15rem"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 11h16a8 8 0 0 1-16 0Z"/><path d="M9 7c0-1.5 1-2 1-3.5M14 7c0-1.5 1-2 1-3.5"/></svg></span>Unser Kochbuch</a>
+    <a class="new" href="#neu">${icon(ICONS.plus)}Neues Rezept</a>
+    ${tabs.slice(0, 2).map(([k, h, l, d]) => `<a class="${t === k ? "on" : ""}" href="${h}">${icon(d)}${l}</a>`).join("")}
+    <a class="${location.hash === "#pruefen" ? "on" : ""}" href="#pruefen">${icon(ICONS.check)}Zu prüfen${drafts ? ` <span class="small">${drafts}</span>` : ""}</a>
+    <a class="${location.hash === "#alle" ? "on" : ""}" href="#alle">${icon(ICONS.list)}Alle von A bis Z</a>
+    <div class="sep"></div>
+    <a class="small" href="buch.html">${icon(ICONS.pdf)}Kochbuch als PDF</a>
+    <button type="button" class="navlink small" data-nav="backup">${icon(ICONS.save)}Sicherung herunterladen</button>
+    <button type="button" class="navlink small" data-nav="key">${icon(ICONS.key)}GitHub-Schlüssel</button>`;
+}
+function backHtml(fallback) { return `<button type="button" class="backbtn" data-action="back" data-fallback="${esc(fallback)}" aria-label="Zurück">${icon(ICONS.back)}</button>`; }
+
+/* ---------- Startseite ---------- */
+function renderStart() {
   if (!recipes.length) {
-    grid.innerHTML = `<div class="empty"><h2>Noch keine Rezepte</h2><p>Schick Claude im Projekt deine Rezepte als Text, Link oder Foto. Oder leg das erste selbst an.</p><a class="btn primary" href="#neu">+ Neues Rezept</a></div>`;
+    app.innerHTML = `<div class="empty"><h2>Noch keine Rezepte</h2><p>Schick Claude im Projekt deine Rezepte als Text, Link oder Foto. Oder leg das erste selbst an.</p><a class="btn primary" href="#neu">+ Neues Rezept</a></div>`;
     return;
   }
-  if (!list.length) { grid.innerHTML = `<div class="empty"><h2>Nichts gefunden</h2><p>Kein Rezept passt zu allen gewählten Filtern.</p><button class="btn" data-action="reset">Filter zurücksetzen</button></div>`; return; }
-  grid.innerHTML = `<div class="grid">${list.map(cardHtml).join("")}</div>`;
+  const recent = recentIds().map(byId).filter(Boolean).slice(0, 6);
+  const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
+  const themes = TOPICS.map(t => [t, recipes.filter(r => (r.topics || []).includes(t)).length]).filter(x => x[1]);
+  app.innerHTML = `<div class="start view-in">
+    <button type="button" class="searchbar" data-action="open-search">${icon(ICONS.search)}<span>Rezept, Zutat oder Stichwort</span></button>
+    ${recent.length ? `<section><div class="sec-h"><h2>Zuletzt angesehen</h2></div>
+      <div class="recent">${recent.map(r => `<a class="rc" href="#r-${esc(r.id)}">${thumbHtml(r)}<b>${esc(r.title)}</b></a>`).join("")}</div></section>` : ""}
+    <section><div class="sec-h"><h2>Kapitel</h2><a href="#alle">Alle von A bis Z</a></div>
+      <div class="tiles">${usedChapters().map(c => { const n = recipes.filter(r => chapterOf(r) === c).length; const [col, d] = lookOf(c);
+        return `<a class="tile" href="${chapterHref(c)}" data-grow style="--cc:var(${col})">${icon(d)}<span><b>${esc(c)}</b><small>${n} ${n === 1 ? "Rezept" : "Rezepte"}</small></span></a>`; }).join("")}</div></section>
+    ${themes.length ? `<section><div class="sec-h"><h2>Themen</h2><a href="#rezepte">Alle Kategorien</a></div>
+      <div class="chips">${themes.map(([t, n]) => `<a class="chip" href="#thema-${slugify(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)} <span class="n">${n}</span></a>`).join("")}</div></section>` : ""}
+    ${drafts ? `<a class="todo" href="#pruefen"><span class="big">${drafts}</span><span><b>${drafts === 1 ? "Rezept wartet" : "Rezepte warten"} auf Prüfung</b><br>Antippen, um sie durchzugehen</span></a>` : ""}
+  </div>`;
+}
+
+/* ---------- Kapitel ---------- */
+function renderChapter(rt) {
+  const ch = chapterBySlug(rt.slug);
+  if (!ch) return notFound("Kapitel");
+  const [col] = lookOf(ch);
+  const rs = recipes.filter(r => chapterOf(r) === ch);
+  const subs = subsOf(ch);
+  app.innerHTML = `<div class="view-in" style="--cc:var(${col})">
+    <div class="band"><div class="vhead">${backHtml("#")}<div><h1>${esc(ch)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
+      ${subs.length > 1 ? `<div class="jump">${subs.map(x => `<a class="chip" href="${chapterHref(ch, x)}" data-jump="${esc(slugify(x))}">${esc(x)}</a>`).join("")}</div>` : ""}</div>
+    ${subs.map(x => `<section class="group" id="g-${esc(slugify(x))}"><h2>${esc(x)}</h2><div class="rows">${rs.filter(r => (r.subchapter || "Weitere") === x).sort(byTitle).map(rowHtml).join("")}</div></section>`).join("")}
+  </div>`;
+  if (rt.sub) requestAnimationFrame(() => document.getElementById("g-" + rt.sub)?.scrollIntoView({ block: "start" }));
+}
+function renderTheme(rt) {
+  const t = [...new Set([...TOPICS, ...recipes.flatMap(r => r.topics || [])])].find(x => slugify(x) === rt.slug);
+  if (!t) return notFound("Thema");
+  const rs = recipes.filter(r => (r.topics || []).includes(t));
+  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#rezepte")}<div><span class="eyebrow">Thema</span><h1>${esc(t)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
+    ${rs.length ? usedChapters().filter(c => rs.some(r => chapterOf(r) === c)).map(c => `<section class="group"><h2>${esc(c)}</h2><div class="rows">${rs.filter(r => chapterOf(r) === c).sort(byTitle).map(rowHtml).join("")}</div></section>`).join("")
+      : `<div class="empty"><p>Zu diesem Thema gibt es noch kein Rezept.</p></div>`}</div>`;
+}
+function renderSimple(title, sub, list) {
+  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>${esc(title)}</h1><div class="sub">${esc(sub)} · ${list.length}</div></div></div>
+    ${list.length ? `<div class="rows">${list.map(rowHtml).join("")}</div>` : `<div class="empty"><p>Hier ist gerade nichts.</p></div>`}</div>`;
+}
+
+/* ---------- Rezepte: Kategorien durchstöbern und suchen ---------- */
+function renderBrowse() {
+  app.innerHTML = `<div class="view-in">
+    <div class="sbar">${backHtml("#")}<label class="sfield">${icon(ICONS.search)}<span class="sr" hidden>Suche</span><input id="q" type="search" placeholder="Rezept, Zutat oder Stichwort" autocomplete="off" enterkeyhint="search" value="${esc(state.q)}"></label></div>
+    <div id="results"></div></div>`;
+  renderResults();
+  if (state.focusSearch) { state.focusSearch = false; const q = document.getElementById("q"); q.focus({ preventScroll: true }); }
+}
+function haystack(r) {
+  return [r.title, r.intro, r.tips, r.chapter, r.subchapter, ...(r.topics || []), ...(r.keywords || []), ...(r.ingredients || []).map(i => i.name || i.heading)].join(" ").toLowerCase();
+}
+function renderResults() {
+  const box = document.getElementById("results"); if (!box) return;
+  const q = state.q.trim().toLowerCase();
+  if (!q) {
+    const chs = usedChapters();
+    box.innerHTML = `<section><h2 class="morehead">Kapitel</h2><div class="ktree">${chs.map(c => {
+        const rs = recipes.filter(r => chapterOf(r) === c); const [col, d] = lookOf(c);
+        return `<div class="kt" style="--cc:var(${col})"><button type="button" data-action="kt" aria-expanded="false">${icon(d)}<b>${esc(c)}</b><small>${rs.length}</small>${icon(ICONS.chev, "chev")}</button>
+          <div class="subs"><div><div class="chips"><a class="chip" href="${chapterHref(c)}">Alle ${rs.length}</a>${subsOf(c).map(x => `<a class="chip" href="${chapterHref(c, x)}">${esc(x)} <span class="n">${rs.filter(r => (r.subchapter || "Weitere") === x).length}</span></a>`).join("")}</div></div></div></div>`;
+      }).join("")}</div></section>
+      ${THEME_GROUPS.map(([g, ts]) => `<section class="browse-sec"><h2 class="morehead">Themen · ${esc(g)}</h2><div class="chips">${ts.map(t => { const n = recipes.filter(r => (r.topics || []).includes(t)).length;
+        return `<a class="chip${n ? "" : " dim"}" href="#thema-${slugify(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)} <span class="n">${n || "noch leer"}</span></a>`; }).join("")}</div></section>`).join("")}
+      <section class="browse-sec"><div class="chips"><a class="chip" href="#alle">${icon(ICONS.list).replace("<svg", '<svg width="16" height="16"')}Alle Rezepte von A bis Z</a></div>
+      <p class="muted" style="font-size:.9rem;margin:14px 0 0">Stichwörter wie „Cupcakes“ oder Zutaten wie „Kokos“ einfach oben eintippen.</p></section>`;
+    return;
+  }
+  const cats = [];
+  usedChapters().forEach(c => { if (c.toLowerCase().includes(q)) cats.push(["Kapitel", c, chapterHref(c)]); });
+  usedChapters().forEach(c => subsOf(c).forEach(x => { if (x !== "Weitere" && x.toLowerCase().includes(q)) cats.push(["Unterkapitel", x, chapterHref(c, x)]); }));
+  [...new Set([...TOPICS, ...recipes.flatMap(r => r.topics || [])])].forEach(t => { if (t.toLowerCase().includes(q)) cats.push(["Thema", t, "#thema-" + slugify(t)]); });
+  const hits = recipes.filter(r => haystack(r).includes(q)).sort((a, b) => {
+    const at = (a.title || "").toLowerCase().includes(q), bt = (b.title || "").toLowerCase().includes(q);
+    return at === bt ? byTitle(a, b) : at ? -1 : 1;
+  });
+  box.innerHTML = `${cats.length ? `<section style="margin-bottom:22px"><h2 class="morehead">Kategorien</h2><div class="chips">${cats.map(([k, v, h]) => `<a class="chip" href="${h}"><span class="hit-type">${k}</span>${esc(v)}</a>`).join("")}</div></section>` : ""}
+    <section><h2 class="morehead">${hits.length} ${hits.length === 1 ? "Rezept" : "Rezepte"}</h2>
+    ${hits.length ? `<div class="rows">${hits.map(rowHtml).join("")}</div>` : `<div class="empty"><p>Nichts gefunden. Gesucht wird in Titel, Zutaten, Kapiteln, Themen und Stichwörtern.</p></div>`}</section>`;
+}
+
+/* ---------- Mehr ---------- */
+function renderMore() {
+  const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
+  app.innerHTML = `<div class="view-in"><div class="vhead"><h1>Mehr</h1></div>
+    <p class="morehead">Rezepte</p>
+    <div class="morelist"><a href="#alle">Alle Rezepte von A bis Z<small>${recipes.length} Rezepte</small></a><a href="#pruefen">Zu prüfen<small>${drafts} ${drafts === 1 ? "Entwurf" : "Entwürfe"}</small></a><a href="#neu">Neues Rezept anlegen</a></div>
+    <p class="morehead">Kochbuch</p>
+    <div class="morelist"><a href="buch.html">Kochbuch als PDF<small>Alle Rezepte im Buchlayout</small></a><button type="button" data-nav="backup">Sicherung herunterladen<small>Alle Rezepte und der Verlauf als Datei</small></button><button type="button" data-nav="key">GitHub-Schlüssel für dieses Gerät<small>Nur nötig, um zu speichern</small></button></div>
+    <p class="muted" style="font-size:.9rem">Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</p></div>`;
 }
 
 function renderDetail(id) {
   const r = byId(id);
   if (!r) return notFound();
+  pushRecent(id);
   const base = Number(r.servings) || 0;
   const cur = servingsFor[id] || base;
   const factor = base ? cur / base : 1;
@@ -691,7 +953,7 @@ function renderDetail(id) {
   }).join("");
   const photoUrl = localPhotos[id] || r.photo;
   app.innerHTML = `
-    <nav class="crumbs"><a href="#">← Alle Rezepte</a>${r.chapter ? ` <span class="muted">· ${esc(r.chapter)}${r.subchapter ? " · " + esc(r.subchapter) : ""}</span>` : ""}</nav>
+    <nav class="crumbs">${backHtml(chapterHref(chapterOf(r)))}<span class="path"><a href="${chapterHref(chapterOf(r))}">${esc(chapterOf(r))}</a>${r.subchapter ? ` › <a href="${chapterHref(chapterOf(r), r.subchapter)}">${esc(r.subchapter)}</a>` : ""}</span></nav>
     <article>
       ${photoUrl ? `<figure class="hero"><img src="${esc(photoUrl)}" alt="${esc(r.title)}">${r.photoNote ? `<div class="hintbox ${esc(r.photoNotePos || "unten-rechts")}">${esc(r.photoNote)}</div>` : ""}</figure>` : ""}
       <header class="recipe-head">
@@ -984,13 +1246,13 @@ app.addEventListener("click", async ev => {
   const t = ev.target.closest("button, [data-action]");
   if (!t) return;
   const r = route();
-  if (t.dataset.topic) { const x = t.dataset.topic; state.topics.has(x) ? state.topics.delete(x) : state.topics.add(x); return renderList(); }
-  if (t.dataset.status) { state.status = t.dataset.status; return renderList(); }
-  if (t.id === "reset-filters" || t.dataset.action === "reset") { state.topics.clear(); state.q = ""; state.status = "alle"; const q = document.getElementById("q"); if (q) q.value = ""; return renderList(); }
-  if (t.id === "backup") return backup(t);
+  if (t.dataset.nav) return navAction(t);
   if (t.dataset.tgl) { t.setAttribute("aria-pressed", t.getAttribute("aria-pressed") !== "true"); return; }
   const a = t.dataset.action;
   if (!a) return;
+  if (a === "back") { if (inAppNav > 0) history.back(); else location.hash = t.dataset.fallback || ""; return; }
+  if (a === "open-search") { state.focusSearch = true; return growTo(t, "rezepte", getComputedStyle(document.body).backgroundColor); }
+  if (a === "kt") { const k = t.closest(".kt"); k.classList.toggle("open"); t.setAttribute("aria-expanded", k.classList.contains("open")); return; }
   const rec = r.id ? byId(r.id) : null;
   if (a === "less" || a === "more" || a === "base") {
     const base = Number(rec.servings) || 1, cur = servingsFor[r.id] || base;
@@ -1026,6 +1288,17 @@ app.addEventListener("click", async ev => {
     inp.value = ""; return;
   }
 });
+app.addEventListener("click", ev => {
+  const g = ev.target.closest("a[data-grow]");
+  if (g && !ev.metaKey && !ev.ctrlKey) { ev.preventDefault(); return growTo(g, g.getAttribute("href").slice(1), getComputedStyle(g).backgroundColor); }
+  const j = ev.target.closest("a[data-jump]");
+  if (j) { ev.preventDefault(); document.getElementById("g-" + j.dataset.jump)?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" }); }
+}, true);
+function navAction(t) {
+  if (t.dataset.nav === "backup") return backup(t);
+  if (t.dataset.nav === "key") return openKeyDialog();
+}
+document.getElementById("side").addEventListener("click", ev => { const t = ev.target.closest("[data-nav]"); if (t) navAction(t); });
 app.addEventListener("change", ev => {
   const t = ev.target;
   if (t.dataset.ing != null) {
@@ -1050,18 +1323,23 @@ async function preparePhoto(file) {
     msg.textContent = "";
   } catch { msg.textContent = "Dieses Foto konnte nicht gelesen werden. Versuch es mit einem JPG oder PNG."; }
 }
-app.addEventListener("input", ev => { if (ev.target.id === "q") { state.q = ev.target.value; document.getElementById("reset-filters").hidden = !(state.topics.size || state.q || state.status !== "alle"); renderGrid(); } });
+app.addEventListener("input", ev => { if (ev.target.id === "q") { state.q = ev.target.value; renderResults(); } });
 app.addEventListener("submit", ev => { ev.preventDefault(); saveForm(); });
 app.addEventListener("keydown", ev => { if (ev.target.id === "f-newtopic" && ev.key === "Enter") { ev.preventDefault(); document.querySelector("[data-action=add-topic]").click(); } });
 
-window.addEventListener("hashchange", () => { builtRoute = null; confirmDelete = false; render(); window.scrollTo(0, 0); });
+// Zählt Schritte innerhalb der App, damit „Zurück“ nicht aus der App hinausführt
+let inAppNav = 0;
+try { if (typeof history.state?.d !== "number") history.replaceState({ d: 0 }, ""); else inAppNav = history.state.d; } catch {}
+window.addEventListener("hashchange", () => {
+  try { if (typeof history.state?.d === "number") inAppNav = history.state.d; else { inAppNav++; history.replaceState({ d: inAppNav }, ""); } } catch {}
+  builtRoute = null; confirmDelete = false; render(); window.scrollTo(0, 0);
+});
 
 /* ---------- boot ---------- */
 (async () => {
   const timer = setTimeout(() => { if (!loaded) { loadErr = "timeout"; render(); } }, 10000);
   db = makeGitHubDb();
   db.startSync();
-  document.getElementById("key-open").addEventListener("click", openKeyDialog);
   db.collection("recipes").limit(1000).onSnapshot(s => {
     clearTimeout(timer); loaded = true; loadErr = null;
     recipes = s.docs.map(d => ({ id: d.id, ...d.data() }));
