@@ -1,0 +1,525 @@
+{
+ "zutaten": [
+  {
+   "name": "Mandelextrakt",
+   "oberbegriff": "Aromen",
+   "schreibweisen": [
+    "Mandelextrakt"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Vanilleextrakt",
+   "oberbegriff": "Aromen",
+   "schreibweisen": [
+    "Vanilleextrakt"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Vanille (beliebig)",
+   "oberbegriff": "Aromen",
+   "schreibweisen": [
+    "Vanille",
+    "Vanille oder Zimt"
+   ],
+   "vorrat": false,
+   "einkaufen": true,
+   "erfuelltDurch": [
+    "Vanilleextrakt",
+    "Vanillepulver",
+    "Vanilleschote"
+   ]
+  },
+  {
+   "name": "Backpulver",
+   "oberbegriff": "Backtriebmittel",
+   "schreibweisen": [
+    "Backpulver"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Natron",
+   "oberbegriff": "Backtriebmittel",
+   "schreibweisen": [
+    "Natron"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Butter",
+   "oberbegriff": "Butter",
+   "schreibweisen": [
+    "ungesalzene Butter"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Eier",
+   "oberbegriff": "Eier",
+   "schreibweisen": [
+    "Ei"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Apfelessig",
+   "oberbegriff": "Essig",
+   "schreibweisen": [
+    "Apfelessig"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Reisessig",
+   "oberbegriff": "Essig",
+   "schreibweisen": [
+    "Reisessig"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Kokosfett",
+   "oberbegriff": "Fett",
+   "schreibweisen": [
+    "Kokosfett"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Pflanzliches Backfett",
+   "oberbegriff": "Fett",
+   "schreibweisen": [
+    "pflanzliches Backfett"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Margarine",
+   "oberbegriff": "Fett",
+   "schreibweisen": [
+    "Margarine"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Haferflocken",
+   "oberbegriff": "Getreide",
+   "schreibweisen": [
+    "Haferflocken"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Knoblauchpulver",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Knoblauchpulver"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Paprikapulver",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Paprikapulver"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Pfeffer",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "schwarzer Pfeffer"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Salz",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Salz"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Zimt",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Zimt",
+    "gemahlener Zimt"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Honig",
+   "oberbegriff": "Honig",
+   "schreibweisen": [
+    "Honig"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Kakaopulver (ungesüsst)",
+   "oberbegriff": "Kakao",
+   "schreibweisen": [
+    "Kakaopulver",
+    "Backkakao"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Vegane Schoko-Sandwichkekse",
+   "oberbegriff": "Kekse",
+   "schreibweisen": [
+    "vegane Schoko-Sandwichkekse"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Kokosflocken",
+   "oberbegriff": "Kokos",
+   "schreibweisen": [
+    "Kokosflocken"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Kokosraspeln",
+   "oberbegriff": "Kokos",
+   "schreibweisen": [
+    "Kokosraspeln"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Petersilie",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Petersilie"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Weissmehl",
+   "oberbegriff": "Mehl",
+   "schreibweisen": [
+    "Weissmehl",
+    "Mehl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Milch (Kuhmilch)",
+   "oberbegriff": "Milch",
+   "schreibweisen": [
+    "Vollmilch"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Pflanzenmilch",
+   "oberbegriff": "Milch",
+   "schreibweisen": [
+    "Pflanzenmilch"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Sojamilch",
+   "oberbegriff": "Milch",
+   "schreibweisen": [
+    "Sojamilch",
+    "Sojamilch oder Soja-Rahm"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Barunüsse",
+   "oberbegriff": "Nüsse",
+   "schreibweisen": [
+    "Barunüsse"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Cashews",
+   "oberbegriff": "Nüsse",
+   "schreibweisen": [
+    "Cashews"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Bananen",
+   "oberbegriff": "Obst",
+   "schreibweisen": [
+    "sehr reife Banane"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Chiliöl",
+   "oberbegriff": "Öl",
+   "schreibweisen": [
+    "Chiliöl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Neutrales Öl",
+   "oberbegriff": "Öl",
+   "schreibweisen": [
+    "neutrales Öl"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Rapsöl",
+   "oberbegriff": "Öl",
+   "schreibweisen": [
+    "Rapsöl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Backtrennspray",
+   "oberbegriff": "Öl",
+   "schreibweisen": [
+    "Backtrennspray oder Öl"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Sesamsamen",
+   "oberbegriff": "Samen",
+   "schreibweisen": [
+    "Sesamsamen"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Hefeflocken",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Hefeflocken"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Sojasauce",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Sojasauce"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Tomatenmark",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Tomatenmark"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Satz von der Grundmilch",
+   "oberbegriff": "Satz",
+   "schreibweisen": [
+    "Satz, von der Grundmilch"
+   ],
+   "vorrat": false,
+   "einkaufen": false
+  },
+  {
+   "name": "Satz von der Kokosmilch",
+   "oberbegriff": "Satz",
+   "schreibweisen": [
+    "Satz, von der Kokosmilch"
+   ],
+   "vorrat": false,
+   "einkaufen": false
+  },
+  {
+   "name": "Satz von der nussigen Milch",
+   "oberbegriff": "Satz",
+   "schreibweisen": [
+    "Satz, von der nussigen Milch"
+   ],
+   "vorrat": false,
+   "einkaufen": false
+  },
+  {
+   "name": "Nudeln",
+   "oberbegriff": "Teigwaren",
+   "schreibweisen": [
+    "Nudeln"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Tofu",
+   "oberbegriff": "Tofu",
+   "schreibweisen": [
+    "Tofu",
+    "fester Tofu"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Datteln",
+   "oberbegriff": "Trockenfrüchte",
+   "schreibweisen": [
+    "Dattel",
+    "Datteln",
+    "weiche Datteln",
+    "Datteln oder Rosinen"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Puderzucker",
+   "oberbegriff": "Zucker",
+   "schreibweisen": [
+    "Puderzucker"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Zucker",
+   "oberbegriff": "Zucker",
+   "schreibweisen": [
+    "Zucker",
+    "weisser Zucker"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Parmesan",
+   "oberbegriff": "Käse",
+   "schreibweisen": [],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Schokoladenextrakt",
+   "oberbegriff": "Aromen",
+   "schreibweisen": [],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Soja-Rahm",
+   "oberbegriff": "Milch",
+   "schreibweisen": [],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Seidentofu",
+   "oberbegriff": "Tofu",
+   "schreibweisen": [],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Rosinen",
+   "oberbegriff": "Trockenfrüchte",
+   "schreibweisen": [],
+   "vorrat": false,
+   "einkaufen": true
+  }
+ ],
+ "alternativen": [
+  {
+   "rezepte": "Kokos-Frühstücksriegel",
+   "zutat": "Datteln",
+   "alternative": "Rosinen"
+  },
+  {
+   "rezepte": "Honig-Hafer-Cookies, Kokos-Honig-Cookies",
+   "zutat": "Vanille",
+   "alternative": "Zimt"
+  },
+  {
+   "rezepte": "Vegane Buttercreme",
+   "zutat": "Sojamilch",
+   "alternative": "Soja-Rahm"
+  },
+  {
+   "rezepte": "Fluffige Waffeln ohne Ei",
+   "zutat": "Backtrennspray",
+   "alternative": "Neutrales Öl"
+  },
+  {
+   "rezepte": "Chili-Tofu-Nudeln (Sauce)",
+   "zutat": "Tofu",
+   "alternative": "Seidentofu (wird am cremigsten)"
+  },
+  {
+   "rezepte": "Chili-Tofu-Nudeln",
+   "zutat": "Hefeflocken",
+   "alternative": "Parmesan"
+  },
+  {
+   "rezepte": "Schoko-Cupcakes, Cookies-'n'-Cream-Cupcakes",
+   "zutat": "Mandelextrakt",
+   "alternative": "Schokoladenextrakt oder mehr Vanilleextrakt"
+  },
+  {
+   "rezepte": "4 Satz-Rezepte",
+   "zutat": "Weissmehl",
+   "alternative": "jedes andere Mehl"
+  }
+ ],
+ "regeln": [
+  "Mengen immer exakt: keine Spannen, kein «gehäuft»",
+  "Kommt eine Zutat sonst in Gramm vor, Löffelangaben in Gramm umrechnen und den Löffel als Hinweis lassen (wie Cups)",
+  "Alternativen gelten nur im jeweiligen Rezept",
+  "Satz und selbst gemachte Milch werden nicht eingekauft, Pflanzenmilch darf auf die Einkaufsliste"
+ ]
+}

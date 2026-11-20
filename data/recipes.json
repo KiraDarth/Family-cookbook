@@ -2,7 +2,7 @@
  "cookies-n-cream-cupcakes": {
   "confirmedAt": "2026-11-17T16:37:13.140Z",
   "createdAt": "2026-11-17T13:45:00.000Z",
-  "historyCount": 1,
+  "historyCount": 2,
   "ingredients": [
    {
     "heading": "Nasse Zutaten"
@@ -71,10 +71,10 @@
     "unit": "TL"
    },
    {
-    "amount": "¼",
+    "amount": "1,5",
     "name": "Salz",
-    "note": "",
-    "unit": "TL"
+    "note": "¼ TL",
+    "unit": "g"
    },
    {
     "heading": "Teig fertigstellen"
@@ -140,7 +140,7 @@
   "tips": "Im Buch werden Newman-O's verwendet, es gehen aber alle veganen Schoko-Sandwichkekse mit Cremefüllung.\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).",
   "title": "Cookies-'n'-Cream-Cupcakes",
   "topics": [],
-  "updatedAt": "2026-11-17T16:45:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "variantNote": "10 grob gehackte Schoko-Sandwichkekse im Teig, Frosting aus veganer Buttercreme mit zerbröselten Keksen, je eine Kekshälfte obendrauf.",
   "yieldUnit": "Stück",
   "chapter": "Süsses & Gebäck",
@@ -178,10 +178,10 @@
     "unit": "EL"
    },
    {
-    "amount": "1",
+    "amount": "4",
     "name": "Zucker",
-    "note": "Menge ergänzt",
-    "unit": "TL"
+    "note": "1 TL, Menge ergänzt",
+    "unit": "g"
    },
    {
     "amount": "1½",
@@ -223,10 +223,10 @@
     "unit": "EL"
    },
    {
-    "amount": "1",
+    "amount": "4",
     "name": "Zucker",
-    "note": "",
-    "unit": "TL"
+    "note": "1 TL",
+    "unit": "g"
    },
    {
     "amount": "3",
@@ -303,7 +303,7 @@
   "topics": [
    "Chinesisch"
   ],
-  "updatedAt": "2026-11-19T10:20:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "Portionen",
   "chapter": "Hauptgerichte",
   "subchapter": "Nudeln"
@@ -355,16 +355,16 @@
     "unit": "TL"
    },
    {
-    "amount": "2",
+    "amount": "8",
     "name": "Zucker",
-    "note": "",
-    "unit": "TL"
+    "note": "2 TL",
+    "unit": "g"
    },
    {
-    "amount": "½",
+    "amount": "3",
     "name": "Salz",
-    "note": "",
-    "unit": "TL"
+    "note": "½ TL",
+    "unit": "g"
    },
    {
     "heading": "Zum Backen"
@@ -395,7 +395,7 @@
   "tips": "Zimmerwarme Milch verwenden: so wird die geschmolzene Butter beim Mischen nicht wieder fest.\n\nMilchfrei: Soja-, Mandel- oder Hafermilch statt Vollmilch, vegane Butter oder neutrales Öl statt Butter. Kokosmilch wird im Originalrezept nicht empfohlen.\n\nStatt Zucker gehen auch Honig oder Ahornsirup. Mit gesalzener Butter das Salz weglassen.\n\nWerden die Waffeln kompakt: frisches Backpulver verwenden, das Mehl locker abwiegen und den Teig nicht zu lange rühren.\n\nAufbewahren: ganz auskühlen lassen, luftdicht im Kühlschrank bis 4 Tage. Zum Einfrieren mit Backpapier zwischen den Lagen in einen Gefrierbeutel geben. Im Toaster aufbacken, auch direkt aus dem Tiefkühler.\n\nUS-Mengen umgerechnet: 1 Cup = 240 ml, 4 EL Butter = 55 g. Messlöffel: EL = 15 ml, TL = 5 ml, glatt abstreichen.",
   "title": "Fluffige Waffeln ohne Ei",
   "topics": [],
-  "updatedAt": "2026-11-19T19:05:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "kleine Waffeln",
   "chapter": "Frühstück",
   "subchapter": "Pancakes & Waffeln",
@@ -626,10 +626,10 @@
     "unit": "g"
    },
    {
-    "amount": "1",
+    "amount": "2,5",
     "name": "Backkakao",
-    "note": "gehäuft",
-    "unit": "TL"
+    "note": "1 TL",
+    "unit": "g"
    },
    {
     "amount": "1",
@@ -670,7 +670,7 @@
   "topics": [
    "Reste-Verwertung"
   ],
-  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Cookies",
@@ -836,7 +836,7 @@
     "unit": "g"
    },
    {
-    "amount": "50–60",
+    "amount": "60",
     "name": "sehr reife Banane",
     "note": "geschält",
     "unit": "g"
@@ -848,7 +848,7 @@
     "unit": "g"
    },
    {
-    "amount": "10–15",
+    "amount": "15",
     "name": "Honig",
     "note": "",
     "unit": "g"
@@ -885,7 +885,7 @@
   "topics": [
    "Reste-Verwertung"
   ],
-  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Snacks & Bites"
@@ -901,22 +901,22 @@
     "unit": "g"
    },
    {
-    "amount": "35–45",
+    "amount": "45",
     "name": "weiche Datteln",
     "note": "entsteint",
     "unit": "g"
    },
    {
-    "amount": "20–25",
+    "amount": "25",
     "name": "Haferflocken",
     "note": "",
     "unit": "g"
    },
    {
-    "amount": "1",
+    "amount": "2,5",
     "name": "Backkakao",
-    "note": "optional",
-    "unit": "TL"
+    "note": "1 TL, optional",
+    "unit": "g"
    },
    {
     "amount": "10",
@@ -950,7 +950,7 @@
   "topics": [
    "Reste-Verwertung"
   ],
-  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Snacks & Bites"
@@ -1122,13 +1122,13 @@
     "unit": ""
    },
    {
-    "amount": "25–30",
+    "amount": "30",
     "name": "Mehl",
     "note": "",
     "unit": "g"
    },
    {
-    "amount": "30–50",
+    "amount": "50",
     "name": "Pflanzenmilch",
     "note": "",
     "unit": "ml"
@@ -1140,10 +1140,10 @@
     "unit": "TL"
    },
    {
-    "amount": "1",
+    "amount": "7",
     "name": "Honig",
-    "note": "optional",
-    "unit": "TL"
+    "note": "1 TL, optional",
+    "unit": "g"
    },
    {
     "amount": "1",
@@ -1180,7 +1180,7 @@
   "topics": [
    "Reste-Verwertung"
   ],
-  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Frühstück",
   "subchapter": "Pancakes & Waffeln"
@@ -1321,10 +1321,10 @@
     "unit": "TL"
    },
    {
-    "amount": "¼",
+    "amount": "1,5",
     "name": "Salz",
-    "note": "",
-    "unit": "TL"
+    "note": "¼ TL",
+    "unit": "g"
    }
   ],
   "intro": "Einfacher, zarter und rundum gelungener Schokoladen-Cupcake. Die Basis für viele Varianten.",
@@ -1348,7 +1348,7 @@
   "tips": "Die Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).\n\nFür dunklere Cupcakes Kakao nach holländischer Art verwenden, oder eine Mischung aus schwarzem und normalem Kakao.\n\nLässt sich mit jedem Frosting, jeder Glasur oder Füllung kombinieren. Pur schmecken sie mit einem Glas kalter Sojamilch.",
   "title": "Schokoladen-Cupcakes (Grundrezept)",
   "topics": [],
-  "updatedAt": "2026-11-17T13:45:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "Stück",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Cupcakes",
@@ -1362,7 +1362,7 @@
  "vegane-buttercreme": {
   "confirmedAt": "2026-11-17T16:39:14.029Z",
   "createdAt": "2026-11-17T13:50:00.000Z",
-  "historyCount": 1,
+  "historyCount": 2,
   "ingredients": [
    {
     "amount": "95",
@@ -1372,7 +1372,7 @@
    },
    {
     "amount": "115",
-    "name": "vegane Margarine",
+    "name": "Margarine",
     "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
     "unit": "g"
    },
@@ -1408,7 +1408,7 @@
   "tips": "Ergibt ca. 1 l (4 Cups), genug, um 12 Cupcakes grosszügig zu verzieren. Wenn du das Frosting nur aufstreichst statt aufspritzt, reicht die halbe Menge (Rechner auf 6 stellen).\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Gramm sind Richtwerte. TL = genormter Messlöffel (5 ml).",
   "title": "Vegane Buttercreme (Frosting)",
   "topics": [],
-  "updatedAt": "2026-11-17T20:21:00.000Z",
+  "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "Cupcakes",
   "chapter": "Grundrezepte",
   "subchapter": "Cremes & Frostings",
