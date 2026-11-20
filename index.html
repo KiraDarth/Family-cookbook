@@ -150,6 +150,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .recipe-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
 .recipe-head .lede { margin: 0; font-size: 1.1rem; color: var(--muted); max-width: 62ch; }
 .status-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .9rem; }
+.hero { position: relative; margin: 0 0 18px; border-radius: var(--radius); overflow: hidden; background: var(--line); aspect-ratio: 3 / 2; max-height: 460px; width: 100%; }
+.hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero .hintbox { position: absolute; max-width: min(60%, 260px); padding: 12px 14px; background: #EBD6E0; color: #2B2826; border: 3px solid #fff; border-radius: 18px; font-size: .92rem; line-height: 1.4; font-weight: 700; }
+.hero .hintbox.unten-rechts { right: 14px; bottom: 14px; } .hero .hintbox.unten-links { left: 14px; bottom: 14px; }
+.hero .hintbox.oben-rechts { right: 14px; top: 14px; } .hero .hintbox.oben-links { left: 14px; top: 14px; }
+.photo-edit { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.photo-edit img { width: 132px; height: 88px; object-fit: cover; border-radius: 10px; background: var(--line); }
+.field select { min-height: 44px; border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; background: var(--surface); color: var(--ink); font: inherit; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 4px 0 0; }
 .facts div { display: flex; flex-direction: column; }
 .facts dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); font-weight: 700; }
@@ -360,8 +368,17 @@ function makeGitHubDb() {
     };
   }
   const label = (name, id, docs) => docs[id]?.title || id;
+  // Fotos landen als eigene Dateien im Ordner images/ (Rezept speichert nur den Pfad)
+  async function putFile(path, base64, message) {
+    if (!ghToken()) { openKeyDialog(); throw new Error("Zum Hochladen fehlt auf diesem Gerät der GitHub-Schlüssel"); }
+    const res = await fetch(`https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${path}`, { method: "PUT", headers: { ...headers(), "Content-Type": "application/json" }, body: JSON.stringify({ message, branch: GH.branch, content: base64 }) });
+    if (res.status === 401 || res.status === 403) { openKeyDialog(); throw new Error("Der GitHub-Schlüssel darf nicht speichern"); }
+    if (!res.ok) throw new Error("Foto hochladen fehlgeschlagen (" + res.status + ")");
+    return path;
+  }
   return {
     collection: name => query(name),
+    putFile,
     doc(path) {
       const [name, id] = path.split("/");
       return {
@@ -407,6 +424,11 @@ function openKeyDialog() {
 }
 
 const TOPICS = ["Verdauung", "Erkältung", "Chinesisch", "Pflanzenmilch", "Reste-Verwertung", "Dessert", "Gebäck"];
+// Kapitel fürs Buch (Hauptkategorien, in dieser Reihenfolge); Unterkapitel sind frei wählbar
+const CHAPTERS = ["Grundrezepte", "Frühstück", "Vorspeisen & Salate", "Suppen", "Hauptgerichte", "Beilagen", "Süsses & Gebäck", "Getränke"];
+const NOTE_POS = [["unten-rechts", "unten rechts"], ["unten-links", "unten links"], ["oben-rechts", "oben rechts"], ["oben-links", "oben links"]];
+const localPhotos = {}; // frisch hochgeladene Fotos, bis die Website sie ausliefert
+let pendingPhoto = null; // { dataUrl, base64 } oder "remove"
 const UNITS = ["g","kg","mg","ml","l","dl","cl","EL","TL","Msp","Prise","Prisen","Stück","Stk","Tasse","Tassen","Bund","Zehe","Zehen","Scheibe","Scheiben","Dose","Dosen","Päckchen","Pck","Handvoll","cm","Becher","Glas","Blatt","Blätter","Zweig","Zweige"];
 const app = document.getElementById("app");
 let db = null, recipes = [], loaded = false, loadErr = null;
@@ -481,7 +503,7 @@ function scaledAmount(amount, factor) {
 function snap(r) {
   return {
     title: r.title || "", intro: r.intro || "", servings: Number(r.servings) || 0, yieldUnit: r.yieldUnit || "Portionen",
-    time: r.time || "", topics: [...(r.topics || [])], ingredients: (r.ingredients || []).map(i => ({ ...i })),
+    time: r.time || "", prepTime: r.prepTime || "", restTime: r.restTime || "", cookTime: r.cookTime || "", topics: [...(r.topics || [])], ingredients: (r.ingredients || []).map(i => ({ ...i })),
     steps: [...(r.steps || [])], tips: r.tips || "", source: r.source || ""
   };
 }
@@ -495,7 +517,7 @@ function ingText(i) { return [i.amount, i.unit, i.name].filter(Boolean).join(" "
 function diff(a, b) {
   const out = [];
   // Nur Rezeptinhalt zählt für den Verlauf; Themen und Quelle sind Formalien und erscheinen dort nicht.
-  const simple = [["title", "Titel"], ["intro", "Beschreibung"], ["servings", "Menge"], ["yieldUnit", "Einheit der Menge"], ["time", "Zeit"], ["tips", "Tipps & Notizen"]];
+  const simple = [["title", "Titel"], ["intro", "Beschreibung"], ["servings", "Menge"], ["yieldUnit", "Einheit der Menge"], ["prepTime", "Vorbereitung"], ["restTime", "Ruhezeit"], ["cookTime", "Koch-/Backzeit"], ["time", "Gesamtzeit"], ["tips", "Tipps & Notizen"]];
   for (const [k, label] of simple) if (String(a[k] ?? "") !== String(b[k] ?? "")) out.push({ kind: "chg", label, from: a[k], to: b[k] });
   const key = i => i.heading != null ? "#" + i.heading.toLowerCase().trim() : (i.name || "").toLowerCase().trim();
   const am = new Map(a.ingredients.map(i => [key(i), i])), bm = new Map(b.ingredients.map(i => [key(i), i]));
@@ -600,7 +622,7 @@ function renderList() {
       </div>
       <div id="grid"></div>
       <footer class="foot"><span>Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</span>
-        <button class="btn small" id="backup">Sicherung herunterladen</button></footer>
+        <span style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn small" href="buch.html">Kochbuch als PDF</a><button class="btn small" id="backup">Sicherung herunterladen</button></span></footer>
     </div>`;
     document.getElementById("q").value = state.q;
   }
@@ -667,16 +689,21 @@ function renderDetail(id) {
     const c = x.title ? colorOf.get(normHead(x.title)) : null;
     return `<section class="step-sec${c ? " has" : x.title ? " plain" : ""}"${c ? ` style="--sec:${c}"` : ""}>${x.title ? `<h3>${esc(x.title)}</h3>` : ""}${x.items.length ? `<ol class="steps-list">${x.items.map(s => `<li><p>${linkStep(s)}</p></li>`).join("")}</ol>` : ""}</section>`;
   }).join("");
+  const photoUrl = localPhotos[id] || r.photo;
   app.innerHTML = `
-    <nav class="crumbs"><a href="#">← Alle Rezepte</a></nav>
+    <nav class="crumbs"><a href="#">← Alle Rezepte</a>${r.chapter ? ` <span class="muted">· ${esc(r.chapter)}${r.subchapter ? " · " + esc(r.subchapter) : ""}</span>` : ""}</nav>
     <article>
+      ${photoUrl ? `<figure class="hero"><img src="${esc(photoUrl)}" alt="${esc(r.title)}">${r.photoNote ? `<div class="hintbox ${esc(r.photoNotePos || "unten-rechts")}">${esc(r.photoNote)}</div>` : ""}</figure>` : ""}
       <header class="recipe-head">
         <div class="status-row">${statusPill(r)}${parent ? `<span class="pill var">Variante</span><span class="muted">von <a href="#r-${esc(parent.id)}">${esc(parent.title)}</a></span>` : ""}${milk ? `<span class="pill var">Satz-Rezept</span><span class="muted">aus dem Satz von <a href="#r-${esc(milk.id)}">${esc(milk.title)}</a></span>` : ""}</div>
         <h1>${esc(r.title || "Ohne Titel")}</h1>
         ${r.intro ? `<p class="lede">${esc(r.intro)}</p>` : ""}
         <div class="tags">${tagsHtml(r.topics)}</div>
         <dl class="facts">
-          ${r.time ? `<div><dt>Zeit</dt><dd>${esc(r.time)}</dd></div>` : ""}
+          ${r.prepTime ? `<div><dt>Vorbereitung</dt><dd>${esc(r.prepTime)}</dd></div>` : ""}
+          ${r.restTime ? `<div><dt>Ruhezeit</dt><dd>${esc(r.restTime)}</dd></div>` : ""}
+          ${r.cookTime ? `<div><dt>Koch-/Backzeit</dt><dd>${esc(r.cookTime)}</dd></div>` : ""}
+          ${r.time ? `<div><dt>${r.prepTime || r.restTime || r.cookTime ? "Gesamt" : "Zeit"}</dt><dd>${esc(r.time)}</dd></div>` : ""}
           ${base ? `<div><dt>Ergibt</dt><dd>${base} ${esc(r.yieldUnit || "Portionen")}</dd></div>` : ""}
           ${r.status === "bestaetigt" && r.confirmedAt ? `<div><dt>Bestätigt am</dt><dd>${esc(new Date(r.confirmedAt).toLocaleDateString("de-CH"))}</dd></div>` : ""}
         </dl>
@@ -705,6 +732,7 @@ function renderDetail(id) {
       <div class="actions">
         <a class="btn primary" href="#edit-${esc(id)}">Bearbeiten</a>
         <a class="btn" href="#variante-${esc(id)}">Variante erstellen</a>
+        <a class="btn" href="buch.html?r=${encodeURIComponent(id)}">Als PDF</a>
         ${r.status === "bestaetigt" ? `<a class="btn" href="#verlauf-${esc(id)}">Verlauf${r.historyCount ? ` (${r.historyCount})` : ""}</a>` : ""}
         ${"wakeLock" in navigator ? `<label class="wake"><input type="checkbox" id="wake" ${wakeLock ? "checked" : ""}> Bildschirm beim Kochen anlassen</label>` : ""}
         <span style="flex:1"></span>
@@ -733,6 +761,7 @@ function renderEditor(r, key) {
     title = r.mode === "edit" ? "Rezept bearbeiten" : "Variante erstellen";
   }
   builtRoute = key;
+  pendingPhoto = null;
   const d = src ? snap(src) : snap({});
   if (r.mode === "variant") d.title = d.title + " (Variante)";
   const isConfirmedEdit = r.mode === "edit" && src.status === "bestaetigt";
@@ -749,7 +778,12 @@ function renderEditor(r, key) {
       <div class="row2">
         <div class="field"><label for="f-servings">Ergibt (Anzahl)</label><input id="f-servings" type="number" min="0" step="1" value="${d.servings || ""}" placeholder="4"></div>
         <div class="field"><label for="f-yield">Einheit</label><input id="f-yield" value="${esc(d.yieldUnit)}" placeholder="Portionen, Stück, Liter …"></div>
-        <div class="field"><label for="f-time">Zeit</label><input id="f-time" value="${esc(d.time)}" placeholder="30 Min + 8 Std Einweichen"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-prep">Vorbereitung</label><input id="f-prep" value="${esc(d.prepTime)}" placeholder="20 Min"></div>
+        <div class="field"><label for="f-rest">Ruhezeit</label><input id="f-rest" value="${esc(d.restTime)}" placeholder="8 Std Einweichen"></div>
+        <div class="field"><label for="f-cook">Koch-/Backzeit</label><input id="f-cook" value="${esc(d.cookTime)}" placeholder="25 Min"></div>
+        <div class="field"><label for="f-time">Gesamtzeit <span class="muted">(optional)</span></label><input id="f-time" value="${esc(d.time)}" placeholder="45 Min"></div>
       </div>
       <div class="field"><span class="lbl">Themen</span>
         <div class="chips" id="f-topics">${topics.map(t => `<button type="button" class="chip" data-tgl="${esc(t)}" aria-pressed="${d.topics.includes(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)}</button>`).join("")}</div>
@@ -769,6 +803,21 @@ function renderEditor(r, key) {
       <div class="field"><label for="f-tips">Tipps &amp; Notizen</label><textarea id="f-tips" rows="4">${esc(d.tips)}</textarea></div>
       <div class="field"><label for="f-restvon">Aus dem Satz (Rest) von</label><p class="hint">Für Reste-Rezepte: wähle das Rezept, bei dem der Rest anfällt. Beide Rezepte verweisen dann aufeinander.</p>
         <select id="f-restvon" style="min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:var(--surface)"><option value="">Kein Reste-Rezept</option>${recipes.filter(x => !src || x.id !== src.id || r.mode === "variant").sort((a, b) => (a.title || "").localeCompare(b.title || "", "de")).map(x => `<option value="${esc(x.id)}" ${(src?.restVon || "") === x.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></div>
+      <div class="row2">
+        <div class="field"><label for="f-chapter">Kapitel im Buch</label><select id="f-chapter"><option value="">Noch offen</option>${[...new Set([...CHAPTERS, ...recipes.map(x => x.chapter).filter(Boolean)])].map(c => `<option ${(src?.chapter || "") === c ? "selected" : ""}>${esc(c)}</option>`).join("")}</select></div>
+        <div class="field"><label for="f-sub">Unterkapitel</label><input id="f-sub" list="subs" value="${esc(src?.subchapter || "")}" placeholder="z.B. Cupcakes"></div>
+      </div>
+      <datalist id="subs">${[...new Set(recipes.map(x => x.subchapter).filter(Boolean))].sort().map(x => `<option value="${esc(x)}">`).join("")}</datalist>
+      <div class="field"><label for="f-keywords">Stichwörter fürs Register</label><p class="hint">Mit Komma trennen. Titel, Themen und Hauptzutaten kommen automatisch ins Stichwortverzeichnis, hier nur Zusätzliches, z.B. „Mooncake, Mondfest“.</p><input id="f-keywords" value="${esc((src?.keywords || []).join(", "))}"></div>
+      <div class="field"><span class="lbl">Foto</span>
+        <div class="photo-edit">${src?.photo || localPhotos[src?.id] ? `<img id="f-photo-prev" src="${esc(localPhotos[src.id] || src.photo)}" alt="">` : `<img id="f-photo-prev" alt="" hidden>`}
+          <label class="btn small" style="cursor:pointer">Foto wählen<input type="file" id="f-photo" accept="image/*" hidden></label>
+          <button type="button" class="btn small" data-action="rm-photo" ${src?.photo ? "" : "hidden"}>Foto entfernen</button></div>
+        <p class="hint">Querformat wirkt im Buch am besten. Das Foto wird verkleinert und beim Speichern hochgeladen.</p></div>
+      <div class="row2">
+        <div class="field"><label for="f-pnote">Hinweis-Box auf dem Foto <span class="muted">(optional)</span></label><input id="f-pnote" value="${esc(src?.photoNote || "")}" placeholder="z.B. Statt Butter geht auch vegane Butter"></div>
+        <div class="field"><label for="f-ppos">Position der Box</label><select id="f-ppos">${NOTE_POS.map(([v, t]) => `<option value="${v}" ${(src?.photoNotePos || "unten-rechts") === v ? "selected" : ""}>${t}</option>`).join("")}</select></div>
+      </div>
       <div class="field"><label for="f-source">Quelle</label><input id="f-source" value="${esc(d.source)}" placeholder="Buch und Seite, Link oder „von Oma“"></div>
       ${r.mode === "variant" ? `<div class="field"><label for="f-variant">Was ist bei dieser Variante anders?</label><textarea id="f-variant" rows="3" placeholder="z.B. 50 g Kokosraspeln in den Teig, dafür 20 g weniger Mehl"></textarea></div>` : ""}
       ${r.mode === "edit" && src.parentId ? `<div class="field"><label for="f-variant">Unterschied zum Grundrezept</label><textarea id="f-variant" rows="3">${esc(src.variantNote || "")}</textarea></div>` : ""}
@@ -803,7 +852,9 @@ function collectForm() {
   }).filter(Boolean);
   return {
     title: v("f-title"), intro: v("f-intro"), servings: Number(v("f-servings")) || 0, yieldUnit: v("f-yield") || "Portionen",
-    time: v("f-time"), topics: [...document.querySelectorAll("#f-topics [aria-pressed=true]")].map(b => b.dataset.tgl),
+    time: v("f-time"), prepTime: v("f-prep"), restTime: v("f-rest"), cookTime: v("f-cook"),
+    chapter: v("f-chapter"), subchapter: v("f-sub"), keywords: v("f-keywords").split(",").map(x => x.trim()).filter(Boolean),
+    photoNote: v("f-pnote"), photoNotePos: v("f-ppos") || "unten-rechts", topics: [...document.querySelectorAll("#f-topics [aria-pressed=true]")].map(b => b.dataset.tgl),
     ingredients, steps: v("f-steps").split("\n").map(s => s.trim()).filter(Boolean).map(s => /:$/.test(s) && s.length < 60 ? "## " + s.replace(/:$/, "").trim() : s), tips: v("f-tips"), source: v("f-source"),
     restVon: v("f-restvon")
   };
@@ -824,6 +875,13 @@ async function saveForm() {
   msg.textContent = ""; btn.disabled = true; btn.textContent = "Speichert …";
   const now = new Date().toISOString();
   try {
+    if (pendingPhoto === "remove") data.photo = "";
+    else if (pendingPhoto) {
+      btn.textContent = "Foto wird hochgeladen …";
+      const slug = (data.title || "rezept").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40);
+      data.photo = await db.putFile(`images/${slug}-${Date.now().toString(36)}.jpg`, pendingPhoto.base64, `Foto: ${data.title}`);
+      btn.textContent = "Speichert …";
+    } else if (src?.photo && r.mode === "edit") data.photo = src.photo;
     if (r.mode === "edit") {
       const changes = diff(snap(src), snap(data));
       const upd = { ...data, updatedAt: now };
@@ -833,11 +891,15 @@ async function saveForm() {
         upd.historyCount = (src.historyCount || 0) + 1;
       }
       await db.doc("recipes/" + src.id).update(upd);
+      if (pendingPhoto && pendingPhoto !== "remove") localPhotos[src.id] = pendingPhoto.dataUrl;
+      pendingPhoto = null;
       location.hash = "r-" + src.id;
     } else {
       const doc = { ...data, status: "entwurf", createdAt: now, updatedAt: now, historyCount: 0 };
       if (r.mode === "variant") { doc.parentId = src.id; doc.variantNote = variantNote; }
       const ref = await db.collection("recipes").add(doc);
+      if (pendingPhoto && pendingPhoto !== "remove") localPhotos[ref.id] = pendingPhoto.dataUrl;
+      pendingPhoto = null;
       location.hash = "r-" + ref.id;
     }
   } catch (e) {
@@ -942,6 +1004,7 @@ app.addEventListener("click", async ev => {
   if (a === "delete-yes") { t.disabled = true; t.textContent = "Wird gelöscht …"; try { await deleteRecipe(r.id); } catch { t.disabled = false; t.textContent = "Nochmal versuchen"; } return; }
   if (a === "restore") { t.disabled = true; t.textContent = "Wird wiederhergestellt …"; try { await restore(t.dataset.entry); } catch { t.disabled = false; t.textContent = "Nochmal versuchen"; } return; }
   if (a === "rm-ing") { t.closest(".ing-row").remove(); return; }
+  if (a === "rm-photo") { pendingPhoto = "remove"; const im = document.getElementById("f-photo-prev"); im.hidden = true; im.removeAttribute("src"); t.hidden = true; return; }
   if (a === "add-ing" || a === "add-head") {
     document.getElementById("f-ings").insertAdjacentHTML("beforeend", ingRowHtml(a === "add-head" ? { heading: "" } : {}));
     document.querySelector("#f-ings .ing-row:last-child input").focus(); return;
@@ -970,7 +1033,23 @@ app.addEventListener("change", ev => {
     t.checked ? s.add(i) : s.delete(i); t.closest("li").classList.toggle("done", t.checked);
   }
   if (t.id === "wake") setWake(t.checked);
+  if (t.id === "f-photo" && t.files?.[0]) preparePhoto(t.files[0]);
 });
+// Foto im Browser verkleinern (lange Seite max. 2400 px, reicht für Druck in A4-Breite)
+async function preparePhoto(file) {
+  const msg = document.getElementById("form-msg");
+  try {
+    const bmp = await createImageBitmap(file, { imageOrientation: "from-image" });
+    const k = Math.min(1, 2400 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas"); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    const dataUrl = c.toDataURL("image/jpeg", 0.85);
+    pendingPhoto = { dataUrl, base64: dataUrl.split(",")[1] };
+    const im = document.getElementById("f-photo-prev"); im.src = dataUrl; im.hidden = false;
+    const rm = document.querySelector("[data-action=rm-photo]"); if (rm) rm.hidden = false;
+    msg.textContent = "";
+  } catch { msg.textContent = "Dieses Foto konnte nicht gelesen werden. Versuch es mit einem JPG oder PNG."; }
+}
 app.addEventListener("input", ev => { if (ev.target.id === "q") { state.q = ev.target.value; document.getElementById("reset-filters").hidden = !(state.topics.size || state.q || state.status !== "alle"); renderGrid(); } });
 app.addEventListener("submit", ev => { ev.preventDefault(); saveForm(); });
 app.addEventListener("keydown", ev => { if (ev.target.id === "f-newtopic" && ev.key === "Enter") { ev.preventDefault(); document.querySelector("[data-action=add-topic]").click(); } });

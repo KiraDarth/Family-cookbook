@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kochbuch als PDF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Zilla+Slab:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap">
+<style id="page-size">@page { size: 210mm 297mm; margin: 0; }</style>
+<style>
+/* Buch-Layout: pro Rezept eine Doppelseite.
+   Links: grosses Foto (randabfallend) mit optionaler Hinweis-Box, darunter Titel, Einleitung und Notizen.
+   Rechts: Zutaten nach Teilrezept in Spalten, Eckdaten-Tabelle, nummerierte Schritte. */
+:root {
+  --pw: 210mm; --ph: 297mm;
+  --ink: #2B2826; --muted: #6F6863; --rose: #D7A3B2; --rose-ink: #A85A72; --hint: #EBD6E0;
+  --paper: #FFFFFF; --placeholder: #EFE8E2;
+  --sans: "Jost", "Futura", "Avenir Next", sans-serif;
+  --serif: "Zilla Slab", "Rockwell", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: #E9E6E1; color: var(--ink); font-family: var(--sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* ---------- Bedienung (nur Bildschirm) ---------- */
+.toolbar { max-width: 1100px; margin: 0 auto; padding: 20px 16px 8px; font-size: 16px; }
+.toolbar h1 { font-weight: 400; font-size: 28px; margin: 0 0 4px; }
+.toolbar a { color: var(--rose-ink); }
+.toolbar .row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 12px 0; }
+.toolbar label { display: inline-flex; gap: 8px; align-items: center; }
+.toolbar select, .toolbar input[type=text] { font: inherit; min-height: 40px; padding: 0 10px; border: 1px solid #CFC8C1; border-radius: 10px; background: #fff; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-size: 15px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #CFC8C1; background: #fff; color: var(--ink); cursor: pointer; }
+.chip[aria-pressed=true] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn { font: inherit; font-weight: 500; min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: var(--rose-ink); color: #fff; cursor: pointer; }
+.hint-text { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 6px 0 0; max-width: 70ch; }
+.status { color: var(--muted); font-size: 15px; }
+#book { padding: 8px 16px 60px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.spread-wrap { position: relative; }
+.spread { display: flex; transform-origin: top left; position: absolute; top: 0; left: 0; }
+.spread .slot { width: var(--pw); height: var(--ph); }
+.page { width: var(--pw); height: var(--ph); background: var(--paper); position: relative; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+.spread .page.left { box-shadow: -2px 2px 10px rgba(0,0,0,.12), inset -14px 0 18px -16px rgba(0,0,0,.25); }
+.spread .page.right { box-shadow: 2px 2px 10px rgba(0,0,0,.12), inset 14px 0 18px -16px rgba(0,0,0,.25); }
+#measure { position: absolute; left: -99999px; top: 0; }
+
+/* ---------- Seitenaufbau ---------- */
+.page { --k: 1; --in: 18mm; --out: 15mm; --top: 15mm; --bot: 20mm; }
+.page.left { --pl: var(--out); --pr: var(--in); }
+.page.right { --pl: var(--in); --pr: var(--out); }
+.folio { position: absolute; bottom: 10mm; font: 400 8pt var(--sans); color: var(--muted); display: flex; align-items: center; gap: 2mm; }
+.folio::before { content: ""; width: .35mm; height: 5mm; background: var(--rose); }
+.page.left .folio { left: var(--out); }
+.page.right .folio { right: var(--out); flex-direction: row-reverse; }
+.page.right .folio::before { order: 0; }
+.runhead { position: absolute; top: 9mm; font: 500 6.5pt var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.page.right .runhead { right: var(--out); }
+.page.left .runhead { left: var(--out); }
+.runhead b { color: var(--ink); font-weight: 600; }
+.label { font: 500 6.6pt var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+
+/* Linke Rezeptseite */
+.photo { position: absolute; left: 0; right: 0; top: 0; height: 60%; margin: 0; background: var(--placeholder); overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo .ph { position: absolute; inset: 0; display: grid; place-items: center; background:
+  repeating-linear-gradient(135deg, transparent 0 9mm, rgba(168,90,114,.05) 9mm 9.4mm), var(--placeholder); }
+.photo .ph span { font: 500 7pt var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #A89C93; }
+.hintbox { position: absolute; width: 52mm; padding: 6mm 6.5mm; background: var(--hint); border: 1mm solid #fff; border-radius: 7mm;
+  font: 500 9pt/1.45 var(--sans); color: var(--ink); box-shadow: 0 1mm 3mm rgba(0,0,0,.12); }
+.hintbox.unten-rechts { right: 14mm; bottom: 12mm; } .hintbox.unten-links { left: 14mm; bottom: 12mm; }
+.hintbox.oben-rechts { right: 14mm; top: 14mm; } .hintbox.oben-links { left: 14mm; top: 14mm; }
+.l-body { position: absolute; left: var(--pl); right: var(--pr); top: calc(60% + 10mm); bottom: var(--bot); display: grid; grid-template-columns: 34% 1fr; column-gap: 7mm; }
+.l-title { font: 300 calc(25pt * var(--tk, 1))/1.12 var(--sans); margin: 0; letter-spacing: -.005em; hyphens: auto; overflow-wrap: break-word; }
+.l-text { border-left: .3mm solid #BDB4AD; padding-left: 6mm; overflow: hidden; font: 300 calc(9.3pt * var(--k))/1.5 var(--serif); }
+.l-text p { margin: 0 0 .7em; hyphens: auto; }
+.l-text b, .l-text strong { font-weight: 600; }
+.l-text .src { font-size: .88em; color: var(--muted); }
+
+/* Rechte Rezeptseite */
+.r-body { position: absolute; left: var(--pl); right: var(--pr); top: var(--top); bottom: var(--bot); display: flex; flex-direction: column; }
+.r-top { display: grid; grid-template-columns: 1fr 44mm; column-gap: 8mm; padding-top: 4mm; border-top: .35mm solid var(--rose); }
+.ings { columns: 2; column-gap: 7mm; font: 600 calc(8.6pt * var(--k))/1.32 var(--sans); }
+.ings.three { columns: 3; column-gap: 5mm; }
+.ings .grp { margin-bottom: 3.2mm; }
+.ings .grp.short { break-inside: avoid; }
+.ings .grp h4 { break-after: avoid; }
+.ings .grp h4 { margin: 0 0 1.3mm; font: 500 calc(6.4pt * var(--k))/1.3 var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+.ings ul { list-style: none; margin: 0; padding: 0; }
+.ings li { margin: 0 0 1.25mm; break-inside: avoid; }
+.ings li small { font-weight: 400; font-size: .94em; color: var(--muted); }
+.specs { align-self: start; }
+.specs .label { display: block; margin-bottom: 1.5mm; }
+.specs dl { margin: 0; border-top: .3mm solid var(--ink); }
+.specs dl div { display: grid; grid-template-columns: 1fr auto; gap: 3mm; padding: 1.8mm 0; border-bottom: .3mm solid var(--ink); align-items: baseline; }
+.specs dt { font: 500 6.3pt var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.specs dd { margin: 0; font: 600 7.6pt var(--sans); letter-spacing: .06em; text-transform: uppercase; text-align: right; }
+.steps-box { flex: 1; min-height: 0; overflow: hidden; margin-top: 3mm; padding-top: 5mm; border-top: .35mm solid var(--rose); }
+.steps { margin: 0; padding: 0; list-style: none; counter-reset: s var(--start, 0); font: 300 calc(9.4pt * var(--k))/1.5 var(--serif); }
+.steps li { counter-increment: s; margin: 0 0 .75em; hyphens: auto; }
+.steps li::before { content: counter(s); font: 600 calc(10pt * var(--k)) var(--sans); margin-right: .45em; }
+.steps .lead { font-style: italic; font-weight: 600; }
+.steps.cols { columns: 2; column-gap: 8mm; }
+.steps.cols li { break-inside: avoid; }
+
+/* Fortsetzungs- und Notizseiten */
+.flow { position: absolute; left: var(--pl); right: var(--pr); top: var(--top); bottom: var(--bot); overflow: hidden; display: flex; flex-direction: column; }
+.flow .cont { font: 300 15pt var(--sans); margin: 4mm 0 5mm; padding-bottom: 4mm; border-bottom: .35mm solid var(--rose); }
+.flow .cont small { display: block; font: 500 6.6pt var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5mm; }
+.flow .notes { font: 300 calc(9.3pt * var(--k))/1.5 var(--serif); }
+.flow .notes p { margin: 0 0 .7em; }
+.lines { flex: 1; margin-top: 6mm; background: repeating-linear-gradient(to bottom, transparent 0 9mm, #E3D9D3 9mm 9.3mm); }
+
+/* Titelei */
+.cover { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--out) 42mm var(--in); }
+.cover h1 { font: 300 46pt/1.05 var(--sans); margin: 0 0 6mm; }
+.cover p { font: 300 12pt/1.5 var(--serif); color: var(--muted); margin: 0; }
+.cover .bar { width: 28mm; height: .6mm; background: var(--rose); margin-bottom: 9mm; }
+.toc { position: absolute; left: var(--pl); right: var(--pr); top: 26mm; bottom: var(--bot); }
+.toc h2 { font: 300 30pt var(--sans); margin: 0 0 10mm; }
+.toc { display: flex; flex-direction: column; overflow: hidden; }
+.toc h2, .reg h2 { font: 300 30pt var(--sans); margin: 0 0 8mm; }
+.toc ol { list-style: none; margin: 0; padding: 0; flex: 1; min-height: 0; overflow: hidden; }
+.toc li { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: baseline; }
+.toc li.ch { margin-top: 6mm; padding: 2mm 0 1.6mm; border-top: .35mm solid var(--rose); font: 400 14pt var(--sans); }
+.toc li.ch:first-child { margin-top: 0; }
+.toc li.sub { margin-top: 2.6mm; padding-bottom: .8mm; font: 500 6.8pt var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+.toc li.r { padding: 1.3mm 0 1.3mm 4mm; border-bottom: .25mm solid #EEE7E2; font: 300 10pt/1.3 var(--serif); }
+.toc .n { font: 500 9pt var(--sans); color: var(--rose-ink); }
+.toc li.ch .n { font-size: 10pt; }
+.reg { position: absolute; left: var(--pl); right: var(--pr); top: 26mm; bottom: var(--bot); display: flex; flex-direction: column; }
+.reg.cont { top: var(--top); }
+.reg .cols { flex: 1; min-height: 0; columns: 2; column-gap: 9mm; column-fill: auto; overflow: hidden; border-top: .35mm solid var(--rose); padding-top: 3mm; font: 300 8.6pt/1.35 var(--serif); }
+.reg .letter { font: 400 13pt var(--sans); color: var(--rose-ink); margin: 2.5mm 0 1mm; break-after: avoid; }
+.reg .term { break-inside: avoid; margin-bottom: 1.6mm; }
+.reg .term b { font: 600 8.4pt var(--sans); }
+.reg .term div { padding-left: 3.5mm; text-indent: -1mm; }
+.reg .term .pg { font: 500 8pt var(--sans); color: var(--rose-ink); white-space: nowrap; }
+
+@media print {
+  body { background: #fff; }
+  .toolbar, #measure { display: none !important; }
+  #book { display: block; padding: 0; }
+  .spread-wrap { width: auto !important; height: auto !important; }
+  .spread { position: static; transform: none !important; display: contents; }
+  .spread .slot { display: none; }
+  .page { box-shadow: none !important; break-after: page; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <p style="margin:0 0 6px"><a href="./">← Zurück zur Rezeptsammlung</a></p>
+  <h1>Kochbuch als PDF</h1>
+  <div class="row">
+    <label>Titel <input type="text" id="o-title" value="Unser Kochbuch"></label>
+    <label>Format <select id="o-size">
+      <option value="210x297">A4 (21 × 29,7 cm)</option>
+      <option value="200x250">Buchformat (20 × 25 cm)</option>
+      <option value="148x210">A5 (14,8 × 21 cm)</option>
+    </select></label>
+    <label>Rezepte <select id="o-status">
+      <option value="alle">Alle</option>
+      <option value="bestaetigt">Nur bestätigte</option>
+    </select></label>
+  </div>
+  <div class="row chips" id="o-topics" role="group" aria-label="Nur diese Themen"></div>
+  <div class="row">
+    <button class="btn" id="print">PDF erstellen</button>
+    <span class="status" id="status">Rezepte werden geladen …</span>
+  </div>
+  <p class="hint-text">Aufbau: Titelseite, Inhaltsverzeichnis nach Kapiteln und Unterkapiteln, dann die Rezepte als Doppelseiten, hinten das Stichwortverzeichnis (Rezepte, Zutaten, Themen und eigene Stichwörter). Im Druckfenster als Ziel „Als PDF sichern“ wählen, Ränder „Keine“ und „Hintergrundgrafiken“ einschalten. Am zuverlässigsten klappt das am Computer in Chrome oder Edge. Jedes Rezept beginnt auf einer linken Seite, damit die Doppelseite im gedruckten Buch nebeneinander liegt.</p>
+</div>
+<div id="measure"></div>
+<div id="book"></div>
+
+<script>
+const GH = { owner: "KiraDarth", repo: "Family-cookbook", branch: "main" };
+const TOKEN_KEY = "kochbuch-github-schluessel";
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const params = new URLSearchParams(location.search);
+const onlyId = params.get("r");
+let recipes = [];
+const opt = { topics: new Set() };
+
+async function loadRecipes() {
+  let token = ""; try { token = localStorage.getItem(TOKEN_KEY) || ""; } catch {}
+  if (token) {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/data/recipes.json?ref=${GH.branch}&t=${Date.now()}`,
+        { headers: { Accept: "application/vnd.github.raw+json", Authorization: "Bearer " + token }, cache: "no-store" });
+      if (res.ok) return await res.json();
+    } catch {}
+  }
+  const res = await fetch(`data/recipes.json?t=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(res.status);
+  return res.json();
+}
+
+/* ---------- Bausteine ---------- */
+/* Kapitel (Hauptkategorien) in Buchreihenfolge. Unterkapitel stehen frei im Rezept (Feld subchapter). */
+const CHAPTERS = ["Grundrezepte", "Frühstück", "Vorspeisen & Salate", "Suppen", "Hauptgerichte", "Beilagen", "Süsses & Gebäck", "Getränke"];
+const chapterOf = r => r.chapter || "Weitere Rezepte";
+const chIdx = r => { const i = CHAPTERS.indexOf(chapterOf(r)); return i < 0 ? 99 : i; };
+const cmp = (a, b) => (a || "").localeCompare(b || "", "de");
+/* Stichwörter: Rezepttitel, Themen, eigene Stichwörter und Hauptzutaten (ohne Grundzutaten wie Salz, Zucker, Mehl). */
+const BASICS = new Set(["salz", "zucker", "wasser", "mehl", "weissmehl", "öl", "rapsöl", "neutrales öl", "backpulver", "natron", "vanilleextrakt", "vanille", "pfeffer", "schwarzer pfeffer", "weisser zucker", "puderzucker", "backtrennspray", "satz", "ei", "apfelessig"]);
+function ingTerms(name) {
+  return String(name).split(/\s+oder\s+|,|\s+und\s+/).map(t => t.trim()).filter(Boolean)
+    .map(t => t.replace(/^((?:[a-zäöüß-]+)\s+)+(?=[A-ZÄÖÜ])/, ""))
+    .filter(t => t.length > 2 && /^[A-ZÄÖÜ]/.test(t) && !BASICS.has(t.toLowerCase()));
+}
+function registerOf(list) {
+  const map = new Map();
+  const put = (term, r) => { const key = term.toLowerCase(); if (!map.has(key)) map.set(key, { term, ids: new Set() }); map.get(key).ids.add(r.id); };
+  for (const r of list) {
+    put(r.title || "Ohne Titel", r);
+    (r.topics || []).forEach(t => put(t, r));
+    (r.keywords || []).forEach(t => t && put(t, r));
+    (r.ingredients || []).filter(i => i.name).forEach(i => ingTerms(i.name).forEach(t => put(t, r)));
+  }
+  return [...map.values()].sort((a, b) => cmp(a.term, b.term));
+}
+const isHead = s => /^##\s*/.test(s);
+const headText = s => s.replace(/^##\s*/, "");
+function specsOf(r) {
+  const rows = [];
+  if (r.prepTime) rows.push(["Vorbereitung", r.prepTime]);
+  if (r.restTime) rows.push(["Ruhezeit", r.restTime]);
+  if (r.cookTime) rows.push(["Koch-/Backzeit", r.cookTime]);
+  if (r.time) rows.push([rows.length ? "Gesamt" : "Zeit", r.time]);
+  if (Number(r.servings)) rows.push(["Ergibt", `${r.servings} ${r.yieldUnit || "Portionen"}`]);
+  return rows;
+}
+function groupIngs(r) {
+  const groups = []; let cur = null;
+  for (const i of r.ingredients || []) {
+    if (i.heading != null) { cur = { title: i.heading, items: [] }; groups.push(cur); continue; }
+    if (!cur) { cur = { title: "", items: [] }; groups.push(cur); }
+    cur.items.push(i);
+  }
+  return groups.filter(g => g.items.length);
+}
+function ingLabel(t) {
+  const s = String(t).trim();
+  return /^(für|zum|zur|zu)\b/i.test(s) ? s : "Für " + (/(zutaten)$/i.test(s) ? "die " : "") + s;
+}
+// Hinweise, die nur in der App Sinn ergeben (z.B. „Rezept antippen“), im Buch weglassen
+const printNote = n => String(n || "").split(/,\s*/).filter(x => !/antippen|anklicken|tippen/i.test(x)).join(", ").trim();
+const pref = id => `<span class="pref" data-id="${esc(id)}"></span>`;
+function stepItems(r) {
+  const links = (r.ingredients || []).filter(i => i.recipeId && i.name);
+  const out = []; let lead = null;
+  for (const s of r.steps || []) {
+    if (isHead(s)) { lead = headText(s); continue; }
+    let h = esc(s);
+    for (const i of links) {
+      const re = new RegExp(esc(i.name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+      h = h.replace(re, m => m + pref(i.recipeId));
+    }
+    out.push(lead ? `<span class="lead">${esc(lead)}.</span> ${h}` : h);
+    lead = null;
+  }
+  return out;
+}
+function noteParas(r, byId) {
+  const p = [];
+  if (r.intro) p.push(`<p>${esc(r.intro)}</p>`);
+  const tips = (r.tips || "").split(/\n{2,}/).map(t => t.trim()).filter(Boolean);
+  tips.forEach((t, k) => p.push(`<p class="note">${k === 0 ? "<b><i>Notizen:</i></b> " : ""}${esc(t).replace(/\n/g, "<br>")}</p>`));
+  const parent = r.parentId && byId[r.parentId];
+  if (r.variantNote) p.push(`<p class="note"><b><i>Anders als im Grundrezept${parent ? ` «${esc(parent.title)}»${pref(parent.id)}` : ""}:</i></b> ${esc(r.variantNote)}</p>`);
+  const milk = r.restVon && byId[r.restVon];
+  if (milk) p.push(`<p class="note"><b><i>Aus dem Satz von</i></b> «${esc(milk.title)}»${pref(milk.id)}.</p>`);
+  if (r.source) p.push(`<p class="note src">Quelle: ${esc(r.source)}</p>`);
+  return p;
+}
+function page(side, inner) {
+  const d = document.createElement("div");
+  d.className = "page " + side;
+  d.innerHTML = inner + `<div class="folio"><span class="num"></span></div>`;
+  return d;
+}
+function runhead(r, book) { return `<div class="runhead"><b>${esc(chapterOf(r))}</b>${r.subchapter ? ` &nbsp;|&nbsp; ${esc(r.subchapter)}` : ""}</div>`; }
+
+function leftPage(r, paras) {
+  const pos = r.photoNotePos || "unten-rechts";
+  const photo = r.photo
+    ? `<img src="${esc(r.photo)}" alt="">`
+    : `<div class="ph"><span>Foto folgt</span></div>`;
+  return page("left", `
+    <figure class="photo">${photo}${r.photoNote ? `<div class="hintbox ${esc(pos)}">${esc(r.photoNote)}</div>` : ""}</figure>
+    <div class="l-body"><h2 class="l-title">${esc(r.title || "Ohne Titel")}</h2><div class="l-text">${paras.join("")}</div></div>`);
+}
+function rightPage(r, book) {
+  const groups = groupIngs(r);
+  const n = groups.reduce((a, g) => a + g.items.length + 1, 0);
+  const ings = groups.map(g => `<div class="grp${g.items.length <= 6 ? " short" : ""}">${g.title ? `<h4>${esc(ingLabel(g.title))}</h4>` : ""}<ul>${g.items.map(i =>
+    `<li>${esc([i.amount, i.unit, i.name].filter(Boolean).join(" "))}${i.recipeId ? pref(i.recipeId) : ""}${printNote(i.note) ? ` <small>(${esc(printNote(i.note))})</small>` : ""}</li>`).join("")}</ul></div>`).join("");
+  const specs = specsOf(r);
+  return page("right", `${runhead(r, book)}
+    <div class="r-body">
+      <div class="r-top">
+        <div class="ings${n > 26 ? " three" : ""}">${ings}</div>
+        <aside class="specs">${specs.length ? `<span class="label">Eckdaten</span><dl>${specs.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join("")}</dl>` : ""}</aside>
+      </div>
+      <div class="steps-box"><ol class="steps"></ol></div>
+    </div>`);
+}
+function flowPage(side, r, book) {
+  return page(side, `${runhead(r, book)}<div class="flow"><h3 class="cont"><small>Fortsetzung</small>${esc(r.title || "")}</h3><ol class="steps"></ol><div class="notes"></div></div>`);
+}
+function notesPage(side, r, book) {
+  return page(side, `${runhead(r, book)}<div class="flow"><h3 class="cont"><small>Eigene Notizen</small>${esc(r.title || "")}</h3><div class="lines"></div></div>`);
+}
+const over = el => el.scrollHeight > el.clientHeight + 1;
+
+/* ---------- Seiten bauen ---------- */
+async function build() {
+  const book = document.getElementById("o-title").value.trim() || "Unser Kochbuch";
+  const [w, h] = document.getElementById("o-size").value.split("x").map(Number);
+  document.documentElement.style.setProperty("--pw", w + "mm");
+  document.documentElement.style.setProperty("--ph", h + "mm");
+  document.getElementById("page-size").textContent = `@page { size: ${w}mm ${h}mm; margin: 0; }`;
+  const small = w < 180;
+
+  const byId = Object.fromEntries(recipes.map(r => [r.id, r]));
+  const status = document.getElementById("o-status").value;
+  let list = onlyId ? recipes.filter(r => r.id === onlyId) : recipes.filter(r =>
+    (status === "alle" || r.status === "bestaetigt") && (!opt.topics.size || (r.topics || []).some(t => opt.topics.has(t))));
+  list = list.sort((a, b) => chIdx(a) - chIdx(b) || cmp(chapterOf(a), chapterOf(b)) || cmp(a.subchapter, b.subchapter) || cmp(a.title, b.title));
+
+  const measure = document.getElementById("measure");
+  measure.innerHTML = "";
+  const pages = [];
+  const add = p => { if (small) p.style.setProperty("--k", ".9"); measure.appendChild(p); pages.push(p); return p; };
+
+  // Titelei: Titelseite (rechts), Inhalt, ggf. leere Seite, damit jedes Rezept links beginnt
+  // Inhalt: Kapitel > Unterkapitel > Rezepte, fortlaufend auf so viele Seiten wie nötig
+  const tocRows = [];
+  if (!onlyId) {
+    add(page("right", `<div class="cover"><div class="bar"></div><h1>${esc(book)}</h1><p>${list.length} Rezepte · ${new Date().getFullYear()}</p></div>`)).classList.add("nofolio");
+    let ch = null, sub = null;
+    for (const r of list) {
+      if (chapterOf(r) !== ch) { ch = chapterOf(r); sub = null; tocRows.push(`<li class="ch"><span>${esc(ch)}</span><span class="n" data-first="${esc(r.id)}"></span></li>`); }
+      if ((r.subchapter || "") !== (sub || "")) { sub = r.subchapter || ""; if (sub) tocRows.push(`<li class="sub"><span>${esc(sub)}</span></li>`); }
+      tocRows.push(`<li class="r"><span>${esc(r.title)}</span><span class="n" data-first="${esc(r.id)}"></span></li>`);
+    }
+    const rows = [...tocRows];
+    let first = true;
+    while (rows.length) {
+      const p = add(page(pages.length % 2 ? "left" : "right", `<div class="toc"><h2>${first ? "Inhalt" : "&nbsp;"}</h2><ol></ol></div>`));
+      const ol = p.querySelector("ol"); first = false;
+      while (rows.length) {
+        ol.insertAdjacentHTML("beforeend", rows[0]);
+        if (over(ol) && ol.children.length > 1) { ol.lastElementChild.remove(); break; }
+        rows.shift();
+      }
+      // Kapitel- oder Unterkapitelzeile nie allein unten auf der Seite
+      while (ol.children.length > 1 && !ol.lastElementChild.classList.contains("r") && rows.length) { rows.unshift(ol.lastElementChild.outerHTML); ol.lastElementChild.remove(); }
+    }
+    // Passt das Inhaltsverzeichnis auf eine Doppelseite, an einem Kapitelanfang nahe der Mitte teilen
+    const tocPages = pages.slice(1);
+    if (tocPages.length === 2) {
+      const [o1, o2] = tocPages.map(p => p.querySelector("ol"));
+      const all = [...o1.children, ...o2.children];
+      const cuts = all.map((li, k) => li.classList.contains("ch") && k > 0 ? k : -1).filter(k => k > 0);
+      const cut = cuts.sort((x, y) => Math.abs(x - all.length / 2) - Math.abs(y - all.length / 2))[0];
+      const n1 = o1.children.length;
+      if (cut) { o1.replaceChildren(...all.slice(0, cut)); o2.replaceChildren(...all.slice(cut)); if (over(o1) || over(o2)) { o1.replaceChildren(...all.slice(0, n1)); o2.replaceChildren(...all.slice(n1)); } }
+    }
+    if (pages.length % 2 === 0) add(page("right", "")).classList.add("nofolio");
+  } else {
+    add(page("right", "")).classList.add("nofolio", "blank-start");
+  }
+
+  const startPage = {};
+  for (const r of list) {
+    const paras = noteParas(r, byId);
+    const L = add(leftPage(r, paras));
+    startPage[r.id] = pages.length;
+    const R = add(rightPage(r, book));
+    // Links: Schrift leicht verkleinern, sonst Notizen auf Folgeseite
+    const ltext = L.querySelector(".l-text"), ltitle = L.querySelector(".l-title");
+    for (const tk of [1, .9, .8, .72]) { ltitle.style.setProperty("--tk", tk); if (ltitle.scrollWidth <= ltitle.clientWidth + 1 && ltitle.scrollHeight < L.querySelector(".l-body").clientHeight * .9) break; }
+    const restNotes = [];
+    for (const k of [1, .95, .9, .86]) { L.style.setProperty("--k", k * (small ? .9 : 1)); if (!over(ltext)) break; }
+    while (over(ltext) && ltext.children.length > 1) restNotes.unshift(ltext.lastElementChild.outerHTML), ltext.lastElementChild.remove();
+    // Rechts: Schritte einfüllen, bei kurzen Rezepten zweispaltig wenn nötig, Rest auf Folgeseiten
+    const box = R.querySelector(".steps-box"), ol = R.querySelector(".steps");
+    const items = stepItems(r);
+    ol.innerHTML = items.map(s => `<li>${s}</li>`).join("");
+    for (const k of [1.12, 1.06, 1, .95, .9, .86]) { R.style.setProperty("--k", k * (small ? .9 : 1)); if (!over(box)) break; }
+    const rest = [];
+    while (over(box) && ol.children.length > 1) rest.unshift(ol.lastElementChild.innerHTML), ol.lastElementChild.remove();
+    let num = ol.children.length;
+    let side = "left", extra = 0;
+    while (rest.length || restNotes.length) {
+      const F = add(flowPage(side, r, book)); extra++;
+      F.style.setProperty("--k", small ? .9 : 1);
+      const fl = F.querySelector(".flow"), fol = F.querySelector(".steps"), notes = F.querySelector(".notes");
+      fol.style.setProperty("--start", num);
+      while (rest.length) {
+        const li = document.createElement("li"); li.innerHTML = rest[0]; fol.appendChild(li);
+        if (over(fl) && fol.children.length > 1) { li.remove(); break; }
+        rest.shift(); num++;
+      }
+      if (!rest.length) while (restNotes.length) {
+        notes.insertAdjacentHTML("beforeend", restNotes[0]);
+        if (over(fl) && notes.children.length > 1) { notes.lastElementChild.remove(); break; }
+        restNotes.shift();
+      }
+      if (!fol.children.length) fol.remove();
+      side = side === "left" ? "right" : "left";
+    }
+    if (extra % 2) add(notesPage("right", r, book));
+  }
+
+  // Stichwortverzeichnis hinten
+  if (!onlyId && list.length) {
+    const terms = registerOf(list);
+    const html = []; let letter = "";
+    for (const t of terms) {
+      const L0 = t.term[0].toLocaleUpperCase("de").replace(/[ÄÖÜ]/, c => ({ "Ä": "A", "Ö": "O", "Ü": "U" }[c]));
+      if (L0 !== letter) { letter = L0; html.push(`<div class="letter">${esc(letter)}</div>`); }
+      const recs = [...t.ids].map(id => byId[id]);
+      const own = recs.length === 1 && recs[0].title === t.term;
+      html.push(own
+        ? `<div class="term"><b>${esc(t.term)}</b> <span class="pg" data-first="${esc(recs[0].id)}"></span></div>`
+        : `<div class="term"><b>${esc(t.term)}</b>${recs.sort((a, b) => cmp(a.title, b.title)).map(r => `<div>${esc(r.title)} <span class="pg" data-first="${esc(r.id)}"></span></div>`).join("")}</div>`);
+    }
+    let firstReg = true;
+    while (html.length) {
+      const p = add(page(pages.length % 2 ? "left" : "right", `<div class="reg${firstReg ? "" : " cont"}">${firstReg ? "<h2>Stichwortverzeichnis</h2>" : ""}<div class="cols"></div></div>`));
+      const cols = p.querySelector(".cols"); firstReg = false;
+      const full = () => cols.scrollWidth > cols.clientWidth + 1 || over(cols);
+      while (html.length) {
+        cols.insertAdjacentHTML("beforeend", html[0]);
+        if (full() && cols.children.length > 1) { cols.lastElementChild.remove(); break; }
+        html.shift();
+      }
+      if (cols.lastElementChild?.classList.contains("letter") && html.length) { html.unshift(cols.lastElementChild.outerHTML); cols.lastElementChild.remove(); }
+    }
+  }
+
+  // Seitenzahlen, Inhaltsverzeichnis, Verweise auf Teilrezepte
+  pages.forEach((p, k) => { const n = p.querySelector(".folio .num"); if (n) n.textContent = k + 1; if (onlyId || p.classList.contains("nofolio")) p.querySelector(".folio")?.remove(); });
+  measure.querySelectorAll("[data-first]").forEach(s => { s.textContent = startPage[s.dataset.first] || ""; });
+  measure.querySelectorAll(".pref").forEach(s => { const n = startPage[s.dataset.id]; s.textContent = n && !onlyId ? ` (S. ${n})` : ""; });
+
+  // Doppelseiten für die Vorschau zusammenstellen
+  if (onlyId) { pages.shift().remove(); }
+  const bookEl = document.getElementById("book");
+  bookEl.innerHTML = "";
+  const spreads = [];
+  let i = 0;
+  if (!onlyId) { spreads.push([null, pages[0]]); i = 1; }
+  for (; i < pages.length; i += 2) spreads.push([pages[i], pages[i + 1] || null]);
+  for (const [a, b] of spreads) {
+    const wrap = document.createElement("div"); wrap.className = "spread-wrap";
+    const sp = document.createElement("div"); sp.className = "spread";
+    for (const p of [a, b]) { if (p) sp.appendChild(p); else { const s = document.createElement("div"); s.className = "slot"; sp.appendChild(s); } }
+    wrap.appendChild(sp); bookEl.appendChild(wrap);
+  }
+  fitPreview();
+  const noPhoto = list.filter(r => !r.photo).length;
+  document.getElementById("status").textContent = `${list.length} ${list.length === 1 ? "Rezept" : "Rezepte"}, ${pages.length} Seiten${noPhoto ? `, ${noPhoto} noch ohne Foto` : ""}`;
+}
+function fitPreview() {
+  const [w, h] = document.getElementById("o-size").value.split("x").map(Number);
+  const pw = w * 96 / 25.4, ph = h * 96 / 25.4;
+  const avail = Math.min(document.documentElement.clientWidth - 32, 1400);
+  const s = Math.min(1, avail / (pw * 2));
+  document.querySelectorAll(".spread").forEach(sp => {
+    sp.style.transform = `scale(${s})`;
+    sp.parentElement.style.width = pw * 2 * s + "px";
+    sp.parentElement.style.height = ph * s + "px";
+  });
+}
+
+function renderTopics() {
+  const all = [...new Set(recipes.flatMap(r => r.topics || []))].sort((a, b) => a.localeCompare(b, "de"));
+  document.getElementById("o-topics").innerHTML = (all.length ? `<span class="status">Nur Themen:</span>` : "") + all.map(t => `<button class="chip" data-t="${esc(t)}" aria-pressed="${opt.topics.has(t)}">${esc(t)}</button>`).join("");
+}
+let timer;
+const rebuild = () => { clearTimeout(timer); timer = setTimeout(() => build().catch(e => { document.getElementById("status").textContent = "Fehler beim Aufbauen: " + e.message; }), 150); };
+document.getElementById("o-topics").addEventListener("click", e => { const b = e.target.closest("[data-t]"); if (!b) return; opt.topics.has(b.dataset.t) ? opt.topics.delete(b.dataset.t) : opt.topics.add(b.dataset.t); renderTopics(); rebuild(); });
+["o-size", "o-status"].forEach(id => document.getElementById(id).addEventListener("change", rebuild));
+document.getElementById("o-title").addEventListener("input", rebuild);
+document.getElementById("print").addEventListener("click", () => window.print());
+window.addEventListener("resize", () => { clearTimeout(window.__rz); window.__rz = setTimeout(fitPreview, 100); });
+
+(async () => {
+  try {
+    const data = await loadRecipes();
+    recipes = Object.entries(data).map(([id, d]) => ({ id, ...d }));
+    if (onlyId) { document.querySelector("h1").textContent = "Rezept als PDF"; document.getElementById("o-status").closest("label").hidden = true; document.getElementById("o-topics").hidden = true; document.getElementById("o-title").closest("label").hidden = true; }
+    renderTopics();
+    await document.fonts.ready;
+    await build();
+    window.__bookReady = true;
+  } catch (e) {
+    document.getElementById("status").textContent = "Die Rezepte konnten nicht geladen werden. Prüfe die Internetverbindung und lade die Seite neu.";
+  }
+})();
+</script>
+</body>
+</html>
