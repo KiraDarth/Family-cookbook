@@ -22,8 +22,7 @@
    "name": "Vanille (beliebig)",
    "oberbegriff": "Aromen",
    "schreibweisen": [
-    "Vanille",
-    "Vanille oder Zimt"
+    "Vanille"
    ],
    "vorrat": false,
    "einkaufen": true,
@@ -256,8 +255,7 @@
    "name": "Sojamilch",
    "oberbegriff": "Milch",
    "schreibweisen": [
-    "Sojamilch",
-    "Sojamilch oder Soja-Rahm"
+    "Sojamilch"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -319,9 +317,7 @@
   {
    "name": "Backtrennspray",
    "oberbegriff": "Öl",
-   "schreibweisen": [
-    "Backtrennspray oder Öl"
-   ],
+   "schreibweisen": [],
    "vorrat": true,
    "einkaufen": true
   },
@@ -413,8 +409,7 @@
    "schreibweisen": [
     "Dattel",
     "Datteln",
-    "weiche Datteln",
-    "Datteln oder Rosinen"
+    "weiche Datteln"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -474,52 +469,97 @@
    "einkaufen": true
   }
  ],
- "alternativen": [
-  {
-   "rezepte": "Kokos-Frühstücksriegel",
-   "zutat": "Datteln",
-   "alternative": "Rosinen"
-  },
-  {
-   "rezepte": "Honig-Hafer-Cookies, Kokos-Honig-Cookies",
-   "zutat": "Vanille",
-   "alternative": "Zimt"
-  },
-  {
-   "rezepte": "Vegane Buttercreme",
-   "zutat": "Sojamilch",
-   "alternative": "Soja-Rahm"
-  },
-  {
-   "rezepte": "Fluffige Waffeln ohne Ei",
-   "zutat": "Backtrennspray",
-   "alternative": "Neutrales Öl"
-  },
-  {
-   "rezepte": "Chili-Tofu-Nudeln (Sauce)",
-   "zutat": "Tofu",
-   "alternative": "Seidentofu (wird am cremigsten)"
-  },
-  {
-   "rezepte": "Chili-Tofu-Nudeln",
-   "zutat": "Hefeflocken",
-   "alternative": "Parmesan"
-  },
-  {
-   "rezepte": "Schoko-Cupcakes, Cookies-'n'-Cream-Cupcakes",
-   "zutat": "Mandelextrakt",
-   "alternative": "Schokoladenextrakt oder mehr Vanilleextrakt"
-  },
-  {
-   "rezepte": "4 Satz-Rezepte",
-   "zutat": "Weissmehl",
-   "alternative": "jedes andere Mehl"
-  }
- ],
  "regeln": [
   "Mengen immer exakt: keine Spannen, kein «gehäuft»",
   "Kommt eine Zutat sonst in Gramm vor, Löffelangaben in Gramm umrechnen und den Löffel als Hinweis lassen (wie Cups)",
   "Alternativen gelten nur im jeweiligen Rezept",
   "Satz und selbst gemachte Milch werden nicht eingekauft, Pflanzenmilch darf auf die Einkaufsliste"
- ]
+ ],
+ "varianten": {
+  "Datteln oder Rosinen": {
+   "zutat": "Datteln",
+   "alt": [
+    "Rosinen"
+   ]
+  },
+  "Vanille oder Zimt": {
+   "zutat": "Vanille (beliebig)",
+   "alt": [
+    "Zimt"
+   ]
+  },
+  "Sojamilch oder Soja-Rahm": {
+   "zutat": "Sojamilch",
+   "alt": [
+    "Soja-Rahm"
+   ]
+  },
+  "Backtrennspray oder Öl": {
+   "zutat": "Backtrennspray",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  }
+ },
+ "rezeptAlternativen": [
+  {
+   "rezept": "cremige-tofu-nudeln",
+   "schreibweise": "Tofu",
+   "alt": [
+    "Seidentofu"
+   ]
+  },
+  {
+   "rezept": "cremige-tofu-nudeln",
+   "schreibweise": "Hefeflocken",
+   "alt": [
+    "Parmesan"
+   ]
+  },
+  {
+   "rezept": "cookies-n-cream-cupcakes",
+   "schreibweise": "Mandelextrakt",
+   "alt": [
+    "Schokoladenextrakt",
+    "Vanilleextrakt"
+   ]
+  },
+  {
+   "rezept": "schoko-cupcakes",
+   "schreibweise": "Mandelextrakt",
+   "alt": [
+    "Schokoladenextrakt",
+    "Vanilleextrakt"
+   ]
+  },
+  {
+   "rezept": "satz-baru-kakao-cookies",
+   "schreibweise": "Mehl",
+   "alt": [
+    "@Mehl"
+   ]
+  },
+  {
+   "rezept": "satz-honig-hafer-cookies",
+   "schreibweise": "Mehl",
+   "alt": [
+    "@Mehl"
+   ]
+  },
+  {
+   "rezept": "satz-kokos-honig-cookies",
+   "schreibweise": "Mehl",
+   "alt": [
+    "@Mehl"
+   ]
+  },
+  {
+   "rezept": "satz-pancakes",
+   "schreibweise": "Mehl",
+   "alt": [
+    "@Mehl"
+   ]
+  }
+ ],
+ "_hinweis": "Schreibweise = Zutatenname im Rezept (bei Satz: Name + ', ' + Hinweis). varianten: Schreibweisen mit 'oder' -> Hauptzutat + Alternativen. rezeptAlternativen gelten nur im genannten Rezept; '@Gruppe' = jede Zutat dieses Oberbegriffs."
 }

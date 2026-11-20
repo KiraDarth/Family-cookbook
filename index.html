@@ -384,6 +384,52 @@ body.editing .tabbar { display: none; }
 .crumbs { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .crumbs .path { color: var(--muted); font-size: .92rem; }
 .crumbs .path a { font-weight: 700; color: var(--muted); }
+/* Schritt 3: Listen, Einkauf, Was ist noch da? */
+.quick { display: flex; flex-wrap: wrap; gap: 8px; margin: -6px 0 20px; }
+.btn.on { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.lpanel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: -8px 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.lpanel .chips .chip svg { width: 16px; height: 16px; }
+.inline-new { display: flex; gap: 8px; flex-wrap: wrap; }
+.inline-new input { flex: 1 1 200px; min-height: 44px; border: 1px solid var(--line); border-radius: 12px; padding: 0 12px; background: var(--surface); min-width: 0; }
+.seg2 { display: flex; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 4px; gap: 4px; margin-bottom: 14px; }
+.seg2 a { flex: 1; text-align: center; padding: 9px 8px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: .95rem; color: var(--muted); }
+.seg2 a.on { background: var(--accent-soft); color: var(--accent); }
+.daBtn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; border-radius: 14px; background: var(--accent-soft); color: var(--accent); font-weight: 700; text-decoration: none; margin-top: -14px; }
+.daBtn svg { width: 20px; height: 20px; }
+.havebox { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.chip .x { margin-left: 2px; color: var(--muted); font-weight: 700; }
+.shopsel { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.shopsel .it { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 8px 10px; }
+.shopsel .it { flex-wrap: wrap; }
+.shopsel .it a { flex: 1 1 100%; min-width: 0; font-weight: 700; text-decoration: none; font-size: .95rem; }
+.shopsel .st { flex: 1; }
+.shopsel .st { display: flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; font-size: .9rem; color: var(--muted); white-space: nowrap; }
+.shopsel .st button, .shopsel .rm { width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 1.05rem; color: var(--ink); }
+.shopsel .st b { color: var(--ink); min-width: 2ch; text-align: center; }
+.shoplist { list-style: none; margin: 0 0 8px; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.shoplist li { border-bottom: 1px solid var(--line); }
+.shoplist li:last-child { border-bottom: 0; }
+.shoplist label { display: grid; grid-template-columns: 22px 6.5rem minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 11px 14px; cursor: pointer; }
+.shoplist input { accent-color: var(--ok); width: 19px; height: 19px; transform: translateY(3px); }
+.shoplist .amt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.shoplist small { display: block; color: var(--muted); font-size: .82rem; }
+.shoplist .alt { color: var(--accent); font-weight: 700; font-size: .88rem; }
+.shoplist li.done .amt, .shoplist li.done .nm { text-decoration: line-through; opacity: .5; }
+.shophead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 22px 0 8px; }
+.shophead h2 { font-size: 1.1rem; }
+.shophead span { color: var(--muted); font-size: .88rem; }
+.shopsec.vorrat .shoplist { background: color-mix(in srgb, var(--ok-soft) 45%, var(--surface)); }
+.shopsec.nicht .shoplist { background: var(--bg); }
+.opt { font-size: .75rem; font-weight: 700; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 6px; margin-left: 4px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(96px + env(safe-area-inset-bottom, 0px)); z-index: 40; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-size: .92rem; max-width: calc(100vw - 32px); box-shadow: var(--shadow); }
+@media (min-width: 900px) { .toast { bottom: 28px; } }
+.badge { background: var(--accent); color: var(--surface); border-radius: 999px; font-size: .7rem; padding: 0 6px; font-weight: 700; margin-left: 4px; }
+.tab { position: relative; }
+.tab .badge { position: absolute; top: 2px; left: calc(50% + 6px); margin: 0; }
+.unknown { background: var(--warn-soft); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 18px; }
+.unknown h2 { font-size: 1.05rem; margin-bottom: 6px; }
+.unknown ul { margin: 6px 0 0; padding-left: 20px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 </style>
 </head>
@@ -570,7 +616,10 @@ let pendingPhoto = null; // { dataUrl, base64 } oder "remove"
 const UNITS = ["g","kg","mg","ml","l","dl","cl","EL","TL","Msp","Prise","Prisen","Stück","Stk","Tasse","Tassen","Bund","Zehe","Zehen","Scheibe","Scheiben","Dose","Dosen","Päckchen","Pck","Handvoll","cm","Becher","Glas","Blatt","Blätter","Zweig","Zweige"];
 const app = document.getElementById("app");
 let db = null, recipes = [], loaded = false, loadErr = null;
-const state = { q: "", focusSearch: false, lastTab: "start" };
+const state = { q: "", focusSearch: false, lastTab: "start", listPanel: false, confirmClear: false, confirmListDel: false };
+let Z = null, lists = [], listsLoaded = false;
+const SHOP_KEY = "kochbuch-einkauf", HAVE_KEY = "kochbuch-noch-da";
+let shop = loadShop(), have = loadHave();
 const servingsFor = {};
 const checked = {};
 let builtRoute = null;
@@ -597,7 +646,10 @@ const ICONS = {
   save: "M12 4v11M7 10l5 5 5-5M5 20h14",
   key: "M15 7a4 4 0 1 1-3.5 6L5 19.5V16h3v-3h2.5",
   list: "M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01",
-  check: "M5 12l5 5 9-10"
+  check: "M5 12l5 5 9-10",
+  cart: "M3 4h2l2.4 11h11L21 8H6.2M10 20h.01M17 20h.01",
+  fridge: "M7 3h10v18H7ZM7 10h10M10 6v2M10 13v3",
+  share: "M12 3v12M7 8l5-5 5 5M5 14v6h14v-6"
 };
 const chapterBySlug = slug => [...CHAPTERS, NO_CHAPTER].find(c => slugify(c) === slug);
 const chapterHref = (ch, sub) => "#kapitel-" + slugify(ch) + (sub ? "/" + slugify(sub) : "");
@@ -609,8 +661,8 @@ function thumbHtml(r) {
   const ph = localPhotos[r.id] || r.photo;
   return `<span class="thumb" style="--cc:var(${c})">${ph ? `<img src="${esc(ph)}" alt="" loading="lazy">` : icon(d)}</span>`;
 }
-function rowHtml(r) {
-  const meta = [r.subchapter, r.time].filter(Boolean).join(" · ");
+function rowHtml(r, metaOverride) {
+  const meta = metaOverride ?? [r.subchapter, r.time].filter(Boolean).join(" · ");
   return `<a class="rrow" href="#r-${esc(r.id)}">${thumbHtml(r)}<span class="tx"><b>${esc(r.title || "Ohne Titel")}${r.status !== "bestaetigt" ? `<span class="pill draft">Entwurf</span>` : ""}</b>${meta ? `<small>${esc(meta)}</small>` : ""}</span></a>`;
 }
 function recentIds() { try { return JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); } catch { return []; } }
@@ -639,9 +691,13 @@ function route() {
   if (h === "mehr") return { view: "more" };
   if (h === "pruefen") return { view: "drafts" };
   if (h === "alle") return { view: "all" };
+  if (h === "listen") return { view: "lists" };
+  if (h === "einkauf") return { view: "shop" };
+  if (h === "da") return { view: "have" };
   let m;
   if ((m = h.match(/^kapitel-([^/]+)(?:\/(.+))?$/))) return { view: "chapter", slug: m[1], sub: m[2] || "" };
   if ((m = h.match(/^thema-(.+)$/))) return { view: "theme", slug: m[1] };
+  if ((m = h.match(/^liste-(.+)$/))) return { view: "list", id: m[1] };
   if ((m = h.match(/^r-(.+)$/))) return { view: "detail", id: m[1] };
   if ((m = h.match(/^edit-(.+)$/))) return { view: "edit", mode: "edit", id: m[1] };
   if ((m = h.match(/^variante-(.+)$/))) return { view: "edit", mode: "variant", id: m[1] };
@@ -742,7 +798,7 @@ function render(force) {
   if (r.view !== "history" && historyUnsub) { historyUnsub(); historyUnsub = null; historyFor = null; }
   if (r.view !== "detail") releaseWake();
   document.body.classList.toggle("editing", r.view === "edit");
-  const tabOf = { start: "start", browse: "rezepte", all: "rezepte", chapter: "rezepte", theme: "rezepte", more: "mehr", drafts: "mehr" };
+  const tabOf = { start: "start", browse: "rezepte", all: "rezepte", chapter: "rezepte", theme: "rezepte", have: "rezepte", lists: "listen", list: "listen", shop: "einkauf", more: "mehr", drafts: "mehr" };
   if (tabOf[r.view]) state.lastTab = tabOf[r.view];
   renderNav();
   if (r.view === "edit" && builtRoute === key && !force) return;
@@ -752,7 +808,11 @@ function render(force) {
   if (r.view === "browse") return renderBrowse();
   if (r.view === "chapter") return renderChapter(r);
   if (r.view === "theme") return renderTheme(r);
-  if (r.view === "drafts") return renderSimple("Zu prüfen", "Entwürfe, die noch jemand kontrollieren sollte", recipes.filter(x => x.status !== "bestaetigt").sort(byTitle));
+  if (r.view === "drafts") return renderDrafts();
+  if (r.view === "lists") return renderLists();
+  if (r.view === "list") return renderListDetail(r.id);
+  if (r.view === "shop") return renderShop();
+  if (r.view === "have") return renderHave();
   if (r.view === "all") return renderSimple("Alle Rezepte", "Von A bis Z", [...recipes].sort(byTitle));
   if (r.view === "more") return renderMore();
   if (r.view === "detail") return renderDetail(r.id);
@@ -793,13 +853,15 @@ function cardHtml(r) {
 /* ---------- Navigation ---------- */
 function renderNav() {
   const t = state.lastTab;
-  const tabs = [["start", "#", "Start", ICONS.home], ["rezepte", "#rezepte", "Rezepte", ICONS.search], ["mehr", "#mehr", "Mehr", ICONS.more]];
-  document.getElementById("tabbar").innerHTML = tabs.map(([k, h, l, d]) => `<a class="tab${t === k ? " on" : ""}" href="${h}"${t === k ? ' aria-current="page"' : ""}>${icon(d)}<span>${l}</span></a>`).join("");
+  const nShop = shop.items.filter(x => byId(x.id)).length;
+  const tabs = [["start", "#", "Start", ICONS.home], ["rezepte", "#rezepte", "Rezepte", ICONS.search], ["listen", "#listen", "Listen", ICONS.list], ["einkauf", "#einkauf", "Einkauf", ICONS.cart, nShop], ["mehr", "#mehr", "Mehr", ICONS.more]];
+  document.getElementById("tabbar").innerHTML = tabs.map(([k, h, l, d, n]) => `<a class="tab${t === k ? " on" : ""}" href="${h}"${t === k ? ' aria-current="page"' : ""}>${icon(d)}<span>${l}</span>${n ? `<span class="badge">${n}</span>` : ""}</a>`).join("");
   const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
   document.getElementById("side").innerHTML = `
     <a class="brand" href="#" style="padding:0;font-size:1.15rem"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 11h16a8 8 0 0 1-16 0Z"/><path d="M9 7c0-1.5 1-2 1-3.5M14 7c0-1.5 1-2 1-3.5"/></svg></span>Unser Kochbuch</a>
     <a class="new" href="#neu">${icon(ICONS.plus)}Neues Rezept</a>
-    ${tabs.slice(0, 2).map(([k, h, l, d]) => `<a class="${t === k ? "on" : ""}" href="${h}">${icon(d)}${l}</a>`).join("")}
+    ${tabs.slice(0, 4).map(([k, h, l, d, n]) => `<a class="${t === k && !(k === "rezepte" && location.hash === "#da") ? "on" : ""}" href="${h}">${icon(d)}${l}${n ? ` <span class="badge">${n}</span>` : ""}</a>`).join("")}
+    <a class="${location.hash === "#da" ? "on" : ""}" href="#da">${icon(ICONS.fridge)}Was ist noch da?</a>
     <a class="${location.hash === "#pruefen" ? "on" : ""}" href="#pruefen">${icon(ICONS.check)}Zu prüfen${drafts ? ` <span class="small">${drafts}</span>` : ""}</a>
     <a class="${location.hash === "#alle" ? "on" : ""}" href="#alle">${icon(ICONS.list)}Alle von A bis Z</a>
     <div class="sep"></div>
@@ -820,6 +882,7 @@ function renderStart() {
   const themes = TOPICS.map(t => [t, recipes.filter(r => (r.topics || []).includes(t)).length]).filter(x => x[1]);
   app.innerHTML = `<div class="start view-in">
     <button type="button" class="searchbar" data-action="open-search">${icon(ICONS.search)}<span>Rezept, Zutat oder Stichwort</span></button>
+    <a class="daBtn" href="#da">${icon(ICONS.fridge)}Was ist noch da?</a>
     ${recent.length ? `<section><div class="sec-h"><h2>Zuletzt angesehen</h2></div>
       <div class="recent">${recent.map(r => `<a class="rc" href="#r-${esc(r.id)}">${thumbHtml(r)}<b>${esc(r.title)}</b></a>`).join("")}</div></section>` : ""}
     <section><div class="sec-h"><h2>Kapitel</h2><a href="#alle">Alle von A bis Z</a></div>
@@ -862,6 +925,7 @@ function renderSimple(title, sub, list) {
 function renderBrowse() {
   app.innerHTML = `<div class="view-in">
     <div class="sbar">${backHtml("#")}<label class="sfield">${icon(ICONS.search)}<span class="sr" hidden>Suche</span><input id="q" type="search" placeholder="Rezept, Zutat oder Stichwort" autocomplete="off" enterkeyhint="search" value="${esc(state.q)}"></label></div>
+    <nav class="seg2"><a class="on" href="#rezepte">Nach Name suchen</a><a href="#da">Was ist noch da?</a></nav>
     <div id="results"></div></div>`;
   renderResults();
   if (state.focusSearch) { state.focusSearch = false; const q = document.getElementById("q"); q.focus({ preventScroll: true }); }
@@ -896,6 +960,191 @@ function renderResults() {
   box.innerHTML = `${cats.length ? `<section style="margin-bottom:22px"><h2 class="morehead">Kategorien</h2><div class="chips">${cats.map(([k, v, h]) => `<a class="chip" href="${h}"><span class="hit-type">${k}</span>${esc(v)}</a>`).join("")}</div></section>` : ""}
     <section><h2 class="morehead">${hits.length} ${hits.length === 1 ? "Rezept" : "Rezepte"}</h2>
     ${hits.length ? `<div class="rows">${hits.map(rowHtml).join("")}</div>` : `<div class="empty"><p>Nichts gefunden. Gesucht wird in Titel, Zutaten, Kapiteln, Themen und Stichwörtern.</p></div>`}</section>`;
+}
+
+/* ---------- Zutatenliste (Regelwerk aus data/zutaten.json) ---------- */
+let ZI = null;
+function zIndex() {
+  if (ZI || !Z) return ZI;
+  const byName = new Map(), bySpell = new Map();
+  for (const e of Z.zutaten || []) { byName.set(e.name, e); bySpell.set(e.name.toLowerCase(), e); for (const x of e.schreibweisen || []) bySpell.set(x.toLowerCase(), e); }
+  ZI = { byName, bySpell };
+  return ZI;
+}
+function zutatNamen() {
+  if (!Z) return [];
+  return [...new Set((Z.zutaten || []).flatMap(e => [e.name.replace(/ \(.*\)$/, ""), ...(e.schreibweisen || []).filter(x => !x.includes(","))]))].sort((a, b) => a.localeCompare(b, "de"));
+}
+// Ordnet eine Rezeptzutat einem Eintrag der Zutatenliste zu, mit Alternativen
+function resolveIng(rid, i) {
+  const nm = (i.name || "").trim();
+  if (!nm || /^wasser$/i.test(nm)) return { skip: true };
+  const ix = zIndex();
+  if (!ix) return { entry: null, alts: [], unknown: true };
+  const withNote = i.note ? `${nm}, ${i.note}` : "";
+  const spell = withNote && ix.bySpell.has(withNote.toLowerCase()) ? withNote : nm;
+  let entry = null; const alts = [];
+  const v = Z.varianten?.[spell];
+  if (v) { entry = ix.byName.get(v.zutat) || null; v.alt.forEach(a => { const e = ix.byName.get(a); if (e) alts.push(e); }); }
+  else entry = ix.bySpell.get(spell.toLowerCase()) || null;
+  for (const ra of Z.rezeptAlternativen || []) {
+    if (ra.rezept !== rid || ra.schreibweise.toLowerCase() !== nm.toLowerCase()) continue;
+    ra.alt.forEach(a => {
+      if (a.startsWith("@")) (Z.zutaten || []).filter(e => e.oberbegriff === a.slice(1) && e !== entry).forEach(e => alts.push(e));
+      else { const e = ix.byName.get(a); if (e && e !== entry) alts.push(e); }
+    });
+  }
+  return { entry, alts: [...new Set(alts)], unknown: !entry && !i.recipeId };
+}
+function unknownIngredients() {
+  if (!Z) return [];
+  const m = new Map();
+  recipes.forEach(r => (r.ingredients || []).forEach(i => { if (i.heading != null || i.recipeId) return; const x = resolveIng(r.id, i); if (x.unknown) { if (!m.has(i.name)) m.set(i.name, new Set()); m.get(i.name).add(r.title); } }));
+  return [...m].map(([n, t]) => [n, [...t]]);
+}
+
+/* ---------- Zu prüfen ---------- */
+function renderDrafts() {
+  const list = recipes.filter(x => x.status !== "bestaetigt").sort(byTitle);
+  const unk = unknownIngredients();
+  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>Zu prüfen</h1><div class="sub">${list.length} ${list.length === 1 ? "Entwurf" : "Entwürfe"}</div></div></div>
+    ${unk.length ? `<div class="unknown"><h2>Zutaten, die die Zutatenliste noch nicht kennt</h2><p style="margin:0">Schick sie Claude im Projekt, dann werden sie eingeordnet. Bis dahin fehlen sie in Einkaufsliste und „Was ist noch da?“ nicht, werden aber nicht zusammengezählt.</p><ul>${unk.map(([n, t]) => `<li><b>${esc(n)}</b> <span class="muted">in ${esc(t.join(", "))}</span></li>`).join("")}</ul></div>` : ""}
+    ${list.length ? `<div class="rows">${list.map(r => rowHtml(r)).join("")}</div>` : `<div class="empty"><p>Alle Rezepte sind geprüft.</p></div>`}</div>`;
+}
+
+/* ---------- Listen (gemeinsam, im Repo gespeichert) ---------- */
+function renderLists() {
+  const sorted = [...lists].sort((a, b) => (a.title || "").localeCompare(b.title || "", "de"));
+  app.innerHTML = `<div class="view-in"><div class="vhead"><div><h1>Listen</h1><div class="sub">Eure eigenen Sammlungen, für euch beide sichtbar</div></div></div>
+    <div class="inline-new" style="margin-bottom:18px"><input id="new-list-name" placeholder="Neue Liste, z.B. Wenn Gäste kommen" aria-label="Name der neuen Liste"><button type="button" class="btn primary small" data-action="list-new">Liste anlegen</button></div>
+    ${sorted.length ? `<div class="rows">${sorted.map(l => { const rs = (l.recipeIds || []).map(byId).filter(Boolean); const f = rs[0];
+      return `<a class="rrow" href="#liste-${esc(l.id)}">${f ? thumbHtml(f) : `<span class="thumb" style="--cc:var(--muted)">${icon(ICONS.list)}</span>`}<span class="tx"><b>${esc(l.title)}</b><small>${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</small></span></a>`; }).join("")}</div>`
+      : `<div class="empty"><h2>Noch keine Listen</h2><p>Eine Liste sammelt Rezepte für einen Anlass, z.B. „Lieblinge“ oder „Wenn Gäste kommen“. Leg oben eine an oder tippe in einem Rezept auf „Zu einer Liste“.</p></div>`}</div>`;
+}
+function renderListDetail(lid) {
+  const l = lists.find(x => x.id === lid);
+  if (!l) return listsLoaded ? notFound("Liste") : (app.innerHTML = `<p class="loading">Liste wird geladen …</p>`);
+  const rs = (l.recipeIds || []).map(byId).filter(Boolean).sort(byTitle);
+  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#listen")}<div><span class="eyebrow">Liste</span><h1>${esc(l.title)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
+    ${rs.length ? `<div class="rows">${rs.map(r => `<div style="display:flex;gap:8px;align-items:center;min-width:0">${rowHtml(r).replace('class="rrow"', 'class="rrow" style="flex:1"')}<button type="button" class="backbtn" data-action="list-rm" data-id="${esc(r.id)}" aria-label="Aus der Liste entfernen">×</button></div>`).join("")}</div>`
+      : `<div class="empty"><p>Noch leer. Öffne ein Rezept und tippe auf „Zu einer Liste“.</p></div>`}
+    <div class="toolbar">
+      <a class="btn small" href="#einkauf" data-action="list-to-shop">${icon(ICONS.cart).replace("<svg", '<svg width="18" height="18"')}Alle auf die Einkaufsliste</a>
+      <button type="button" class="btn small" data-action="list-rename">Umbenennen</button>
+      ${state.confirmListDel ? `<span class="confirm-row">Liste löschen? Die Rezepte bleiben erhalten. <button type="button" class="btn danger solid small" data-action="list-del-yes">Ja, löschen</button><button type="button" class="btn small" data-action="list-del-no">Abbrechen</button></span>` : `<button type="button" class="btn danger small" data-action="list-del">Liste löschen</button>`}
+    </div></div>`;
+}
+
+/* ---------- Einkaufsliste (nur auf diesem Gerät) ---------- */
+function loadShop() { try { const x = JSON.parse(localStorage.getItem(SHOP_KEY) || "null"); if (x && Array.isArray(x.items)) return { items: x.items, checked: x.checked || {} }; } catch {} return { items: [], checked: {} }; }
+function saveShop() { try { localStorage.setItem(SHOP_KEY, JSON.stringify(shop)); } catch {} }
+function lastNum(a) { const v = parseAmount(a); return v ? v[v.length - 1] : null; }
+function shopRows() {
+  const rows = new Map();
+  const add = (rid, i, factor, title) => {
+    if (i.heading != null) return;
+    const sub = i.recipeId ? byId(i.recipeId) : null;
+    if (sub) { const n = lastNum(i.amount) || 1; const f = /portion|rezept/i.test(i.unit || "") ? n * factor : factor; (sub.ingredients || []).forEach(x => add(sub.id, x, f, `${title} (${sub.title})`)); return; }
+    const res = resolveIng(rid, i); if (res.skip) return;
+    const e = res.entry; const key = e ? e.name : "?" + (i.name || "").toLowerCase();
+    let row = rows.get(key);
+    if (!row) { row = { key, name: e ? e.name.replace(/ \(beliebig\)$/, "") : i.name, entry: e, alts: new Map(), amounts: new Map(), loose: false, from: new Set(), optional: true, unknown: !e }; rows.set(key, row); }
+    res.alts.forEach(a => row.alts.set(a.name, a));
+    if (!/optional/i.test(i.note || "")) row.optional = false;
+    row.from.add(title);
+    const n = lastNum(i.amount);
+    if (n != null) { const u = i.unit || ""; row.amounts.set(u, (row.amounts.get(u) || 0) + n * factor); } else row.loose = true;
+  };
+  shop.items.forEach(it => { const r = byId(it.id); if (!r) return; const base = Number(r.servings) || 0; const f = base ? it.servings / base : 1; (r.ingredients || []).forEach(i => add(r.id, i, f, r.title)); });
+  const amt = row => [...[...row.amounts].map(([u, n]) => fmtNum(n) + " " + (u || "Stück")), ...(row.loose ? [row.amounts.size ? "etwas" : "nach Bedarf"] : [])].join(" + ");
+  const out = [...rows.values()].map(r => ({ ...r, amountText: amt(r), group: r.entry?.oberbegriff || "Noch nicht eingeordnet" }));
+  out.sort((a, b) => a.group.localeCompare(b.group, "de") || a.name.localeCompare(b.name, "de"));
+  return {
+    buy: out.filter(r => !r.entry || (r.entry.einkaufen !== false && !r.entry.vorrat)),
+    pantry: out.filter(r => r.entry?.vorrat && r.entry.einkaufen !== false),
+    skip: out.filter(r => r.entry && r.entry.einkaufen === false)
+  };
+}
+function shopLi(r) {
+  const done = !!shop.checked[r.key];
+  const alts = [...r.alts.keys()].map(x => x.replace(/ \(.*\)$/, ""));
+  return `<li class="${done ? "done" : ""}"><label><input type="checkbox" data-shop="${esc(r.key)}" ${done ? "checked" : ""}><span class="amt">${esc(r.amountText)}</span>
+    <span class="nm">${esc(r.name)}${r.optional ? `<span class="opt">optional</span>` : ""}${alts.length ? ` <span class="alt">oder ${esc(alts.join(", "))}</span>` : ""}<small>${esc(r.group)} · für ${esc([...r.from].join(", "))}</small></span></label></li>`;
+}
+function renderShop() {
+  const items = shop.items.filter(x => byId(x.id));
+  if (!items.length) {
+    app.innerHTML = `<div class="view-in"><div class="vhead"><div><h1>Einkaufsliste</h1><div class="sub">Nur auf diesem Handy gespeichert</div></div></div>
+      <div class="empty"><h2>Noch leer</h2><p>Öffne ein Rezept und tippe auf „Auf die Einkaufsliste“. Die Zutaten aller gewählten Rezepte werden hier zusammengezählt.</p><a class="btn primary" href="#rezepte">Rezepte ansehen</a></div></div>`;
+    return;
+  }
+  const { buy, pantry, skip } = shopRows();
+  app.innerHTML = `<div class="view-in"><div class="vhead"><div><h1>Einkaufsliste</h1><div class="sub">Nur auf diesem Handy gespeichert · zum Weitergeben „Teilen“</div></div></div>
+    <div class="shopsel">${items.map(it => { const r = byId(it.id); return `<div class="it"><a href="#r-${esc(r.id)}">${esc(r.title)}</a><span class="st"><button type="button" data-action="shop-dec" data-id="${esc(r.id)}" aria-label="Weniger">−</button><b>${it.servings}</b><button type="button" data-action="shop-inc" data-id="${esc(r.id)}" aria-label="Mehr">+</button>${esc(r.yieldUnit || "Portionen")}</span><button type="button" class="rm" data-action="shop-rm" data-id="${esc(r.id)}" aria-label="Rezept entfernen">×</button></div>`; }).join("")}</div>
+    <section class="shopsec"><div class="shophead"><h2>Einkaufen</h2><span>${buy.length}</span></div><ul class="shoplist">${buy.map(shopLi).join("") || `<li style="padding:12px 14px" class="muted">Nichts, alles ist Vorrat.</li>`}</ul></section>
+    ${pantry.length ? `<section class="shopsec vorrat"><div class="shophead"><h2>Vorrat: kurz prüfen, ob genug da ist</h2><span>${pantry.length}</span></div><ul class="shoplist">${pantry.map(shopLi).join("")}</ul></section>` : ""}
+    ${skip.length ? `<section class="shopsec nicht"><div class="shophead"><h2>Nicht einkaufen, kommt aus der Küche</h2><span>${skip.length}</span></div><ul class="shoplist">${skip.map(shopLi).join("")}</ul></section>` : ""}
+    <div class="toolbar"><button type="button" class="btn primary" data-action="shop-share">${icon(ICONS.share).replace("<svg", '<svg width="18" height="18"')}Teilen</button>
+      ${state.confirmClear ? `<span class="confirm-row">Ganze Liste leeren? <button type="button" class="btn danger solid small" data-action="shop-clear-yes">Ja, leeren</button><button type="button" class="btn small" data-action="shop-clear-no">Abbrechen</button></span>` : `<button type="button" class="btn" data-action="shop-clear">Liste leeren</button>`}</div></div>`;
+}
+function shopText() {
+  const { buy, pantry } = shopRows();
+  const line = r => `- ${r.amountText ? r.amountText + " " : ""}${r.name}${r.alts.size ? ` (oder ${[...r.alts.keys()].map(x => x.replace(/ \(.*\)$/, "")).join(", ")})` : ""}${r.optional ? " (optional)" : ""}`;
+  const titles = shop.items.map(x => byId(x.id)).filter(Boolean).map(r => r.title);
+  return `Einkaufsliste für: ${titles.join(", ")}\n\n${buy.filter(r => !shop.checked[r.key]).map(line).join("\n")}${pantry.length ? `\n\nVorrat prüfen:\n${pantry.filter(r => !shop.checked[r.key]).map(line).join("\n")}` : ""}`;
+}
+async function shareShop(btn) {
+  const text = shopText();
+  try { if (navigator.share) { await navigator.share({ title: "Einkaufsliste", text }); return; } } catch (e) { if (e?.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(text); toast("Einkaufsliste kopiert. Du kannst sie jetzt z.B. in WhatsApp einfügen."); }
+  catch { toast("Teilen geht auf diesem Gerät nicht."); }
+}
+let toastTimer = null;
+function toast(msg) {
+  let t = document.getElementById("toast");
+  if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+  t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3500);
+}
+
+/* ---------- Was ist noch da? ---------- */
+function loadHave() { try { const x = JSON.parse(localStorage.getItem(HAVE_KEY) || "[]"); return Array.isArray(x) ? x : []; } catch { return []; } }
+function saveHave() { try { localStorage.setItem(HAVE_KEY, JSON.stringify(have)); } catch {} }
+function hasEntry(e, h) {
+  if (!e) return false;
+  if ([e.name, e.name.replace(/ \(.*\)$/, ""), ...(e.schreibweisen || []), e.oberbegriff].some(c => c && h.has(c.toLowerCase()))) return true;
+  return (e.erfuelltDurch || []).some(n => h.has(n.toLowerCase()));
+}
+function haveResults() {
+  const h = new Set(have.map(x => x.toLowerCase()));
+  const out = [];
+  for (const r of recipes) {
+    let used = 0; const missing = [];
+    for (const i of r.ingredients || []) {
+      if (i.heading != null) continue;
+      if (/optional/i.test(i.note || "")) continue;
+      const sub = i.recipeId ? byId(i.recipeId) : null;
+      if (sub) { if (h.has(sub.title.toLowerCase()) || h.has((i.name || "").toLowerCase())) used++; else missing.push(i.name); continue; }
+      const x = resolveIng(r.id, i); if (x.skip) continue;
+      if (x.entry?.vorrat) continue;
+      const ok = x.entry ? (hasEntry(x.entry, h) || x.alts.some(a => hasEntry(a, h))) : h.has((i.name || "").toLowerCase());
+      if (ok) used++; else missing.push(x.entry ? x.entry.name.replace(/ \(.*\)$/, "") : i.name);
+    }
+    if (used) out.push({ r, used, missing: [...new Set(missing)] });
+  }
+  return out.sort((a, b) => a.missing.length - b.missing.length || b.used - a.used || byTitle(a.r, b.r));
+}
+function renderHave() {
+  const res = have.length ? haveResults() : [];
+  const grp = (title, list) => list.length ? `<section class="group"><h2>${title}</h2><div class="rows">${list.map(x => rowHtml(x.r, x.missing.length ? "Fehlt: " + x.missing.join(", ") : `${x.used} deiner Zutaten`)).join("")}</div></section>` : "";
+  const groups = [[0, "Alles da"], [1, "Fehlt nur 1 Zutat"], [2, "Fehlen 2 Zutaten"]];
+  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>Was ist noch da?</h1><div class="sub">Gib ein, was du hast. Vorrat wie Salz, Zucker und Öl zählt automatisch.</div></div></div>
+    <nav class="seg2"><a href="#rezepte">Nach Name suchen</a><a class="on" href="#da">Was ist noch da?</a></nav>
+    <div class="havebox"><div class="inline-new"><input id="have-input" list="zutaten-namen" placeholder="z.B. Satz, Kokosraspeln, Eier" aria-label="Zutat, die du hast" enterkeyhint="done" autocomplete="off"><button type="button" class="btn primary small" data-action="have-add">Hinzufügen</button></div>
+      <datalist id="zutaten-namen">${[...zutatNamen(), ...new Set((Z?.zutaten || []).map(e => e.oberbegriff))].map(x => `<option value="${esc(x)}">`).join("")}</datalist>
+      ${have.length ? `<div class="chips">${have.map(x => `<button type="button" class="chip" data-action="have-rm" data-have="${esc(x)}">${esc(x)} <span class="x" aria-label="entfernen">×</span></button>`).join("")}<button type="button" class="linkish" data-action="have-clear">Alle entfernen</button></div>` : ""}</div>
+    ${!have.length ? `<div class="empty"><p>Noch nichts eingegeben. Tipp: Ein Oberbegriff wie „Satz“ oder „Mehl“ zählt für alle Sorten.</p></div>`
+      : res.length ? groups.map(([n, t]) => grp(t, res.filter(x => x.missing.length === n))).join("") + (res.some(x => x.missing.length > 2) ? `<p class="muted" style="font-size:.9rem;margin-top:16px">${res.filter(x => x.missing.length > 2).length} weitere Rezepte brauchen noch mehr Zutaten.</p>` : "")
+      : `<div class="empty"><p>Kein Rezept braucht diese Zutaten. Prüf die Schreibweise oder probier einen Oberbegriff.</p></div>`}</div>`;
 }
 
 /* ---------- Mehr ---------- */
@@ -970,6 +1219,12 @@ function renderDetail(id) {
           ${r.status === "bestaetigt" && r.confirmedAt ? `<div><dt>Bestätigt am</dt><dd>${esc(new Date(r.confirmedAt).toLocaleDateString("de-CH"))}</dd></div>` : ""}
         </dl>
       </header>
+      <div class="quick">
+        <button type="button" class="btn small${shop.items.some(x => x.id === id) ? " on" : ""}" data-action="shop-add" data-servings="${cur}">${icon(ICONS.cart).replace("<svg", '<svg width="18" height="18"')}${shop.items.some(x => x.id === id) ? `Auf der Einkaufsliste (${shop.items.find(x => x.id === id).servings})` : "Auf die Einkaufsliste"}</button>
+        <button type="button" class="btn small" data-action="list-panel" aria-expanded="${state.listPanel}">${icon(ICONS.list).replace("<svg", '<svg width="18" height="18"')}Zu einer Liste${lists.filter(l => (l.recipeIds || []).includes(id)).length ? ` (${lists.filter(l => (l.recipeIds || []).includes(id)).length})` : ""}</button>
+      </div>
+      ${state.listPanel ? `<div class="lpanel"><div class="chips">${lists.map(l => { const on = (l.recipeIds || []).includes(id); return `<button type="button" class="chip" aria-pressed="${on}" data-action="list-toggle" data-list="${esc(l.id)}">${on ? icon(ICONS.check) : ""}${esc(l.title)}</button>`; }).join("") || `<span class="muted">Noch keine Listen.</span>`}</div>
+        <div class="inline-new"><input id="new-list-name" placeholder="Neue Liste, z.B. Lieblinge" aria-label="Name der neuen Liste"><button type="button" class="btn small" data-action="list-new" data-with="${esc(id)}">Anlegen</button></div></div>` : ""}
       ${r.variantNote ? `<div class="note-box variant"><p><b>Anders als im Grundrezept</b>${esc(r.variantNote)}</p></div>` : ""}
       ${r.status !== "bestaetigt" ? `<div class="note-box draft"><p><b>Noch ein Entwurf</b>Prüf Mengen und Schritte und korrigiere, was nicht stimmt. Korrekturen im Entwurf landen nicht im Verlauf. Sobald du das Rezept bestätigst, wird jede weitere Änderung festgehalten.</p>
         <button class="btn ok" data-action="confirm">Als korrekt bestätigen</button></div>` : ""}
@@ -1011,7 +1266,7 @@ function ingRowHtml(i = {}) {
   return `<div class="ing-row" data-rid="${esc(i.recipeId || "")}">
     <input class="i-amount" value="${esc(i.amount)}" placeholder="200" aria-label="Menge" inputmode="decimal">
     <input class="i-unit" value="${esc(i.unit)}" placeholder="g" aria-label="Einheit" list="units">
-    <input class="i-name" value="${esc(i.name)}" placeholder="Zutat" aria-label="Zutat">
+    <input class="i-name" value="${esc(i.name)}" placeholder="Zutat" aria-label="Zutat" list="zutaten-namen">
     <input class="i-note" value="${esc(i.note)}" placeholder="Hinweis, z.B. eingeweicht" aria-label="Hinweis">
     <button type="button" data-action="rm-ing" aria-label="Zutat entfernen">×</button></div>`;
 }
@@ -1069,6 +1324,7 @@ function renderEditor(r, key) {
         <div class="field"><label for="f-chapter">Kapitel im Buch</label><select id="f-chapter"><option value="">Noch offen</option>${[...new Set([...CHAPTERS, ...recipes.map(x => x.chapter).filter(Boolean)])].map(c => `<option ${(src?.chapter || "") === c ? "selected" : ""}>${esc(c)}</option>`).join("")}</select></div>
         <div class="field"><label for="f-sub">Unterkapitel</label><input id="f-sub" list="subs" value="${esc(src?.subchapter || "")}" placeholder="z.B. Cupcakes"></div>
       </div>
+      <datalist id="zutaten-namen">${zutatNamen().map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       <datalist id="subs">${[...new Set(recipes.map(x => x.subchapter).filter(Boolean))].sort().map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       <div class="field"><label for="f-keywords">Stichwörter fürs Register</label><p class="hint">Mit Komma trennen. Titel, Themen und Hauptzutaten kommen automatisch ins Stichwortverzeichnis, hier nur Zusätzliches, z.B. „Mooncake, Mondfest“.</p><input id="f-keywords" value="${esc((src?.keywords || []).join(", "))}"></div>
       <div class="field"><span class="lbl">Foto</span>
@@ -1252,6 +1508,25 @@ app.addEventListener("click", async ev => {
   if (!a) return;
   if (a === "back") { if (inAppNav > 0) history.back(); else location.hash = t.dataset.fallback || ""; return; }
   if (a === "open-search") { state.focusSearch = true; return growTo(t, "rezepte", getComputedStyle(document.body).backgroundColor); }
+  if (a === "shop-add") { const ex = shop.items.find(x => x.id === r.id); const n = Number(t.dataset.servings) || 1; if (ex) ex.servings = n; else shop.items.push({ id: r.id, servings: n }); saveShop(); renderNav(); toast(ex ? "Menge auf der Einkaufsliste angepasst." : "Auf die Einkaufsliste gesetzt."); return renderDetail(r.id); }
+  if (a === "shop-inc" || a === "shop-dec") { const it = shop.items.find(x => x.id === t.dataset.id); const rr = byId(t.dataset.id); if (!it || !rr) return; const base = Number(rr.servings) || 1; const step = base >= 50 ? 10 : 1; it.servings = Math.max(step, it.servings + (a === "shop-inc" ? step : -step)); saveShop(); return renderShop(); }
+  if (a === "shop-rm") { shop.items = shop.items.filter(x => x.id !== t.dataset.id); saveShop(); renderNav(); return renderShop(); }
+  if (a === "shop-clear") { state.confirmClear = true; return renderShop(); }
+  if (a === "shop-clear-no") { state.confirmClear = false; return renderShop(); }
+  if (a === "shop-clear-yes") { shop = { items: [], checked: {} }; state.confirmClear = false; saveShop(); renderNav(); return renderShop(); }
+  if (a === "shop-share") return shareShop(t);
+  if (a === "list-panel") { state.listPanel = !state.listPanel; return renderDetail(r.id); }
+  if (a === "list-toggle") { const l = lists.find(x => x.id === t.dataset.list); if (!l) return; const ids = new Set(l.recipeIds || []); ids.has(r.id) ? ids.delete(r.id) : ids.add(r.id); t.disabled = true; return saveList(l.id, { recipeIds: [...ids] }); }
+  if (a === "list-new") { const inp = document.getElementById("new-list-name"); const name = (inp?.value || "").trim(); if (!name) { inp?.focus(); return; } t.disabled = true; try { await db.collection("lists").add({ title: name, recipeIds: t.dataset.with ? [t.dataset.with] : [], createdAt: new Date().toISOString() }); toast(`Liste „${name}“ angelegt.`); } catch (e) { toast(e?.message || "Speichern hat nicht geklappt."); t.disabled = false; } return; }
+  if (a === "list-rm") { const l = lists.find(x => x.id === r.id); if (!l) return; return saveList(l.id, { recipeIds: (l.recipeIds || []).filter(x => x !== t.dataset.id) }); }
+  if (a === "list-rename") { const l = lists.find(x => x.id === r.id); const tb = t.closest(".toolbar"); tb.insertAdjacentHTML("afterend", `<div class="inline-new" style="margin-top:10px"><input id="rename-list" value="${esc(l.title)}" aria-label="Neuer Name"><button type="button" class="btn small primary" data-action="list-rename-save">Speichern</button></div>`); t.remove(); document.getElementById("rename-list").focus(); return; }
+  if (a === "list-rename-save") { const v = document.getElementById("rename-list").value.trim(); if (v) return saveList(r.id, { title: v }); return; }
+  if (a === "list-del") { state.confirmListDel = true; return renderListDetail(r.id); }
+  if (a === "list-del-no") { state.confirmListDel = false; return renderListDetail(r.id); }
+  if (a === "list-del-yes") { t.disabled = true; try { await db.doc("lists/" + r.id).delete(); state.confirmListDel = false; location.hash = "listen"; } catch (e) { toast(e?.message || "Löschen hat nicht geklappt."); t.disabled = false; } return; }
+  if (a === "have-add") { const inp = document.getElementById("have-input"); const v = (inp.value || "").trim(); if (v && !have.some(x => x.toLowerCase() === v.toLowerCase())) { have.push(v); saveHave(); } renderHave(); document.getElementById("have-input").focus(); return; }
+  if (a === "have-rm") { have = have.filter(x => x !== t.dataset.have); saveHave(); return renderHave(); }
+  if (a === "have-clear") { have = []; saveHave(); return renderHave(); }
   if (a === "kt") { const k = t.closest(".kt"); k.classList.toggle("open"); t.setAttribute("aria-expanded", k.classList.contains("open")); return; }
   const rec = r.id ? byId(r.id) : null;
   if (a === "less" || a === "more" || a === "base") {
@@ -1291,6 +1566,8 @@ app.addEventListener("click", async ev => {
 app.addEventListener("click", ev => {
   const g = ev.target.closest("a[data-grow]");
   if (g && !ev.metaKey && !ev.ctrlKey) { ev.preventDefault(); return growTo(g, g.getAttribute("href").slice(1), getComputedStyle(g).backgroundColor); }
+  const ls = ev.target.closest("a[data-action=list-to-shop]");
+  if (ls) { const l = lists.find(x => x.id === route().id); (l?.recipeIds || []).map(byId).filter(Boolean).forEach(r => { if (!shop.items.some(x => x.id === r.id)) shop.items.push({ id: r.id, servings: Number(r.servings) || 1 }); }); saveShop(); renderNav(); return; }
   const j = ev.target.closest("a[data-jump]");
   if (j) { ev.preventDefault(); document.getElementById("g-" + j.dataset.jump)?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" }); }
 }, true);
@@ -1299,8 +1576,13 @@ function navAction(t) {
   if (t.dataset.nav === "key") return openKeyDialog();
 }
 document.getElementById("side").addEventListener("click", ev => { const t = ev.target.closest("[data-nav]"); if (t) navAction(t); });
+async function saveList(id, data) {
+  try { await db.doc("lists/" + id).update({ ...data, updatedAt: new Date().toISOString() }); }
+  catch (e) { toast(e?.message || "Speichern hat nicht geklappt."); render(); }
+}
 app.addEventListener("change", ev => {
   const t = ev.target;
+  if (t.dataset.shop != null) { t.checked ? shop.checked[t.dataset.shop] = true : delete shop.checked[t.dataset.shop]; saveShop(); t.closest("li").classList.toggle("done", t.checked); return; }
   if (t.dataset.ing != null) {
     const id = route().id; const s = checked[id] || (checked[id] = new Set()); const i = Number(t.dataset.ing);
     t.checked ? s.add(i) : s.delete(i); t.closest("li").classList.toggle("done", t.checked);
@@ -1325,6 +1607,11 @@ async function preparePhoto(file) {
 }
 app.addEventListener("input", ev => { if (ev.target.id === "q") { state.q = ev.target.value; renderResults(); } });
 app.addEventListener("submit", ev => { ev.preventDefault(); saveForm(); });
+app.addEventListener("keydown", ev => {
+  if (ev.key === "Enter" && ev.target.id === "have-input") { ev.preventDefault(); document.querySelector("[data-action=have-add]").click(); }
+  if (ev.key === "Enter" && ev.target.id === "new-list-name") { ev.preventDefault(); document.querySelector("[data-action=list-new]").click(); }
+  if (ev.key === "Enter" && ev.target.id === "rename-list") { ev.preventDefault(); document.querySelector("[data-action=list-rename-save]").click(); }
+});
 app.addEventListener("keydown", ev => { if (ev.target.id === "f-newtopic" && ev.key === "Enter") { ev.preventDefault(); document.querySelector("[data-action=add-topic]").click(); } });
 
 // Zählt Schritte innerhalb der App, damit „Zurück“ nicht aus der App hinausführt
@@ -1345,6 +1632,11 @@ window.addEventListener("hashchange", () => {
     recipes = s.docs.map(d => ({ id: d.id, ...d.data() }));
     render();
   }, e => { clearTimeout(timer); loadErr = e?.message || e?.code || "error"; render(); });
+  db.collection("lists").limit(500).onSnapshot(s => {
+    lists = s.docs.map(d => ({ id: d.id, ...d.data() })); listsLoaded = true;
+    const v = route().view; if (loaded && ["lists", "list", "detail"].includes(v)) render();
+  }, () => { listsLoaded = true; });
+  fetch("data/zutaten.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(z => { Z = z; ZI = null; if (loaded && route().view !== "edit") render(true); }).catch(() => {});
 })();
 </script>
 </body>
