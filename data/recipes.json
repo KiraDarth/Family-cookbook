@@ -137,7 +137,6 @@
    "## Verzieren",
    "Die Cupcakes grosszügig mit dem Frosting bestreichen und jeden mit einer Kekshälfte verzieren."
   ],
-  "time": "30 Min + 18–20 Min Backen",
   "tips": "Im Buch werden Newman-O's verwendet, es gehen aber alle veganen Schoko-Sandwichkekse mit Cremefüllung.\n\nDie Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).",
   "title": "Cookies-'n'-Cream-Cupcakes",
   "topics": [
@@ -147,7 +146,11 @@
   ],
   "updatedAt": "2026-11-17T16:45:00.000Z",
   "variantNote": "10 grob gehackte Schoko-Sandwichkekse im Teig, Frosting aus veganer Buttercreme mit zerbröselten Keksen, je eine Kekshälfte obendrauf.",
-  "yieldUnit": "Stück"
+  "yieldUnit": "Stück",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Cupcakes",
+  "prepTime": "30 Min",
+  "cookTime": "18–20 Min"
  },
  "cremige-tofu-nudeln": {
   "createdAt": "2026-11-19T10:20:00.000Z",
@@ -302,7 +305,9 @@
    "Nudeln"
   ],
   "updatedAt": "2026-11-19T10:20:00.000Z",
-  "yieldUnit": "Portionen"
+  "yieldUnit": "Portionen",
+  "chapter": "Hauptgerichte",
+  "subchapter": "Nudeln"
  },
  "eifreie-waffeln": {
   "createdAt": "2026-11-19T19:05:00.000Z",
@@ -396,7 +401,9 @@
    "Waffeln"
   ],
   "updatedAt": "2026-11-19T19:05:00.000Z",
-  "yieldUnit": "kleine Waffeln"
+  "yieldUnit": "kleine Waffeln",
+  "chapter": "Frühstück",
+  "subchapter": "Pancakes & Waffeln"
  },
  "grundmilch": {
   "confirmedAt": "2026-11-17T16:38:06.057Z",
@@ -457,7 +464,9 @@
    "Pflanzenmilch"
   ],
   "updatedAt": "2026-11-17T16:38:06.057Z",
-  "yieldUnit": "dl"
+  "yieldUnit": "dl",
+  "chapter": "Grundrezepte",
+  "subchapter": "Pflanzenmilch"
  },
  "kokosmilch": {
   "confirmedAt": "2026-11-17T16:25:59.900Z",
@@ -514,7 +523,9 @@
   ],
   "updatedAt": "2026-11-17T16:25:59.900Z",
   "variantNote": "Mehr Kokosraspeln (96 g statt 54 g), weniger Cashews (30 g statt 36 g), ohne Hafer.",
-  "yieldUnit": "dl"
+  "yieldUnit": "dl",
+  "chapter": "Grundrezepte",
+  "subchapter": "Pflanzenmilch"
  },
  "nussige-milch": {
   "confirmedAt": "2026-11-17T16:38:18.639Z",
@@ -583,7 +594,9 @@
   ],
   "updatedAt": "2026-11-17T16:38:18.639Z",
   "variantNote": "Zusätzlich 14 g Barunüsse, dafür etwas weniger Cashews (34 g statt 36 g) und Haferflocken (11 g statt 18 g).",
-  "yieldUnit": "dl"
+  "yieldUnit": "dl",
+  "chapter": "Grundrezepte",
+  "subchapter": "Pflanzenmilch"
  },
  "satz-baru-kakao-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -666,7 +679,9 @@
    "Gebäck"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Cookies"
  },
  "satz-baru-zimt-knusper": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -729,7 +744,9 @@
    "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Frühstück",
+  "subchapter": "Müsli & Riegel"
  },
  "satz-honig-hafer-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -807,7 +824,9 @@
    "Gebäck"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Cookies"
  },
  "satz-kokos-bananen-bites": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -870,7 +889,9 @@
    "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Snacks & Bites"
  },
  "satz-kokos-baru-energy-balls": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -933,7 +954,9 @@
    "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Snacks & Bites"
  },
  "satz-kokos-fruehstuecksriegel": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -996,7 +1019,9 @@
    "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Frühstück",
+  "subchapter": "Müsli & Riegel"
  },
  "satz-kokos-honig-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1074,7 +1099,9 @@
    "Gebäck"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Cookies"
  },
  "satz-pancakes": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1155,7 +1182,9 @@
    "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Frühstück",
+  "subchapter": "Pancakes & Waffeln"
  },
  "satz-weiche-fruehstuecksriegel": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1218,7 +1247,9 @@
    "Reste-Verwertung"
   ],
   "updatedAt": "2026-11-17T13:00:00.000Z",
-  "yieldUnit": "g Satz"
+  "yieldUnit": "g Satz",
+  "chapter": "Frühstück",
+  "subchapter": "Müsli & Riegel"
  },
  "schoko-cupcakes": {
   "createdAt": "2026-11-17T13:45:00.000Z",
@@ -1315,7 +1346,6 @@
    "18 bis 20 Minuten backen, bis ein Zahnstocher in der Mitte sauber herauskommt.",
    "Auf ein Kuchengitter setzen und vollständig auskühlen lassen."
   ],
-  "time": "15 Min + 18–20 Min Backen",
   "tips": "Die Mengen sind aus amerikanischen Cups umgerechnet (1 Cup = 240 ml), die Cup-Angaben stehen zum Vergleich dabei. EL und TL sind genormte Messlöffel (EL = 15 ml, TL = 5 ml).\n\nFür dunklere Cupcakes Kakao nach holländischer Art verwenden, oder eine Mischung aus schwarzem und normalem Kakao.\n\nLässt sich mit jedem Frosting, jeder Glasur oder Füllung kombinieren. Pur schmecken sie mit einem Glas kalter Sojamilch.",
   "title": "Schokoladen-Cupcakes (Grundrezept)",
   "topics": [
@@ -1324,7 +1354,11 @@
    "Cupcakes"
   ],
   "updatedAt": "2026-11-17T13:45:00.000Z",
-  "yieldUnit": "Stück"
+  "yieldUnit": "Stück",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Cupcakes",
+  "prepTime": "15 Min",
+  "cookTime": "18–20 Min"
  },
  "vegane-buttercreme": {
   "confirmedAt": "2026-11-17T16:39:14.029Z",
@@ -1380,6 +1414,8 @@
    "Frosting"
   ],
   "updatedAt": "2026-11-17T20:21:00.000Z",
-  "yieldUnit": "Cupcakes"
+  "yieldUnit": "Cupcakes",
+  "chapter": "Grundrezepte",
+  "subchapter": "Cremes & Frostings"
  }
 }
