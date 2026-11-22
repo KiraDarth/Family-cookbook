@@ -811,7 +811,7 @@
  },
  "satz-honig-hafer-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
-  "historyCount": 0,
+  "historyCount": 1,
   "ingredients": [
    {
     "amount": "100",
@@ -866,7 +866,7 @@
   "restVon": "grundmilch",
   "servings": 100,
   "source": "Die kleine Satzküche (PDF), Rezept 4 von 9",
-  "status": "entwurf",
+  "status": "bestaetigt",
   "steps": [
    "## Teig mischen und formen",
    "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
@@ -883,13 +883,14 @@
   "topics": [
    "Reste-Verwertung"
   ],
-  "updatedAt": "2026-11-17T13:00:00.000Z",
+  "updatedAt": "2026-11-22T14:41:03.273Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Cookies",
   "keywords": [
    "Gebäck"
-  ]
+  ],
+  "confirmedAt": "2026-11-22T14:41:03.273Z"
  },
  "satz-kokos-bananen-bites": {
   "createdAt": "2026-11-17T13:00:00.000Z",
