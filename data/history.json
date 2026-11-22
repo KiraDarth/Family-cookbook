@@ -194,20 +194,32 @@
     {
      "amount": "95",
      "name": "pflanzliches Backfett",
-     "note": "ungehärtet, ½ Cup",
-     "unit": "g"
+     "note": "ungehärtet",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "115",
      "name": "vegane Margarine",
-     "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
-     "unit": "g"
+     "note": "ungehärtet, z.B. Earth Balance",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "420",
      "name": "Puderzucker",
-     "note": "gesiebt, falls klumpig, 3½ Cups",
-     "unit": "g"
+     "note": "gesiebt, falls klumpig",
+     "unit": "g",
+     "orig": {
+      "amount": "3½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1½",
@@ -218,8 +230,12 @@
     {
      "amount": "60",
      "name": "Sojamilch oder Soja-Rahm",
-     "note": "ungesüsst, ¼ Cup",
-     "unit": "ml"
+     "note": "ungesüsst",
+     "unit": "ml",
+     "orig": {
+      "amount": "¼",
+      "unit": "Cup"
+     }
     }
    ],
    "intro": "Das Allzweck-Frosting: zum Aufspritzen in üppigen Wirbeln und genauso gut zum Bestreichen.",
@@ -252,8 +268,12 @@
     {
      "amount": "240",
      "name": "Sojamilch",
-     "note": "1 Cup",
-     "unit": "ml"
+     "note": "",
+     "unit": "ml",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1",
@@ -264,14 +284,22 @@
     {
      "amount": "150",
      "name": "Zucker",
-     "note": "¾ Cup",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "¾",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "80",
      "name": "Rapsöl",
-     "note": "⅓ Cup",
-     "unit": "ml"
+     "note": "",
+     "unit": "ml",
+     "orig": {
+      "amount": "⅓",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1",
@@ -291,14 +319,22 @@
     {
      "amount": "125",
      "name": "Weissmehl",
-     "note": "1 Cup",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "30",
      "name": "Kakaopulver",
-     "note": "⅓ Cup, holländische Art oder normal",
-     "unit": "g"
+     "note": "holländische Art oder normal",
+     "unit": "g",
+     "orig": {
+      "amount": "⅓",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "¾",
@@ -324,8 +360,12 @@
     {
      "amount": "10",
      "name": "vegane Schoko-Sandwichkekse",
-     "note": "mit Cremefüllung, grob gehackt (ca. 1 Cup)",
-     "unit": ""
+     "note": "mit Cremefüllung, grob gehackt",
+     "unit": "",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "heading": "Für das Frosting"
@@ -340,8 +380,12 @@
     {
      "amount": "50",
      "name": "vegane Schoko-Sandwichkekse",
-     "note": "fein zerbröselt (ca. ½ Cup)",
-     "unit": "g"
+     "note": "fein zerbröselt",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "heading": "Zum Verzieren"
@@ -409,8 +453,12 @@
     {
      "amount": "240",
      "name": "Sojamilch",
-     "note": "1 Cup",
-     "unit": "ml"
+     "note": "",
+     "unit": "ml",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1",
@@ -421,14 +469,22 @@
     {
      "amount": "150",
      "name": "Zucker",
-     "note": "¾ Cup",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "¾",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "80",
      "name": "Rapsöl",
-     "note": "⅓ Cup",
-     "unit": "ml"
+     "note": "",
+     "unit": "ml",
+     "orig": {
+      "amount": "⅓",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1",
@@ -448,14 +504,22 @@
     {
      "amount": "125",
      "name": "Weissmehl",
-     "note": "1 Cup",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "30",
      "name": "Kakaopulver",
-     "note": "⅓ Cup, holländische Art oder normal",
-     "unit": "g"
+     "note": "holländische Art oder normal",
+     "unit": "g",
+     "orig": {
+      "amount": "⅓",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "¾",
@@ -481,8 +545,12 @@
     {
      "amount": "10",
      "name": "vegane Schoko-Sandwichkekse",
-     "note": "mit Cremefüllung, grob gehackt (ca. 1 Cup)",
-     "unit": ""
+     "note": "mit Cremefüllung, grob gehackt",
+     "unit": "",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "heading": "Für das Frosting"
@@ -497,8 +565,12 @@
     {
      "amount": "50",
      "name": "vegane Schoko-Sandwichkekse",
-     "note": "fein zerbröselt (ca. ½ Cup)",
-     "unit": "g"
+     "note": "fein zerbröselt",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "heading": "Zum Verzieren"
@@ -551,8 +623,12 @@
     {
      "amount": "240",
      "name": "Sojamilch",
-     "note": "1 Cup",
-     "unit": "ml"
+     "note": "",
+     "unit": "ml",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1",
@@ -563,14 +639,22 @@
     {
      "amount": "150",
      "name": "Zucker",
-     "note": "¾ Cup",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "¾",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "80",
      "name": "Rapsöl",
-     "note": "⅓ Cup",
-     "unit": "ml"
+     "note": "",
+     "unit": "ml",
+     "orig": {
+      "amount": "⅓",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1",
@@ -590,14 +674,22 @@
     {
      "amount": "125",
      "name": "Weissmehl",
-     "note": "1 Cup",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "30",
      "name": "Kakaopulver",
-     "note": "⅓ Cup, holländische Art oder normal",
-     "unit": "g"
+     "note": "holländische Art oder normal",
+     "unit": "g",
+     "orig": {
+      "amount": "⅓",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "¾",
@@ -614,8 +706,12 @@
     {
      "amount": "1,5",
      "name": "Salz",
-     "note": "¼ TL",
-     "unit": "g"
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "¼",
+      "unit": "TL"
+     }
     },
     {
      "heading": "Teig fertigstellen"
@@ -623,8 +719,12 @@
     {
      "amount": "10",
      "name": "vegane Schoko-Sandwichkekse",
-     "note": "mit Cremefüllung, grob gehackt (ca. 1 Cup)",
-     "unit": ""
+     "note": "mit Cremefüllung, grob gehackt",
+     "unit": "",
+     "orig": {
+      "amount": "1",
+      "unit": "Cup"
+     }
     },
     {
      "heading": "Für das Frosting"
@@ -639,8 +739,12 @@
     {
      "amount": "50",
      "name": "vegane Schoko-Sandwichkekse",
-     "note": "fein zerbröselt (ca. ½ Cup)",
-     "unit": "g"
+     "note": "fein zerbröselt",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "heading": "Zum Verzieren"
@@ -696,20 +800,32 @@
     {
      "amount": "95",
      "name": "pflanzliches Backfett",
-     "note": "ungehärtet, ½ Cup",
-     "unit": "g"
+     "note": "ungehärtet",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "115",
      "name": "vegane Margarine",
-     "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
-     "unit": "g"
+     "note": "ungehärtet, z.B. Earth Balance",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "420",
      "name": "Puderzucker",
-     "note": "gesiebt, falls klumpig, 3½ Cups",
-     "unit": "g"
+     "note": "gesiebt, falls klumpig",
+     "unit": "g",
+     "orig": {
+      "amount": "3½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1½",
@@ -720,8 +836,12 @@
     {
      "amount": "60",
      "name": "Sojamilch oder Soja-Rahm",
-     "note": "ungesüsst, ¼ Cup",
-     "unit": "ml"
+     "note": "ungesüsst",
+     "unit": "ml",
+     "orig": {
+      "amount": "¼",
+      "unit": "Cup"
+     }
     }
    ],
    "steps": [
@@ -746,20 +866,32 @@
     {
      "amount": "95",
      "name": "pflanzliches Backfett",
-     "note": "ungehärtet, ½ Cup",
-     "unit": "g"
+     "note": "ungehärtet",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "115",
      "name": "Margarine",
-     "note": "ungehärtet, z.B. Earth Balance, ½ Cup",
-     "unit": "g"
+     "note": "ungehärtet, z.B. Earth Balance",
+     "unit": "g",
+     "orig": {
+      "amount": "½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "420",
      "name": "Puderzucker",
-     "note": "gesiebt, falls klumpig, 3½ Cups",
-     "unit": "g"
+     "note": "gesiebt, falls klumpig",
+     "unit": "g",
+     "orig": {
+      "amount": "3½",
+      "unit": "Cup"
+     }
     },
     {
      "amount": "1½",
@@ -770,8 +902,12 @@
     {
      "amount": "60",
      "name": "Sojamilch oder Soja-Rahm",
-     "note": "ungesüsst, ¼ Cup",
-     "unit": "ml"
+     "note": "ungesüsst",
+     "unit": "ml",
+     "orig": {
+      "amount": "¼",
+      "unit": "Cup"
+     }
     }
    ],
    "steps": [
