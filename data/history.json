@@ -1285,5 +1285,491 @@
    "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
    "source": "Die kleine Satzküche (PDF), Rezept 4 von 9"
   }
+ },
+ "zql5vgc0ulr8hi": {
+  "recipeId": "satz-kokos-honig-cookies",
+  "at": "2026-11-22T15:13:19.000Z",
+  "type": "aenderung",
+  "note": "Tipp für zu trockenen Teig ergänzt",
+  "prev": {
+   "title": "Kokos-Honig-Cookies",
+   "intro": "Kokosreich, mild und cremig",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der Kokosmilch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille oder Zimt",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+    "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+    "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 1 von 9"
+  },
+  "snapshot": {
+   "title": "Kokos-Honig-Cookies",
+   "intro": "Kokosreich, mild und cremig",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der Kokosmilch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille oder Zimt",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+    "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+    "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\n\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Kokosmilch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 1 von 9"
+  }
+ },
+ "9ui307mom021o6": {
+  "recipeId": "satz-honig-hafer-cookies",
+  "at": "2026-11-22T15:13:19.000Z",
+  "type": "aenderung",
+  "note": "Tipp für zu trockenen Teig ergänzt",
+  "prev": {
+   "title": "Honig-Hafer-Cookies",
+   "intro": "Mild, cremig, leicht haferig und gut bindend",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der Grundmilch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille oder Zimt",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+    "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+    "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 4 von 9"
+  },
+  "snapshot": {
+   "title": "Honig-Hafer-Cookies",
+   "intro": "Mild, cremig, leicht haferig und gut bindend",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der Grundmilch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille oder Zimt",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+    "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+    "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\n\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Grundmilch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 4 von 9"
+  }
+ },
+ "jb0tluzxtw02zo": {
+  "recipeId": "satz-baru-kakao-cookies",
+  "at": "2026-11-22T15:13:19.000Z",
+  "type": "aenderung",
+  "note": "Tipp für zu trockenen Teig ergänzt",
+  "prev": {
+   "title": "Baru-Kakao-Cookies",
+   "intro": "Kokosig, cremig und röstig-nussig",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der nussigen Milch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "2,5",
+     "name": "Backkakao",
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "1",
+      "unit": "TL"
+     }
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kakao, Kokosfett und Salz vermischen. Nach Wunsch Vanille zugeben.",
+    "Kleine Cookies formen und auf Backpapier setzen. Kakao bindet Flüssigkeit, deshalb zusätzliches Mehl nur bei tatsächlich zu nassem Teig zugeben.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 7 von 9"
+  },
+  "snapshot": {
+   "title": "Baru-Kakao-Cookies",
+   "intro": "Kokosig, cremig und röstig-nussig",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der nussigen Milch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "2,5",
+     "name": "Backkakao",
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "1",
+      "unit": "TL"
+     }
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kakao, Kokosfett und Salz vermischen. Nach Wunsch Vanille zugeben.",
+    "Kleine Cookies formen und auf Backpapier setzen. Kakao bindet Flüssigkeit, deshalb zusätzliches Mehl nur bei tatsächlich zu nassem Teig zugeben.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\n\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Nussige Milch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 7 von 9"
+  }
  }
 }
