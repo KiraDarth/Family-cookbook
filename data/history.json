@@ -1114,5 +1114,95 @@
    "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
    "source": "Die kleine Satzküche (PDF), Rezept 1 von 9"
   }
+ },
+ "mwry1g0mws2gwt": {
+  "recipeId": "satz-baru-kakao-cookies",
+  "at": "2026-11-22T14:40:05.625Z",
+  "type": "bestaetigt",
+  "note": "",
+  "snapshot": {
+   "title": "Baru-Kakao-Cookies",
+   "intro": "Kokosig, cremig und röstig-nussig",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der nussigen Milch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "2,5",
+     "name": "Backkakao",
+     "note": "",
+     "unit": "g",
+     "orig": {
+      "amount": "1",
+      "unit": "TL"
+     }
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kakao, Kokosfett und Salz vermischen. Nach Wunsch Vanille zugeben.",
+    "Kleine Cookies formen und auf Backpapier setzen. Kakao bindet Flüssigkeit, deshalb zusätzliches Mehl nur bei tatsächlich zu nassem Teig zugeben.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 7 von 9"
+  }
  }
 }
