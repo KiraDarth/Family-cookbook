@@ -654,7 +654,7 @@
  },
  "satz-baru-kakao-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
-  "historyCount": 0,
+  "historyCount": 1,
   "ingredients": [
    {
     "amount": "100",
@@ -719,7 +719,7 @@
   "restVon": "nussige-milch",
   "servings": 100,
   "source": "Die kleine Satzküche (PDF), Rezept 7 von 9",
-  "status": "entwurf",
+  "status": "bestaetigt",
   "steps": [
    "## Teig mischen und formen",
    "Satz, Haferflocken, Mehl, Honig, Zucker, Kakao, Kokosfett und Salz vermischen. Nach Wunsch Vanille zugeben.",
@@ -735,13 +735,14 @@
   "topics": [
    "Reste-Verwertung"
   ],
-  "updatedAt": "2026-11-20T19:52:40.000Z",
+  "updatedAt": "2026-11-22T14:40:05.625Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Cookies",
   "keywords": [
    "Gebäck"
-  ]
+  ],
+  "confirmedAt": "2026-11-22T14:40:05.625Z"
  },
  "satz-baru-zimt-knusper": {
   "createdAt": "2026-11-17T13:00:00.000Z",
