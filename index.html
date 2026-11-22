@@ -677,21 +677,9 @@ function setOrigMode(on) { try { on ? localStorage.setItem(ORIG_KEY, "1") : loca
 // Originalmenge aus dem Quellrezept (Cups, EL, TL), z.B. { amount: "¾", unit: "Cup" }
 function origText(o, factor = 1) {
   if (!o || !(o.amount || o.unit)) return "";
-  let a = o.amount || "";
-  if (factor !== 1) {
-    // Cups und Löffel auf übliche Messgrössen runden (⅛, ¼, ⅓, ½, ⅔, ¾)
-    const vals = parseAmount(a);
-    if (vals) a = vals.map(x => {
-      x *= factor;
-      if (x >= 10) return String(Math.round(x));
-      const w = Math.floor(x), f = x - w;
-      const [fv, fg] = [[0, ""], [1 / 8, "⅛"], [1 / 4, "¼"], [1 / 3, "⅓"], [1 / 2, "½"], [2 / 3, "⅔"], [3 / 4, "¾"], [1, ""]].reduce((best, c) => Math.abs(f - c[0]) < Math.abs(f - best[0]) ? c : best);
-      const ww = fv === 1 ? w + 1 : w;
-      return fg ? (ww ? String(ww) : "") + fg : String(ww || "⅛");
-    }).join("–");
-  }
+  let a = o.amount || "", u = o.unit || "";
   const v = parseAmount(a);
-  let u = o.unit || "";
+  if (measureUnit(u) && v) return qtyText(a, u, factor);
   if (/^cups?$/i.test(u)) u = v && Math.max(...v) > 1 ? "Cups" : "Cup";
   return [a, u].filter(Boolean).join(" ");
 }
@@ -779,6 +767,57 @@ function fmtNum(n) {
     }
   }
   return String(Math.round(n * 10) / 10).replace(".", ",");
+}
+// Genormte Messgrössen: nur Mengen, die sich mit einem Messlöffel-/Cup-Set abmessen lassen.
+// Löffel: 1 EL (= 3 TL), 1 TL, ½ TL, ¼ TL, ⅛ TL. Cups: 1, ¾, ⅔, ½, ⅓, ¼ Cup (1 Cup = 16 EL).
+const TL_PER = { TL: 1, EL: 3, Cup: 48 };
+function measureUnit(u) {
+  u = String(u || "").trim().replace(/\.$/, "");
+  if (/^cups?$/i.test(u)) return "Cup";
+  if (/^(el|tbsp)$/i.test(u)) return "EL";
+  if (/^(tl|tsp)$/i.test(u)) return "TL";
+  return null;
+}
+function spoonParts(tl) {
+  const parts = [];
+  const el = Math.floor(tl / 3 + 1e-9);
+  if (el) parts.push(el + " EL");
+  tl -= el * 3;
+  const whole = Math.floor(tl + 1e-9);
+  let rest = tl - whole, head = whole ? String(whole) : "";
+  const more = [];
+  for (const [v, g] of [[1 / 2, "½"], [1 / 4, "¼"], [1 / 8, "⅛"]]) {
+    if (rest + 1e-9 >= v) { rest -= v; if (!head || /^\d+$/.test(head)) head += g; else more.push(g + " TL"); }
+  }
+  if (head) parts.push(head + " TL");
+  return parts.concat(more);
+}
+// x in der Einheit unit (EL, TL oder Cup) → z.B. "1 EL + 1 TL" oder "½ Cup + 2 EL"
+function measureText(x, unit) {
+  let tl = x * TL_PER[unit];
+  if (!(tl > 0)) return "";
+  const g = tl < 1 ? 1 / 8 : tl < 6 ? 1 / 4 : tl < 24 ? 1 / 2 : tl < 48 ? 1 : 3;
+  tl = Math.max(1 / 8, Math.round(tl / g) * g);
+  const parts = [];
+  if (unit === "Cup" && tl >= 12 - 1e-9) {
+    const cupsets = [[3 / 4, "¾"], [2 / 3, "⅔"], [1 / 2, "½"], [1 / 3, "⅓"], [1 / 4, "¼"], [0, ""]];
+    // fast genau eine Cup-Grösse (±4 %)? Dann diese nehmen statt Löffel-Rest
+    const cups = tl / 48, w0 = Math.floor(cups + 1e-9);
+    const near = [...cupsets, [1, ""]].map(([v]) => w0 + v).find(c => c > 0 && Math.abs(c - cups) <= c * 0.04);
+    if (near != null) tl = near * 48;
+    const c = tl / 48, w = Math.floor(c + 1e-9), [fv, fg] = cupsets.find(([v]) => c - w + 1e-9 >= v);
+    parts.push((w ? String(w) : "") + fg + " " + (w + fv > 1 ? "Cups" : "Cup"));
+    const gr = Math.max(g, 1); // Löffel-Rest neben Cups auf ganze TL
+    tl = Math.round((tl - (w + fv) * 48) / gr) * gr;
+    if (tl < 1 / 8) tl = 0;
+  }
+  return parts.concat(spoonParts(tl)).join(" + ");
+}
+// Menge + Einheit als Text; EL/TL/Cup werden in Messgrössen umgerechnet
+function qtyText(amount, unit, factor = 1) {
+  const mu = measureUnit(unit), v = parseAmount(amount);
+  if (mu && v) return measureText(Math.max(...v) * factor, mu);
+  return [factor === 1 ? (amount || "") : scaledAmount(amount, factor), unit].filter(Boolean).join(" ");
 }
 function scaledAmount(amount, factor) {
   if (factor === 1) return amount || "";
@@ -1096,7 +1135,7 @@ function shopRows() {
     if (n != null) { const u = i.unit || ""; row.amounts.set(u, (row.amounts.get(u) || 0) + n * factor); } else row.loose = true;
   };
   shop.items.forEach(it => { const r = byId(it.id); if (!r) return; const base = Number(r.servings) || 0; const f = base ? it.servings / base : 1; (r.ingredients || []).forEach(i => add(r.id, i, f, r.title)); });
-  const amt = row => [...[...row.amounts].map(([u, n]) => fmtNum(n) + " " + (u || "Stück")), ...(row.loose ? [row.amounts.size ? "etwas" : "nach Bedarf"] : [])].join(" + ");
+  const amt = row => [...[...row.amounts].map(([u, n]) => (measureUnit(u) ? measureText(n, measureUnit(u)) : fmtNum(n) + " " + (u || "Stück"))), ...(row.loose ? [row.amounts.size ? "etwas" : "nach Bedarf"] : [])].join(" + ");
   const out = [...rows.values()].map(r => ({ ...r, amountText: amt(r), group: r.entry?.oberbegriff || "Noch nicht eingeordnet" }));
   out.sort((a, b) => a.group.localeCompare(b.group, "de") || a.name.localeCompare(b.name, "de"));
   return {
@@ -1225,7 +1264,7 @@ function renderDetail(id) {
   const hasOrig = (r.ingredients || []).some(i => i.orig && (i.orig.amount || i.orig.unit));
   const useOrig = hasOrig && origMode();
   const amtHtml = i => {
-    const metric = [scaledAmount(i.amount, factor), i.unit].filter(Boolean).join(" ");
+    const metric = qtyText(i.amount, i.unit, factor);
     const o = origText(i.orig, factor);
     if (!o) return esc(metric);
     return useOrig ? `${esc(o)}${metric ? `<span class="alt">${esc(metric)}</span>` : ""}` : `${esc(metric || o)}${metric ? `<span class="alt">${esc(o)}</span>` : ""}`;
