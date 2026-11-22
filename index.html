@@ -184,6 +184,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .ing-list input { accent-color: var(--accent); width: 18px; height: 18px; transform: translateY(3px); }
 .ing-list .amt { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); }
 .ing-list .nm small { color: var(--muted); }
+.ing-list .amt .alt { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); line-height: 1.25; }
+.unit-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; margin: 0 0 12px; background: var(--bg); }
+.unit-switch button { border: 0; background: transparent; padding: 5px 12px; border-radius: 999px; font: inherit; font-size: .85rem; cursor: pointer; color: var(--muted); }
+.unit-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; font-weight: 700; }
 .ing-list li.done .amt, .ing-list li.done .nm { text-decoration: line-through; opacity: .5; }
 .ing-list li.hd { border-bottom: 0; padding: 14px 0 2px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
 .ing-list li.hd:first-child { padding-top: 0; }
@@ -220,13 +224,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .field textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
 .row2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 14px; }
 .ing-rows { display: flex; flex-direction: column; gap: 8px; }
-.ing-row { display: grid; grid-template-columns: 5rem 5rem minmax(0, 1fr) minmax(0, 1fr) 40px; gap: 6px; align-items: center; }
+.ing-row { display: grid; grid-template-columns: 5rem 5rem minmax(0, 1fr) minmax(0, 1fr) 6.5rem 40px; gap: 6px; align-items: center; }
 .ing-row.heading { grid-template-columns: minmax(0, 1fr) 40px; }
 .ing-row.heading input { font-weight: 700; background: var(--bg); }
 .ing-row button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; color: var(--muted); font-size: 1.1rem; }
 @media (max-width: 620px) {
   .ing-row { grid-template-columns: 4.2rem 4.2rem minmax(0, 1fr) 40px; }
-  .ing-row .i-note { grid-column: 1 / 4; grid-row: 2; }
+  .ing-row .i-note { grid-column: 3 / 4; grid-row: 2; }
+  .ing-row .i-orig { grid-column: 1 / 3; grid-row: 2; }
   .ing-row:not(.heading) { padding-bottom: 8px; border-bottom: 1px dotted var(--line); }
 }
 .ing-tools { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -666,6 +671,41 @@ function rowHtml(r, metaOverride) {
   return `<a class="rrow" href="#r-${esc(r.id)}">${thumbHtml(r)}<span class="tx"><b>${esc(r.title || "Ohne Titel")}${r.status !== "bestaetigt" ? `<span class="pill draft">Entwurf</span>` : ""}</b>${meta ? `<small>${esc(meta)}</small>` : ""}</span></a>`;
 }
 function recentIds() { try { return JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); } catch { return []; } }
+const ORIG_KEY = "kochbuch-originalmengen";
+function origMode() { try { return localStorage.getItem(ORIG_KEY) === "1"; } catch { return false; } }
+function setOrigMode(on) { try { on ? localStorage.setItem(ORIG_KEY, "1") : localStorage.removeItem(ORIG_KEY); } catch {} }
+// Originalmenge aus dem Quellrezept (Cups, EL, TL), z.B. { amount: "¾", unit: "Cup" }
+function origText(o, factor = 1) {
+  if (!o || !(o.amount || o.unit)) return "";
+  let a = o.amount || "";
+  if (factor !== 1) {
+    // Cups und Löffel auf übliche Messgrössen runden (⅛, ¼, ⅓, ½, ⅔, ¾)
+    const vals = parseAmount(a);
+    if (vals) a = vals.map(x => {
+      x *= factor;
+      if (x >= 10) return String(Math.round(x));
+      const w = Math.floor(x), f = x - w;
+      const [fv, fg] = [[0, ""], [1 / 8, "⅛"], [1 / 4, "¼"], [1 / 3, "⅓"], [1 / 2, "½"], [2 / 3, "⅔"], [3 / 4, "¾"], [1, ""]].reduce((best, c) => Math.abs(f - c[0]) < Math.abs(f - best[0]) ? c : best);
+      const ww = fv === 1 ? w + 1 : w;
+      return fg ? (ww ? String(ww) : "") + fg : String(ww || "⅛");
+    }).join("–");
+  }
+  const v = parseAmount(a);
+  let u = o.unit || "";
+  if (/^cups?$/i.test(u)) u = v && Math.max(...v) > 1 ? "Cups" : "Cup";
+  return [a, u].filter(Boolean).join(" ");
+}
+function parseOrig(t) {
+  t = String(t || "").trim();
+  if (!t) return null;
+  const m = t.match(/^([\d½¼¾⅓⅔⅛][\d½¼¾⅓⅔⅛.,/\s–-]*?)\s*([A-Za-zÄÖÜäöü.]*)$/);
+  if (!m) return { amount: "", unit: t };
+  let u = m[2].replace(/\.$/, "");
+  if (/^cups?$/i.test(u)) u = "Cup";
+  else if (/^(el|tbsp|tablespoons?)$/i.test(u)) u = "EL";
+  else if (/^(tl|tsp|teaspoons?)$/i.test(u)) u = "TL";
+  return { amount: m[1].trim(), unit: u };
+}
 function pushRecent(id) { try { localStorage.setItem(RECENT_KEY, JSON.stringify([id, ...recentIds().filter(x => x !== id)].slice(0, 8))); } catch {} }
 const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 // Fläche wächst vom angetippten Element auf den Inhaltsbereich, dann wechselt die Ansicht
@@ -757,7 +797,7 @@ const isHead = s => /^##\s*/.test(s);
 const headText = s => s.replace(/^##\s*/, "");
 const normHead = t => String(t).toLowerCase().replace(/^(für\s+(den|die|das)|zum|zur|für)\s+/, "").trim();
 function secColor(k) { return `var(--t${[2, 4, 6, 1, 5, 3][k % 6]})`; }
-function ingText(i) { return [i.amount, i.unit, i.name].filter(Boolean).join(" ") + (i.note ? `, ${i.note}` : ""); }
+function ingText(i) { const o = origText(i.orig); return [i.amount, i.unit].filter(Boolean).join(" ") + (o ? ` (${o})` : "") + (i.amount || i.unit ? " " : "") + (i.name || "") + (i.note ? `, ${i.note}` : ""); }
 
 /* ---------- diff ---------- */
 function diff(a, b) {
@@ -770,7 +810,7 @@ function diff(a, b) {
   for (const [k, i] of bm) {
     const o = am.get(k);
     if (!o) out.push({ kind: "add", label: i.heading != null ? "Abschnitt" : "Zutat", to: i.heading ?? ingText(i) });
-    else if (i.heading == null && (String(o.amount || "") !== String(i.amount || "") || (o.unit || "") !== (i.unit || "") || (o.note || "") !== (i.note || "")))
+    else if (i.heading == null && (String(o.amount || "") !== String(i.amount || "") || (o.unit || "") !== (i.unit || "") || (o.note || "") !== (i.note || "") || origText(o.orig) !== origText(i.orig)))
       out.push({ kind: "chg", label: i.name, from: ingText(o), to: ingText(i) });
   }
   for (const [k, o] of am) if (!bm.has(k)) out.push({ kind: "del", label: o.heading != null ? "Abschnitt" : "Zutat", from: o.heading ?? ingText(o) });
@@ -1182,10 +1222,18 @@ function renderDetail(id) {
   const ingHeads = new Set((r.ingredients || []).filter(i => i.heading != null).map(i => normHead(i.heading)));
   const colorOf = new Map();
   secs.filter(x => x.title && ingHeads.has(normHead(x.title))).forEach(x => { if (!colorOf.has(normHead(x.title))) colorOf.set(normHead(x.title), secColor(colorOf.size)); });
+  const hasOrig = (r.ingredients || []).some(i => i.orig && (i.orig.amount || i.orig.unit));
+  const useOrig = hasOrig && origMode();
+  const amtHtml = i => {
+    const metric = [scaledAmount(i.amount, factor), i.unit].filter(Boolean).join(" ");
+    const o = origText(i.orig, factor);
+    if (!o) return esc(metric);
+    return useOrig ? `${esc(o)}${metric ? `<span class="alt">${esc(metric)}</span>` : ""}` : `${esc(metric || o)}${metric ? `<span class="alt">${esc(o)}</span>` : ""}`;
+  };
   const ings = (r.ingredients || []).map((i, idx) => i.heading != null
     ? (colorOf.get(normHead(i.heading)) ? `<li class="hd has" style="--sec:${colorOf.get(normHead(i.heading))}">${esc(i.heading)}</li>` : `<li class="hd">${esc(i.heading)}</li>`)
     : `<li class="${done.has(idx) ? "done" : ""}"><label><input type="checkbox" data-ing="${idx}" ${done.has(idx) ? "checked" : ""}>
-        <span class="amt">${esc([scaledAmount(i.amount, factor), i.unit].filter(Boolean).join(" "))}</span>
+        <span class="amt">${amtHtml(i)}</span>
         <span class="nm">${i.recipeId && byId(i.recipeId) ? `<a href="#r-${esc(i.recipeId)}">${esc(i.name)}</a>` : esc(i.name)}${i.note ? ` <small>${esc(i.note)}</small>` : ""}</span></label></li>`).join("");
   const linkIngs = (r.ingredients || []).filter(i => i.recipeId && i.name && byId(i.recipeId));
   const linkStep = s => {
@@ -1232,6 +1280,7 @@ function renderDetail(id) {
         <section class="panel ing-panel">
           <h2>Zutaten</h2>
           ${base ? `<div class="stepper"><button data-action="less" aria-label="Weniger">−</button><span class="val">${cur}</span><button data-action="more" aria-label="Mehr">+</button><span>${esc(r.yieldUnit || "Portionen")}</span>${cur !== base ? `<button class="linkish reset" data-action="base">Original (${base})</button>` : ""}</div>` : ""}
+          ${hasOrig ? `<div class="unit-switch" role="group" aria-label="Mengenangaben"><button type="button" data-action="units-metric" aria-pressed="${!useOrig}">g / ml</button><button type="button" data-action="units-orig" aria-pressed="${useOrig}">Original (Cups, EL, TL)</button></div>` : ""}
           <ul class="ing-list">${ings || `<li class="muted">Noch keine Zutaten eingetragen.</li>`}</ul>
         </section>
         <section class="panel">
@@ -1268,6 +1317,7 @@ function ingRowHtml(i = {}) {
     <input class="i-unit" value="${esc(i.unit)}" placeholder="g" aria-label="Einheit" list="units">
     <input class="i-name" value="${esc(i.name)}" placeholder="Zutat" aria-label="Zutat" list="zutaten-namen">
     <input class="i-note" value="${esc(i.note)}" placeholder="Hinweis, z.B. eingeweicht" aria-label="Hinweis">
+    <input class="i-orig" value="${esc(origText(i.orig))}" placeholder="Original: Cup/EL/TL" aria-label="Originalmenge (Cups, EL, TL)">
     <button type="button" data-action="rm-ing" aria-label="Zutat entfernen">×</button></div>`;
 }
 function renderEditor(r, key) {
@@ -1365,6 +1415,7 @@ function collectForm() {
     if (row.classList.contains("heading")) { const h = row.querySelector(".i-heading").value.trim(); return h ? { heading: h } : null; }
     const g = c => row.querySelector(c).value.trim();
     const i = { amount: g(".i-amount"), unit: g(".i-unit"), name: g(".i-name"), note: g(".i-note") };
+    const o = parseOrig(g(".i-orig")); if (o) i.orig = o;
     if (row.dataset.rid) i.recipeId = row.dataset.rid;
     return i.name || i.amount ? i : null;
   }).filter(Boolean);
@@ -1529,6 +1580,7 @@ app.addEventListener("click", async ev => {
   if (a === "have-clear") { have = []; saveHave(); return renderHave(); }
   if (a === "kt") { const k = t.closest(".kt"); k.classList.toggle("open"); t.setAttribute("aria-expanded", k.classList.contains("open")); return; }
   const rec = r.id ? byId(r.id) : null;
+  if (a === "units-metric" || a === "units-orig") { setOrigMode(a === "units-orig"); return renderDetail(r.id); }
   if (a === "less" || a === "more" || a === "base") {
     const base = Number(rec.servings) || 1, cur = servingsFor[r.id] || base;
     const step = base >= 50 ? 10 : 1;
