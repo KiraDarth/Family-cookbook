@@ -1033,5 +1033,86 @@
    "tips": "Zimmerwarme Milch verwenden: so wird die geschmolzene Butter beim Mischen nicht wieder fest.\n\nMilchfrei: Soja-, Mandel- oder Hafermilch statt Vollmilch, vegane Butter oder neutrales Öl statt Butter. Kokosmilch wird im Originalrezept nicht empfohlen.\n\nStatt Zucker gehen auch Honig oder Ahornsirup. Mit gesalzener Butter das Salz weglassen.\n\nWerden die Waffeln kompakt: frisches Backpulver verwenden, das Mehl locker abwiegen und den Teig nicht zu lange rühren.\n\nAufbewahren: ganz auskühlen lassen, luftdicht im Kühlschrank bis 4 Tage. Zum Einfrieren mit Backpapier zwischen den Lagen in einen Gefrierbeutel geben. Im Toaster aufbacken, auch direkt aus dem Tiefkühler.\n\nUS-Mengen umgerechnet: 1 Cup = 240 ml, 4 EL Butter = 55 g. Messlöffel: EL = 15 ml, TL = 5 ml, glatt abstreichen.",
    "source": "https://oursliceofhome.com/egg-free-waffles/"
   }
+ },
+ "mwry0i5obfpvl4": {
+  "recipeId": "satz-kokos-honig-cookies",
+  "at": "2026-11-22T14:39:21.589Z",
+  "type": "bestaetigt",
+  "note": "",
+  "snapshot": {
+   "title": "Kokos-Honig-Cookies",
+   "intro": "Kokosreich, mild und cremig",
+   "servings": 100,
+   "yieldUnit": "g Satz",
+   "time": "",
+   "prepTime": "",
+   "restTime": "",
+   "cookTime": "",
+   "topics": [
+    "Reste-Verwertung"
+   ],
+   "ingredients": [
+    {
+     "amount": "100",
+     "name": "Satz",
+     "note": "von der Kokosmilch",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Haferflocken",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "20",
+     "name": "Mehl",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "25",
+     "name": "Honig",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "5",
+     "name": "weisser Zucker",
+     "note": "",
+     "unit": "g"
+    },
+    {
+     "amount": "1",
+     "name": "Kokosfett",
+     "note": "geschmolzen",
+     "unit": "EL"
+    },
+    {
+     "amount": "1",
+     "name": "Salz",
+     "note": "",
+     "unit": "kleine Prise"
+    },
+    {
+     "amount": "",
+     "name": "Vanille oder Zimt",
+     "note": "optional",
+     "unit": ""
+    }
+   ],
+   "steps": [
+    "## Teig mischen und formen",
+    "Satz, Haferflocken, Mehl, Honig, Zucker, Kokosfett und Salz vermengen. Nach Wunsch Vanille oder Zimt zugeben.",
+    "Bei sehr nassem Satz Mehl nur mess-teelöffelweise ergänzen, bis der Teig formbar ist.",
+    "Cookies auf Backpapier setzen und so dick formen wie beim gelungenen ersten Versuch.",
+    "## Backen und auskühlen",
+    "Im vorgeheizten Ofen bei 180 °C Umluft ca. 15–17 Minuten backen.",
+    "Aus dem Ofen nehmen. Kein zusätzliches Nachtrocknen.",
+    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
+   ],
+   "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+   "source": "Die kleine Satzküche (PDF), Rezept 1 von 9"
+  }
  }
 }
