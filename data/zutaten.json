@@ -90,7 +90,8 @@
    "name": "Kokosfett",
    "oberbegriff": "Fett",
    "schreibweisen": [
-    "Kokosfett"
+    "Kokosfett",
+    "Kokosöl"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -237,7 +238,8 @@
    "name": "Milch (Kuhmilch)",
    "oberbegriff": "Milch",
    "schreibweisen": [
-    "Vollmilch"
+    "Vollmilch",
+    "Milch"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -467,6 +469,193 @@
    "schreibweisen": [],
    "vorrat": false,
    "einkaufen": true
+  },
+  {
+   "name": "Klebreismehl",
+   "oberbegriff": "Mehl",
+   "schreibweisen": [
+    "Klebreismehl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Reismehl",
+   "oberbegriff": "Mehl",
+   "schreibweisen": [
+    "Reismehl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Maisstärke",
+   "oberbegriff": "Stärke",
+   "schreibweisen": [
+    "Maisstärke"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Weizenstärke",
+   "oberbegriff": "Stärke",
+   "schreibweisen": [
+    "Weizenstärke"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Puddingpulver",
+   "oberbegriff": "Stärke",
+   "schreibweisen": [
+    "Puddingpulver",
+    "Custard Powder"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Goldsirup",
+   "oberbegriff": "Sirup",
+   "schreibweisen": [
+    "Goldsirup",
+    "Golden Syrup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Maltosesirup",
+   "oberbegriff": "Sirup",
+   "schreibweisen": [
+    "Maltosesirup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Rote Bohnen (Adzuki)",
+   "oberbegriff": "Hülsenfrüchte",
+   "schreibweisen": [
+    "Rote Bohnen",
+    "Adzukibohnen"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Lotossamen",
+   "oberbegriff": "Samen",
+   "schreibweisen": [
+    "Lotossamen"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Pistazien",
+   "oberbegriff": "Nüsse",
+   "schreibweisen": [
+    "Pistazien"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Eigelb",
+   "oberbegriff": "Eier",
+   "schreibweisen": [
+    "Eigelb"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Alkalisches Wasser",
+   "oberbegriff": "Backtriebmittel",
+   "schreibweisen": [
+    "Alkalisches Wasser",
+    "Kansui"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Grobes Salz",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Grobes Salz"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Miso",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Miso"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Gezuckerte Kondensmilch",
+   "oberbegriff": "Milch",
+   "schreibweisen": [
+    "Gezuckerte Kondensmilch"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Zitrone",
+   "oberbegriff": "Obst",
+   "schreibweisen": [
+    "Zitrone"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Matcha-Pulver",
+   "oberbegriff": "Aromen",
+   "schreibweisen": [
+    "Matcha-Pulver",
+    "Matcha"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Lebensmittelfarbe",
+   "oberbegriff": "Dekoration",
+   "schreibweisen": [
+    "Lebensmittelfarbe"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Essbares Gold",
+   "oberbegriff": "Dekoration",
+   "schreibweisen": [
+    "Essbares Gold",
+    "Goldstaub",
+    "Blattgold"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Glace",
+   "oberbegriff": "Glace",
+   "schreibweisen": [
+    "Glace"
+   ],
+   "vorrat": false,
+   "einkaufen": true
   }
  ],
  "regeln": [
@@ -558,6 +747,62 @@
    "schreibweise": "Mehl",
    "alt": [
     "@Mehl"
+   ]
+  },
+  {
+   "rezept": "snowy-skin-mooncakes",
+   "schreibweise": "Miso",
+   "alt": [
+    "Salz"
+   ]
+  },
+  {
+   "rezept": "snowy-skin-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "rote-bohnenpaste",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "mooncakes-rote-bohne-salzeigelb",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "honig-pistazien-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "weisse-lotossamenpaste",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "snow-skin-glace-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "lotos-mooncakes",
+   "schreibweise": "Alkalisches Wasser",
+   "alt": [
+    "Natron"
    ]
   }
  ],
