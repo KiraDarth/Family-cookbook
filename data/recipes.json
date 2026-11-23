@@ -1699,7 +1699,7 @@
    "Die Eigelbe auf ein Gitter über einem grossen Backblech mit Rand legen und 90 Minuten trocknen, bis sie fest sind.",
    "Abkühlen lassen und in einem kleinen luftdichten Behälter im Kühlschrank aufbewahren, bis 1 Monat."
   ],
-  "tips": "Ganze Salzeier und einzelne gesalzene Eigelbe gibt es auch fertig im chinesischen Lebensmittelgeschäft.\n\nTraditionell werden ganze Enten- oder Hühnereier über mehrere Wochen in einer Mischung aus Lehm und Salz oder in Salzlake eingelegt.\n\nGute Verwertung für übrige Eigelbe, z.B. wenn du Eiweiss für Macarons brauchst.\n\nDie Salzmenge ist nicht kritisch, die Eigelbe müssen nur ganz bedeckt sein.",
+  "tips": "Ganze Salzeier und einzelne gesalzene Eigelbe gibt es auch fertig im chinesischen Lebensmittelgeschäft.\n\nTraditionell werden ganze Enten- oder Hühnereier über mehrere Wochen in einer Mischung aus Lehm und Salz oder in Salzlake eingelegt, siehe Gesalzene Eier in Salzlake (klassisch).\n\nGute Verwertung für übrige Eigelbe, z.B. wenn du Eiweiss für Macarons brauchst.\n\nDie Salzmenge ist nicht kritisch, die Eigelbe müssen nur ganz bedeckt sein.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Salted Egg Yolks», S. 73",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -1902,7 +1902,7 @@
  },
  "lotus-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T22:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1975,10 +1975,10 @@
    },
    {
     "amount": "10",
-    "name": "Salzeigelb",
-    "note": "optional",
+    "name": "Gesalzene Eier in Salzlake (klassisch)",
+    "note": "optional, nur das Eigelb",
     "unit": "",
-    "recipeId": "salzeigelb"
+    "recipeId": "salzeier-lake"
    },
    {
     "heading": "Andere Füllung als Option"
@@ -2003,6 +2003,13 @@
     "note": "Option",
     "unit": "g",
     "recipeId": "honig-pistazien-fuellung"
+   },
+   {
+    "amount": "10",
+    "name": "Salzeigelb",
+    "note": "Option statt der klassischen Salzeier",
+    "unit": "",
+    "recipeId": "salzeigelb"
    },
    {
     "heading": "Zum Bestreichen"
@@ -2989,6 +2996,86 @@
    "Snow Skin",
    "Glace",
    "Dessert"
+  ]
+ },
+ "salzeier-lake": {
+  "createdAt": "2026-11-23T22:30:00.000Z",
+  "updatedAt": "2026-11-23T22:30:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Gesalzene Eier in Salzlake (klassisch)",
+  "intro": "Die klassische Methode für Salzeier: ganze Enten- oder Hühnereier reifen 30 Tage in einer gewürzten Salzlake. Das feste, goldgelbe Eigelb kommt in Mooncakes und Reisknödel (Zongzi).",
+  "servings": 10,
+  "yieldUnit": "Eier",
+  "parentId": "salzeigelb",
+  "variantNote": "Ganze Eier reifen 30 Tage in Salzlake mit Pfeffer und Reiswein, statt einzelne Eigelbe wenige Tage in Salz und danach im Ofen.",
+  "ingredients": [
+   {
+    "amount": "500",
+    "name": "Grobes Meersalz",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "1",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Pfefferkörner",
+    "note": "",
+    "unit": "EL"
+   },
+   {
+    "amount": "1,5",
+    "name": "Wasser",
+    "note": "",
+    "unit": "l",
+    "orig": {
+     "amount": "6",
+     "unit": "Cups"
+    }
+   },
+   {
+    "amount": "2",
+    "name": "Reiswein",
+    "note": "",
+    "unit": "EL"
+   },
+   {
+    "amount": "10",
+    "name": "Eier",
+    "note": "Enten- oder Hühnereier, gewaschen",
+    "unit": ""
+   }
+  ],
+  "steps": [
+   "## Salzlake",
+   "Salz, Pfefferkörner, Wasser und Reiswein in einen grossen Topf geben. Bei sehr niedriger Hitze unter ständigem Rühren erhitzen, bis sich das Salz ganz aufgelöst hat, 5 bis 10 Minuten.",
+   "Vom Herd nehmen und abkühlen lassen.",
+   "## Einlegen",
+   "Die abgekühlte Lake in ein sauberes Gefäss giessen, das nicht aus Metall ist (Glas, Keramik oder Steingut).",
+   "Die Eier vorsichtig hineinlegen. Sie müssen vollständig von der Lake bedeckt sein.",
+   "Das Gefäss zudecken und 30 Tage bei Raumtemperatur stehen lassen.",
+   "## Trocknen und verwenden",
+   "Nach 30 Tagen die Eier herausnehmen und auf einem Gitter trocknen lassen. Kühl und trocken aufbewahren.",
+   "Für Mooncakes das Ei aufschlagen und nur das feste Eigelb verwenden. Das flüssige Eiweiss wegwerfen."
+  ],
+  "tips": "Enteneier schmecken besser, Hühnereier gehen auch.\n\nGekaufte Salzeier aus dem chinesischen Laden erkennt man an der schwarzen Schutzschicht aus Asche und Lehm. Diese Schicht entfernen und die Eier gut abspülen, bevor du sie aufschlägst. Nicht verwechseln mit tausendjährigen Eiern (braune Holzasche-Schicht).\n\nSchwimmen die Eier oben, mit einem kleinen Teller beschweren, damit sie ganz in der Lake liegen (Tipp von mir, nicht aus dem Buch).\n\nSchneller geht es mit dem Salzeigelb (einzelne Eigelbe, 3 bis 5 Tage in Salz, dann im Ofen getrocknet).\n\nDie Gramm- und Liter-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
+  "source": "Chinese Feasts & Festivals (S.C. Moey), «Salted Preserved Eggs», S. 89",
+  "chapter": "Grundrezepte",
+  "subchapter": "Füllungen & Pasten",
+  "prepTime": "5 Min",
+  "cookTime": "10 Min",
+  "restTime": "30 Tage",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Salzei",
+   "Zongzi"
   ]
  }
 }

@@ -586,7 +586,8 @@
    "name": "Grobes Salz",
    "oberbegriff": "Gewürze & Kräuter",
    "schreibweisen": [
-    "Grobes Salz"
+    "Grobes Salz",
+    "Grobes Meersalz"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -662,6 +663,25 @@
    "oberbegriff": "Sirup",
    "schreibweisen": [
     "Ahornsirup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Pfefferkörner",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Pfefferkörner"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Reiswein",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Reiswein",
+    "Shaoxing-Wein"
    ],
    "vorrat": false,
    "einkaufen": true
