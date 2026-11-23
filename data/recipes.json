@@ -1536,7 +1536,7 @@
  },
  "goldsirup": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1594,7 +1594,7 @@
  },
  "rote-bohnenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1662,14 +1662,14 @@
  },
  "salzeigelb": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Salzeigelb",
-  "intro": "Eigelbe in Salz gereift und im Ofen getrocknet: cremig-krümelig, goldgelb und salzig. Die vereinfachte Hausmethode ohne Lehm und Lake, in Tagen statt Wochen.",
+  "title": "Modernes Salzeigelb (Ofen)",
+  "intro": "Die schnelle Hausmethode: einzelne Eigelbe reifen wenige Tage in Salz und werden im Ofen getrocknet. Cremig-krümelig, goldgelb und salzig, ohne Lehm und Lake.",
   "servings": 6,
   "yieldUnit": "Stück",
   "ingredients": [
@@ -1699,7 +1699,7 @@
    "Die Eigelbe auf ein Gitter über einem grossen Backblech mit Rand legen und 90 Minuten trocknen, bis sie fest sind.",
    "Abkühlen lassen und in einem kleinen luftdichten Behälter im Kühlschrank aufbewahren, bis 1 Monat."
   ],
-  "tips": "Ganze Salzeier und einzelne gesalzene Eigelbe gibt es auch fertig im chinesischen Lebensmittelgeschäft.\n\nTraditionell werden ganze Enten- oder Hühnereier über mehrere Wochen in einer Mischung aus Lehm und Salz oder in Salzlake eingelegt, siehe Gesalzene Eier in Salzlake (klassisch).\n\nGute Verwertung für übrige Eigelbe, z.B. wenn du Eiweiss für Macarons brauchst.\n\nDie Salzmenge ist nicht kritisch, die Eigelbe müssen nur ganz bedeckt sein.",
+  "tips": "Ganze Salzeier und einzelne gesalzene Eigelbe gibt es auch fertig im chinesischen Lebensmittelgeschäft.\n\nTraditionell werden ganze Enten- oder Hühnereier über mehrere Wochen in einer Mischung aus Lehm und Salz oder in Salzlake eingelegt, siehe Klassisches Salzeigelb (Salzlake).\n\nGute Verwertung für übrige Eigelbe, z.B. wenn du Eiweiss für Macarons brauchst.\n\nDie Salzmenge ist nicht kritisch, die Eigelbe müssen nur ganz bedeckt sein.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Salted Egg Yolks», S. 73",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -1714,13 +1714,13 @@
  },
  "weisse-lotussamenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Weisse Lotussamenpaste",
+  "title": "Moderne Lotussamenpaste",
   "intro": "Helle, feine Lotuspaste aus nur drei Zutaten. Füllung für Tausend-Schichten-Mooncakes und andere Mooncakes.",
   "servings": 1,
   "yieldUnit": "Portion",
@@ -1782,13 +1782,13 @@
  },
  "suesse-lotussamenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Süsse Lotussamenpaste",
+  "title": "Klassische Lotussamenpaste",
   "intro": "Die klassische Mooncake-Füllung (lianrong): Lotussamen werden weich gekocht, püriert und mit karamellisiertem Zucker und Öl zu einer dicken Paste geröstet.",
   "servings": 450,
   "yieldUnit": "g",
@@ -1843,7 +1843,7 @@
    "Zum Schluss den Maltosesirup einrühren und vom Herd nehmen.",
    "Die Paste über Nacht auskühlen lassen, bevor du sie verwendest."
   ],
-  "tips": "Ergibt etwa 450 g, genau die Menge für 10 Lotus-Mooncakes.\n\nIm Buch steht beim Öl «½ cup (150 ml)». ½ Cup sind 125 ml, die 150 ml sind vermutlich mit den 150 g Zucker bzw. Lotussamen verwechselt.\n\nFertige süsse Lotussamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
+  "tips": "Ergibt etwa 450 g, genau die Menge für 10 Lotus-Mooncakes.\n\nIm Buch steht beim Öl «½ cup (150 ml)». ½ Cup sind 125 ml, die 150 ml sind vermutlich mit den 150 g Zucker bzw. Lotussamen verwechselt.\n\nFertige klassische Lotussamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), Teilrezept «Sweet Lotus Seed Paste» aus «Lotus Seed Mooncakes», S. 108",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -1858,7 +1858,7 @@
  },
  "mooncake-streiche": {
   "createdAt": "2026-11-23T22:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1902,14 +1902,14 @@
  },
  "lotus-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T22:30:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Lotus-Mooncakes",
-  "intro": "Gebackene Mooncakes aus der Holzform, klassisch mit süsser Lotussamenpaste (lianrong) und einem ganzen gesalzenen Eigelb in der Mitte. Die Füllung lässt sich frei wählen.",
+  "title": "Klassisches Mooncake (Lotus)",
+  "intro": "Gebackenes Mooncake aus der Holzform mit klassischer Lotussamenpaste (lianrong). Mit Salzeigelb in der Mitte siehe die Variante.",
   "servings": 10,
   "yieldUnit": "Stück",
   "ingredients": [
@@ -1964,7 +1964,7 @@
    },
    {
     "amount": "450",
-    "name": "Süsse Lotussamenpaste",
+    "name": "Klassische Lotussamenpaste",
     "note": "",
     "unit": "g",
     "orig": {
@@ -1974,18 +1974,11 @@
     "recipeId": "suesse-lotussamenpaste"
    },
    {
-    "amount": "10",
-    "name": "Gesalzene Eier in Salzlake (klassisch)",
-    "note": "optional, nur das Eigelb",
-    "unit": "",
-    "recipeId": "salzeier-lake"
-   },
-   {
     "heading": "Andere Füllung als Option"
    },
    {
     "amount": "450",
-    "name": "Weisse Lotussamenpaste",
+    "name": "Moderne Lotussamenpaste",
     "note": "Option",
     "unit": "g",
     "recipeId": "weisse-lotussamenpaste"
@@ -2003,13 +1996,6 @@
     "note": "Option",
     "unit": "g",
     "recipeId": "honig-pistazien-fuellung"
-   },
-   {
-    "amount": "10",
-    "name": "Salzeigelb",
-    "note": "Option statt der klassischen Salzeier",
-    "unit": "",
-    "recipeId": "salzeigelb"
    },
    {
     "heading": "Zum Bestreichen"
@@ -2030,7 +2016,6 @@
    "Die Hände bemehlen und alles zu einem glatten Teig kneten. Mit einem Tuch abdecken und 3 bis 4 Stunden ruhen lassen.",
    "## Füllung portionieren",
    "Die Lotussamenpaste (oder die gewählte andere Füllung) in 10 gleich grosse Portionen (je 45 g) teilen und jede zwischen den Handflächen zu einer Kugel rollen.",
-   "Mit Salzeigelb: mit dem Daumen eine Mulde in jede Kugel drücken, ein Eigelb hineinlegen und die Paste rundherum darüber schliessen.",
    "## Formen",
    "Den Teig auf einer bemehlten Fläche in 10 gleich grosse Portionen teilen und zu Kugeln rollen.",
    "Eine Teigkugel mit der Handfläche flach drücken und mit dem Wallholz zu einem 3 mm dicken Kreis ausrollen.",
@@ -2045,7 +2030,7 @@
    "## Ruhen lassen",
    "Die Mooncakes unbedeckt an einem gut belüfteten Ort 1 bis 2 Tage ruhen lassen. So wird der Teig weich und sie schmecken besser."
   ],
-  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nIm Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nFertige süsse Lotussamenpaste und gesalzene Eier gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
+  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nIm Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nFertige Lotussamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), «Lotus Seed Mooncakes», S. 108, und «How to Shape a Mooncake», S. 110",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2061,14 +2046,14 @@
  },
  "mooncakes-rote-bohne-salzeigelb": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Mooncakes mit roter Bohnenpaste und Salzeigelb",
-  "intro": "Der Klassiker und Lieblings-Mooncake der Autorin: süsser Teig, nussige rote Bohnenpaste und ein cremig-krümeliges Salzeigelb in der Mitte. Statt Bohnenpaste geht auch jede andere Füllung.",
+  "title": "Modernes Mooncake (Bohnenpaste)",
+  "intro": "Der Lieblings-Mooncake der Autorin: süsser Teig, nussige rote Bohnenpaste und ein cremig-krümeliges halbes Salzeigelb in der Mitte. Geht auch nur mit Bohnenpaste.",
   "servings": 12,
   "yieldUnit": "Stück",
   "ingredients": [
@@ -2132,27 +2117,10 @@
    },
    {
     "amount": "6",
-    "name": "Salzeigelb",
-    "note": "halbiert",
+    "name": "Modernes Salzeigelb (Ofen)",
+    "note": "halbiert, optional",
     "unit": "",
     "recipeId": "salzeigelb"
-   },
-   {
-    "heading": "Andere Füllung als Option (statt Bohnenpaste)"
-   },
-   {
-    "amount": "250",
-    "name": "Süsse Lotussamenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "suesse-lotussamenpaste"
-   },
-   {
-    "amount": "250",
-    "name": "Weisse Lotussamenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "weisse-lotussamenpaste"
    },
    {
     "heading": "Zum Bestreichen"
@@ -2174,7 +2142,7 @@
    "## Formen",
    "Den Teig auf einer leicht bemehlten Fläche mit der Teigkarte in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu glatten Kugeln rollen.",
    "Eine Kugel nach der anderen mit der Handfläche flach drücken und mit einem Rundholz zu einem Kreis von 10 cm ausrollen. Bei Bedarf leicht bemehlen und den Teig mit der Teigkarte anheben.",
-   "½ EL Bohnenpaste in die Mitte geben, darauf ein halbes Salzeigelb und darauf nochmals ½ EL Bohnenpaste.",
+   "Mit Salzeigelb: ½ EL Bohnenpaste in die Mitte geben, darauf ein halbes Salzeigelb und darauf nochmals ½ EL Bohnenpaste. Nur mit Bohnenpaste: 1 EL + 1½ TL Bohnenpaste in die Mitte geben.",
    "Die Teigränder um die Füllung hochziehen. Der Teig deckt die Füllung anfangs nicht ganz, einfach zusammendrücken, bis sie vollständig umhüllt ist. Risse zusammendrücken und zu einer glatten Kugel rollen.",
    "Die Kugeln beim Formen mit mindestens 5 cm Abstand auf das Blech setzen. Die Mondkuchenform leicht bemehlen, eine Kugel hineinlegen und den Stempel herunterdrücken, aber nicht zu fest. Vorsichtig aus der Form lösen und zurück aufs Blech setzen. Mit dem restlichen Teig und der Füllung wiederholen, bis alle 12 Mooncakes geformt sind.",
    "## Erster Backgang",
@@ -2185,7 +2153,7 @@
    "## Ruhen lassen",
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nOhne Salzeigelb: jeden Mooncake mit 1 EL + 1½ TL Paste füllen.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Red Bean and Salted Egg Yolk Mooncakes», S. 176–177, Tipps aus der Einleitung zu Mooncakes",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2199,18 +2167,18 @@
  },
  "honig-pistazien-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Honig-Pistazien-Mooncakes",
+  "title": "Modernes Mooncake (Honig-Pistazie)",
   "intro": "Einfache Füllung ohne Gang in den Asia-Laden: Pistazien mit Honig, Kokosöl und einer kräftigen Prise Salz, im gleichen Teig wie die klassischen Mooncakes.",
   "servings": 12,
   "yieldUnit": "Stück",
   "parentId": "mooncakes-rote-bohne-salzeigelb",
-  "variantNote": "Mit Honig-Pistazien-Füllung statt roter Bohnenpaste und Salzeigelb. Teig, Formen und Backen sind gleich.",
+  "variantNote": "Mit Honig-Pistazien-Füllung statt Bohnenpaste und Salzeigelb. Teig, Formen und Backen sind gleich.",
   "ingredients": [
    {
     "heading": "Für den Teig"
@@ -2267,30 +2235,6 @@
     "recipeId": "honig-pistazien-fuellung"
    },
    {
-    "heading": "Andere Füllung als Option (statt Pistazien)"
-   },
-   {
-    "amount": "250",
-    "name": "Rote Bohnenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "rote-bohnenpaste"
-   },
-   {
-    "amount": "250",
-    "name": "Süsse Lotussamenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "suesse-lotussamenpaste"
-   },
-   {
-    "amount": "250",
-    "name": "Weisse Lotussamenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "weisse-lotussamenpaste"
-   },
-   {
     "heading": "Zum Bestreichen"
    },
    {
@@ -2337,7 +2281,7 @@
  },
  "honig-pistazien-fuellung": {
   "createdAt": "2026-11-23T22:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2413,14 +2357,14 @@
  },
  "salzeigelb-custard": {
   "createdAt": "2026-11-23T22:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
   "title": "Salzeigelb-Custard",
-  "intro": "Cremige, leicht salzige Custard-Füllung mit gesalzenem Eigelb, im Topf gekocht. Füllung für Snowy-Skin-Mooncakes.",
+  "intro": "Cremige, leicht salzige Custard-Füllung mit gesalzenem Eigelb, im Topf gekocht. Füllung für Snow-Skin-Mooncakes.",
   "servings": 15,
   "yieldUnit": "Mooncakes",
   "ingredients": [
@@ -2505,7 +2449,7 @@
    "Bei mittel-niedriger Hitze unter ständigem Rühren erhitzen. Sobald die Masse eindickt, sich vom Topf löst und zu einem Klumpen wird, vom Herd nehmen.",
    "Mit einem flexiblen Teigschaber glatt streichen, etwas klumpig darf die Füllung sein. Frischhaltefolie direkt auf die Oberfläche legen und mindestens 1 Stunde kühlen."
   ],
-  "tips": "Reicht für etwa 15 Snowy-Skin-Mooncakes à 25 g Füllung.\n\nGesalzene Enteneigelbe gibt es gekocht und vakuumverpackt im Kühl- oder Tiefkühlregal im Asia-Laden. Selbst gemachtes Salzeigelb geht auch.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
+  "tips": "Reicht für etwa 15 Snow-Skin-Mooncakes à 25 g Füllung.\n\nGesalzene Enteneigelbe gibt es gekocht und vakuumverpackt im Kühl- oder Tiefkühlregal im Asia-Laden. Selbst gemachtes Salzeigelb geht auch.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
   "source": "Modern Asian Baking at Home (Kat Lieu), Füllung aus «Snowy Skin Mooncake», S. 129",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -2521,14 +2465,14 @@
  },
  "snowy-skin-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Snowy-Skin-Mooncakes mit Salzeigelb-Custard",
-  "intro": "Ungebackene Mooncakes mit weicher, mochiartiger Haut in beliebiger Farbe und einer Custard-Füllung mit gesalzenem Eigelb. Statt Custard geht auch jede andere Füllung. Nicht nur fürs Mondfest.",
+  "title": "Snow-Skin-Mooncake mit Salzeigelb-Custard",
+  "intro": "Ungebackenes Mooncake mit weicher, mochiartiger Haut in beliebiger Farbe und einer Custard-Füllung mit gesalzenem Eigelb. Nicht nur fürs Mondfest.",
   "servings": 15,
   "yieldUnit": "Stück",
   "ingredients": [
@@ -2554,37 +2498,6 @@
     "note": "ca. 375 g",
     "unit": "Portion",
     "recipeId": "salzeigelb-custard"
-   },
-   {
-    "heading": "Andere Füllung als Option (statt Custard)"
-   },
-   {
-    "amount": "375",
-    "name": "Rote Bohnenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "rote-bohnenpaste"
-   },
-   {
-    "amount": "375",
-    "name": "Süsse Lotussamenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "suesse-lotussamenpaste"
-   },
-   {
-    "amount": "375",
-    "name": "Weisse Lotussamenpaste",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "weisse-lotussamenpaste"
-   },
-   {
-    "amount": "375",
-    "name": "Honig-Pistazien-Füllung",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "honig-pistazien-fuellung"
    },
    {
     "heading": "Für die Haut"
@@ -2685,7 +2598,7 @@
    "## Geröstetes Klebreismehl",
    "Das Klebreismehl in einer Pfanne bei mittel-niedriger Hitze rösten, bis es duftet. Beiseitestellen.",
    "## Füllung",
-   "Den Salzeigelb-Custard (oder die gewählte andere Füllung) zubereiten. Der Custard muss mindestens 1 Stunde kühlen.",
+   "Den Salzeigelb-Custard zubereiten. Er muss mindestens 1 Stunde kühlen.",
    "## Haut",
    "Alle Zutaten für die Haut ausser der Lebensmittelfarbe in eine hitzefeste Schüssel geben und glatt verquirlen. Mit Alufolie abdecken und mindestens 30 Minuten über mittel-starker Hitze dämpfen, bis die Masse fest und nicht mehr flüssig ist. Der Teig ist fertig, wenn er wie festes Gelee aussieht und ein Zahnstocher sauber herauskommt.",
    "Den Teig in die Küchenmaschine mit Flachrührer geben und auf niedriger Stufe 1 bis 2 Minuten mischen, bis er glänzend und glatt ist. Nicht zu lange bearbeiten.",
@@ -2700,7 +2613,7 @@
    "## Kühlen",
    "Abgedeckt einige Stunden bis höchstens 4 Tage kühlen. Vor dem Essen bei Raumtemperatur etwas weich werden lassen."
   ],
-  "tips": "Du brauchst eine Mondkuchenpresse mit 50 bis 100 g Fassungsvermögen (günstig online erhältlich).\n\nDas Buch schlägt als andere Füllung auch Ube-Halaya-Konfitüre vor (im Buch S. 28).\n\nZur Dämpftechnik gibt es im Buch eine Anleitung auf S. 17.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenpresse mit 50 bis 100 g Fassungsvermögen (günstig online erhältlich).\n\nZur Dämpftechnik gibt es im Buch eine Anleitung auf S. 17.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
   "source": "Modern Asian Baking at Home (Kat Lieu), Kapitel «Treats under one Moon and Holiday Bakes», «Snowy Skin Mooncake», S. 128–129, nach einem Rezept von Karen Ng",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2716,14 +2629,14 @@
  },
  "tausend-schichten-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Tausend-Schichten-Mooncakes mit weisser Lotussamenpaste",
-  "intro": "Spiral-Mooncakes im Chaoshan-Stil: Ein Wasserteig wird mit einem Ölteig geschichtet, ähnlich wie Blätterteig. Mit etwas Matcha werden die Spiralen besonders deutlich.",
+  "title": "Tausend-Schichten-Mooncake (Lotus)",
+  "intro": "Spiral-Mooncakes im Chaoshan-Stil: Ein Wasserteig wird mit einem Ölteig geschichtet, ähnlich wie Blätterteig. Mit etwas Matcha werden die Spiralen besonders deutlich. Im Buch mit moderner Lotussamenpaste gefüllt.",
   "servings": 6,
   "yieldUnit": "Stück",
   "ingredients": [
@@ -2732,7 +2645,7 @@
    },
    {
     "amount": "180",
-    "name": "Weisse Lotussamenpaste",
+    "name": "Moderne Lotussamenpaste",
     "note": "",
     "unit": "g",
     "orig": {
@@ -2746,7 +2659,7 @@
    },
    {
     "amount": "180",
-    "name": "Süsse Lotussamenpaste",
+    "name": "Klassische Lotussamenpaste",
     "note": "Option",
     "unit": "g",
     "recipeId": "suesse-lotussamenpaste"
@@ -2759,11 +2672,21 @@
     "recipeId": "rote-bohnenpaste"
    },
    {
-    "amount": "180",
-    "name": "Honig-Pistazien-Füllung",
-    "note": "Option",
-    "unit": "g",
-    "recipeId": "honig-pistazien-fuellung"
+    "heading": "Optional in die Füllung"
+   },
+   {
+    "amount": "3",
+    "name": "Modernes Salzeigelb (Ofen)",
+    "note": "halbiert, optional",
+    "unit": "",
+    "recipeId": "salzeigelb"
+   },
+   {
+    "amount": "3",
+    "name": "Klassisches Salzeigelb (Salzlake)",
+    "note": "Option, nur das Eigelb, halbiert",
+    "unit": "",
+    "recipeId": "salzeier-lake"
    },
    {
     "heading": "Für den Wasserteig"
@@ -2845,6 +2768,7 @@
   "steps": [
    "## Füllung",
    "Einen mittelgrossen Teller mit Backpapier auslegen. Mit einem Portionierer (1½ EL) 6 Kugeln Lotuspaste bzw. der gewählten Füllung (je 30 g) abstechen und auf das Papier setzen. Mindestens 45 Minuten oder über Nacht tiefkühlen, bis sie fest sind (über Nacht abdecken).",
+   "Mit Salzeigelb: in jede gefrorene Kugel ein halbes Salzeigelb drücken und die Paste darüber schliessen, dann nochmals kurz tiefkühlen.",
    "## Wasserteig",
    "In einer mittelgrossen Schüssel Mehl, Zucker und Matcha (falls verwendet) verquirlen. Backfett und Wasser dazugeben, das Fett mit den Fingern zerkleinern und alles 3 bis 4 Minuten glatt kneten.",
    "Zu einer dicken Scheibe formen, in Frischhaltefolie wickeln und 30 Minuten kühlen.",
@@ -2866,7 +2790,7 @@
    "## Backen",
    "Backen, bis die Mooncakes blättrig und leicht golden sind, 25 bis 28 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf abkühlen lassen. Warm oder bei Raumtemperatur servieren."
   ],
-  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nMit Lotus- oder Bohnenpaste ist das Rezept komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nOhne Salzeigelb ist das Rezept komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Thousand Layer Mooncakes with White Lotus Seed Paste», Kapitel gao",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2883,13 +2807,13 @@
  },
  "snow-skin-glace-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Snow-Skin-Glace-Mooncakes",
+  "title": "Snow-Skin-Mooncake mit Glace",
   "intro": "Mochiartige Snow-Skin-Mooncakes aus Hongkong, gefüllt mit Glace statt Paste, inspiriert von Mochi-Glace. Fest und zugleich zäh, ein Sommerdessert fürs ganze Jahr.",
   "servings": 6,
   "yieldUnit": "Stück",
@@ -3000,18 +2924,16 @@
  },
  "salzeier-lake": {
   "createdAt": "2026-11-23T22:30:00.000Z",
-  "updatedAt": "2026-11-23T22:30:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Gesalzene Eier in Salzlake (klassisch)",
+  "title": "Klassisches Salzeigelb (Salzlake)",
   "intro": "Die klassische Methode für Salzeier: ganze Enten- oder Hühnereier reifen 30 Tage in einer gewürzten Salzlake. Das feste, goldgelbe Eigelb kommt in Mooncakes und Reisknödel (Zongzi).",
   "servings": 10,
   "yieldUnit": "Eier",
-  "parentId": "salzeigelb",
-  "variantNote": "Ganze Eier reifen 30 Tage in Salzlake mit Pfeffer und Reiswein, statt einzelne Eigelbe wenige Tage in Salz und danach im Ofen.",
   "ingredients": [
    {
     "amount": "500",
@@ -3064,7 +2986,7 @@
    "Nach 30 Tagen die Eier herausnehmen und auf einem Gitter trocknen lassen. Kühl und trocken aufbewahren.",
    "Für Mooncakes das Ei aufschlagen und nur das feste Eigelb verwenden. Das flüssige Eiweiss wegwerfen."
   ],
-  "tips": "Enteneier schmecken besser, Hühnereier gehen auch.\n\nGekaufte Salzeier aus dem chinesischen Laden erkennt man an der schwarzen Schutzschicht aus Asche und Lehm. Diese Schicht entfernen und die Eier gut abspülen, bevor du sie aufschlägst. Nicht verwechseln mit tausendjährigen Eiern (braune Holzasche-Schicht).\n\nSchwimmen die Eier oben, mit einem kleinen Teller beschweren, damit sie ganz in der Lake liegen (Tipp von mir, nicht aus dem Buch).\n\nSchneller geht es mit dem Salzeigelb (einzelne Eigelbe, 3 bis 5 Tage in Salz, dann im Ofen getrocknet).\n\nDie Gramm- und Liter-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
+  "tips": "Enteneier schmecken besser, Hühnereier gehen auch.\n\nGekaufte Salzeier aus dem chinesischen Laden erkennt man an der schwarzen Schutzschicht aus Asche und Lehm. Diese Schicht entfernen und die Eier gut abspülen, bevor du sie aufschlägst. Nicht verwechseln mit tausendjährigen Eiern (braune Holzasche-Schicht).\n\nSchwimmen die Eier oben, mit einem kleinen Teller beschweren, damit sie ganz in der Lake liegen (Tipp von mir, nicht aus dem Buch).\n\nSchneller geht es mit dem Modernen Salzeigelb (Ofen) (einzelne Eigelbe, 3 bis 5 Tage in Salz, dann im Ofen getrocknet).\n\nDie Gramm- und Liter-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), «Salted Preserved Eggs», S. 89",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -3077,5 +2999,166 @@
    "Salzei",
    "Zongzi"
   ]
+ },
+ "lotus-mooncakes-salzeigelb": {
+  "createdAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Klassisches Mooncake (Lotus mit Salzeigelb)",
+  "intro": "Die Variante für Kenner: klassische Lotussamenpaste mit einem ganzen gesalzenen Eigelb in der Mitte. Süss und salzig zugleich.",
+  "servings": 10,
+  "yieldUnit": "Stück",
+  "ingredients": [
+   {
+    "heading": "Für den Teig"
+   },
+   {
+    "amount": "125",
+    "name": "Goldsirup",
+    "note": "selbst gemacht oder gekauft",
+    "unit": "ml",
+    "orig": {
+     "amount": "½",
+     "unit": "Cup"
+    },
+    "recipeId": "goldsirup"
+   },
+   {
+    "amount": "300",
+    "name": "Weissmehl",
+    "note": "gesiebt",
+    "unit": "g",
+    "orig": {
+     "amount": "2",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Natron",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "125",
+    "name": "Neutrales Öl",
+    "note": "",
+    "unit": "ml",
+    "orig": {
+     "amount": "½",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Alkalisches Wasser",
+    "note": "Kansui, oder Natronlösung (Rezept im Buch S. 134)",
+    "unit": "TL"
+   },
+   {
+    "heading": "Für die Füllung"
+   },
+   {
+    "amount": "450",
+    "name": "Klassische Lotussamenpaste",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "1½",
+     "unit": "Cup"
+    },
+    "recipeId": "suesse-lotussamenpaste"
+   },
+   {
+    "amount": "10",
+    "name": "Klassisches Salzeigelb (Salzlake)",
+    "note": "nur das Eigelb",
+    "unit": "",
+    "recipeId": "salzeier-lake"
+   },
+   {
+    "heading": "Andere Füllung als Option"
+   },
+   {
+    "amount": "450",
+    "name": "Moderne Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "weisse-lotussamenpaste"
+   },
+   {
+    "amount": "450",
+    "name": "Rote Bohnenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "rote-bohnenpaste"
+   },
+   {
+    "amount": "450",
+    "name": "Honig-Pistazien-Füllung",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "honig-pistazien-fuellung"
+   },
+   {
+    "amount": "10",
+    "name": "Modernes Salzeigelb (Ofen)",
+    "note": "Option statt klassischem Salzeigelb",
+    "unit": "",
+    "recipeId": "salzeigelb"
+   },
+   {
+    "heading": "Zum Bestreichen"
+   },
+   {
+    "amount": "1",
+    "name": "Mooncake-Streiche ohne Ei",
+    "note": "",
+    "unit": "Portion",
+    "recipeId": "mooncake-streiche"
+   }
+  ],
+  "steps": [
+   "## Vorbereiten",
+   "Den Goldsirup mindestens 3 Wochen im Voraus kochen (oder gekauften verwenden). Die Füllung am Vortag zubereiten, Lotus- und Bohnenpaste müssen über Nacht auskühlen. Das klassische Salzeigelb braucht 30 Tage in der Salzlake, also früh genug ansetzen (oder das moderne Salzeigelb nehmen, 3 bis 5 Tage).",
+   "## Teig",
+   "Mehl und Natron in einer Schüssel mischen. In der Mitte eine Mulde formen und nach und nach Goldsirup, Öl und alkalisches Wasser einrühren, mit einem Holzlöffel gut vermischen.",
+   "Die Hände bemehlen und alles zu einem glatten Teig kneten. Mit einem Tuch abdecken und 3 bis 4 Stunden ruhen lassen.",
+   "## Füllung portionieren",
+   "Die Lotussamenpaste (oder die gewählte andere Füllung) in 10 gleich grosse Portionen (je 45 g) teilen und jede zwischen den Handflächen zu einer Kugel rollen.",
+   "Mit dem Daumen eine Mulde in jede Kugel drücken, ein Salzeigelb hineinlegen und die Paste rundherum darüber schliessen.",
+   "## Formen",
+   "Den Teig auf einer bemehlten Fläche in 10 gleich grosse Portionen teilen und zu Kugeln rollen.",
+   "Eine Teigkugel mit der Handfläche flach drücken und mit dem Wallholz zu einem 3 mm dicken Kreis ausrollen.",
+   "Den Teigkreis in die Handfläche legen, eine Füllkugel in die Mitte setzen und den Teig rundherum hochziehen, bis die Füllung ganz umschlossen ist. Die Ränder gut zusammendrücken.",
+   "Die Mondkuchenform (6 cm Durchmesser) innen leicht bemehlen. Die Kugel mit der Naht nach oben in die Form drücken.",
+   "Mit der Handfläche flach drücken, damit der Mooncake die Form ganz ausfüllt.",
+   "Die Form umdrehen und mit dem Ende leicht auf die Arbeitsfläche klopfen, bis sich der Mooncake löst. Wiederholen, bis alle 10 Mooncakes geformt sind.",
+   "## Backen",
+   "Den Ofen auf 200 °C vorheizen. Die Mooncakes etwa 15 Minuten backen.",
+   "Herausnehmen und die Oberseite dünn mit der Mooncake-Streiche ohne Ei bestreichen.",
+   "Weitere 6 bis 8 Minuten backen, bis sie goldbraun sind.",
+   "## Ruhen lassen",
+   "Die Mooncakes unbedeckt an einem gut belüfteten Ort 1 bis 2 Tage ruhen lassen. So wird der Teig weich und sie schmecken besser."
+  ],
+  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nIm Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nFertige Lotussamenpaste und gesalzene Eier gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
+  "source": "Chinese Feasts & Festivals (S.C. Moey), «Lotus Seed Mooncakes», S. 108, und «How to Shape a Mooncake», S. 110",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Mooncakes",
+  "prepTime": "2 Std",
+  "restTime": "30 Tage (Salzeier) + 3–4 Std (Teig) + 1–2 Tage",
+  "cookTime": "25 Min pro Blech",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Gebäck",
+   "Lotus"
+  ],
+  "parentId": "lotus-mooncakes",
+  "variantNote": "Mit einem ganzen klassischen Salzeigelb in jeder Füllkugel."
  }
 }
