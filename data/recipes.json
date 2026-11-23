@@ -2924,7 +2924,7 @@
  },
  "salzeier-lake": {
   "createdAt": "2026-11-23T22:30:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T00:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2941,7 +2941,7 @@
     "note": "",
     "unit": "g",
     "orig": {
-     "amount": "1",
+     "amount": "2",
      "unit": "Cup"
     }
    },
