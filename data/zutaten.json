@@ -546,10 +546,10 @@
    "einkaufen": true
   },
   {
-   "name": "Lotossamen",
+   "name": "Lotussamen",
    "oberbegriff": "Samen",
    "schreibweisen": [
-    "Lotossamen"
+    "Lotussamen"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -656,6 +656,15 @@
    ],
    "vorrat": false,
    "einkaufen": true
+  },
+  {
+   "name": "Ahornsirup",
+   "oberbegriff": "Sirup",
+   "schreibweisen": [
+    "Ahornsirup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
   }
  ],
  "regeln": [
@@ -750,7 +759,7 @@
    ]
   },
   {
-   "rezept": "snowy-skin-mooncakes",
+   "rezept": "salzeigelb-custard",
    "schreibweise": "Miso",
    "alt": [
     "Salz"
@@ -778,13 +787,6 @@
    ]
   },
   {
-   "rezept": "honig-pistazien-mooncakes",
-   "schreibweise": "Rapsöl",
-   "alt": [
-    "Neutrales Öl"
-   ]
-  },
-  {
    "rezept": "weisse-lotossamenpaste",
    "schreibweise": "Rapsöl",
    "alt": [
@@ -799,10 +801,24 @@
    ]
   },
   {
-   "rezept": "lotos-mooncakes",
+   "rezept": "lotus-mooncakes",
    "schreibweise": "Alkalisches Wasser",
    "alt": [
     "Natron"
+   ]
+  },
+  {
+   "rezept": "honig-pistazien-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "mooncake-streiche",
+   "schreibweise": "Goldsirup",
+   "alt": [
+    "Ahornsirup"
    ]
   }
  ],

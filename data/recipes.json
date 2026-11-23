@@ -1592,443 +1592,6 @@
    "Mondfest"
   ]
  },
- "suesse-lotossamenpaste": {
-  "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
-  "historyCount": 0,
-  "status": "entwurf",
-  "topics": [
-   "Chinesisch"
-  ],
-  "title": "Süsse Lotossamenpaste",
-  "intro": "Die klassische Mooncake-Füllung (lianrong): Lotossamen werden weich gekocht, püriert und mit karamellisiertem Zucker und Öl zu einer dicken Paste geröstet.",
-  "servings": 450,
-  "yieldUnit": "g",
-  "ingredients": [
-   {
-    "amount": "150",
-    "name": "Lotossamen",
-    "note": "getrocknet, geschält",
-    "unit": "g",
-    "orig": {
-     "amount": "2½",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "150",
-    "name": "Neutrales Öl",
-    "note": "",
-    "unit": "ml",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "150",
-    "name": "Zucker",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "¾",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "1",
-    "name": "Maltosesirup",
-    "note": "",
-    "unit": "TL"
-   }
-  ],
-  "steps": [
-   "## Kochen und pürieren",
-   "Die Lotossamen 1 Stunde in Wasser einweichen.",
-   "In einem Topf mit Wasser bei mittlerer Hitze etwa 1 Stunde weich kochen, dann abgiessen.",
-   "Im Mixer zu einer glatten Paste pürieren.",
-   "## Rösten",
-   "2 EL + 1½ TL vom Öl in einem beschichteten Wok oder Topf bei starker Hitze erhitzen. 2 EL vom Zucker dazugeben und rühren, bis er karamellisiert, 2 bis 3 Minuten.",
-   "Die Hitze auf mittlere Stufe stellen, die Lotospaste dazugeben und gut vermischen.",
-   "Den restlichen Zucker einrühren, bis er sich aufgelöst hat.",
-   "Das restliche Öl nach und nach einrühren und weiterrühren, bis die Masse dick ist und sich vom Rand der Pfanne löst (Zeitangabe im Foto nicht lesbar).",
-   "Zum Schluss den Maltosesirup einrühren und vom Herd nehmen.",
-   "Die Paste über Nacht auskühlen lassen, bevor du sie verwendest."
-  ],
-  "tips": "Ergibt etwa 450 g, genau die Menge für 10 Lotos-Mooncakes.\n\nFertige süsse Lotossamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
-  "source": "Chinese Feasts & Festivals (S.C. Moey), Teilrezept «Sweet Lotus Seed Paste» aus «Lotus Seed Mooncakes», S. 108",
-  "chapter": "Grundrezepte",
-  "subchapter": "Füllungen & Pasten",
-  "prepTime": "15 Min",
-  "cookTime": "1 Std 30 Min",
-  "restTime": "1 Std Einweichen + über Nacht",
-  "keywords": [
-   "Mooncake",
-   "Mondfest",
-   "Lotos"
-  ]
- },
- "lotos-mooncakes": {
-  "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
-  "historyCount": 0,
-  "status": "entwurf",
-  "topics": [
-   "Chinesisch"
-  ],
-  "title": "Lotos-Mooncakes",
-  "intro": "Gebackene Mooncakes aus der Holzform mit süsser Lotossamenpaste, traditionell mit einem ganzen gesalzenen Eigelb in der Mitte. Süss und salzig, für Kenner die beste Kombination.",
-  "servings": 10,
-  "yieldUnit": "Stück",
-  "ingredients": [
-   {
-    "heading": "Für den Teig"
-   },
-   {
-    "amount": "125",
-    "name": "Goldsirup",
-    "note": "selbst gemacht oder gekauft",
-    "unit": "ml",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    },
-    "recipeId": "goldsirup"
-   },
-   {
-    "amount": "300",
-    "name": "Weissmehl",
-    "note": "gesiebt",
-    "unit": "g",
-    "orig": {
-     "amount": "2",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "1",
-    "name": "Natron",
-    "note": "",
-    "unit": "TL"
-   },
-   {
-    "amount": "125",
-    "name": "Neutrales Öl",
-    "note": "",
-    "unit": "ml",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "1",
-    "name": "Alkalisches Wasser",
-    "note": "Kansui, oder Natronlösung (Rezept im Buch S. 134)",
-    "unit": "TL"
-   },
-   {
-    "heading": "Für die Füllung"
-   },
-   {
-    "amount": "450",
-    "name": "Süsse Lotossamenpaste",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "1½",
-     "unit": "Cup"
-    },
-    "recipeId": "suesse-lotossamenpaste"
-   },
-   {
-    "amount": "10",
-    "name": "Salzeigelb",
-    "note": "optional",
-    "unit": "",
-    "recipeId": "salzeigelb"
-   },
-   {
-    "heading": "Zum Bestreichen"
-   },
-   {
-    "amount": "1",
-    "name": "Eigelb",
-    "note": "verquirlt",
-    "unit": ""
-   }
-  ],
-  "steps": [
-   "## Vorbereiten",
-   "Den Goldsirup mindestens 3 Wochen im Voraus kochen (oder gekauften verwenden). Die Süsse Lotossamenpaste am Vortag zubereiten, sie muss über Nacht auskühlen.",
-   "## Teig",
-   "Mehl und Natron in einer Schüssel mischen. In der Mitte eine Mulde formen und nach und nach Goldsirup, Öl und alkalisches Wasser einrühren, mit einem Holzlöffel gut vermischen.",
-   "Die Hände bemehlen und alles zu einem glatten Teig kneten. Mit einem Tuch abdecken und 3 bis 4 Stunden ruhen lassen.",
-   "## Füllung portionieren",
-   "Die Lotossamenpaste in 10 gleich grosse Portionen teilen und jede zwischen den Handflächen zu einer Kugel rollen.",
-   "Mit Salzeigelb: mit dem Daumen eine Mulde in jede Kugel drücken, ein Eigelb hineinlegen und die Paste rundherum darüber schliessen.",
-   "## Formen",
-   "Den Teig auf einer bemehlten Fläche in 10 gleich grosse Portionen teilen und zu Kugeln rollen.",
-   "Eine Teigkugel mit der Handfläche flach drücken und mit dem Wallholz zu einem 3 mm dicken Kreis ausrollen.",
-   "Den Teigkreis in die Handfläche legen, eine Füllkugel in die Mitte setzen und den Teig rundherum hochziehen, bis die Füllung ganz umschlossen ist. Die Ränder gut zusammendrücken.",
-   "Die Mondkuchenform (6 cm Durchmesser) innen leicht bemehlen. Die Kugel mit der Naht nach oben in die Form drücken.",
-   "Mit der Handfläche flach drücken, damit der Mooncake die Form ganz ausfüllt.",
-   "Die Form umdrehen und mit dem Ende leicht auf die Arbeitsfläche klopfen, bis sich der Mooncake löst. Wiederholen, bis alle 10 Mooncakes geformt sind.",
-   "## Backen",
-   "Den Ofen auf 200 °C vorheizen. Die Mooncakes etwa 15 Minuten backen.",
-   "Herausnehmen und die Oberseite mit dem verquirlten Eigelb bestreichen.",
-   "Weitere 6 bis 8 Minuten backen, bis sie goldbraun sind.",
-   "## Ruhen lassen",
-   "Die Mooncakes unbedeckt an einem gut belüfteten Ort 1 bis 2 Tage ruhen lassen. So wird der Teig weich und sie schmecken besser."
-  ],
-  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nFertige süsse Lotossamenpaste und gesalzene Eier gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
-  "source": "Chinese Feasts & Festivals (S.C. Moey), «Lotus Seed Mooncakes», S. 108, und «How to Shape a Mooncake», S. 110",
-  "chapter": "Süsses & Gebäck",
-  "subchapter": "Mooncakes",
-  "prepTime": "2 Std",
-  "restTime": "3–4 Std (Teig) + 1–2 Tage",
-  "cookTime": "25 Min pro Blech",
-  "keywords": [
-   "Mooncake",
-   "Mondfest",
-   "Gebäck",
-   "Lotos"
-  ]
- },
- "snowy-skin-mooncakes": {
-  "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
-  "historyCount": 0,
-  "status": "entwurf",
-  "topics": [
-   "Chinesisch"
-  ],
-  "title": "Snowy-Skin-Mooncakes mit Salzeigelb-Custard",
-  "intro": "Ungebackene Mooncakes mit weicher, mochiartiger Haut in beliebiger Farbe und einer Custard-Füllung mit gesalzenem Eigelb. Nicht nur fürs Mondfest.",
-  "servings": 15,
-  "yieldUnit": "Stück",
-  "ingredients": [
-   {
-    "heading": "Für das geröstete Klebreismehl"
-   },
-   {
-    "amount": "32",
-    "name": "Klebreismehl",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "4",
-     "unit": "EL"
-    }
-   },
-   {
-    "heading": "Für die Füllung"
-   },
-   {
-    "amount": "45",
-    "name": "Butter",
-    "note": "geschmolzen",
-    "unit": "g",
-    "orig": {
-     "amount": "3",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "120",
-    "name": "Milch",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "78",
-    "name": "Zucker",
-    "note": "nach Geschmack anpassen",
-    "unit": "g",
-    "orig": {
-     "amount": "6",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "3",
-    "name": "Eier",
-    "note": "mittelgross (ca. 150 g), verquirlt",
-    "unit": ""
-   },
-   {
-    "amount": "1",
-    "name": "Vanilleextrakt",
-    "note": "",
-    "unit": "TL"
-   },
-   {
-    "amount": "28",
-    "name": "Salzeigelb",
-    "note": "2 gesalzene Enteneigelbe, gekauft oder selbst gemacht, 15 Min gedämpft und mit der Gabel zerdrückt",
-    "unit": "g",
-    "recipeId": "salzeigelb"
-   },
-   {
-    "amount": "¼",
-    "name": "Miso",
-    "note": "oder Salz",
-    "unit": "TL"
-   },
-   {
-    "amount": "32",
-    "name": "Maisstärke",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "4",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "36",
-    "name": "Puddingpulver",
-    "note": "Custard Powder, gesiebt, optional",
-    "unit": "g",
-    "orig": {
-     "amount": "3",
-     "unit": "EL"
-    }
-   },
-   {
-    "heading": "Für die Haut"
-   },
-   {
-    "amount": "60",
-    "name": "Klebreismehl",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "40",
-    "name": "Reismehl",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "¼",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "24",
-    "name": "Maisstärke",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "3",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "39",
-    "name": "Zucker",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "3",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "185",
-    "name": "Milch",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "19/24",
-     "unit": "Cup"
-    }
-   },
-   {
-    "amount": "25",
-    "name": "Gezuckerte Kondensmilch",
-    "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "1½",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "30",
-    "name": "Rapsöl",
-    "note": "oder anderes neutrales Öl, plus etwas zum Bestreichen",
-    "unit": "g",
-    "orig": {
-     "amount": "2",
-     "unit": "EL"
-    }
-   },
-   {
-    "amount": "1",
-    "name": "Vanilleextrakt",
-    "note": "optional",
-    "unit": "TL"
-   },
-   {
-    "amount": "",
-    "name": "Lebensmittelfarbe",
-    "note": "Gel, einige Tropfen, Farbe nach Wahl, optional",
-    "unit": ""
-   },
-   {
-    "heading": "Zum Verzieren"
-   },
-   {
-    "amount": "",
-    "name": "Essbares Gold",
-    "note": "Goldstaub oder Blattgold, optional",
-    "unit": ""
-   }
-  ],
-  "steps": [
-   "## Geröstetes Klebreismehl",
-   "Das Klebreismehl in einer Pfanne bei mittel-niedriger Hitze rösten, bis es duftet. Beiseitestellen.",
-   "## Füllung",
-   "Alle Zutaten für die Füllung in einen Topf geben und verquirlen, bis alles gut verbunden ist.",
-   "Bei mittel-niedriger Hitze unter ständigem Rühren erhitzen. Sobald die Masse eindickt, sich vom Topf löst und zu einem Klumpen wird, vom Herd nehmen.",
-   "Die Füllung mit einem flexiblen Teigschaber glatt streichen, etwas klumpig darf sie sein. Frischhaltefolie direkt auf die Oberfläche legen und mindestens 1 Stunde kühlen.",
-   "## Haut",
-   "Alle Zutaten für die Haut ausser der Lebensmittelfarbe in eine hitzefeste Schüssel geben und glatt verquirlen. Mit Alufolie abdecken und mindestens 30 Minuten über mittel-starker Hitze dämpfen, bis die Masse fest und nicht mehr flüssig ist. Der Teig ist fertig, wenn er wie festes Gelee aussieht und ein Zahnstocher sauber herauskommt.",
-   "Den Teig in die Küchenmaschine mit Flachrührer geben und auf niedriger Stufe 1 bis 2 Minuten mischen, bis er glänzend und glatt ist. Nicht zu lange bearbeiten.",
-   "Abkühlen lassen, bis er sich lauwarm anfühlt.",
-   "## Formen",
-   "Lebensmittelechte Handschuhe anziehen. Nach Wunsch einige Tropfen Lebensmittelfarbe auf den Teig geben, dehnen und mischen, bis er marmoriert ist.",
-   "20 g Teig abnehmen, zu einer Kugel rollen und zwischen zwei Lagen Frischhaltefolie flach drücken. Von der Folie nehmen.",
-   "25 g Füllung zu einer Kugel rollen. Den Teig darum legen, die Nähte zusammendrücken und zu einer glatten Kugel rollen.",
-   "Die Kugel in der Pfanne im gerösteten Klebreismehl wenden. Die Mondkuchenpresse innen ebenfalls mit geröstetem Klebreismehl bestäuben.",
-   "Die Presse mit dem gewünschten Stempel sanft auf die Kugel drücken. Mit dem restlichen Teig und der Füllung etwa 14 weitere Mooncakes formen.",
-   "Mit neutralem Öl bestreichen und nach Wunsch mit Goldstaub oder Blattgold verzieren.",
-   "## Kühlen",
-   "Abgedeckt einige Stunden bis höchstens 4 Tage kühlen. Vor dem Essen bei Raumtemperatur etwas weich werden lassen."
-  ],
-  "tips": "Du brauchst eine Mondkuchenpresse mit 50 bis 100 g Fassungsvermögen (günstig online erhältlich).\n\nGesalzene Enteneigelbe gibt es gekocht und vakuumverpackt im Kühl- oder Tiefkühlregal im Asia-Laden. Selbst gemachtes Salzeigelb geht auch.\n\nStatt Custard lässt sich auch eine andere Füllung verwenden, z.B. Ube-Halaya-Konfitüre (im Buch S. 28).\n\nZur Dämpftechnik gibt es im Buch eine Anleitung auf S. 17.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
-  "source": "Modern Asian Baking at Home (Kat Lieu), Kapitel «Treats under one Moon and Holiday Bakes», «Snowy Skin Mooncake», S. 128–129, nach einem Rezept von Karen Ng",
-  "chapter": "Süsses & Gebäck",
-  "subchapter": "Mooncakes",
-  "prepTime": "45 Min",
-  "cookTime": "40 Min",
-  "restTime": "1 Std (Füllung) + einige Std kühlen",
-  "keywords": [
-   "Mooncake",
-   "Mondfest",
-   "Snow Skin",
-   "Dessert"
-  ]
- },
  "rote-bohnenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
   "updatedAt": "2026-11-23T21:00:00.000Z",
@@ -2149,7 +1712,7 @@
    "Salzei"
   ]
  },
- "mooncakes-rote-bohne-salzeigelb": {
+ "weisse-lotussamenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
   "updatedAt": "2026-11-23T21:00:00.000Z",
   "historyCount": 0,
@@ -2157,8 +1720,348 @@
   "topics": [
    "Chinesisch"
   ],
+  "title": "Weisse Lotussamenpaste",
+  "intro": "Helle, feine Lotuspaste aus nur drei Zutaten. Füllung für Tausend-Schichten-Mooncakes und andere Mooncakes.",
+  "servings": 1,
+  "yieldUnit": "Portion",
+  "ingredients": [
+   {
+    "amount": "100",
+    "name": "Lotussamen",
+    "note": "getrocknet",
+    "unit": "g",
+    "orig": {
+     "amount": "1",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "50",
+    "name": "Zucker",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "¼",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "45",
+    "name": "Rapsöl",
+    "note": "oder anderes neutrales Öl",
+    "unit": "g",
+    "orig": {
+     "amount": "¼",
+     "unit": "Cup"
+    }
+   }
+  ],
+  "steps": [
+   "## Einweichen",
+   "Die Lotussamen 8 Stunden oder über Nacht in Wasser einweichen. Abgiessen und abspülen.",
+   "Manche Samen haben innen kleine grüne Keimlinge. So viele wie möglich davon entfernen.",
+   "## Kochen und pürieren",
+   "Die Samen in einem mittelgrossen Topf mit so viel Wasser bedecken, dass es 5 cm über den Samen steht. Aufkochen und köcheln lassen, bis sie weich sind, 45 Minuten bis 1 Stunde. Abgiessen und kalt abspülen.",
+   "Samen und Zucker im Food Processor glatt pürieren.",
+   "## Rösten",
+   "Das Püree und das Öl in eine mittelgrosse beschichtete Pfanne geben. Bei mittel-niedriger Hitze ständig mit einem flexiblen Teigschaber rühren, bis das Öl aufgenommen ist und die Farbe dunkler wird, 8 bis 10 Minuten.",
+   "In einen hitzefesten Behälter füllen und abkühlen lassen."
+  ],
+  "tips": "Ergibt laut Buch etwa 600 ml (2½ Cups). Für 6 Tausend-Schichten-Mooncakes brauchst du 180 g.\n\nLuftdicht im Kühlschrank bis 2 Wochen, tiefgekühlt bis 3 Monate haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), «White Lotus Seed Paste», S. 187",
+  "chapter": "Grundrezepte",
+  "subchapter": "Füllungen & Pasten",
+  "prepTime": "10 Min",
+  "restTime": "8 Std (Einweichen)",
+  "cookTime": "1 Std 10 Min",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Lotus"
+  ]
+ },
+ "suesse-lotussamenpaste": {
+  "createdAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Süsse Lotussamenpaste",
+  "intro": "Die klassische Mooncake-Füllung (lianrong): Lotussamen werden weich gekocht, püriert und mit karamellisiertem Zucker und Öl zu einer dicken Paste geröstet.",
+  "servings": 450,
+  "yieldUnit": "g",
+  "ingredients": [
+   {
+    "amount": "150",
+    "name": "Lotussamen",
+    "note": "getrocknet, geschält",
+    "unit": "g",
+    "orig": {
+     "amount": "2½",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "125",
+    "name": "Neutrales Öl",
+    "note": "",
+    "unit": "ml",
+    "orig": {
+     "amount": "½",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "150",
+    "name": "Zucker",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "¾",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Maltosesirup",
+    "note": "",
+    "unit": "TL"
+   }
+  ],
+  "steps": [
+   "## Kochen und pürieren",
+   "Die Lotussamen 1 Stunde in Wasser einweichen.",
+   "In einem Topf mit Wasser bei mittlerer Hitze etwa 1 Stunde weich kochen, dann abgiessen.",
+   "Im Mixer zu einer glatten Paste pürieren.",
+   "## Rösten",
+   "2 EL + 1½ TL vom Öl in einem beschichteten Wok oder Topf bei starker Hitze erhitzen. 2 EL vom Zucker dazugeben und rühren, bis er karamellisiert, 2 bis 3 Minuten.",
+   "Die Hitze auf mittlere Stufe stellen, die Lotuspaste dazugeben und gut vermischen.",
+   "Den restlichen Zucker einrühren, bis er sich aufgelöst hat.",
+   "Das restliche Öl nach und nach einrühren und weiterrühren, bis die Masse dick ist und sich vom Rand der Pfanne löst, 20 bis 30 Minuten.",
+   "Zum Schluss den Maltosesirup einrühren und vom Herd nehmen.",
+   "Die Paste über Nacht auskühlen lassen, bevor du sie verwendest."
+  ],
+  "tips": "Ergibt etwa 450 g, genau die Menge für 10 Lotus-Mooncakes.\n\nIm Buch steht beim Öl «½ cup (150 ml)». ½ Cup sind 125 ml, die 150 ml sind vermutlich mit den 150 g Zucker bzw. Lotussamen verwechselt.\n\nFertige süsse Lotussamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
+  "source": "Chinese Feasts & Festivals (S.C. Moey), Teilrezept «Sweet Lotus Seed Paste» aus «Lotus Seed Mooncakes», S. 108",
+  "chapter": "Grundrezepte",
+  "subchapter": "Füllungen & Pasten",
+  "prepTime": "15 Min",
+  "cookTime": "1 Std 30 Min",
+  "restTime": "1 Std Einweichen + über Nacht",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Lotus"
+  ]
+ },
+ "mooncake-streiche": {
+  "createdAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Mooncake-Streiche ohne Ei",
+  "intro": "Glänzende, goldbraune Streiche für gebackene Mooncakes, ganz ohne Ei. Sojamilch bräunt ähnlich wie Ei, der Sirup bringt zusätzlich Farbe und Glanz.",
+  "servings": 12,
+  "yieldUnit": "Mooncakes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "name": "Sojamilch",
+    "note": "ungesüsst",
+    "unit": "EL"
+   },
+   {
+    "amount": "1",
+    "name": "Goldsirup",
+    "note": "oder Ahornsirup",
+    "unit": "TL"
+   }
+  ],
+  "steps": [
+   "Sojamilch und Sirup in einer kleinen Schüssel verrühren, bis sich der Sirup ganz aufgelöst hat.",
+   "Nach dem ersten Backgang die leicht abgekühlten Mooncakes (Oberseite und Seiten) mit einem Pinsel dünn bestreichen. Zu viel Streiche mit Küchenpapier abtupfen, sonst verschwindet das Muster.",
+   "Danach wie im Rezept fertig backen."
+  ],
+  "tips": "Am besten mit einem Pinsel aus Naturhaar statt Silikon auftragen, so bleibt die Streiche dünn und die feinen Vertiefungen des Musters frei.\n\nWarum diese Mischung: In einem Vergleichstest von King Arthur Baking schnitt ungesüsste Sojamilch mit Ahornsirup (1 TL auf 2 EL) unter den Ei-Ersatz-Streichen am besten ab, mit schönem Glanz und guter Bräunung. Reine Sojamilch glänzt ähnlich wie Ei, bräunt aber etwas weniger. Fett (Margarine, Kokosöl) gibt kaum Glanz und wirkt fettig. Vegane Mooncake-Rezepte (z.B. The Plant-Based Wok) nutzen dieselbe Idee: 2 EL Pflanzenmilch mit 1 TL Sirup, dünn nach dem ersten Backgang.\n\nGoldsirup statt Ahornsirup ist meine Anpassung, weil er sowieso im Mooncake-Teig ist und neutraler schmeckt. Beides funktioniert.\n\nReicht für 10 bis 12 Mooncakes.",
+  "source": "Eigene Zusammenstellung nach King Arthur Baking (Vegan-Egg-Wash-Test) und The Plant-Based Wok (Vegan Mooncakes)",
+  "chapter": "Grundrezepte",
+  "subchapter": "Glasuren & Streichen",
+  "prepTime": "2 Min",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Ei-Ersatz",
+   "Vegan",
+   "Glasur"
+  ]
+ },
+ "lotus-mooncakes": {
+  "createdAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Lotus-Mooncakes",
+  "intro": "Gebackene Mooncakes aus der Holzform, klassisch mit süsser Lotussamenpaste (lianrong) und einem ganzen gesalzenen Eigelb in der Mitte. Die Füllung lässt sich frei wählen.",
+  "servings": 10,
+  "yieldUnit": "Stück",
+  "ingredients": [
+   {
+    "heading": "Für den Teig"
+   },
+   {
+    "amount": "125",
+    "name": "Goldsirup",
+    "note": "selbst gemacht oder gekauft",
+    "unit": "ml",
+    "orig": {
+     "amount": "½",
+     "unit": "Cup"
+    },
+    "recipeId": "goldsirup"
+   },
+   {
+    "amount": "300",
+    "name": "Weissmehl",
+    "note": "gesiebt",
+    "unit": "g",
+    "orig": {
+     "amount": "2",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Natron",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "125",
+    "name": "Neutrales Öl",
+    "note": "",
+    "unit": "ml",
+    "orig": {
+     "amount": "½",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Alkalisches Wasser",
+    "note": "Kansui, oder Natronlösung (Rezept im Buch S. 134)",
+    "unit": "TL"
+   },
+   {
+    "heading": "Für die Füllung"
+   },
+   {
+    "amount": "450",
+    "name": "Süsse Lotussamenpaste",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "1½",
+     "unit": "Cup"
+    },
+    "recipeId": "suesse-lotussamenpaste"
+   },
+   {
+    "amount": "10",
+    "name": "Salzeigelb",
+    "note": "optional",
+    "unit": "",
+    "recipeId": "salzeigelb"
+   },
+   {
+    "heading": "Andere Füllung als Option"
+   },
+   {
+    "amount": "450",
+    "name": "Weisse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "weisse-lotussamenpaste"
+   },
+   {
+    "amount": "450",
+    "name": "Rote Bohnenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "rote-bohnenpaste"
+   },
+   {
+    "amount": "450",
+    "name": "Honig-Pistazien-Füllung",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "honig-pistazien-fuellung"
+   },
+   {
+    "heading": "Zum Bestreichen"
+   },
+   {
+    "amount": "1",
+    "name": "Mooncake-Streiche ohne Ei",
+    "note": "",
+    "unit": "Portion",
+    "recipeId": "mooncake-streiche"
+   }
+  ],
+  "steps": [
+   "## Vorbereiten",
+   "Den Goldsirup mindestens 3 Wochen im Voraus kochen (oder gekauften verwenden). Die Füllung am Vortag zubereiten, Lotus- und Bohnenpaste müssen über Nacht auskühlen.",
+   "## Teig",
+   "Mehl und Natron in einer Schüssel mischen. In der Mitte eine Mulde formen und nach und nach Goldsirup, Öl und alkalisches Wasser einrühren, mit einem Holzlöffel gut vermischen.",
+   "Die Hände bemehlen und alles zu einem glatten Teig kneten. Mit einem Tuch abdecken und 3 bis 4 Stunden ruhen lassen.",
+   "## Füllung portionieren",
+   "Die Lotussamenpaste (oder die gewählte andere Füllung) in 10 gleich grosse Portionen (je 45 g) teilen und jede zwischen den Handflächen zu einer Kugel rollen.",
+   "Mit Salzeigelb: mit dem Daumen eine Mulde in jede Kugel drücken, ein Eigelb hineinlegen und die Paste rundherum darüber schliessen.",
+   "## Formen",
+   "Den Teig auf einer bemehlten Fläche in 10 gleich grosse Portionen teilen und zu Kugeln rollen.",
+   "Eine Teigkugel mit der Handfläche flach drücken und mit dem Wallholz zu einem 3 mm dicken Kreis ausrollen.",
+   "Den Teigkreis in die Handfläche legen, eine Füllkugel in die Mitte setzen und den Teig rundherum hochziehen, bis die Füllung ganz umschlossen ist. Die Ränder gut zusammendrücken.",
+   "Die Mondkuchenform (6 cm Durchmesser) innen leicht bemehlen. Die Kugel mit der Naht nach oben in die Form drücken.",
+   "Mit der Handfläche flach drücken, damit der Mooncake die Form ganz ausfüllt.",
+   "Die Form umdrehen und mit dem Ende leicht auf die Arbeitsfläche klopfen, bis sich der Mooncake löst. Wiederholen, bis alle 10 Mooncakes geformt sind.",
+   "## Backen",
+   "Den Ofen auf 200 °C vorheizen. Die Mooncakes etwa 15 Minuten backen.",
+   "Herausnehmen und die Oberseite dünn mit der Mooncake-Streiche ohne Ei bestreichen.",
+   "Weitere 6 bis 8 Minuten backen, bis sie goldbraun sind.",
+   "## Ruhen lassen",
+   "Die Mooncakes unbedeckt an einem gut belüfteten Ort 1 bis 2 Tage ruhen lassen. So wird der Teig weich und sie schmecken besser."
+  ],
+  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nIm Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nFertige süsse Lotussamenpaste und gesalzene Eier gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.",
+  "source": "Chinese Feasts & Festivals (S.C. Moey), «Lotus Seed Mooncakes», S. 108, und «How to Shape a Mooncake», S. 110",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Mooncakes",
+  "prepTime": "2 Std",
+  "restTime": "3–4 Std (Teig) + 1–2 Tage",
+  "cookTime": "25 Min pro Blech",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Gebäck",
+   "Lotus"
+  ]
+ },
+ "mooncakes-rote-bohne-salzeigelb": {
+  "createdAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
   "title": "Mooncakes mit roter Bohnenpaste und Salzeigelb",
-  "intro": "Der Klassiker und Lieblings-Mooncake der Autorin: süsser Teig, nussige rote Bohnenpaste und ein cremig-krümeliges Salzeigelb in der Mitte.",
+  "intro": "Der Klassiker und Lieblings-Mooncake der Autorin: süsser Teig, nussige rote Bohnenpaste und ein cremig-krümeliges Salzeigelb in der Mitte. Statt Bohnenpaste geht auch jede andere Füllung.",
   "servings": 12,
   "yieldUnit": "Stück",
   "ingredients": [
@@ -2228,19 +2131,31 @@
     "recipeId": "salzeigelb"
    },
    {
-    "heading": "Für die Eistreiche"
+    "heading": "Andere Füllung als Option (statt Bohnenpaste)"
+   },
+   {
+    "amount": "250",
+    "name": "Süsse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "suesse-lotussamenpaste"
+   },
+   {
+    "amount": "250",
+    "name": "Weisse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "weisse-lotussamenpaste"
+   },
+   {
+    "heading": "Zum Bestreichen"
    },
    {
     "amount": "1",
-    "name": "Ei",
-    "note": "gross",
-    "unit": ""
-   },
-   {
-    "amount": "2",
-    "name": "Wasser",
+    "name": "Mooncake-Streiche ohne Ei",
     "note": "",
-    "unit": "EL"
+    "unit": "Portion",
+    "recipeId": "mooncake-streiche"
    }
   ],
   "steps": [
@@ -2257,13 +2172,13 @@
    "Die Kugeln beim Formen mit mindestens 5 cm Abstand auf das Blech setzen. Die Mondkuchenform leicht bemehlen, eine Kugel hineinlegen und den Stempel herunterdrücken, aber nicht zu fest. Vorsichtig aus der Form lösen und zurück aufs Blech setzen. Mit dem restlichen Teig und der Füllung wiederholen, bis alle 12 Mooncakes geformt sind.",
    "## Erster Backgang",
    "Backen, bis die Ränder leicht goldbraun sind, 9 bis 11 Minuten. Herausnehmen und 10 Minuten auf dem Blech abkühlen lassen.",
-   "## Eistreiche und zweiter Backgang",
-   "Ei und Wasser in einer kleinen Schüssel verquirlen. Die Mooncakes (Oberseite und Seiten) mit einem Pinsel dünn damit bestreichen.",
+   "## Streiche und zweiter Backgang",
+   "Die Mooncakes (Oberseite und Seiten) mit einem Pinsel dünn mit der Mooncake-Streiche ohne Ei bestreichen.",
    "Zurück in den Ofen geben und backen, bis sie tief goldbraun sind, 10 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf vollständig auskühlen lassen.",
    "## Ruhen lassen",
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nOhne Salzeigelb: jeden Mooncake mit 1 EL + 1½ TL Bohnenpaste füllen.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Eistreiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Eistreiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nOhne Salzeigelb: jeden Mooncake mit 1 EL + 1½ TL Paste füllen.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Red Bean and Salted Egg Yolk Mooncakes», S. 176–177, Tipps aus der Einleitung zu Mooncakes",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2277,18 +2192,18 @@
  },
  "honig-pistazien-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
   "title": "Honig-Pistazien-Mooncakes",
-  "intro": "Einfache Füllung ohne Gang in den Asia-Laden: Pistazien mit Honig, Kokosöl und einer kräftigen Prise Salz. Schmeckt wie ein Schokoriegel ohne Schokolade.",
+  "intro": "Einfache Füllung ohne Gang in den Asia-Laden: Pistazien mit Honig, Kokosöl und einer kräftigen Prise Salz, im gleichen Teig wie die klassischen Mooncakes.",
   "servings": 12,
   "yieldUnit": "Stück",
   "parentId": "mooncakes-rote-bohne-salzeigelb",
-  "variantNote": "Füllung aus Honig-Pistazien statt roter Bohnenpaste und Salzeigelb. Teig, Formen und Backen sind gleich.",
+  "variantNote": "Mit Honig-Pistazien-Füllung statt roter Bohnenpaste und Salzeigelb. Teig, Formen und Backen sind gleich.",
   "ingredients": [
    {
     "heading": "Für den Teig"
@@ -2338,6 +2253,95 @@
     "heading": "Für die Füllung"
    },
    {
+    "amount": "1",
+    "name": "Honig-Pistazien-Füllung",
+    "note": "ca. 315 g",
+    "unit": "Portion",
+    "recipeId": "honig-pistazien-fuellung"
+   },
+   {
+    "heading": "Andere Füllung als Option (statt Pistazien)"
+   },
+   {
+    "amount": "250",
+    "name": "Rote Bohnenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "rote-bohnenpaste"
+   },
+   {
+    "amount": "250",
+    "name": "Süsse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "suesse-lotussamenpaste"
+   },
+   {
+    "amount": "250",
+    "name": "Weisse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "weisse-lotussamenpaste"
+   },
+   {
+    "heading": "Zum Bestreichen"
+   },
+   {
+    "amount": "1",
+    "name": "Mooncake-Streiche ohne Ei",
+    "note": "",
+    "unit": "Portion",
+    "recipeId": "mooncake-streiche"
+   }
+  ],
+  "steps": [
+   "## Teig",
+   "In einer grossen Schüssel Mehl, Öl, Goldsirup und alkalisches Wasser mit einem flexiblen Teigschaber zu einem krümeligen Teig mischen, dann mit den Händen zu einem glatten, zusammenhängenden Teig kneten.",
+   "Den Teig zu einer dicken Scheibe formen, in Frischhaltefolie wickeln und 45 Minuten bei Raumtemperatur ruhen lassen.",
+   "## Vorbereiten",
+   "Den Ofen auf 175 °C vorheizen und ein grosses Backblech mit Rand mit Backpapier auslegen.",
+   "## Füllung",
+   "Die Honig-Pistazien-Füllung in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu Kugeln formen.",
+   "## Formen",
+   "Den Teig auf einer leicht bemehlten Fläche mit der Teigkarte in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu glatten Kugeln rollen.",
+   "Eine Kugel nach der anderen mit der Handfläche flach drücken und mit einem Rundholz zu einem Kreis von 10 cm ausrollen. Bei Bedarf leicht bemehlen und den Teig mit der Teigkarte anheben.",
+   "Eine Füllkugel in die Mitte setzen.",
+   "Die Teigränder um die Füllung hochziehen. Der Teig deckt die Füllung anfangs nicht ganz, einfach zusammendrücken, bis sie vollständig umhüllt ist. Risse zusammendrücken und zu einer glatten Kugel rollen.",
+   "Die Kugeln beim Formen mit mindestens 5 cm Abstand auf das Blech setzen. Die Mondkuchenform leicht bemehlen, eine Kugel hineinlegen und den Stempel herunterdrücken, aber nicht zu fest. Vorsichtig aus der Form lösen und zurück aufs Blech setzen. Mit dem restlichen Teig und der Füllung wiederholen, bis alle 12 Mooncakes geformt sind.",
+   "## Erster Backgang",
+   "Backen, bis die Ränder leicht goldbraun sind, 9 bis 11 Minuten. Herausnehmen und 10 Minuten auf dem Blech abkühlen lassen.",
+   "## Streiche und zweiter Backgang",
+   "Die Mooncakes (Oberseite und Seiten) mit einem Pinsel dünn mit der Mooncake-Streiche ohne Ei bestreichen.",
+   "Zurück in den Ofen geben und backen, bis sie tief goldbraun sind, 10 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf vollständig auskühlen lassen.",
+   "## Ruhen lassen",
+   "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
+  ],
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), «Honey Pistachio Mooncakes», S. 178–179 (Seitenzahl vermutet)",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Mooncakes",
+  "restTime": "45 Min (Teig) + 1–2 Tage",
+  "cookTime": "20 Min",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Gebäck"
+  ]
+ },
+ "honig-pistazien-fuellung": {
+  "createdAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Honig-Pistazien-Füllung",
+  "intro": "Mooncake-Füllung ohne Gang in den Asia-Laden: Pistazien mit Honig, Kokosöl und einer kräftigen Prise Salz. Schmeckt wie ein Schokoriegel ohne Schokolade.",
+  "servings": 12,
+  "yieldUnit": "kleine Mooncakes",
+  "ingredients": [
+   {
     "amount": "200",
     "name": "Pistazien",
     "note": "geröstet, ungesalzen",
@@ -2382,134 +2386,336 @@
     "name": "Grobes Salz",
     "note": "",
     "unit": "TL"
-   },
-   {
-    "heading": "Für die Eistreiche"
-   },
-   {
-    "amount": "1",
-    "name": "Ei",
-    "note": "gross",
-    "unit": ""
-   },
-   {
-    "amount": "2",
-    "name": "Wasser",
-    "note": "",
-    "unit": "EL"
    }
   ],
   "steps": [
-   "## Teig",
-   "In einer grossen Schüssel Mehl, Öl, Goldsirup und alkalisches Wasser mit einem flexiblen Teigschaber zu einem krümeligen Teig mischen, dann mit den Händen zu einem glatten, zusammenhängenden Teig kneten.",
-   "Den Teig zu einer dicken Scheibe formen, in Frischhaltefolie wickeln und 45 Minuten bei Raumtemperatur ruhen lassen.",
-   "## Vorbereiten",
-   "Den Ofen auf 175 °C vorheizen und ein grosses Backblech mit Rand mit Backpapier auslegen.",
-   "## Füllung",
-   "Die Pistazien im Food Processor grob hacken (pulsieren). Honig, Kokosöl, Maisstärke und Salz dazugeben und nochmals einige Male pulsieren. Die Füllung soll etwas krümelig sein, aber beim Zusammendrücken halten. Nicht zu lange mixen, sonst wird Pistazienbutter daraus.",
-   "Die Füllung in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu Kugeln formen.",
-   "## Formen",
-   "Den Teig mit der Teigkarte in 12 gleich grosse Stücke teilen (am genausten mit der Küchenwaage) und zu glatten Kugeln rollen.",
-   "Eine Kugel nach der anderen mit der Handfläche flach drücken und zu einem Kreis von 10 cm ausrollen. Bei Bedarf leicht bemehlen und den Teig mit der Teigkarte anheben.",
-   "Eine Füllkugel in die Mitte setzen. Die Teigränder hochziehen. Der Teig deckt die Füllung anfangs nicht ganz, einfach zusammendrücken, bis sie vollständig umhüllt ist. Risse zusammendrücken und zu einer glatten Kugel rollen.",
-   "Die Kugeln beim Formen mit mindestens 5 cm Abstand auf das Blech setzen. Die Mondkuchenform leicht bemehlen, eine Kugel hineinlegen und den Stempel herunterdrücken, aber nicht zu fest. Vorsichtig aus der Form lösen und zurück aufs Blech setzen. Mit dem restlichen Teig und der Füllung wiederholen, bis alle 12 Mooncakes geformt sind.",
-   "## Erster Backgang",
-   "Backen, bis die Ränder leicht goldbraun sind, 9 bis 11 Minuten. Herausnehmen und 10 Minuten auf dem Blech abkühlen lassen.",
-   "## Eistreiche und zweiter Backgang",
-   "Ei und Wasser in einer kleinen Schüssel verquirlen. Die Mooncakes (Oberseite und Seiten) mit einem Pinsel dünn damit bestreichen.",
-   "Zurück in den Ofen geben und backen, bis sie tief goldbraun sind, 10 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf vollständig auskühlen lassen.",
-   "## Ruhen lassen",
-   "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
+   "Die Pistazien im Food Processor grob hacken (pulsieren).",
+   "Honig, Kokosöl, Maisstärke und Salz dazugeben und nochmals einige Male pulsieren. Die Füllung soll etwas krümelig sein, aber beim Zusammendrücken halten. Nicht zu lange mixen, sonst wird Pistazienbutter daraus.",
+   "Für kleine Mooncakes (50-g-Form) in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu Kugeln formen."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nEine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Eistreiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Eistreiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
-  "source": "Mooncakes & Milk Bread (Kristina Cho), «Honey Pistachio Mooncakes», S. 178–179 (Seitenzahl vermutet)",
-  "chapter": "Süsses & Gebäck",
-  "subchapter": "Mooncakes",
-  "restTime": "45 Min (Teig) + 1–2 Tage",
-  "cookTime": "20 Min",
+  "tips": "Ergibt etwa 315 g, genug für 12 kleine oder 6 grosse Mooncakes.\n\nEine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), Füllung aus «Honey Pistachio Mooncakes»",
+  "chapter": "Grundrezepte",
+  "subchapter": "Füllungen & Pasten",
+  "prepTime": "10 Min",
   "keywords": [
    "Mooncake",
    "Mondfest",
-   "Gebäck"
+   "Pistazien"
   ]
  },
- "weisse-lotossamenpaste": {
-  "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+ "salzeigelb-custard": {
+  "createdAt": "2026-11-23T22:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Weisse Lotossamenpaste",
-  "intro": "Helle, feine Lotospaste aus nur drei Zutaten. Füllung für Tausend-Schichten-Mooncakes und andere Mooncakes.",
-  "servings": 1,
-  "yieldUnit": "Portion",
+  "title": "Salzeigelb-Custard",
+  "intro": "Cremige, leicht salzige Custard-Füllung mit gesalzenem Eigelb, im Topf gekocht. Füllung für Snowy-Skin-Mooncakes.",
+  "servings": 15,
+  "yieldUnit": "Mooncakes",
   "ingredients": [
    {
-    "amount": "100",
-    "name": "Lotossamen",
-    "note": "getrocknet",
+    "amount": "45",
+    "name": "Butter",
+    "note": "geschmolzen",
     "unit": "g",
     "orig": {
-     "amount": "1",
+     "amount": "3",
+     "unit": "EL"
+    }
+   },
+   {
+    "amount": "120",
+    "name": "Milch",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "½",
      "unit": "Cup"
     }
    },
    {
-    "amount": "50",
+    "amount": "78",
+    "name": "Zucker",
+    "note": "nach Geschmack anpassen",
+    "unit": "g",
+    "orig": {
+     "amount": "6",
+     "unit": "EL"
+    }
+   },
+   {
+    "amount": "3",
+    "name": "Eier",
+    "note": "mittelgross (ca. 150 g), verquirlt",
+    "unit": ""
+   },
+   {
+    "amount": "1",
+    "name": "Vanilleextrakt",
+    "note": "",
+    "unit": "TL"
+   },
+   {
+    "amount": "28",
+    "name": "Salzeigelb",
+    "note": "2 gesalzene Enteneigelbe, gekauft oder selbst gemacht, 15 Min gedämpft und mit der Gabel zerdrückt",
+    "unit": "g",
+    "recipeId": "salzeigelb"
+   },
+   {
+    "amount": "¼",
+    "name": "Miso",
+    "note": "oder Salz",
+    "unit": "TL"
+   },
+   {
+    "amount": "32",
+    "name": "Maisstärke",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "4",
+     "unit": "EL"
+    }
+   },
+   {
+    "amount": "36",
+    "name": "Puddingpulver",
+    "note": "Custard Powder, gesiebt, optional",
+    "unit": "g",
+    "orig": {
+     "amount": "3",
+     "unit": "EL"
+    }
+   }
+  ],
+  "steps": [
+   "Alle Zutaten in einen Topf geben und verquirlen, bis alles gut verbunden ist.",
+   "Bei mittel-niedriger Hitze unter ständigem Rühren erhitzen. Sobald die Masse eindickt, sich vom Topf löst und zu einem Klumpen wird, vom Herd nehmen.",
+   "Mit einem flexiblen Teigschaber glatt streichen, etwas klumpig darf die Füllung sein. Frischhaltefolie direkt auf die Oberfläche legen und mindestens 1 Stunde kühlen."
+  ],
+  "tips": "Reicht für etwa 15 Snowy-Skin-Mooncakes à 25 g Füllung.\n\nGesalzene Enteneigelbe gibt es gekocht und vakuumverpackt im Kühl- oder Tiefkühlregal im Asia-Laden. Selbst gemachtes Salzeigelb geht auch.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
+  "source": "Modern Asian Baking at Home (Kat Lieu), Füllung aus «Snowy Skin Mooncake», S. 129",
+  "chapter": "Grundrezepte",
+  "subchapter": "Füllungen & Pasten",
+  "prepTime": "5 Min",
+  "cookTime": "10 Min",
+  "restTime": "1 Std",
+  "keywords": [
+   "Mooncake",
+   "Mondfest",
+   "Custard",
+   "Salzei"
+  ]
+ },
+ "snowy-skin-mooncakes": {
+  "createdAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
+  "historyCount": 0,
+  "status": "entwurf",
+  "topics": [
+   "Chinesisch"
+  ],
+  "title": "Snowy-Skin-Mooncakes mit Salzeigelb-Custard",
+  "intro": "Ungebackene Mooncakes mit weicher, mochiartiger Haut in beliebiger Farbe und einer Custard-Füllung mit gesalzenem Eigelb. Statt Custard geht auch jede andere Füllung. Nicht nur fürs Mondfest.",
+  "servings": 15,
+  "yieldUnit": "Stück",
+  "ingredients": [
+   {
+    "heading": "Für das geröstete Klebreismehl"
+   },
+   {
+    "amount": "32",
+    "name": "Klebreismehl",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "4",
+     "unit": "EL"
+    }
+   },
+   {
+    "heading": "Für die Füllung"
+   },
+   {
+    "amount": "1",
+    "name": "Salzeigelb-Custard",
+    "note": "ca. 375 g",
+    "unit": "Portion",
+    "recipeId": "salzeigelb-custard"
+   },
+   {
+    "heading": "Andere Füllung als Option (statt Custard)"
+   },
+   {
+    "amount": "375",
+    "name": "Rote Bohnenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "rote-bohnenpaste"
+   },
+   {
+    "amount": "375",
+    "name": "Süsse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "suesse-lotussamenpaste"
+   },
+   {
+    "amount": "375",
+    "name": "Weisse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "weisse-lotussamenpaste"
+   },
+   {
+    "amount": "375",
+    "name": "Honig-Pistazien-Füllung",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "honig-pistazien-fuellung"
+   },
+   {
+    "heading": "Für die Haut"
+   },
+   {
+    "amount": "60",
+    "name": "Klebreismehl",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "½",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "40",
+    "name": "Reismehl",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "¼",
+     "unit": "Cup"
+    }
+   },
+   {
+    "amount": "24",
+    "name": "Maisstärke",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "3",
+     "unit": "EL"
+    }
+   },
+   {
+    "amount": "39",
     "name": "Zucker",
     "note": "",
     "unit": "g",
     "orig": {
-     "amount": "¼",
+     "amount": "3",
+     "unit": "EL"
+    }
+   },
+   {
+    "amount": "185",
+    "name": "Milch",
+    "note": "",
+    "unit": "g",
+    "orig": {
+     "amount": "19/24",
      "unit": "Cup"
     }
    },
    {
-    "amount": "45",
-    "name": "Rapsöl",
-    "note": "oder anderes neutrales Öl",
+    "amount": "25",
+    "name": "Gezuckerte Kondensmilch",
+    "note": "",
     "unit": "g",
     "orig": {
-     "amount": "¼",
-     "unit": "Cup"
+     "amount": "1½",
+     "unit": "EL"
     }
+   },
+   {
+    "amount": "30",
+    "name": "Rapsöl",
+    "note": "oder anderes neutrales Öl, plus etwas zum Bestreichen",
+    "unit": "g",
+    "orig": {
+     "amount": "2",
+     "unit": "EL"
+    }
+   },
+   {
+    "amount": "1",
+    "name": "Vanilleextrakt",
+    "note": "optional",
+    "unit": "TL"
+   },
+   {
+    "amount": "",
+    "name": "Lebensmittelfarbe",
+    "note": "Gel, einige Tropfen, Farbe nach Wahl, optional",
+    "unit": ""
+   },
+   {
+    "heading": "Zum Verzieren"
+   },
+   {
+    "amount": "",
+    "name": "Essbares Gold",
+    "note": "Goldstaub oder Blattgold, optional",
+    "unit": ""
    }
   ],
   "steps": [
-   "## Einweichen",
-   "Die Lotossamen 8 Stunden oder über Nacht in Wasser einweichen. Abgiessen und abspülen.",
-   "Manche Samen haben innen kleine grüne Keimlinge. So viele wie möglich davon entfernen.",
-   "## Kochen und pürieren",
-   "Die Samen in einem mittelgrossen Topf mit so viel Wasser bedecken, dass es 5 cm über den Samen steht. Aufkochen und köcheln lassen, bis sie weich sind, 45 Minuten bis 1 Stunde. Abgiessen und kalt abspülen.",
-   "Samen und Zucker im Food Processor glatt pürieren.",
-   "## Rösten",
-   "Das Püree und das Öl in eine mittelgrosse beschichtete Pfanne geben. Bei mittel-niedriger Hitze ständig mit einem flexiblen Teigschaber rühren, bis das Öl aufgenommen ist und die Farbe dunkler wird, 8 bis 10 Minuten.",
-   "In einen hitzefesten Behälter füllen und abkühlen lassen."
+   "## Geröstetes Klebreismehl",
+   "Das Klebreismehl in einer Pfanne bei mittel-niedriger Hitze rösten, bis es duftet. Beiseitestellen.",
+   "## Füllung",
+   "Den Salzeigelb-Custard (oder die gewählte andere Füllung) zubereiten. Der Custard muss mindestens 1 Stunde kühlen.",
+   "## Haut",
+   "Alle Zutaten für die Haut ausser der Lebensmittelfarbe in eine hitzefeste Schüssel geben und glatt verquirlen. Mit Alufolie abdecken und mindestens 30 Minuten über mittel-starker Hitze dämpfen, bis die Masse fest und nicht mehr flüssig ist. Der Teig ist fertig, wenn er wie festes Gelee aussieht und ein Zahnstocher sauber herauskommt.",
+   "Den Teig in die Küchenmaschine mit Flachrührer geben und auf niedriger Stufe 1 bis 2 Minuten mischen, bis er glänzend und glatt ist. Nicht zu lange bearbeiten.",
+   "Abkühlen lassen, bis er sich lauwarm anfühlt.",
+   "## Formen",
+   "Lebensmittelechte Handschuhe anziehen. Nach Wunsch einige Tropfen Lebensmittelfarbe auf den Teig geben, dehnen und mischen, bis er marmoriert ist.",
+   "20 g Teig abnehmen, zu einer Kugel rollen und zwischen zwei Lagen Frischhaltefolie flach drücken. Von der Folie nehmen.",
+   "25 g Füllung zu einer Kugel rollen. Den Teig darum legen, die Nähte zusammendrücken und zu einer glatten Kugel rollen.",
+   "Die Kugel in der Pfanne im gerösteten Klebreismehl wenden. Die Mondkuchenpresse innen ebenfalls mit geröstetem Klebreismehl bestäuben.",
+   "Die Presse mit dem gewünschten Stempel sanft auf die Kugel drücken. Mit dem restlichen Teig und der Füllung etwa 14 weitere Mooncakes formen.",
+   "Mit neutralem Öl bestreichen und nach Wunsch mit Goldstaub oder Blattgold verzieren.",
+   "## Kühlen",
+   "Abgedeckt einige Stunden bis höchstens 4 Tage kühlen. Vor dem Essen bei Raumtemperatur etwas weich werden lassen."
   ],
-  "tips": "Ergibt laut Buch etwa 600 ml (2½ Cups). Für 6 Tausend-Schichten-Mooncakes brauchst du 180 g.\n\nLuftdicht im Kühlschrank bis 2 Wochen, tiefgekühlt bis 3 Monate haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
-  "source": "Mooncakes & Milk Bread (Kristina Cho), «White Lotus Seed Paste», S. 187",
-  "chapter": "Grundrezepte",
-  "subchapter": "Füllungen & Pasten",
-  "prepTime": "10 Min",
-  "restTime": "8 Std (Einweichen)",
-  "cookTime": "1 Std 10 Min",
+  "tips": "Du brauchst eine Mondkuchenpresse mit 50 bis 100 g Fassungsvermögen (günstig online erhältlich).\n\nDas Buch schlägt als andere Füllung auch Ube-Halaya-Konfitüre vor (im Buch S. 28).\n\nZur Dämpftechnik gibt es im Buch eine Anleitung auf S. 17.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
+  "source": "Modern Asian Baking at Home (Kat Lieu), Kapitel «Treats under one Moon and Holiday Bakes», «Snowy Skin Mooncake», S. 128–129, nach einem Rezept von Karen Ng",
+  "chapter": "Süsses & Gebäck",
+  "subchapter": "Mooncakes",
+  "prepTime": "45 Min",
+  "cookTime": "40 Min",
+  "restTime": "einige Std kühlen",
   "keywords": [
    "Mooncake",
    "Mondfest",
-   "Lotos"
+   "Snow Skin",
+   "Dessert"
   ]
  },
  "tausend-schichten-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T21:00:00.000Z",
+  "updatedAt": "2026-11-23T22:00:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
    "Chinesisch"
   ],
-  "title": "Tausend-Schichten-Mooncakes mit weisser Lotossamenpaste",
+  "title": "Tausend-Schichten-Mooncakes mit weisser Lotussamenpaste",
   "intro": "Spiral-Mooncakes im Chaoshan-Stil: Ein Wasserteig wird mit einem Ölteig geschichtet, ähnlich wie Blätterteig. Mit etwas Matcha werden die Spiralen besonders deutlich.",
   "servings": 6,
   "yieldUnit": "Stück",
@@ -2519,14 +2725,38 @@
    },
    {
     "amount": "180",
-    "name": "Weisse Lotossamenpaste",
+    "name": "Weisse Lotussamenpaste",
     "note": "",
     "unit": "g",
     "orig": {
      "amount": "½",
      "unit": "Cup"
     },
-    "recipeId": "weisse-lotossamenpaste"
+    "recipeId": "weisse-lotussamenpaste"
+   },
+   {
+    "heading": "Andere Füllung als Option"
+   },
+   {
+    "amount": "180",
+    "name": "Süsse Lotussamenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "suesse-lotussamenpaste"
+   },
+   {
+    "amount": "180",
+    "name": "Rote Bohnenpaste",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "rote-bohnenpaste"
+   },
+   {
+    "amount": "180",
+    "name": "Honig-Pistazien-Füllung",
+    "note": "Option",
+    "unit": "g",
+    "recipeId": "honig-pistazien-fuellung"
    },
    {
     "heading": "Für den Wasserteig"
@@ -2607,7 +2837,7 @@
   ],
   "steps": [
    "## Füllung",
-   "Einen mittelgrossen Teller mit Backpapier auslegen. Mit einem Portionierer (1½ EL) 6 Kugeln Lotospaste abstechen und auf das Papier setzen. Mindestens 45 Minuten oder über Nacht tiefkühlen, bis sie fest sind (über Nacht abdecken).",
+   "Einen mittelgrossen Teller mit Backpapier auslegen. Mit einem Portionierer (1½ EL) 6 Kugeln Lotuspaste bzw. der gewählten Füllung (je 30 g) abstechen und auf das Papier setzen. Mindestens 45 Minuten oder über Nacht tiefkühlen, bis sie fest sind (über Nacht abdecken).",
    "## Wasserteig",
    "In einer mittelgrossen Schüssel Mehl, Zucker und Matcha (falls verwendet) verquirlen. Backfett und Wasser dazugeben, das Fett mit den Fingern zerkleinern und alles 3 bis 4 Minuten glatt kneten.",
    "Zu einer dicken Scheibe formen, in Frischhaltefolie wickeln und 30 Minuten kühlen.",
@@ -2629,7 +2859,7 @@
    "## Backen",
    "Backen, bis die Mooncakes blättrig und leicht golden sind, 25 bis 28 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf abkühlen lassen. Warm oder bei Raumtemperatur servieren."
   ],
-  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nDieses Rezept ist komplett vegan (pflanzliches Backfett, Lotospaste ohne tierische Zutaten).\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nMit Lotus- oder Bohnenpaste ist das Rezept komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Thousand Layer Mooncakes with White Lotus Seed Paste», Kapitel gao",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2640,7 +2870,7 @@
    "Mooncake",
    "Mondfest",
    "Gebäck",
-   "Lotos",
+   "Lotus",
    "Vegan"
   ]
  },
