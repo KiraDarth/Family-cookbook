@@ -672,8 +672,9 @@ function rowHtml(r, metaOverride) {
 }
 function recentIds() { try { return JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); } catch { return []; } }
 const ORIG_KEY = "kochbuch-originalmengen";
-function origMode() { try { return localStorage.getItem(ORIG_KEY) === "1"; } catch { return false; } }
-function setOrigMode(on) { try { on ? localStorage.setItem(ORIG_KEY, "1") : localStorage.removeItem(ORIG_KEY); } catch {} }
+// Grundeinstellung: Originalmengen aus der Quelle; umgerechnete Mengen nur auf Wunsch
+function origMode() { try { return localStorage.getItem(ORIG_KEY) !== "0"; } catch { return true; } }
+function setOrigMode(on) { try { localStorage.setItem(ORIG_KEY, on ? "1" : "0"); } catch {} }
 // Originalmenge aus dem Quellrezept (Cups, EL, TL), z.B. { amount: "¾", unit: "Cup" }
 function origText(o, factor = 1) {
   if (!o || !(o.amount || o.unit)) return "";
@@ -1319,7 +1320,7 @@ function renderDetail(id) {
         <section class="panel ing-panel">
           <h2>Zutaten</h2>
           ${base ? `<div class="stepper"><button data-action="less" aria-label="Weniger">−</button><span class="val">${cur}</span><button data-action="more" aria-label="Mehr">+</button><span>${esc(r.yieldUnit || "Portionen")}</span>${cur !== base ? `<button class="linkish reset" data-action="base">Original (${base})</button>` : ""}</div>` : ""}
-          ${hasOrig ? `<div class="unit-switch" role="group" aria-label="Mengenangaben"><button type="button" data-action="units-metric" aria-pressed="${!useOrig}">g / ml</button><button type="button" data-action="units-orig" aria-pressed="${useOrig}">Original (Cups, EL, TL)</button></div>` : ""}
+          ${hasOrig ? `<div class="unit-switch" role="group" aria-label="Mengenangaben"><button type="button" data-action="units-orig" aria-pressed="${useOrig}">Original</button><button type="button" data-action="units-metric" aria-pressed="${!useOrig}">Umgerechnet (g / ml)</button></div>` : ""}
           <ul class="ing-list">${ings || `<li class="muted">Noch keine Zutaten eingetragen.</li>`}</ul>
         </section>
         <section class="panel">

@@ -1594,7 +1594,7 @@
  },
  "rote-bohnenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1609,31 +1609,19 @@
     "amount": "200",
     "name": "Rote Bohnen",
     "note": "getrocknet (Adzukibohnen), gewaschen und verlesen",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "100",
     "name": "Zucker",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "90",
     "name": "Rapsöl",
     "note": "oder anderes neutrales Öl",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    }
   ],
   "steps": [
@@ -1647,7 +1635,7 @@
    "Die restlichen 45 g Öl dazugeben und weiterrühren, bis die Paste dunkler ist und das Öl ganz aufgenommen hat, 8 bis 10 Minuten.",
    "Die Paste in einen hitzefesten Behälter füllen, vollständig auskühlen lassen und bis zur Verwendung kühlen."
   ],
-  "tips": "Ergibt etwa 720 ml (3 Cups). Für 12 Mooncakes mit roter Bohnenpaste und Salzeigelb brauchst du 250 g.\n\nLuftdicht im Kühlschrank bis 2 Wochen, tiefgekühlt bis 3 Monate haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
+  "tips": "Ergibt etwa 720 ml (3 Cups). Für 12 Mooncakes mit roter Bohnenpaste und Salzeigelb brauchst du 250 g.\n\nLuftdicht im Kühlschrank bis 2 Wochen, tiefgekühlt bis 3 Monate haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Red Bean Paste», S. 53",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -1662,7 +1650,7 @@
  },
  "salzeigelb": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1674,10 +1662,10 @@
   "yieldUnit": "Stück",
   "ingredients": [
    {
-    "amount": "480",
+    "amount": "500",
     "name": "Grobes Salz",
     "note": "",
-    "unit": "ml",
+    "unit": "g",
     "orig": {
      "amount": "2",
      "unit": "Cup"
@@ -1699,7 +1687,7 @@
    "Die Eigelbe auf ein Gitter über einem grossen Backblech mit Rand legen und 90 Minuten trocknen, bis sie fest sind.",
    "Abkühlen lassen und in einem kleinen luftdichten Behälter im Kühlschrank aufbewahren, bis 1 Monat."
   ],
-  "tips": "Ganze Salzeier und einzelne gesalzene Eigelbe gibt es auch fertig im chinesischen Lebensmittelgeschäft.\n\nTraditionell werden ganze Enten- oder Hühnereier über mehrere Wochen in einer Mischung aus Lehm und Salz oder in Salzlake eingelegt, siehe Klassisches Salzeigelb (Salzlake).\n\nGute Verwertung für übrige Eigelbe, z.B. wenn du Eiweiss für Macarons brauchst.\n\nDie Salzmenge ist nicht kritisch, die Eigelbe müssen nur ganz bedeckt sein.",
+  "tips": "Ganze Salzeier und einzelne gesalzene Eigelbe gibt es auch fertig im chinesischen Lebensmittelgeschäft.\n\nTraditionell werden ganze Enten- oder Hühnereier über mehrere Wochen in einer Mischung aus Lehm und Salz oder in Salzlake eingelegt, siehe Klassisches Salzeigelb (Salzlake).\n\nGute Verwertung für übrige Eigelbe, z.B. wenn du Eiweiss für Macarons brauchst.\n\nDas Buch gibt das Salz nur in Cups an (2 Cups). Die 500 g sind umgerechnet: 1 Cup grobes Salz wiegt je nach Korngrösse 140 bis 290 g, das Buch Chinese Feasts & Festivals rechnet für grobes Meersalz 2 Cups = 500 g. Die Menge ist nicht kritisch, die Eigelbe müssen nur ganz bedeckt sein.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Salted Egg Yolks», S. 73",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -1714,7 +1702,7 @@
  },
  "weisse-lotussamenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -1729,31 +1717,19 @@
     "amount": "100",
     "name": "Lotussamen",
     "note": "getrocknet",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "50",
     "name": "Zucker",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "¼",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "45",
     "name": "Rapsöl",
     "note": "oder anderes neutrales Öl",
-    "unit": "g",
-    "orig": {
-     "amount": "¼",
-     "unit": "Cup"
-    }
+    "unit": "g"
    }
   ],
   "steps": [
@@ -1767,7 +1743,7 @@
    "Das Püree und das Öl in eine mittelgrosse beschichtete Pfanne geben. Bei mittel-niedriger Hitze ständig mit einem flexiblen Teigschaber rühren, bis das Öl aufgenommen ist und die Farbe dunkler wird, 8 bis 10 Minuten.",
    "In einen hitzefesten Behälter füllen und abkühlen lassen."
   ],
-  "tips": "Ergibt laut Buch etwa 600 ml (2½ Cups). Für 6 Tausend-Schichten-Mooncakes brauchst du 180 g.\n\nLuftdicht im Kühlschrank bis 2 Wochen, tiefgekühlt bis 3 Monate haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
+  "tips": "Ergibt laut Buch etwa 600 ml (2½ Cups). Für 6 Tausend-Schichten-Mooncakes brauchst du 180 g.\n\nLuftdicht im Kühlschrank bis 2 Wochen, tiefgekühlt bis 3 Monate haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «White Lotus Seed Paste», S. 187",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -2046,7 +2022,7 @@
  },
  "mooncakes-rote-bohne-salzeigelb": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2064,42 +2040,26 @@
     "amount": "300",
     "name": "Weissmehl",
     "note": "plus etwas zum Bestäuben",
-    "unit": "g",
-    "orig": {
-     "amount": "2½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "110",
     "name": "Rapsöl",
     "note": "oder anderes neutrales Öl",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "160",
     "name": "Goldsirup",
     "note": "z.B. Lyle's Golden Syrup",
     "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    },
     "recipeId": "goldsirup"
    },
    {
     "amount": "8",
     "name": "Alkalisches Wasser",
     "note": "Kansui",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "TL"
-    }
+    "unit": "g"
    },
    {
     "heading": "Für die Füllung"
@@ -2109,10 +2069,6 @@
     "name": "Rote Bohnenpaste",
     "note": "",
     "unit": "g",
-    "orig": {
-     "amount": "¾",
-     "unit": "Cup"
-    },
     "recipeId": "rote-bohnenpaste"
    },
    {
@@ -2153,7 +2109,7 @@
    "## Ruhen lassen",
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Red Bean and Salted Egg Yolk Mooncakes», S. 176–177, Tipps aus der Einleitung zu Mooncakes",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2167,7 +2123,7 @@
  },
  "honig-pistazien-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2187,42 +2143,26 @@
     "amount": "300",
     "name": "Weissmehl",
     "note": "plus etwas zum Bestäuben",
-    "unit": "g",
-    "orig": {
-     "amount": "2½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "110",
     "name": "Rapsöl",
     "note": "oder anderes neutrales Öl",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "160",
     "name": "Goldsirup",
     "note": "z.B. Lyle's Golden Syrup",
     "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    },
     "recipeId": "goldsirup"
    },
    {
     "amount": "8",
     "name": "Alkalisches Wasser",
     "note": "Kansui",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "TL"
-    }
+    "unit": "g"
    },
    {
     "heading": "Für die Füllung"
@@ -2267,7 +2207,7 @@
    "## Ruhen lassen",
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Honey Pistachio Mooncakes», S. 178–179 (Seitenzahl vermutet)",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2281,7 +2221,7 @@
  },
  "honig-pistazien-fuellung": {
   "createdAt": "2026-11-23T22:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2296,41 +2236,25 @@
     "amount": "200",
     "name": "Pistazien",
     "note": "geröstet, ungesalzen",
-    "unit": "g",
-    "orig": {
-     "amount": "1½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "80",
     "name": "Honig",
     "note": "z.B. Orangenblütenhonig",
-    "unit": "g",
-    "orig": {
-     "amount": "¼",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "25",
     "name": "Kokosöl",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "2",
-     "unit": "EL"
-    }
+    "unit": "g"
    },
    {
     "amount": "10",
     "name": "Maisstärke",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "EL"
-    }
+    "unit": "g"
    },
    {
     "amount": "1",
@@ -2344,7 +2268,7 @@
    "Honig, Kokosöl, Maisstärke und Salz dazugeben und nochmals einige Male pulsieren. Die Füllung soll etwas krümelig sein, aber beim Zusammendrücken halten. Nicht zu lange mixen, sonst wird Pistazienbutter daraus.",
    "Für kleine Mooncakes (50-g-Form) in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu Kugeln formen."
   ],
-  "tips": "Ergibt etwa 315 g, genug für 12 kleine oder 6 grosse Mooncakes.\n\nEine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Ergibt etwa 315 g, genug für 12 kleine oder 6 grosse Mooncakes.\n\nEine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), Füllung aus «Honey Pistachio Mooncakes»",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
@@ -2629,7 +2553,7 @@
  },
  "tausend-schichten-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2648,10 +2572,6 @@
     "name": "Moderne Lotussamenpaste",
     "note": "",
     "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    },
     "recipeId": "weisse-lotussamenpaste"
    },
    {
@@ -2695,51 +2615,31 @@
     "amount": "125",
     "name": "Weissmehl",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "12",
     "name": "Zucker",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "EL"
-    }
+    "unit": "g"
    },
    {
     "amount": "30",
     "name": "Pflanzliches Backfett",
     "note": "in Würfeln",
-    "unit": "g",
-    "orig": {
-     "amount": "3",
-     "unit": "EL"
-    }
+    "unit": "g"
    },
    {
     "amount": "55",
     "name": "Wasser",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "¼",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "4",
     "name": "Matcha-Pulver",
     "note": "in Lebensmittelqualität, optional",
-    "unit": "g",
-    "orig": {
-     "amount": "2",
-     "unit": "TL"
-    }
+    "unit": "g"
    },
    {
     "heading": "Für den Ölteig"
@@ -2748,21 +2648,13 @@
     "amount": "100",
     "name": "Weissmehl",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "13/16",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "60",
     "name": "Pflanzliches Backfett",
     "note": "in Würfeln",
-    "unit": "g",
-    "orig": {
-     "amount": "3/8",
-     "unit": "Cup"
-    }
+    "unit": "g"
    }
   ],
   "steps": [
@@ -2790,7 +2682,7 @@
    "## Backen",
    "Backen, bis die Mooncakes blättrig und leicht golden sind, 25 bis 28 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf abkühlen lassen. Warm oder bei Raumtemperatur servieren."
   ],
-  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nOhne Salzeigelb ist das Rezept komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nOhne Salzeigelb ist das Rezept komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Thousand Layer Mooncakes with White Lotus Seed Paste», Kapitel gao",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2807,7 +2699,7 @@
  },
  "snow-skin-glace-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
-  "updatedAt": "2026-11-23T23:00:00.000Z",
+  "updatedAt": "2026-11-24T17:30:00.000Z",
   "historyCount": 0,
   "status": "entwurf",
   "topics": [
@@ -2838,51 +2730,31 @@
     "amount": "90",
     "name": "Klebreismehl",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "30",
     "name": "Weizenstärke",
     "note": "plus etwas zum Bestäuben",
-    "unit": "g",
-    "orig": {
-     "amount": "3",
-     "unit": "EL"
-    }
+    "unit": "g"
    },
    {
     "amount": "50",
     "name": "Zucker",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "¼",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "113",
     "name": "Milch",
     "note": "",
-    "unit": "g",
-    "orig": {
-     "amount": "½",
-     "unit": "Cup"
-    }
+    "unit": "g"
    },
    {
     "amount": "12",
     "name": "Rapsöl",
     "note": "oder anderes neutrales Öl",
-    "unit": "g",
-    "orig": {
-     "amount": "1",
-     "unit": "EL"
-    }
+    "unit": "g"
    },
    {
     "amount": "1",
@@ -2907,7 +2779,7 @@
    "Den Mooncake sofort auf das Blech oder direkt in den Tiefkühler legen. Mit der restlichen Glace und dem restlichen Teig wiederholen.",
    "Vor dem Servieren mindestens 1 Stunde tiefkühlen, bis sie fest sind."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g).\n\nRegeln für die Arbeit mit Glace (aus dem Buch):\n- Glace nehmen, die sehr hart gefriert (Häagen-Dazs funktioniert gut). Nichts mit «slow churned», Sorbet geht gar nicht.\n- Beim Kühlen nichts überstürzen: Glace und Teig müssen portioniert und lange genug gekühlt sein (die Glace sehr fest), bevor du sie zusammensetzt.\n- Nicht am heissesten Tag des Jahres machen. Klimaanlage hoch oder auf einen kühlen Abend warten.\n- Nahe am Tiefkühler arbeiten, damit du Teile schnell wieder fest werden lassen kannst.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Cup- und Löffel-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g).\n\nRegeln für die Arbeit mit Glace (aus dem Buch):\n- Glace nehmen, die sehr hart gefriert (Häagen-Dazs funktioniert gut). Nichts mit «slow churned», Sorbet geht gar nicht.\n- Beim Kühlen nichts überstürzen: Glace und Teig müssen portioniert und lange genug gekühlt sein (die Glace sehr fest), bevor du sie zusammensetzt.\n- Nicht am heissesten Tag des Jahres machen. Klimaanlage hoch oder auf einen kühlen Abend warten.\n- Nahe am Tiefkühler arbeiten, damit du Teile schnell wieder fest werden lassen kannst.\n\nAlle Mengen wie im Buch in Gramm, ausser die Glace: Sie steht im Buch nur als ½ Cup, die 120 ml sind umgerechnet.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Snow Skin Ice Cream Mooncakes», Kapitel gao, S. 18x",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
