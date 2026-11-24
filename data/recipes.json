@@ -2208,7 +2208,7 @@
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
   "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).\n\nAlkalisches Wasser ersetzen (Tipp aus «Chinese Feasts & Festivals», S. 34): die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
-  "source": "Mooncakes & Milk Bread (Kristina Cho), «Honey Pistachio Mooncakes», S. 178–179 (Seitenzahl vermutet)",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), «Honey Pistachio Mooncakes», S. 179–180",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
   "restTime": "45 Min (Teig) + 1–2 Tage",
@@ -2269,7 +2269,7 @@
    "Für kleine Mooncakes (50-g-Form) in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu Kugeln formen."
   ],
   "tips": "Ergibt etwa 315 g, genug für 12 kleine oder 6 grosse Mooncakes.\n\nEine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
-  "source": "Mooncakes & Milk Bread (Kristina Cho), Füllung aus «Honey Pistachio Mooncakes»",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), Füllung aus «Honey Pistachio Mooncakes», S. 179–180",
   "chapter": "Grundrezepte",
   "subchapter": "Füllungen & Pasten",
   "prepTime": "10 Min",
@@ -2592,23 +2592,6 @@
     "recipeId": "rote-bohnenpaste"
    },
    {
-    "heading": "Optional in die Füllung"
-   },
-   {
-    "amount": "3",
-    "name": "Modernes Salzeigelb (Ofen)",
-    "note": "halbiert, optional",
-    "unit": "",
-    "recipeId": "salzeigelb"
-   },
-   {
-    "amount": "3",
-    "name": "Klassisches Salzeigelb (Salzlake)",
-    "note": "Option, nur das Eigelb, halbiert",
-    "unit": "",
-    "recipeId": "salzeier-lake"
-   },
-   {
     "heading": "Für den Wasserteig"
    },
    {
@@ -2660,7 +2643,6 @@
   "steps": [
    "## Füllung",
    "Einen mittelgrossen Teller mit Backpapier auslegen. Mit einem Portionierer (1½ EL) 6 Kugeln Lotuspaste bzw. der gewählten Füllung (je 30 g) abstechen und auf das Papier setzen. Mindestens 45 Minuten oder über Nacht tiefkühlen, bis sie fest sind (über Nacht abdecken).",
-   "Mit Salzeigelb: in jede gefrorene Kugel ein halbes Salzeigelb drücken und die Paste darüber schliessen, dann nochmals kurz tiefkühlen.",
    "## Wasserteig",
    "In einer mittelgrossen Schüssel Mehl, Zucker und Matcha (falls verwendet) verquirlen. Backfett und Wasser dazugeben, das Fett mit den Fingern zerkleinern und alles 3 bis 4 Minuten glatt kneten.",
    "Zu einer dicken Scheibe formen, in Frischhaltefolie wickeln und 30 Minuten kühlen.",
@@ -2682,8 +2664,8 @@
    "## Backen",
    "Backen, bis die Mooncakes blättrig und leicht golden sind, 25 bis 28 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf abkühlen lassen. Warm oder bei Raumtemperatur servieren."
   ],
-  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nOhne Salzeigelb ist das Rezept komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
-  "source": "Mooncakes & Milk Bread (Kristina Cho), «Thousand Layer Mooncakes with White Lotus Seed Paste», Kapitel gao",
+  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nDas Rezept ist komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), «Thousand Layer Mooncakes with White Lotus Seed Paste», S. 184–187 (S. 186 zeigt das Rollen, S. 187 die Lotussamenpaste)",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
   "prepTime": "1 Std",
@@ -2780,7 +2762,7 @@
    "Vor dem Servieren mindestens 1 Stunde tiefkühlen, bis sie fest sind."
   ],
   "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g).\n\nRegeln für die Arbeit mit Glace (aus dem Buch):\n- Glace nehmen, die sehr hart gefriert (Häagen-Dazs funktioniert gut). Nichts mit «slow churned», Sorbet geht gar nicht.\n- Beim Kühlen nichts überstürzen: Glace und Teig müssen portioniert und lange genug gekühlt sein (die Glace sehr fest), bevor du sie zusammensetzt.\n- Nicht am heissesten Tag des Jahres machen. Klimaanlage hoch oder auf einen kühlen Abend warten.\n- Nahe am Tiefkühler arbeiten, damit du Teile schnell wieder fest werden lassen kannst.\n\nAlle Mengen wie im Buch in Gramm, ausser die Glace: Sie steht im Buch nur als ½ Cup, die 120 ml sind umgerechnet.",
-  "source": "Mooncakes & Milk Bread (Kristina Cho), «Snow Skin Ice Cream Mooncakes», Kapitel gao, S. 18x",
+  "source": "Mooncakes & Milk Bread (Kristina Cho), «Snow Skin Ice Cream Mooncakes», S. 188–189",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
   "prepTime": "45 Min",
