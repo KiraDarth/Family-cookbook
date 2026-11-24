@@ -124,6 +124,7 @@ body { background: #E9E6E1; color: var(--ink); font-family: var(--sans); -webkit
 .toc li { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: baseline; }
 .toc li.ch { margin-top: 6mm; padding: 2mm 0 1.6mm; border-top: .35mm solid var(--rose); font: 400 14pt var(--sans); }
 .toc li.ch:first-child { margin-top: 0; }
+.toc li.sec { margin-top: 1.4mm; font: italic 500 7.4pt var(--sans); color: var(--muted); padding-left: 2mm; }
 .toc li.sub { margin-top: 2.6mm; padding-bottom: .8mm; font: 500 6.8pt var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
 .toc li.r { padding: 1.3mm 0 1.3mm 4mm; border-bottom: .25mm solid #EEE7E2; font: 300 10pt/1.3 var(--serif); }
 .toc .n { font: 500 9pt var(--sans); color: var(--rose-ink); }
@@ -282,7 +283,7 @@ function page(side, inner) {
   d.innerHTML = inner + `<div class="folio"><span class="num"></span></div>`;
   return d;
 }
-function runhead(r, book) { return `<div class="runhead"><b>${esc(chapterOf(r))}</b>${r.subchapter ? ` &nbsp;|&nbsp; ${esc(r.subchapter)}` : ""}</div>`; }
+function runhead(r, book) { return `<div class="runhead"><b>${esc(chapterOf(r))}</b>${r.subchapter ? ` &nbsp;|&nbsp; ${esc(r.subchapter)}` : ""}${r.subchapter && r.section ? ` &nbsp;|&nbsp; ${esc(r.section)}` : ""}</div>`; }
 
 function leftPage(r, paras) {
   const pos = r.photoNotePos || "unten-rechts";
@@ -329,8 +330,9 @@ async function build() {
   const status = document.getElementById("o-status").value;
   let list = onlyId ? recipes.filter(r => r.id === onlyId) : recipes.filter(r =>
     (status === "alle" || r.status === "bestaetigt") && (!opt.topics.size || (r.topics || []).some(t => opt.topics.has(t))));
-  list = list.sort((a, b) => chIdx(a) - chIdx(b) || cmp(chapterOf(a), chapterOf(b)) || cmp(a.subchapter, b.subchapter) || cmp(a.title, b.title));
+  list = list.sort((a, b) => chIdx(a) - chIdx(b) || cmp(chapterOf(a), chapterOf(b)) || cmp(a.subchapter, b.subchapter) || secCmp(a, b) || cmp(a.title, b.title));
 
+  function secCmp(a, b) { const x = a.section || "", y = b.section || ""; if (x === y) return 0; if (!x) return 1; if (!y) return -1; if (x === a.subchapter) return -1; if (y === b.subchapter) return 1; return cmp(x, y); }
   const measure = document.getElementById("measure");
   measure.innerHTML = "";
   const pages = [];
@@ -341,10 +343,11 @@ async function build() {
   const tocRows = [];
   if (!onlyId) {
     add(page("right", `<div class="cover"><div class="bar"></div><h1>${esc(book)}</h1><p>${list.length} Rezepte · ${new Date().getFullYear()}</p></div>`)).classList.add("nofolio");
-    let ch = null, sub = null;
+    let ch = null, sub = null, sec = null;
     for (const r of list) {
       if (chapterOf(r) !== ch) { ch = chapterOf(r); sub = null; tocRows.push(`<li class="ch"><span>${esc(ch)}</span><span class="n" data-first="${esc(r.id)}"></span></li>`); }
-      if ((r.subchapter || "") !== (sub || "")) { sub = r.subchapter || ""; if (sub) tocRows.push(`<li class="sub"><span>${esc(sub)}</span></li>`); }
+      if ((r.subchapter || "") !== (sub || "")) { sub = r.subchapter || ""; sec = null; if (sub) tocRows.push(`<li class="sub"><span>${esc(sub)}</span></li>`); }
+      if (sub && (r.section || "") !== (sec || "")) { sec = r.section || ""; if (sec) tocRows.push(`<li class="sec"><span>${esc(sec)}</span></li>`); }
       tocRows.push(`<li class="r"><span>${esc(r.title)}</span><span class="n" data-first="${esc(r.id)}"></span></li>`);
     }
     const rows = [...tocRows];

@@ -340,6 +340,7 @@ body.editing .tabbar { display: none; }
 .rrow small { color: var(--muted); font-size: .85rem; }
 .rrow .pill { margin-left: 6px; vertical-align: 2px; font-size: .72rem; }
 .group { margin-top: 22px; scroll-margin-top: 130px; }
+.group h3.subsec { margin: 16px 0 8px; padding-left: 9px; border-left: 3px solid var(--cc, var(--line)); font-size: .95rem; font-weight: 600; color: var(--ink, inherit); }
 .group:first-child { margin-top: 0; }
 .group > h2 { font-family: var(--font-body); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
 
@@ -659,6 +660,11 @@ const ICONS = {
 const chapterBySlug = slug => [...CHAPTERS, NO_CHAPTER].find(c => slugify(c) === slug);
 const chapterHref = (ch, sub) => "#kapitel-" + slugify(ch) + (sub ? "/" + slugify(sub) : "");
 const usedChapters = () => [...CHAPTERS, NO_CHAPTER].filter(c => recipes.some(r => chapterOf(r) === c));
+// Abschnitte innerhalb eines Unterkapitels (Feld section, optional): Abschnitt mit dem Namen des Unterkapitels zuerst, Rezepte ohne Abschnitt zuletzt
+const secsOf = (list, sub) => [...new Set(list.map(r => r.section || ""))].sort((a, b) => !a ? 1 : !b ? -1 : a === sub ? -1 : b === sub ? 1 : a.localeCompare(b, "de"));
+const subBody = (list, sub) => { const secs = secsOf(list, sub);
+  if (secs.length < 2 && !secs[0]) return `<div class="rows">${list.sort(byTitle).map(r => rowHtml(r, r.time || "")).join("")}</div>`;
+  return secs.map(sc => `<h3 class="subsec">${esc(sc || "Weitere")}</h3><div class="rows">${list.filter(r => (r.section || "") === sc).sort(byTitle).map(r => rowHtml(r, r.time || "")).join("")}</div>`).join(""); };
 const subsOf = ch => [...new Set(recipes.filter(r => chapterOf(r) === ch).map(r => r.subchapter || "Weitere"))].sort((a, b) => a === "Weitere" ? 1 : b === "Weitere" ? -1 : a.localeCompare(b, "de"));
 const byTitle = (a, b) => (a.title || "").localeCompare(b.title || "", "de");
 function thumbHtml(r) {
@@ -984,7 +990,7 @@ function renderChapter(rt) {
   app.innerHTML = `<div class="view-in" style="--cc:var(${col})">
     <div class="band"><div class="vhead">${backHtml("#")}<div><h1>${esc(ch)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
       ${subs.length > 1 ? `<div class="jump">${subs.map(x => `<a class="chip" href="${chapterHref(ch, x)}" data-jump="${esc(slugify(x))}">${esc(x)}</a>`).join("")}</div>` : ""}</div>
-    ${subs.map(x => `<section class="group" id="g-${esc(slugify(x))}"><h2>${esc(x)}</h2><div class="rows">${rs.filter(r => (r.subchapter || "Weitere") === x).sort(byTitle).map(rowHtml).join("")}</div></section>`).join("")}
+    ${subs.map(x => `<section class="group" id="g-${esc(slugify(x))}"><h2>${esc(x)}</h2>${subBody(rs.filter(r => (r.subchapter || "Weitere") === x), x)}</section>`).join("")}
   </div>`;
   if (rt.sub) requestAnimationFrame(() => document.getElementById("g-" + rt.sub)?.scrollIntoView({ block: "start" }));
 }
@@ -993,12 +999,12 @@ function renderTheme(rt) {
   if (!t) return notFound("Thema");
   const rs = recipes.filter(r => (r.topics || []).includes(t));
   app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#rezepte")}<div><span class="eyebrow">Thema</span><h1>${esc(t)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
-    ${rs.length ? usedChapters().filter(c => rs.some(r => chapterOf(r) === c)).map(c => `<section class="group"><h2>${esc(c)}</h2><div class="rows">${rs.filter(r => chapterOf(r) === c).sort(byTitle).map(rowHtml).join("")}</div></section>`).join("")
+    ${rs.length ? usedChapters().filter(c => rs.some(r => chapterOf(r) === c)).map(c => `<section class="group"><h2>${esc(c)}</h2><div class="rows">${rs.filter(r => chapterOf(r) === c).sort(byTitle).map(r => rowHtml(r)).join("")}</div></section>`).join("")
       : `<div class="empty"><p>Zu diesem Thema gibt es noch kein Rezept.</p></div>`}</div>`;
 }
 function renderSimple(title, sub, list) {
   app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>${esc(title)}</h1><div class="sub">${esc(sub)} · ${list.length}</div></div></div>
-    ${list.length ? `<div class="rows">${list.map(rowHtml).join("")}</div>` : `<div class="empty"><p>Hier ist gerade nichts.</p></div>`}</div>`;
+    ${list.length ? `<div class="rows">${list.map(r => rowHtml(r)).join("")}</div>` : `<div class="empty"><p>Hier ist gerade nichts.</p></div>`}</div>`;
 }
 
 /* ---------- Rezepte: Kategorien durchstöbern und suchen ---------- */
@@ -1011,7 +1017,7 @@ function renderBrowse() {
   if (state.focusSearch) { state.focusSearch = false; const q = document.getElementById("q"); q.focus({ preventScroll: true }); }
 }
 function haystack(r) {
-  return [r.title, r.intro, r.tips, r.chapter, r.subchapter, ...(r.topics || []), ...(r.keywords || []), ...(r.ingredients || []).map(i => i.name || i.heading)].join(" ").toLowerCase();
+  return [r.title, r.intro, r.tips, r.chapter, r.subchapter, r.section, ...(r.topics || []), ...(r.keywords || []), ...(r.ingredients || []).map(i => i.name || i.heading)].join(" ").toLowerCase();
 }
 function renderResults() {
   const box = document.getElementById("results"); if (!box) return;
@@ -1039,7 +1045,7 @@ function renderResults() {
   });
   box.innerHTML = `${cats.length ? `<section style="margin-bottom:22px"><h2 class="morehead">Kategorien</h2><div class="chips">${cats.map(([k, v, h]) => `<a class="chip" href="${h}"><span class="hit-type">${k}</span>${esc(v)}</a>`).join("")}</div></section>` : ""}
     <section><h2 class="morehead">${hits.length} ${hits.length === 1 ? "Rezept" : "Rezepte"}</h2>
-    ${hits.length ? `<div class="rows">${hits.map(rowHtml).join("")}</div>` : `<div class="empty"><p>Nichts gefunden. Gesucht wird in Titel, Zutaten, Kapiteln, Themen und Stichwörtern.</p></div>`}</section>`;
+    ${hits.length ? `<div class="rows">${hits.map(r => rowHtml(r)).join("")}</div>` : `<div class="empty"><p>Nichts gefunden. Gesucht wird in Titel, Zutaten, Kapiteln, Themen und Stichwörtern.</p></div>`}</section>`;
 }
 
 /* ---------- Zutatenliste (Regelwerk aus data/zutaten.json) ---------- */
@@ -1292,7 +1298,7 @@ function renderDetail(id) {
   }).join("");
   const photoUrl = localPhotos[id] || r.photo;
   app.innerHTML = `
-    <nav class="crumbs">${backHtml(chapterHref(chapterOf(r)))}<span class="path"><a href="${chapterHref(chapterOf(r))}">${esc(chapterOf(r))}</a>${r.subchapter ? ` › <a href="${chapterHref(chapterOf(r), r.subchapter)}">${esc(r.subchapter)}</a>` : ""}</span></nav>
+    <nav class="crumbs">${backHtml(chapterHref(chapterOf(r)))}<span class="path"><a href="${chapterHref(chapterOf(r))}">${esc(chapterOf(r))}</a>${r.subchapter ? ` › <a href="${chapterHref(chapterOf(r), r.subchapter)}">${esc(r.subchapter)}</a>` : ""}${r.subchapter && r.section ? ` › ${esc(r.section)}` : ""}</span></nav>
     <article>
       ${photoUrl ? `<figure class="hero"><img src="${esc(photoUrl)}" alt="${esc(r.title)}">${r.photoNote ? `<div class="hintbox ${esc(r.photoNotePos || "unten-rechts")}">${esc(r.photoNote)}</div>` : ""}</figure>` : ""}
       <header class="recipe-head">
@@ -1416,6 +1422,8 @@ function renderEditor(r, key) {
         <div class="field"><label for="f-chapter">Kapitel im Buch</label><select id="f-chapter"><option value="">Noch offen</option>${[...new Set([...CHAPTERS, ...recipes.map(x => x.chapter).filter(Boolean)])].map(c => `<option ${(src?.chapter || "") === c ? "selected" : ""}>${esc(c)}</option>`).join("")}</select></div>
         <div class="field"><label for="f-sub">Unterkapitel</label><input id="f-sub" list="subs" value="${esc(src?.subchapter || "")}" placeholder="z.B. Cupcakes"></div>
       </div>
+      <div class="field"><label for="f-section">Abschnitt im Unterkapitel</label><p class="hint">Optional. Für Unterkapitel mit vielen Rezepten, z.B. bei Mooncakes: „Füllungen &amp; Pasten“.</p><input id="f-section" list="secs" value="${esc(src?.section || "")}"></div>
+      <datalist id="secs">${[...new Set(recipes.map(x => x.section).filter(Boolean))].sort().map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       <datalist id="zutaten-namen">${zutatNamen().map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       <datalist id="subs">${[...new Set(recipes.map(x => x.subchapter).filter(Boolean))].sort().map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       <div class="field"><label for="f-keywords">Stichwörter fürs Register</label><p class="hint">Mit Komma trennen. Titel, Themen und Hauptzutaten kommen automatisch ins Stichwortverzeichnis, hier nur Zusätzliches, z.B. „Mooncake, Mondfest“.</p><input id="f-keywords" value="${esc((src?.keywords || []).join(", "))}"></div>
@@ -1464,7 +1472,7 @@ function collectForm() {
   return {
     title: v("f-title"), intro: v("f-intro"), servings: Number(v("f-servings")) || 0, yieldUnit: v("f-yield") || "Portionen",
     time: v("f-time"), prepTime: v("f-prep"), restTime: v("f-rest"), cookTime: v("f-cook"),
-    chapter: v("f-chapter"), subchapter: v("f-sub"), keywords: v("f-keywords").split(",").map(x => x.trim()).filter(Boolean),
+    chapter: v("f-chapter"), subchapter: v("f-sub"), section: v("f-sub") ? v("f-section") : "", keywords: v("f-keywords").split(",").map(x => x.trim()).filter(Boolean),
     photoNote: v("f-pnote"), photoNotePos: v("f-ppos") || "unten-rechts", topics: [...document.querySelectorAll("#f-topics [aria-pressed=true]")].map(b => b.dataset.tgl),
     ingredients, steps: v("f-steps").split("\n").map(s => s.trim()).filter(Boolean).map(s => /:$/.test(s) && s.length < 60 ? "## " + s.replace(/:$/, "").trim() : s), tips: v("f-tips"), source: v("f-source"),
     restVon: v("f-restvon")
