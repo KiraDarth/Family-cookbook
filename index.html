@@ -1044,6 +1044,8 @@ function renderResults() {
 
 /* ---------- Zutatenliste (Regelwerk aus data/zutaten.json) ---------- */
 let ZI = null;
+// Haupt-Oberbegriff plus weitere (auchUnter), damit eine Zutat unter mehreren gefunden wird
+function oberbegriffe(e) { return [e.oberbegriff, ...(e.auchUnter || [])].filter(Boolean); }
 function zIndex() {
   if (ZI || !Z) return ZI;
   const byName = new Map(), bySpell = new Map();
@@ -1070,7 +1072,7 @@ function resolveIng(rid, i) {
   for (const ra of Z.rezeptAlternativen || []) {
     if (ra.rezept !== rid || ra.schreibweise.toLowerCase() !== nm.toLowerCase()) continue;
     ra.alt.forEach(a => {
-      if (a.startsWith("@")) (Z.zutaten || []).filter(e => e.oberbegriff === a.slice(1) && e !== entry).forEach(e => alts.push(e));
+      if (a.startsWith("@")) (Z.zutaten || []).filter(e => oberbegriffe(e).includes(a.slice(1)) && e !== entry).forEach(e => alts.push(e));
       else { const e = ix.byName.get(a); if (e && e !== entry) alts.push(e); }
     });
   }
@@ -1191,7 +1193,7 @@ function loadHave() { try { const x = JSON.parse(localStorage.getItem(HAVE_KEY) 
 function saveHave() { try { localStorage.setItem(HAVE_KEY, JSON.stringify(have)); } catch {} }
 function hasEntry(e, h) {
   if (!e) return false;
-  if ([e.name, e.name.replace(/ \(.*\)$/, ""), ...(e.schreibweisen || []), e.oberbegriff].some(c => c && h.has(c.toLowerCase()))) return true;
+  if ([e.name, e.name.replace(/ \(.*\)$/, ""), ...(e.schreibweisen || []), ...oberbegriffe(e)].some(c => c && h.has(c.toLowerCase()))) return true;
   return (e.erfuelltDurch || []).some(n => h.has(n.toLowerCase()));
 }
 function haveResults() {
@@ -1220,7 +1222,7 @@ function renderHave() {
   app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>Was ist noch da?</h1><div class="sub">Gib ein, was du hast. Vorrat wie Salz, Zucker und Öl zählt automatisch.</div></div></div>
     <nav class="seg2"><a href="#rezepte">Nach Name suchen</a><a class="on" href="#da">Was ist noch da?</a></nav>
     <div class="havebox"><div class="inline-new"><input id="have-input" list="zutaten-namen" placeholder="z.B. Satz, Kokosraspeln, Eier" aria-label="Zutat, die du hast" enterkeyhint="done" autocomplete="off"><button type="button" class="btn primary small" data-action="have-add">Hinzufügen</button></div>
-      <datalist id="zutaten-namen">${[...zutatNamen(), ...new Set((Z?.zutaten || []).map(e => e.oberbegriff))].map(x => `<option value="${esc(x)}">`).join("")}</datalist>
+      <datalist id="zutaten-namen">${[...zutatNamen(), ...new Set((Z?.zutaten || []).flatMap(oberbegriffe))].map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       ${have.length ? `<div class="chips">${have.map(x => `<button type="button" class="chip" data-action="have-rm" data-have="${esc(x)}">${esc(x)} <span class="x" aria-label="entfernen">×</span></button>`).join("")}<button type="button" class="linkish" data-action="have-clear">Alle entfernen</button></div>` : ""}</div>
     ${!have.length ? `<div class="empty"><p>Noch nichts eingegeben. Tipp: Ein Oberbegriff wie „Satz“ oder „Mehl“ zählt für alle Sorten.</p></div>`
       : res.length ? groups.map(([n, t]) => grp(t, res.filter(x => x.missing.length === n))).join("") + (res.some(x => x.missing.length > 2) ? `<p class="muted" style="font-size:.9rem;margin-top:16px">${res.filter(x => x.missing.length > 2).length} weitere Rezepte brauchen noch mehr Zutaten.</p>` : "")

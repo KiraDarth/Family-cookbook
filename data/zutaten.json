@@ -94,7 +94,10 @@
     "Kokosöl"
    ],
    "vorrat": false,
-   "einkaufen": true
+   "einkaufen": true,
+   "auchUnter": [
+    "Öl"
+   ]
   },
   {
    "name": "Pflanzliches Backfett",
@@ -490,7 +493,7 @@
   },
   {
    "name": "Maisstärke",
-   "oberbegriff": "Stärke",
+   "oberbegriff": "Bindemittel",
    "schreibweisen": [
     "Maisstärke"
    ],
@@ -499,7 +502,7 @@
   },
   {
    "name": "Weizenstärke",
-   "oberbegriff": "Stärke",
+   "oberbegriff": "Bindemittel",
    "schreibweisen": [
     "Weizenstärke"
    ],
@@ -508,7 +511,7 @@
   },
   {
    "name": "Puddingpulver",
-   "oberbegriff": "Stärke",
+   "oberbegriff": "Bindemittel",
    "schreibweisen": [
     "Puddingpulver",
     "Custard Powder"
@@ -547,7 +550,7 @@
   },
   {
    "name": "Lotussamen",
-   "oberbegriff": "Samen",
+   "oberbegriff": "Nüsse",
    "schreibweisen": [
     "Lotussamen"
    ],
@@ -586,7 +589,16 @@
    "name": "Grobes Salz",
    "oberbegriff": "Gewürze & Kräuter",
    "schreibweisen": [
-    "Grobes Salz",
+    "Grobes Salz"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Meersalz",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Meersalz",
     "Grobes Meersalz"
    ],
    "vorrat": false,
@@ -627,7 +639,10 @@
     "Matcha"
    ],
    "vorrat": false,
-   "einkaufen": true
+   "einkaufen": true,
+   "auchUnter": [
+    "Dekoration"
+   ]
   },
   {
    "name": "Lebensmittelfarbe",
@@ -842,5 +857,5 @@
    ]
   }
  ],
- "_hinweis": "Schreibweise = Zutatenname im Rezept (bei Satz: Name + ', ' + Hinweis). varianten: Schreibweisen mit 'oder' -> Hauptzutat + Alternativen. rezeptAlternativen gelten nur im genannten Rezept; '@Gruppe' = jede Zutat dieses Oberbegriffs."
+ "_hinweis": "Schreibweise = Zutatenname im Rezept (bei Satz: Name + ', ' + Hinweis). varianten: Schreibweisen mit 'oder' -> Hauptzutat + Alternativen. rezeptAlternativen gelten nur im genannten Rezept; '@Gruppe' = jede Zutat dieses Oberbegriffs. auchUnter: weitere Oberbegriffe, unter denen die Zutat auch gefunden wird (Einkaufsliste nutzt den ersten Oberbegriff)."
 }
