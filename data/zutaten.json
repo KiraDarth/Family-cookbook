@@ -90,10 +90,14 @@
    "name": "Kokosfett",
    "oberbegriff": "Fett",
    "schreibweisen": [
-    "Kokosfett"
+    "Kokosfett",
+    "Kokosöl"
    ],
    "vorrat": false,
-   "einkaufen": true
+   "einkaufen": true,
+   "auchUnter": [
+    "Öl"
+   ]
   },
   {
    "name": "Pflanzliches Backfett",
@@ -237,7 +241,8 @@
    "name": "Milch (Kuhmilch)",
    "oberbegriff": "Milch",
    "schreibweisen": [
-    "Vollmilch"
+    "Vollmilch",
+    "Milch"
    ],
    "vorrat": false,
    "einkaufen": true
@@ -467,6 +472,234 @@
    "schreibweisen": [],
    "vorrat": false,
    "einkaufen": true
+  },
+  {
+   "name": "Klebreismehl",
+   "oberbegriff": "Mehl",
+   "schreibweisen": [
+    "Klebreismehl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Reismehl",
+   "oberbegriff": "Mehl",
+   "schreibweisen": [
+    "Reismehl"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Maisstärke",
+   "oberbegriff": "Bindemittel",
+   "schreibweisen": [
+    "Maisstärke"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Weizenstärke",
+   "oberbegriff": "Bindemittel",
+   "schreibweisen": [
+    "Weizenstärke"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Puddingpulver",
+   "oberbegriff": "Bindemittel",
+   "schreibweisen": [
+    "Puddingpulver",
+    "Custard Powder"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Goldsirup",
+   "oberbegriff": "Sirup",
+   "schreibweisen": [
+    "Goldsirup",
+    "Golden Syrup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Maltosesirup",
+   "oberbegriff": "Sirup",
+   "schreibweisen": [
+    "Maltosesirup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Rote Bohnen (Adzuki)",
+   "oberbegriff": "Hülsenfrüchte",
+   "schreibweisen": [
+    "Rote Bohnen",
+    "Adzukibohnen"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Lotussamen",
+   "oberbegriff": "Nüsse",
+   "schreibweisen": [
+    "Lotussamen"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Pistazien",
+   "oberbegriff": "Nüsse",
+   "schreibweisen": [
+    "Pistazien"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Eigelb",
+   "oberbegriff": "Eier",
+   "schreibweisen": [
+    "Eigelb"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Alkalisches Wasser",
+   "oberbegriff": "Backtriebmittel",
+   "schreibweisen": [
+    "Alkalisches Wasser",
+    "Kansui"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Grobes Salz",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Grobes Salz"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Meersalz",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Meersalz",
+    "Grobes Meersalz"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Miso",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Miso"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Gezuckerte Kondensmilch",
+   "oberbegriff": "Milch",
+   "schreibweisen": [
+    "Gezuckerte Kondensmilch"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Zitrone",
+   "oberbegriff": "Obst",
+   "schreibweisen": [
+    "Zitrone"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Matcha-Pulver",
+   "oberbegriff": "Aromen",
+   "schreibweisen": [
+    "Matcha-Pulver",
+    "Matcha"
+   ],
+   "vorrat": false,
+   "einkaufen": true,
+   "auchUnter": [
+    "Dekoration"
+   ]
+  },
+  {
+   "name": "Lebensmittelfarbe",
+   "oberbegriff": "Dekoration",
+   "schreibweisen": [
+    "Lebensmittelfarbe"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Essbares Gold",
+   "oberbegriff": "Dekoration",
+   "schreibweisen": [
+    "Essbares Gold",
+    "Goldstaub",
+    "Blattgold"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Glace",
+   "oberbegriff": "Glace",
+   "schreibweisen": [
+    "Glace"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Ahornsirup",
+   "oberbegriff": "Sirup",
+   "schreibweisen": [
+    "Ahornsirup"
+   ],
+   "vorrat": false,
+   "einkaufen": true
+  },
+  {
+   "name": "Pfefferkörner",
+   "oberbegriff": "Gewürze & Kräuter",
+   "schreibweisen": [
+    "Pfefferkörner"
+   ],
+   "vorrat": true,
+   "einkaufen": true
+  },
+  {
+   "name": "Reiswein",
+   "oberbegriff": "Saucen & Würzmittel",
+   "schreibweisen": [
+    "Reiswein",
+    "Shaoxing-Wein"
+   ],
+   "vorrat": false,
+   "einkaufen": true
   }
  ],
  "regeln": [
@@ -559,7 +792,70 @@
    "alt": [
     "@Mehl"
    ]
+  },
+  {
+   "rezept": "salzeigelb-custard",
+   "schreibweise": "Miso",
+   "alt": [
+    "Salz"
+   ]
+  },
+  {
+   "rezept": "snowy-skin-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "rote-bohnenpaste",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "mooncakes-rote-bohne-salzeigelb",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "weisse-lotossamenpaste",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "snow-skin-glace-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "lotus-mooncakes",
+   "schreibweise": "Alkalisches Wasser",
+   "alt": [
+    "Natron"
+   ]
+  },
+  {
+   "rezept": "honig-pistazien-mooncakes",
+   "schreibweise": "Rapsöl",
+   "alt": [
+    "Neutrales Öl"
+   ]
+  },
+  {
+   "rezept": "mooncake-streiche",
+   "schreibweise": "Goldsirup",
+   "alt": [
+    "Ahornsirup"
+   ]
   }
  ],
- "_hinweis": "Schreibweise = Zutatenname im Rezept (bei Satz: Name + ', ' + Hinweis). varianten: Schreibweisen mit 'oder' -> Hauptzutat + Alternativen. rezeptAlternativen gelten nur im genannten Rezept; '@Gruppe' = jede Zutat dieses Oberbegriffs."
+ "_hinweis": "Schreibweise = Zutatenname im Rezept (bei Satz: Name + ', ' + Hinweis). varianten: Schreibweisen mit 'oder' -> Hauptzutat + Alternativen. rezeptAlternativen gelten nur im genannten Rezept; '@Gruppe' = jede Zutat dieses Oberbegriffs. auchUnter: weitere Oberbegriffe, unter denen die Zutat auch gefunden wird (Einkaufsliste nutzt den ersten Oberbegriff)."
 }
