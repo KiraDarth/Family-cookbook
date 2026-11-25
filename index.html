@@ -1404,19 +1404,20 @@ applyTheme();
 function seeded(str) { let h = 2166136261; for (const ch of String(str)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; }; }
 function cssColor(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "#E0A84E"; }
 function rgba(hex, a) { const m = hex.replace("#", "").match(/../g) || ["e0", "a8", "4e"]; return `rgba(${m.map(x => parseInt(x, 16)).join(",")},${a})`; }
+const DAY_LOOK = { bg: 1 };
 function paintAmbientDay(ctx, w, h, seed, tint) {
-  const rnd = seeded(seed), k = Math.max(w, h), bg = cssColor("--bg"), gold = cssColor("--gold");
+  const K = DAY_LOOK.bg, A = a => Math.min(1, a * K), rnd = seeded(seed), k = Math.max(w, h), bg = cssColor("--bg"), gold = cssColor("--gold");
   ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
   const glow = (x, y, r, col) => { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, col); g.addColorStop(1, rgba(bg, 0)); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); };
   const gl = getComputedStyle(document.documentElement).getPropertyValue("--glow").trim() || "255,205,125";
-  glow(w * .9, -h * .05, k * .8, `rgba(${gl},.6)`);
-  glow(w * .1, h * .25, k * .45, `rgba(${gl},.3)`);
-  glow(w * .05, h * (.55 + rnd() * .3), k * .6, rgba(tint, .16));
-  glow(w * (.3 + rnd() * .4), h * 1.05, k * .5, rgba(gold, .14));
+  glow(w * .9, -h * .05, k * .8, `rgba(${gl},${A(.6)})`);
+  glow(w * .1, h * .25, k * .45, `rgba(${gl},${A(.3)})`);
+  glow(w * .05, h * (.55 + rnd() * .3), k * .6, rgba(tint, A(.16)));
+  glow(w * (.3 + rnd() * .4), h * 1.05, k * .5, rgba(gold, A(.14)));
   // Morgenlicht: helle, weiche Lichtflecken
   for (let i = 0; i < 24; i++) {
     const x = rnd() * w, y = rnd() * h, r = (16 + rnd() * 80) * (k / 900), c = rnd();
-    const col = c < .55 ? `rgba(255,255,255,${.35 + rnd() * .45})` : c < .85 ? rgba(gold, .08 + rnd() * .14) : rgba(tint, .08 + rnd() * .12);
+    const col = c < .55 ? `rgba(255,255,255,${A(.35 + rnd() * .45)})` : c < .85 ? rgba(gold, A(.08 + rnd() * .14)) : rgba(tint, A(.08 + rnd() * .12));
     const g = ctx.createRadialGradient(x, y, r * .55, x, y, r); g.addColorStop(0, col); g.addColorStop(1, "rgba(255,255,255,0)");
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
   }
