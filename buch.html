@@ -273,7 +273,7 @@ function noteParas(r, byId) {
   // Tipps zu einzelnen Schritten (in der App das goldene Quadrat beim Schritt)
   const st = r.steps || [];
   Object.keys(r.stepTips || {}).map(Number).sort((x, y) => x - y).forEach(k => { const n = st.slice(0, k + 1).filter(x => !isHead(x)).length;
-    if (r.stepTips[k]) p.push(`<p class="note"><b><i>Tipp zu Schritt ${n}:</i></b> ${esc(r.stepTips[k])}</p>`); });
+    if (r.stepTips[k]) p.push(`<p class="note"><b><i>Tipp zu Schritt ${n}:</i></b> ${esc(r.stepTips[k]).replace(/\n/g, "<br>")}</p>`); });
   const parent = r.parentId && byId[r.parentId];
   if (r.variantNote) p.push(`<p class="note"><b><i>Anders als im Grundrezept${parent ? ` «${esc(parent.title)}»${pref(parent.id)}` : ""}:</i></b> ${esc(r.variantNote)}</p>`);
   const milk = r.restVon && byId[r.restVon];

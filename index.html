@@ -696,7 +696,11 @@ details.bulk summary { color: var(--gold); }
   background: linear-gradient(135deg, rgba(255, 236, 200, .34) 0%, rgba(240, 196, 120, .22) 38%, rgba(224, 168, 78, .12) 70%, rgba(224, 168, 78, .22) 100%) !important;
   border: 1px solid rgba(255, 240, 215, .38) !important; box-shadow: 0 10px 26px rgba(0, 0, 0, .35), 0 0 22px rgba(224, 168, 78, .16) !important; }
 .tip.glass-card--live { box-shadow: 0 10px 26px rgba(0, 0, 0, .35), 0 0 22px rgba(224, 168, 78, .16) !important; }
-.tip span { color: #fbf3e6; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+.tip .tiplist { color: #fbf3e6; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+.tiplist { margin: 0; padding-left: 1.15em; }
+.tiplist li { margin: 0 0 6px; }
+.tiplist li::marker { color: var(--gold); }
+.tiplist ul { margin: 6px 0 0; padding-left: 1.1em; }
 .tip b { display: block; font-family: var(--font-display); font-style: italic; font-size: 1.2rem; color: var(--gold2); line-height: 1.1; margin-bottom: 2px; }
 .notes-tile { padding: 14px 16px; margin: 4px 0 10px; }
 .notes-tile p { margin: 0 0 8px; white-space: pre-wrap; }
@@ -1907,7 +1911,7 @@ function renderDetail(id) {
       <span class="num">${n}</span>
       ${tip ? `<button type="button" class="tipbtn" data-action="tip" aria-expanded="false" aria-label="Tipp zu Schritt ${n}">!</button>` : ""}
       <div class="txt">${pendingHead ? `<span class="stepsec">${esc(pendingHead)}</span>` : ""}<p>${linkStep(s)}</p></div></div>
-      ${tip ? `<div class="tipwrap"><div><div class="tip"><b>Tipp</b><span>${esc(tip)}</span></div></div></div>` : ""}</div>`;
+      ${tip ? `<div class="tipwrap"><div><div class="tip"><b>${tip.includes("\n") ? "Tipps" : "Tipp"}</b>${tipList(tip.split("\n"))}</div></div></div>` : ""}</div>`;
     pendingHead = "";
   });
   if (pendingHead) stHtml += `<div class="stile headonly"><span class="stepsec">${esc(pendingHead)}</span></div>`;
@@ -1954,7 +1958,7 @@ function renderDetail(id) {
         </section>
         <section class="pane${tab === "zub" ? "" : " off"}" id="p-zub"><h2 class="pane-h">Zubereitung</h2>
           ${stHtml || `<div class="stile"><p class="muted" style="margin:0">Noch keine Schritte eingetragen.</p></div>`}
-          ${r.tips || r.source ? `<div class="notes-tile">${r.tips ? `<div class="igrp">Tipps &amp; Notizen</div>${r.tips.split(/\n{2,}/).map(p => `<p>${esc(p)}</p>`).join("")}` : ""}
+          ${r.tips || r.source ? `<div class="notes-tile">${r.tips ? `<div class="igrp">Tipps &amp; Notizen</div>${tipList(r.tips.split(/\n{2,}/))}` : ""}
             ${r.source ? `<p class="source">Quelle: ${/^https?:\/\//.test(r.source) ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</p>` : ""}</div>` : ""}
         </section>
       </div>
@@ -1975,6 +1979,13 @@ function renderDetail(id) {
           : `<button class="btn danger" data-action="delete">Löschen</button>`}
       </div>
     </article></div>`;
+}
+// Tipps als Aufzählung; Zeilen mit «- » werden zur Unteraufzählung
+function tipList(paras) {
+  return `<ul class="tiplist">${paras.map(p => p.trim()).filter(Boolean).map(p => {
+    const [head, ...rest] = p.split("\n"); const subs = rest.filter(l => /^-\s/.test(l)), plain = rest.filter(l => !/^-\s/.test(l));
+    return `<li>${esc([head, ...plain].join(" "))}${subs.length ? `<ul>${subs.map(l => `<li>${esc(l.replace(/^-\s*/, ""))}</li>`).join("")}</ul>` : ""}</li>`;
+  }).join("")}</ul>`;
 }
 function progressText(ia, ib, sa, sb) {
   if (!ia && !sa) return "";
@@ -2038,7 +2049,7 @@ function renderEditor(r, key) {
           <button type="button" class="btn small" data-action="bulk" style="margin-top:8px">Übernehmen</button>
         </details>
       </div>
-      <div class="field"><label for="f-steps">Zubereitung</label><p class="hint">Ein Schritt pro Zeile. Eine Zeile mit Doppelpunkt am Ende wird zur goldenen Zwischenüberschrift, z.B. „Trockene Zutaten:“. Eine Zeile, die mit „Tipp:“ beginnt, wird zum Tipp für den Schritt direkt darüber (goldenes Quadrat beim Schritt).</p><textarea id="f-steps" rows="10">${esc(d.steps.map((s, k) => (isHead(s) ? headText(s) + ":" : s) + (d.stepTips[k] ? "\nTipp: " + d.stepTips[k] : "")).join("\n"))}</textarea></div>
+      <div class="field"><label for="f-steps">Zubereitung</label><p class="hint">Ein Schritt pro Zeile. Eine Zeile mit Doppelpunkt am Ende wird zur goldenen Zwischenüberschrift, z.B. „Trockene Zutaten:“. Eine Zeile, die mit „Tipp:“ beginnt, wird zum Tipp für den Schritt direkt darüber (goldenes Quadrat beim Schritt).</p><textarea id="f-steps" rows="10">${esc(d.steps.map((s, k) => (isHead(s) ? headText(s) + ":" : s) + (d.stepTips[k] ? d.stepTips[k].split("\n").map(x => "\nTipp: " + x).join("") : "")).join("\n"))}</textarea></div>
       <div class="field"><label for="f-tips">Tipps &amp; Notizen</label><textarea id="f-tips" rows="4">${esc(d.tips)}</textarea></div>
       <div class="field"><label for="f-restvon">Aus dem Satz (Rest) von</label><p class="hint">Für Reste-Rezepte: wähle das Rezept, bei dem der Rest anfällt. Beide Rezepte verweisen dann aufeinander.</p>
         <select id="f-restvon" style="min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:var(--surface)"><option value="">Kein Reste-Rezept</option>${recipes.filter(x => !src || x.id !== src.id || r.mode === "variant").sort((a, b) => (a.title || "").localeCompare(b.title || "", "de")).map(x => `<option value="${esc(x.id)}" ${(src?.restVon || "") === x.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></div>
@@ -2088,7 +2099,7 @@ function parseSteps(text) {
   const steps = [], stepTips = {};
   for (const line of text.split("\n").map(x => x.trim()).filter(Boolean)) {
     const tm = line.match(/^tipp\s*:\s*(.+)$/i);
-    if (tm && steps.length && !isHead(steps[steps.length - 1])) { const k = steps.length - 1; stepTips[k] = stepTips[k] ? stepTips[k] + " " + tm[1] : tm[1]; continue; }
+    if (tm && steps.length && !isHead(steps[steps.length - 1])) { const k = steps.length - 1; stepTips[k] = stepTips[k] ? stepTips[k] + "\n" + tm[1] : tm[1]; continue; }
     steps.push(/:$/.test(line) && line.length < 60 ? "## " + line.replace(/:$/, "").trim() : line);
   }
   return { steps, stepTips };

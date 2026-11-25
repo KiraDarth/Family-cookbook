@@ -276,8 +276,8 @@
    },
    {
     "amount": "1",
-    "name": "Hefeflocken",
-    "note": "oder geriebener Parmesan",
+    "name": "Parmesan",
+    "note": "fein gerieben («gemahlener Käse» im Video)",
     "unit": "EL"
    },
    {
@@ -330,7 +330,7 @@
    "## Tofu-Crisp",
    "Den festen Tofu in ein sauberes Küchentuch wickeln und mit etwas Schwerem darauf ein paar Minuten (ca. 10 Min) pressen, damit die Flüssigkeit austritt.",
    "Öl in einer Bratpfanne erhitzen. Den Tofu hineingeben und mit einer Gabel oder dem Bratenwender in kleine Brösel zerdrücken. Bei mittlerer bis hoher Hitze ca. 5–7 Minuten anbraten, bis er leicht goldig ist.",
-   "In einer kleinen Schüssel Sojasauce, Tomatenmark, Zucker, Wasser, Hefeflocken, Knoblauchpulver, Paprikapulver und Pfeffer verrühren. Das ergibt eine ziemlich flüssige Würzmasse.",
+   "In einer kleinen Schüssel Sojasauce, Tomatenmark, Zucker, Wasser, Parmesan, Knoblauchpulver, Paprikapulver und Pfeffer verrühren. Das ergibt eine ziemlich flüssige Würzmasse.",
    "Die Würzmasse über den Tofu in der Pfanne giessen, gut vermischen und unter Rühren weiterbraten, bis die Flüssigkeit verkocht ist und die Brösel wieder trocken und leicht knusprig sind (ca. 3–5 Minuten).",
    "## Nudeln & Anrichten",
    "Inzwischen die Nudeln in reichlich Salzwasser nach Packungsangabe kochen und abgiessen.",
@@ -338,12 +338,12 @@
    "Die Nudeln auf Teller verteilen, das Tofu-Crisp darüberstreuen und mit Petersilie und Sesam garnieren."
   ],
   "time": "30 Min",
-  "tips": "Rezept nach einem TikTok-Video. Die mit «Menge ergänzt» markierten Mengen stammen nicht aus dem Video, sondern sind plausible Richtwerte: bitte beim Nachkochen anpassen.\n\nAngaben aus dem Video in Besteck-Löffeln sind in genormte Messlöffel umgerechnet.\n\n«Gemahlener Käse» im Video: hier als Hefeflocken (vegan, würzig-käsig) umgesetzt. Geriebener Parmesan funktioniert genauso.\n\nMesslöffel: EL = 15 ml, TL = 5 ml. Genormte Messlöffel verwenden und glatt abstreichen.",
+  "tips": "Rezept nach einem TikTok-Video. Die mit «Menge ergänzt» markierten Mengen stammen nicht aus dem Video, sondern sind plausible Richtwerte: bitte beim Nachkochen anpassen.\n\nAngaben aus dem Video in Besteck-Löffeln sind in genormte Messlöffel umgerechnet.\n\n«Gemahlener Käse» im Video: hier als fein geriebener Parmesan umgesetzt.\n\nMesslöffel: EL = 15 ml, TL = 5 ml. Genormte Messlöffel verwenden und glatt abstreichen.",
   "title": "Nudeln an cremiger Chili-Tofusauce mit Tofu-Crisp",
   "topics": [
    "Chinesisch"
   ],
-  "updatedAt": "2026-11-20T19:52:40.000Z",
+  "updatedAt": "2026-11-25T21:50:00.000Z",
   "yieldUnit": "Portionen",
   "chapter": "Hauptgerichte",
   "subchapter": "Nudeln"
@@ -452,7 +452,7 @@
    "Heiss servieren, z.B. mit Ahornsirup, Butter, Beeren, Puderzucker oder Nussmus."
   ],
   "time": "15 Min",
-  "tips": "Zimmerwarme Milch verwenden: so wird die geschmolzene Butter beim Mischen nicht wieder fest.\n\nMilchfrei: Soja-, Mandel- oder Hafermilch statt Vollmilch, vegane Butter oder neutrales Öl statt Butter. Kokosmilch wird im Originalrezept nicht empfohlen.\n\nStatt Zucker gehen auch Honig oder Ahornsirup. Mit gesalzener Butter das Salz weglassen.\n\nWerden die Waffeln kompakt: frisches Backpulver verwenden, das Mehl locker abwiegen und den Teig nicht zu lange rühren.\n\nAufbewahren: ganz auskühlen lassen, luftdicht im Kühlschrank bis 4 Tage. Zum Einfrieren mit Backpapier zwischen den Lagen in einen Gefrierbeutel geben. Im Toaster aufbacken, auch direkt aus dem Tiefkühler.\n\nUS-Mengen umgerechnet: 1 Cup = 240 ml, 4 EL Butter = 55 g. Messlöffel: EL = 15 ml, TL = 5 ml, glatt abstreichen.",
+  "tips": "Milchfrei: Soja-, Mandel- oder Hafermilch statt Vollmilch, vegane Butter oder neutrales Öl statt Butter. Kokosmilch wird im Originalrezept nicht empfohlen.\n\nStatt Zucker gehen auch Honig oder Ahornsirup. Mit gesalzener Butter das Salz weglassen.\n\nAufbewahren: ganz auskühlen lassen, luftdicht im Kühlschrank bis 4 Tage. Zum Einfrieren mit Backpapier zwischen den Lagen in einen Gefrierbeutel geben. Im Toaster aufbacken, auch direkt aus dem Tiefkühler.\n\nUS-Mengen umgerechnet: 1 Cup = 240 ml, 4 EL Butter = 55 g. Messlöffel: EL = 15 ml, TL = 5 ml, glatt abstreichen.",
   "title": "Fluffige Waffeln ohne Ei",
   "topics": [],
   "updatedAt": "2026-11-22T14:32:59.926Z",
@@ -463,7 +463,11 @@
    "Dessert",
    "Waffeln"
   ],
-  "confirmedAt": "2026-11-22T14:32:59.926Z"
+  "confirmedAt": "2026-11-22T14:32:59.926Z",
+  "stepTips": {
+   "1": "Zimmerwarme Milch verwenden: so wird die geschmolzene Butter beim Mischen nicht wieder fest.",
+   "4": "Werden die Waffeln kompakt: frisches Backpulver verwenden, das Mehl locker abwiegen und den Teig nicht zu lange rühren."
+  }
  },
  "grundmilch": {
   "confirmedAt": "2026-11-17T16:38:06.057Z",
@@ -730,7 +734,7 @@
    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\n\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Nussige Milch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Baru-Kakao-Cookies",
   "topics": [
    "Reste-Verwertung"
@@ -742,7 +746,10 @@
   "keywords": [
    "Gebäck"
   ],
-  "confirmedAt": "2026-11-22T14:40:05.625Z"
+  "confirmedAt": "2026-11-22T14:40:05.625Z",
+  "stepTips": {
+   "2": "Zu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Nussige Milch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen."
+  }
  },
  "satz-baru-zimt-knusper": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -799,7 +806,7 @@
    "Auf dem Blech vollständig auskühlen lassen. Grössere Stücke nach Wunsch auseinanderbrechen."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Baru-Zimt-Knusper",
   "topics": [
    "Reste-Verwertung"
@@ -807,7 +814,10 @@
   "updatedAt": "2026-11-17T13:00:00.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Frühstück",
-  "subchapter": "Müsli & Riegel"
+  "subchapter": "Müsli & Riegel",
+  "stepTips": {
+   "1": "Zu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept."
+  }
  },
  "satz-honig-hafer-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -878,7 +888,7 @@
    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\n\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Grundmilch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Honig-Hafer-Cookies",
   "topics": [
    "Reste-Verwertung"
@@ -890,7 +900,10 @@
   "keywords": [
    "Gebäck"
   ],
-  "confirmedAt": "2026-11-22T14:41:03.273Z"
+  "confirmedAt": "2026-11-22T14:41:03.273Z",
+  "stepTips": {
+   "2": "Zu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Grundmilch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen."
+  }
  },
  "satz-kokos-bananen-bites": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -947,7 +960,7 @@
    "Die Taler kurz auf dem Blech ruhen lassen, vorsichtig lösen und auskühlen lassen."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Kokos-Bananen-Bites",
   "topics": [
    "Reste-Verwertung"
@@ -955,7 +968,10 @@
   "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
-  "subchapter": "Snacks & Bites"
+  "subchapter": "Snacks & Bites",
+  "stepTips": {
+   "1": "Zu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept."
+  }
  },
  "satz-kokos-baru-energy-balls": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1016,7 +1032,7 @@
    "Die Kugeln abgedeckt 30–60 Minuten kaltstellen, bei Bedarf länger, bis sie fest genug sind."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Kokos-Baru-Energy-Balls",
   "topics": [
    "Reste-Verwertung"
@@ -1024,7 +1040,10 @@
   "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Süsses & Gebäck",
-  "subchapter": "Snacks & Bites"
+  "subchapter": "Snacks & Bites",
+  "stepTips": {
+   "2": "Zu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept."
+  }
  },
  "satz-kokos-fruehstuecksriegel": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1081,7 +1100,7 @@
    "In der Form auskühlen lassen. Mithilfe des Backpapiers herausheben und in Riegel schneiden."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Kokos-Frühstücksriegel",
   "topics": [
    "Reste-Verwertung"
@@ -1089,7 +1108,10 @@
   "updatedAt": "2026-11-17T13:00:00.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Frühstück",
-  "subchapter": "Müsli & Riegel"
+  "subchapter": "Müsli & Riegel",
+  "stepTips": {
+   "1": "Zu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept."
+  }
  },
  "satz-kokos-honig-cookies": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1160,7 +1182,7 @@
    "Nach wenigen Minuten auf ein Kuchengitter setzen und vollständig auskühlen lassen."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\n\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Kokosmilch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Kokos-Honig-Cookies",
   "topics": [
    "Reste-Verwertung"
@@ -1172,7 +1194,10 @@
   "keywords": [
    "Gebäck"
   ],
-  "confirmedAt": "2026-11-22T14:39:21.589Z"
+  "confirmedAt": "2026-11-22T14:39:21.589Z",
+  "stepTips": {
+   "2": "Zu nass? Trockene Zutaten nur TL-weise ergänzen, bis der Teig formbar ist.\nZu trocken oder bröselig (z.B. weil der Satz sehr gut ausgepresst ist)? Kokosmilch je 1 TL einkneten, bis der Teig beim Zusammendrücken hält, insgesamt höchstens 4 TL. Hält er dann noch nicht, 1 TL Honig oder 1 TL geschmolzenes Kokosfett ergänzen. Test: eine Kugel formen und flachdrücken. Reisst sie nur leicht am Rand, passt der Teig. Mehr Flüssigkeit lässt die Cookies breitlaufen."
+  }
  },
  "satz-pancakes": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1251,7 +1276,7 @@
    "Sobald die Ränder fest werden und sich die Unterseite gut löst, wenden. Die zweite Seite goldbraun backen, bis die Mitte durchgegart ist."
   ],
   "time": "",
-  "tips": "Zum Ausbacken ist neutrales Pflanzenöl üblich. Hier verwendest du nach deiner Vorliebe Kokosfett.\n\nMesslöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Kleine Satz-Pancakes",
   "topics": [
    "Reste-Verwertung"
@@ -1259,7 +1284,11 @@
   "updatedAt": "2026-11-20T19:52:40.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Frühstück",
-  "subchapter": "Pancakes & Waffeln"
+  "subchapter": "Pancakes & Waffeln",
+  "stepTips": {
+   "4": "Zum Ausbacken ist neutrales Pflanzenöl üblich. Hier verwendest du nach deiner Vorliebe Kokosfett.",
+   "2": "Zu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept."
+  }
  },
  "satz-weiche-fruehstuecksriegel": {
   "createdAt": "2026-11-17T13:00:00.000Z",
@@ -1316,7 +1345,7 @@
    "Vollständig auskühlen lassen. Aus der Form heben und erst danach schneiden."
   ],
   "time": "",
-  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nZu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
+  "tips": "Messlöffel: EL = 15 ml, TL = 5 ml, ½ TL = 2,5 ml. Genormte Messlöffel verwenden und glatt abstreichen, ausser wenn ausdrücklich «gehäuft» angegeben.\n\nFeuchten Satz direkt verwenden oder höchstens 1–2 Tage gut gekühlt lagern. Alternativ portionsweise einfrieren.",
   "title": "Weiche Frühstücksriegel",
   "topics": [
    "Reste-Verwertung"
@@ -1324,7 +1353,10 @@
   "updatedAt": "2026-11-17T13:00:00.000Z",
   "yieldUnit": "g Satz",
   "chapter": "Frühstück",
-  "subchapter": "Müsli & Riegel"
+  "subchapter": "Müsli & Riegel",
+  "stepTips": {
+   "1": "Zu nass? Trockene Zutaten nur TL-weise ergänzen. Zu trocken? 1–2 TL Pflanzenmilch, etwas Honig oder mehr Dattel ergänzen, passend zum Rezept."
+  }
  },
  "schoko-cupcakes": {
   "createdAt": "2026-11-17T13:45:00.000Z",
@@ -1580,7 +1612,7 @@
    "Vom Herd nehmen und abkühlen lassen.",
    "In ein Glas mit dicht schliessendem Deckel füllen und kühl und trocken lagern. Hält mehrere Monate."
   ],
-  "tips": "Mindestens 3 Wochen im Voraus zubereiten, dann wird der Sirup dunkler und das Ergebnis am besten.\n\nStatt selbst zu kochen geht auch gekaufter Goldsirup (z.B. Lyle's Golden Syrup).\n\nDie Cup-Angaben sind amerikanisch-britische Cups wie im Buch (1 Cup = 250 ml), die ml-Angaben stammen direkt aus dem Buch.",
+  "tips": "Statt selbst zu kochen geht auch gekaufter Goldsirup (z.B. Lyle's Golden Syrup).\n\nDie Cup-Angaben sind amerikanisch-britische Cups wie im Buch (1 Cup = 250 ml), die ml-Angaben stammen direkt aus dem Buch.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), «Golden Syrup», S. 110",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -1591,7 +1623,10 @@
   "keywords": [
    "Mooncake",
    "Mondfest"
-  ]
+  ],
+  "stepTips": {
+   "3": "Mindestens 3 Wochen im Voraus zubereiten, dann wird der Sirup dunkler und das Ergebnis am besten."
+  }
  },
  "rote-bohnenpaste": {
   "createdAt": "2026-11-23T21:00:00.000Z",
@@ -1868,7 +1903,7 @@
    "Nach dem ersten Backgang die leicht abgekühlten Mooncakes (Oberseite und Seiten) mit einem Pinsel dünn bestreichen. Zu viel Streiche mit Küchenpapier abtupfen, sonst verschwindet das Muster.",
    "Danach wie im Rezept fertig backen."
   ],
-  "tips": "Am besten mit einem Pinsel aus Naturhaar statt Silikon auftragen, so bleibt die Streiche dünn und die feinen Vertiefungen des Musters frei.\n\nWarum diese Mischung: In einem Vergleichstest von King Arthur Baking schnitt ungesüsste Sojamilch mit Ahornsirup (1 TL auf 2 EL) unter den Ei-Ersatz-Streichen am besten ab, mit schönem Glanz und guter Bräunung. Reine Sojamilch glänzt ähnlich wie Ei, bräunt aber etwas weniger. Fett (Margarine, Kokosöl) gibt kaum Glanz und wirkt fettig. Vegane Mooncake-Rezepte (z.B. The Plant-Based Wok) nutzen dieselbe Idee: 2 EL Pflanzenmilch mit 1 TL Sirup, dünn nach dem ersten Backgang.\n\nGoldsirup statt Ahornsirup ist meine Anpassung, weil er sowieso im Mooncake-Teig ist und neutraler schmeckt. Beides funktioniert.\n\nReicht für 10 bis 12 Mooncakes.",
+  "tips": "Warum diese Mischung: In einem Vergleichstest von King Arthur Baking schnitt ungesüsste Sojamilch mit Ahornsirup (1 TL auf 2 EL) unter den Ei-Ersatz-Streichen am besten ab, mit schönem Glanz und guter Bräunung. Reine Sojamilch glänzt ähnlich wie Ei, bräunt aber etwas weniger. Fett (Margarine, Kokosöl) gibt kaum Glanz und wirkt fettig. Vegane Mooncake-Rezepte (z.B. The Plant-Based Wok) nutzen dieselbe Idee: 2 EL Pflanzenmilch mit 1 TL Sirup, dünn nach dem ersten Backgang.\n\nGoldsirup statt Ahornsirup ist meine Anpassung, weil er sowieso im Mooncake-Teig ist und neutraler schmeckt. Beides funktioniert.\n\nReicht für 10 bis 12 Mooncakes.",
   "source": "Eigene Zusammenstellung nach King Arthur Baking (Vegan-Egg-Wash-Test) und The Plant-Based Wok (Vegan Mooncakes)",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -1880,7 +1915,10 @@
    "Ei-Ersatz",
    "Vegan",
    "Glasur"
-  ]
+  ],
+  "stepTips": {
+   "1": "Am besten mit einem Pinsel aus Naturhaar statt Silikon auftragen, so bleibt die Streiche dünn und die feinen Vertiefungen des Musters frei."
+  }
  },
  "lotus-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
@@ -2012,7 +2050,7 @@
    "## Ruhen lassen",
    "Die Mooncakes unbedeckt an einem gut belüfteten Ort 1 bis 2 Tage ruhen lassen. So wird der Teig weich und sie schmecken besser."
   ],
-  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nIm Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nFertige Lotussamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.\n\nAlkalisches Wasser (aus dem Buch, S. 34): Kansui ist eine verdünnte Lösung aus Natrium- oder Kaliumcarbonat. In kleinen Mengen gibt es Nudeln, Reisknödeln und Kuchen Farbe und Biss. Im Asia-Laden in kleinen Flaschen erhältlich. Ersatz: die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
+  "tips": "Fertige Lotussamenpaste gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.\n\nAlkalisches Wasser (aus dem Buch, S. 34): Kansui ist eine verdünnte Lösung aus Natrium- oder Kaliumcarbonat. In kleinen Mengen gibt es Nudeln, Reisknödeln und Kuchen Farbe und Biss. Im Asia-Laden in kleinen Flaschen erhältlich. Ersatz: die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), «Lotus Seed Mooncakes», S. 108, und «How to Shape a Mooncake», S. 110",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2025,7 +2063,11 @@
    "Mondfest",
    "Gebäck",
    "Lotus"
-  ]
+  ],
+  "stepTips": {
+   "11": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.",
+   "16": "Im Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei."
+  }
  },
  "mooncakes-rote-bohne-salzeigelb": {
   "createdAt": "2026-11-23T21:00:00.000Z",
@@ -2116,7 +2158,7 @@
    "## Ruhen lassen",
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).\n\nAlkalisches Wasser ersetzen (Tipp aus «Chinese Feasts & Festivals», S. 34): die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes mit je einem ganzen Salzeigelb.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nForm (aus dem Buch): Die Mondkuchenform lässt sich das ganze Jahr als Keksstempel nutzen, z.B. für gepresstes Shortbread, Lebkuchen, Springerle oder Ma'amoul.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).\n\nAlkalisches Wasser ersetzen (Tipp aus «Chinese Feasts & Festivals», S. 34): die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Red Bean and Salted Egg Yolk Mooncakes», S. 176–177, Tipps aus der Einleitung zu Mooncakes",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2127,7 +2169,11 @@
    "Mooncake",
    "Mondfest",
    "Gebäck"
-  ]
+  ],
+  "stepTips": {
+   "14": "Im Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.",
+   "12": "Zweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar."
+  }
  },
  "honig-pistazien-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
@@ -2215,7 +2261,7 @@
    "## Ruhen lassen",
    "Vor dem Servieren 1 bis 2 Tage luftdicht bei Raumtemperatur aufbewahren, damit der Teig weich wird."
   ],
-  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nIm Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nZweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).\n\nAlkalisches Wasser ersetzen (Tipp aus «Chinese Feasts & Festivals», S. 34): die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
+  "tips": "Du brauchst eine Mondkuchenform für kleine Mooncakes (50 g). Mit einer 100-g-Form werden es 6 grosse Mooncakes.\n\nLuftdicht (z.B. im Gefrierbeutel) bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nKruste (aus dem Buch): Traditionelle kantonesische Mooncakes bestehen aus Mehl, Öl, Goldsirup und alkalischem Wasser. Goldsirup ist ein Invertzuckersirup, er verhindert das Auskristallisieren und macht den Teig weich und zart. Die Autorin empfiehlt, gekauften Lyle's Golden Syrup zu nehmen statt ihn selbst zu kochen. Das alkalische Wasser (auch Lye Water oder Kansui, im Asia-Laden) gibt der Kruste die goldbraune Farbe und die typische Zähigkeit.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).\n\nAlkalisches Wasser ersetzen (Tipp aus «Chinese Feasts & Festivals», S. 34): die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Honey Pistachio Mooncakes», S. 179–180",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2226,7 +2272,11 @@
    "Mooncake",
    "Mondfest",
    "Gebäck"
-  ]
+  ],
+  "stepTips": {
+   "16": "Im Buch wird mit Ei und Wasser bestrichen, hier steht stattdessen die Streiche ohne Ei.",
+   "14": "Zweimal backen (aus dem Buch): Der erste Backgang fixiert das Muster, der zweite backt die Mooncakes fertig und gibt die tiefe goldbraune Farbe. Die Streiche dünn auftragen, am besten mit einem Pinsel aus Naturhaar statt Silikon, damit sie die feinen Vertiefungen des Musters nicht verklebt. Zu viel Streiche mit Küchenpapier abtupfen. Frisch aus dem Ofen wirkt das Muster etwas verzogen, beim Abkühlen wird es wieder klar."
+  }
  },
  "honig-pistazien-fuellung": {
   "createdAt": "2026-11-23T22:00:00.000Z",
@@ -2277,7 +2327,7 @@
    "Honig, Kokosöl, Maisstärke und Salz dazugeben und nochmals einige Male pulsieren. Die Füllung soll etwas krümelig sein, aber beim Zusammendrücken halten. Nicht zu lange mixen, sonst wird Pistazienbutter daraus.",
    "Für kleine Mooncakes (50-g-Form) in 12 gleich grosse Portionen teilen (am genausten mit der Küchenwaage) und zu Kugeln formen."
   ],
-  "tips": "Ergibt etwa 315 g, genug für 12 kleine oder 6 grosse Mooncakes.\n\nEine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
+  "tips": "Ergibt etwa 315 g, genug für 12 kleine oder 6 grosse Mooncakes.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), Füllung aus «Honey Pistachio Mooncakes», S. 179–180",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2287,7 +2337,10 @@
    "Mooncake",
    "Mondfest",
    "Pistazien"
-  ]
+  ],
+  "stepTips": {
+   "1": "Eine Füllung muss fest genug sein, damit die Mooncakes im Ofen nicht zusammenfallen. Nüsse sind dafür ideal."
+  }
  },
  "salzeigelb-custard": {
   "createdAt": "2026-11-23T22:00:00.000Z",
@@ -2548,7 +2601,7 @@
    "## Kühlen",
    "Abgedeckt einige Stunden bis höchstens 4 Tage kühlen. Vor dem Essen bei Raumtemperatur etwas weich werden lassen."
   ],
-  "tips": "Du brauchst eine Mondkuchenpresse mit 50 bis 100 g Fassungsvermögen (günstig online erhältlich).\n\nZur Dämpftechnik gibt es im Buch eine Anleitung auf S. 17.\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
+  "tips": "Du brauchst eine Mondkuchenpresse mit 50 bis 100 g Fassungsvermögen (günstig online erhältlich).\n\nDie Gramm-Angaben stammen direkt aus dem Buch, die Löffel- und Cup-Angaben stehen als Original dabei.",
   "source": "Modern Asian Baking at Home (Kat Lieu), Kapitel «Treats under one Moon and Holiday Bakes», «Snowy Skin Mooncake», S. 128–129, nach einem Rezept von Karen Ng",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2561,7 +2614,10 @@
    "Mondfest",
    "Snow Skin",
    "Dessert"
-  ]
+  ],
+  "stepTips": {
+   "5": "Zur Dämpftechnik gibt es im Buch eine Anleitung auf S. 17."
+  }
  },
  "tausend-schichten-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
@@ -2676,7 +2732,7 @@
    "## Backen",
    "Backen, bis die Mooncakes blättrig und leicht golden sind, 25 bis 28 Minuten. Das Blech auf ein Gitter stellen und die Mooncakes darauf abkühlen lassen. Warm oder bei Raumtemperatur servieren."
   ],
-  "tips": "Ohne Matcha werden die Mooncakes schön goldbraun.\n\nDas Rezept ist komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
+  "tips": "Das Rezept ist komplett vegan.\n\nLuftdicht bei Raumtemperatur oder im Kühlschrank bis 5 Tage haltbar.\n\nAlle Mengen wie im Buch, das Buch gibt die Mengen in Gramm an (Cups nur in Klammern).",
   "source": "Mooncakes & Milk Bread (Kristina Cho), «Thousand Layer Mooncakes with White Lotus Seed Paste», S. 184–187 (S. 186 zeigt das Rollen, S. 187 die Lotussamenpaste)",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2690,7 +2746,10 @@
    "Gebäck",
    "Lotus",
    "Vegan"
-  ]
+  ],
+  "stepTips": {
+   "3": "Ohne Matcha werden die Mooncakes schön goldbraun."
+  }
  },
  "snow-skin-glace-mooncakes": {
   "createdAt": "2026-11-23T21:00:00.000Z",
@@ -2854,7 +2913,7 @@
    "Nach 30 Tagen die Eier herausnehmen und auf einem Gitter trocknen lassen. Kühl und trocken aufbewahren.",
    "Für Mooncakes das Ei aufschlagen und nur das feste Eigelb verwenden. Das flüssige Eiweiss wegwerfen."
   ],
-  "tips": "Enteneier schmecken besser, Hühnereier gehen auch.\n\nGekaufte Salzeier aus dem chinesischen Laden erkennt man an der schwarzen Schutzschicht aus Asche und Lehm. Diese Schicht entfernen und die Eier gut abspülen, bevor du sie aufschlägst. Nicht verwechseln mit tausendjährigen Eiern (braune Holzasche-Schicht).\n\nSchwimmen die Eier oben, mit einem kleinen Teller beschweren, damit sie ganz in der Lake liegen (Tipp von mir, nicht aus dem Buch).\n\nSchneller geht es mit dem Modernen Salzeigelb (Ofen) (einzelne Eigelbe, 3 bis 5 Tage in Salz, dann im Ofen getrocknet).\n\nDie Gramm- und Liter-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
+  "tips": "Enteneier schmecken besser, Hühnereier gehen auch.\n\nGekaufte Salzeier aus dem chinesischen Laden erkennt man an der schwarzen Schutzschicht aus Asche und Lehm. Diese Schicht entfernen und die Eier gut abspülen, bevor du sie aufschlägst. Nicht verwechseln mit tausendjährigen Eiern (braune Holzasche-Schicht).\n\nSchneller geht es mit dem Modernen Salzeigelb (Ofen) (einzelne Eigelbe, 3 bis 5 Tage in Salz, dann im Ofen getrocknet).\n\nDie Gramm- und Liter-Angaben stammen direkt aus dem Buch, die Cup-Angaben stehen als Original dabei.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), «Salted Preserved Eggs», S. 89",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -2867,7 +2926,10 @@
    "Mondfest",
    "Salzei",
    "Zongzi"
-  ]
+  ],
+  "stepTips": {
+   "5": "Schwimmen die Eier oben, mit einem kleinen Teller beschweren, damit sie ganz in der Lake liegen (Tipp von mir, nicht aus dem Buch)."
+  }
  },
  "lotus-mooncakes-salzeigelb": {
   "createdAt": "2026-11-23T23:00:00.000Z",
@@ -3014,7 +3076,7 @@
    "## Ruhen lassen",
    "Die Mooncakes unbedeckt an einem gut belüfteten Ort 1 bis 2 Tage ruhen lassen. So wird der Teig weich und sie schmecken besser."
   ],
-  "tips": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.\n\nIm Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei.\n\nFertige Lotussamenpaste und gesalzene Eier gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.\n\nAlkalisches Wasser (aus dem Buch, S. 34): Kansui ist eine verdünnte Lösung aus Natrium- oder Kaliumcarbonat. In kleinen Mengen gibt es Nudeln, Reisknödeln und Kuchen Farbe und Biss. Im Asia-Laden in kleinen Flaschen erhältlich. Ersatz: die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
+  "tips": "Fertige Lotussamenpaste und gesalzene Eier gibt es zur Mondfest-Zeit auch im Asia-Laden.\n\nDie Cup-Angaben sind Cups wie im Buch (1 Cup = 250 ml), die Gramm- und ml-Angaben stammen direkt aus dem Buch.\n\nAlkalisches Wasser (aus dem Buch, S. 34): Kansui ist eine verdünnte Lösung aus Natrium- oder Kaliumcarbonat. In kleinen Mengen gibt es Nudeln, Reisknödeln und Kuchen Farbe und Biss. Im Asia-Laden in kleinen Flaschen erhältlich. Ersatz: die gleiche Menge Natronlösung aus 1 Teil Natron, gelöst in 1 Teil Wasser.",
   "source": "Chinese Feasts & Festivals (S.C. Moey), «Lotus Seed Mooncakes», S. 108, und «How to Shape a Mooncake», S. 110",
   "chapter": "Süsses & Gebäck",
   "subchapter": "Mooncakes",
@@ -3029,6 +3091,10 @@
    "Lotus"
   ],
   "parentId": "lotus-mooncakes",
-  "variantNote": "Mit einem ganzen klassischen Salzeigelb in jeder Füllkugel."
+  "variantNote": "Mit einem ganzen klassischen Salzeigelb in jeder Füllkugel.",
+  "stepTips": {
+   "12": "Ohne Mondkuchenform: Jeden gefüllten Mooncake zu einer grossen runden Scheibe formen. Mit dem Messerrücken rundherum am Rand im Abstand von 2,5 cm Rillen eindrücken, wie bei einem Kuchenrand.",
+   "17": "Im Buch wird mit einem verquirlten Eigelb bestrichen, hier steht stattdessen die Streiche ohne Ei."
+  }
  }
 }
