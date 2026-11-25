@@ -20,3 +20,6 @@ jedes Rezept als Doppelseite (links Foto mit optionaler Hinweis-Box `photoNote`,
 rechts Zutaten, Eckdaten `prepTime`/`restTime`/`cookTime`/`time`/`servings`, Schritte),
 hinten ein Stichwortverzeichnis (Titel, Themen, Hauptzutaten, `keywords`).
 Fotos liegen in `images/`, das Rezept speichert nur den Pfad (`photo`).
+
+## Kapitelansicht
+Unterkapitel und ihre Abschnitte (`section`) sind aufklappbare Felder. Beim Öffnen eines Unterkapitels sind seine Abschnitte offen.
