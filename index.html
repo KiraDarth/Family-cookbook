@@ -350,11 +350,18 @@ details.fold > summary:focus-visible { outline: 2px solid var(--cc, var(--ink));
 details.fold .fname { flex: 1; font-weight: 600; font-size: 1.02rem; }
 details.fold .fcount { min-width: 28px; padding: 2px 8px; border-radius: 999px; text-align: center; font-size: .82rem; color: var(--muted); background: color-mix(in srgb, var(--cc, var(--line)) 14%, transparent); }
 details.fold .chev { width: 20px; height: 20px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
-details.fold[open] .chev { transform: rotate(180deg); }
+details.fold[open] > summary .chev { transform: rotate(180deg); }
 details.fold[open] > summary { border-bottom: 1px solid var(--line); border-radius: 16px 16px 0 0; }
 details.fold .fbody { padding: 12px; }
 details.fold .fbody > h3.subsec:first-child { margin-top: 4px; }
 details.fold .fbody .rrow { border-color: transparent; background: color-mix(in srgb, var(--line) 25%, var(--surface)); }
+details.fold.sec { margin-top: 8px; border-radius: 12px; background: color-mix(in srgb, var(--cc, var(--line)) 6%, var(--surface)); }
+details.fold.sec:first-child { margin-top: 0; }
+details.fold.sec > summary { min-height: 48px; padding: 0 14px; border-radius: 12px; }
+details.fold.sec[open] > summary { border-radius: 12px 12px 0 0; }
+details.fold.sec .fname { font-size: .95rem; padding-left: 9px; border-left: 3px solid var(--cc, var(--line)); }
+details.fold.sec > .fbody { padding: 10px; }
+details.fold.sec .rrow { background: var(--surface); }
 @media (prefers-reduced-motion: reduce) { details.fold .chev { transition: none; } }
 .group > h2 { font-family: var(--font-body); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
 
@@ -678,7 +685,9 @@ const usedChapters = () => [...CHAPTERS, NO_CHAPTER].filter(c => recipes.some(r 
 const secsOf = (list, sub) => [...new Set(list.map(r => r.section || ""))].sort((a, b) => !a ? 1 : !b ? -1 : a === sub ? -1 : b === sub ? 1 : a.localeCompare(b, "de"));
 const subBody = (list, sub) => { const secs = secsOf(list, sub);
   if (secs.length < 2 && !secs[0]) return `<div class="rows">${list.sort(byTitle).map(r => rowHtml(r, r.time || "")).join("")}</div>`;
-  return secs.map(sc => `<h3 class="subsec">${esc(sc || "Weitere")}</h3><div class="rows">${list.filter(r => (r.section || "") === sc).sort(byTitle).map(r => rowHtml(r, r.time || "")).join("")}</div>`).join(""); };
+  // Abschnitte ebenfalls aufklappbar; sie sind offen, sobald man das Unterkapitel öffnet
+  return secs.map(sc => { const l = list.filter(r => (r.section || "") === sc).sort(byTitle);
+    return `<details class="fold sec" open><summary><span class="fname">${esc(sc || "Weitere")}</span><span class="fcount">${l.length}</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fbody"><div class="rows">${l.map(r => rowHtml(r, r.time || "")).join("")}</div></div></details>`; }).join(""); };
 const subsOf = ch => [...new Set(recipes.filter(r => chapterOf(r) === ch).map(r => r.subchapter || "Weitere"))].sort((a, b) => a === "Weitere" ? 1 : b === "Weitere" ? -1 : a.localeCompare(b, "de"));
 const byTitle = (a, b) => (a.title || "").localeCompare(b.title || "", "de");
 function thumbHtml(r) {
@@ -1008,9 +1017,9 @@ function renderChapter(rt) {
       return `<details class="fold" id="g-${esc(slugify(x))}"${open ? " open" : ""}><summary><span class="fname">${esc(x)}</span><span class="fcount">${list.length}</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fbody">${subBody(list, x)}</div></details>`; }).join("")}
   </div>`;
   // Unterkapitel als aufklappbare Felder; der Regler öffnet oder schliesst alle auf einmal
-  const folds = [...app.querySelectorAll("details.fold")], btn = document.getElementById("fold-all");
+  const folds = [...app.querySelectorAll("details.fold:not(.sec)")], btn = document.getElementById("fold-all");
   const sync = () => { if (!btn) return; const all = folds.every(d => d.open); btn.textContent = all ? "Alle schliessen" : "Alle öffnen"; btn.setAttribute("aria-pressed", String(all)); };
-  folds.forEach(d => d.addEventListener("toggle", sync));
+  folds.forEach(d => d.addEventListener("toggle", () => { if (d.open) d.querySelectorAll("details.sec").forEach(x => { x.open = true; }); sync(); }));
   btn?.addEventListener("click", () => { const open = !folds.every(d => d.open); folds.forEach(d => { d.open = open; }); sync(); });
   sync();
   if (rt.sub) requestAnimationFrame(() => document.getElementById("g-" + rt.sub)?.scrollIntoView({ block: "start" }));
