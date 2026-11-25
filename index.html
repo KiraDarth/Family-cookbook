@@ -494,8 +494,8 @@ body::before { background: rgba(20, 17, 15, .72); -webkit-backdrop-filter: blur(
 .brand-mark svg { stroke: var(--on-gold); }
 .plusbtn, .backbtn { background: var(--glass); color: var(--ink); border: 1px solid rgba(255, 255, 255, .16); border-radius: 14px; }
 .plusbtn { color: var(--gold2); }
-/* Leiste unten: bis an den Rand, oben links/rechts abgerundet; die unteren Ecken liegen ausserhalb des Bildschirms */
-.tabbar { left: 0; right: 0; bottom: -28px; border-radius: 24px; padding: 8px max(8px, env(safe-area-inset-right, 0px)) calc(36px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); border-top: 1px solid rgba(255, 255, 255, .14); }
+/* Leiste unten: schwebend, möglichst nah am unteren Rand (über dem Home-Balken des iPhones nur so weit wie nötig) */
+.tabbar { left: 6px; right: 6px; bottom: max(6px, calc(env(safe-area-inset-bottom, 0px) - 14px)); border-radius: 22px; padding: 6px 4px; border-top: 1px solid rgba(255, 255, 255, .14); }
 .tab { color: #b6aa9b; font-weight: 700; }
 .tab.on { color: var(--gold); }
 body { padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
@@ -641,13 +641,13 @@ details.bulk summary { color: var(--gold); }
 .rtabs button[aria-selected="true"] { background: var(--ink); color: #141210; text-shadow: none; }
 .rtabs .cnt { font-weight: 600; opacity: .7; margin-left: 4px; }
 .rcols { display: block; }
-.pane[hidden] { display: none; }
+.pane.off { display: none; }
 .pane-h { display: none; }
 /* Computer und Tablet: Zutaten links, Zubereitung rechts, ohne Umschalter */
 @media (min-width: 700px) {
   .rtabs-wrap { display: none; }
   .rcols { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 18px; align-items: start; }
-  .pane[hidden] { display: block; }
+  .pane.off { display: block; }
   .pane-h { display: block; font-family: var(--font-display); font-size: 1.6rem; margin: 0 4px 10px; text-shadow: 0 1px 8px rgba(0, 0, 0, .55); }
 }
 @media (min-width: 1300px) { .rcols { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); } }
@@ -1948,11 +1948,11 @@ function renderDetail(id) {
       <div class="rtabs-wrap"><div class="rtabs" role="tablist"><button type="button" role="tab" data-action="tab" data-tab="zut" aria-selected="${tab === "zut"}">Zutaten<span class="cnt">${nIng}</span></button><button type="button" role="tab" data-action="tab" data-tab="zub" aria-selected="${tab === "zub"}">Zubereitung<span class="cnt">${n}</span></button></div></div>
       <div class="progress" id="cook-progress">${progressText(doneIng.size, nIng, doneSt.size, n)}</div>
       <div class="rcols">
-        <section class="pane" id="p-zut" ${tab === "zut" ? "" : "hidden"}><h2 class="pane-h">Zutaten</h2>
+        <section class="pane${tab === "zut" ? "" : " off"}" id="p-zut"><h2 class="pane-h">Zutaten</h2>
           ${ingHtml || `<div class="itile"><p class="muted">Noch keine Zutaten eingetragen.</p></div>`}
           ${hasOrig && !useOrig ? `<p class="unote"><span class="ap">≈</span> umgerechnet. Alles ohne ≈ steht so im Originalrezept.</p>` : ""}
         </section>
-        <section class="pane" id="p-zub" ${tab === "zub" ? "" : "hidden"}><h2 class="pane-h">Zubereitung</h2>
+        <section class="pane${tab === "zub" ? "" : " off"}" id="p-zub"><h2 class="pane-h">Zubereitung</h2>
           ${stHtml || `<div class="stile"><p class="muted" style="margin:0">Noch keine Schritte eingetragen.</p></div>`}
           ${r.tips || r.source ? `<div class="notes-tile">${r.tips ? `<div class="igrp">Tipps &amp; Notizen</div>${r.tips.split(/\n{2,}/).map(p => `<p>${esc(p)}</p>`).join("")}` : ""}
             ${r.source ? `<p class="source">Quelle: ${/^https?:\/\//.test(r.source) ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</p>` : ""}</div>` : ""}
@@ -2340,7 +2340,7 @@ function switchTab(id, tab) {
   const c = cookOf(id); if (c.tab === tab) return;
   c.y[c.tab] = scrollY; c.tab = tab; saveCook(id, c);
   app.querySelectorAll(".rtabs [data-tab]").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
-  document.getElementById("p-zut").hidden = tab !== "zut"; document.getElementById("p-zub").hidden = tab !== "zub";
+  document.getElementById("p-zut").classList.toggle("off", tab !== "zut"); document.getElementById("p-zub").classList.toggle("off", tab !== "zub");
   const top = tabsTop(), y = c.y[tab];
   window.scrollTo(0, y != null ? Math.max(y, Math.min(scrollY, top)) : Math.min(scrollY, top));
 }
