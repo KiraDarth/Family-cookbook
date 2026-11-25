@@ -340,8 +340,22 @@ body.editing .tabbar { display: none; }
 .rrow small { color: var(--muted); font-size: .85rem; }
 .rrow .pill { margin-left: 6px; vertical-align: 2px; font-size: .72rem; }
 .group { margin-top: 22px; scroll-margin-top: 130px; }
-.group h3.subsec { margin: 16px 0 8px; padding-left: 9px; border-left: 3px solid var(--cc, var(--line)); font-size: .95rem; font-weight: 600; color: var(--ink, inherit); }
+h3.subsec { margin: 16px 0 8px; padding-left: 9px; border-left: 3px solid var(--cc, var(--line)); font-size: .95rem; font-weight: 600; color: var(--ink, inherit); }
 .group:first-child { margin-top: 0; }
+.foldbar { display: flex; justify-content: flex-end; margin-top: 12px; }
+details.fold { margin-top: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); scroll-margin-top: 90px; }
+details.fold > summary { list-style: none; display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 16px; cursor: pointer; border-radius: 16px; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary:focus-visible { outline: 2px solid var(--cc, var(--ink)); outline-offset: 2px; }
+details.fold .fname { flex: 1; font-weight: 600; font-size: 1.02rem; }
+details.fold .fcount { min-width: 28px; padding: 2px 8px; border-radius: 999px; text-align: center; font-size: .82rem; color: var(--muted); background: color-mix(in srgb, var(--cc, var(--line)) 14%, transparent); }
+details.fold .chev { width: 20px; height: 20px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+details.fold[open] .chev { transform: rotate(180deg); }
+details.fold[open] > summary { border-bottom: 1px solid var(--line); border-radius: 16px 16px 0 0; }
+details.fold .fbody { padding: 12px; }
+details.fold .fbody > h3.subsec:first-child { margin-top: 4px; }
+details.fold .fbody .rrow { border-color: transparent; background: color-mix(in srgb, var(--line) 25%, var(--surface)); }
+@media (prefers-reduced-motion: reduce) { details.fold .chev { transition: none; } }
 .group > h2 { font-family: var(--font-body); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
 
 /* Kopf von Unterseiten */
@@ -989,9 +1003,16 @@ function renderChapter(rt) {
   const subs = subsOf(ch);
   app.innerHTML = `<div class="view-in" style="--cc:var(${col})">
     <div class="band"><div class="vhead">${backHtml("#")}<div><h1>${esc(ch)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
-      ${subs.length > 1 ? `<div class="jump">${subs.map(x => `<a class="chip" href="${chapterHref(ch, x)}" data-jump="${esc(slugify(x))}">${esc(x)}</a>`).join("")}</div>` : ""}</div>
-    ${subs.map(x => `<section class="group" id="g-${esc(slugify(x))}"><h2>${esc(x)}</h2>${subBody(rs.filter(r => (r.subchapter || "Weitere") === x), x)}</section>`).join("")}
+      ${subs.length > 1 ? `<div class="foldbar"><button type="button" class="btn small" id="fold-all" aria-pressed="false">Alle öffnen</button></div>` : ""}</div>
+    ${subs.map(x => { const list = rs.filter(r => (r.subchapter || "Weitere") === x); const open = subs.length === 1 || rt.sub === slugify(x);
+      return `<details class="fold" id="g-${esc(slugify(x))}"${open ? " open" : ""}><summary><span class="fname">${esc(x)}</span><span class="fcount">${list.length}</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fbody">${subBody(list, x)}</div></details>`; }).join("")}
   </div>`;
+  // Unterkapitel als aufklappbare Felder; der Regler öffnet oder schliesst alle auf einmal
+  const folds = [...app.querySelectorAll("details.fold")], btn = document.getElementById("fold-all");
+  const sync = () => { if (!btn) return; const all = folds.every(d => d.open); btn.textContent = all ? "Alle schliessen" : "Alle öffnen"; btn.setAttribute("aria-pressed", String(all)); };
+  folds.forEach(d => d.addEventListener("toggle", sync));
+  btn?.addEventListener("click", () => { const open = !folds.every(d => d.open); folds.forEach(d => { d.open = open; }); sync(); });
+  sync();
   if (rt.sub) requestAnimationFrame(() => document.getElementById("g-" + rt.sub)?.scrollIntoView({ block: "start" }));
 }
 function renderTheme(rt) {
