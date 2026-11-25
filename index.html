@@ -3,53 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F4F5EF">
+<meta name="theme-color" content="#14110F">
 <title>Unser Kochbuch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Manrope:wght@400;500;600;700;800&display=swap">
 <style>
 /* Layout: a calm recipe shelf. Cards on the overview; on the recipe page ingredients sit beside the steps on wide screens and stack on the phone. */
+/* Abendküche: dunkler Grund, Gold, Glasflächen. Die Tagvariante «Morgenküche» folgt später. */
 :root {
-  --bg: #F4F5EF;
-  --surface: #FFFFFF;
-  --ink: #1E2621;
-  --muted: #5B675F;
-  --line: #DCE1D8;
-  --accent: #9A5300;
-  --accent-soft: #F5E6D0;
-  --ok: #2C6A52;
-  --ok-soft: #DCEDE4;
-  --warn: #7E5A00;
-  --warn-soft: #FAEFCB;
-  --danger: #A3302A;
-  --danger-soft: #F8E0DD;
-  --add: #2C6A52;
-  --del: #A3302A;
-  --t1: #C07A1A; --t2: #3E7FA8; --t3: #B23B3B; --t4: #6A8F3A; --t5: #8A6A4A; --t6: #B0558C; --t7: #2E8A86; --t8: #6B5FA8;
-  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --radius: 14px;
-  --shadow: 0 1px 2px rgba(30, 38, 33, .06), 0 4px 14px rgba(30, 38, 33, .05);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #131714; --surface: #1B201C; --ink: #E7ECE5; --muted: #9AA79E; --line: #2D352F;
-    --accent: #E9A24C; --accent-soft: #3A2A16; --ok: #7CC4A4; --ok-soft: #1D3328;
-    --warn: #E8C463; --warn-soft: #383015; --danger: #F08C84; --danger-soft: #3B1F1D;
-    --add: #7CC4A4; --del: #F08C84;
-    --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3; --t8: #A99CE8;
-    --shadow: 0 1px 2px rgba(0,0,0,.3);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #131714; --surface: #1B201C; --ink: #E7ECE5; --muted: #9AA79E; --line: #2D352F;
-  --accent: #E9A24C; --accent-soft: #3A2A16; --ok: #7CC4A4; --ok-soft: #1D3328;
-  --warn: #E8C463; --warn-soft: #383015; --danger: #F08C84; --danger-soft: #3B1F1D;
-  --add: #7CC4A4; --del: #F08C84;
+  --bg: #14110F;
+  --surface: #201B17;
+  --glass: rgba(28, 24, 20, .5);
+  --ink: #EFE7DC;
+  --muted: #A89B8A;
+  --line: rgba(255, 255, 255, .1);
+  --accent: #E0A84E;
+  --gold: #E0A84E;
+  --gold2: #F3D9A9;
+  --on-gold: #20160A;
+  --accent-soft: rgba(224, 168, 78, .16);
+  --ok: #8FCBA8; --ok-soft: rgba(143, 203, 168, .16);
+  --warn: #E8C463; --warn-soft: rgba(232, 196, 99, .15);
+  --danger: #F08C84; --danger-soft: rgba(240, 140, 132, .16);
+  --add: #8FCBA8; --del: #F08C84;
   --t1: #E9A24C; --t2: #7DB6DB; --t3: #E58585; --t4: #A6C878; --t5: #C9A886; --t6: #E08CC0; --t7: #6CC9C3; --t8: #A99CE8;
-  --shadow: 0 1px 2px rgba(0,0,0,.3);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 18px;
+  --shadow: 0 14px 30px rgba(0, 0, 0, .38);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -458,10 +440,273 @@ details.fold.sec .rrow { background: var(--surface); }
 .unknown h2 { font-size: 1.05rem; margin-bottom: 6px; }
 .unknown ul { margin: 6px 0 0; padding-left: 20px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+/* ================= Abendküche: Glas über einem festen Hintergrund ================= */
+/* Hintergrund: Rezeptfoto oder warmes Kerzenlicht (wird in #stage gemalt, die Glasflächen brechen genau dieses Bild) */
+#stage { position: fixed; inset: 0; width: 100vw; height: 100lvh; z-index: -1; display: block; pointer-events: none; }
+body { font-size: 16.5px; line-height: 1.55; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: 0; }
+h1 { font-size: clamp(2.1rem, 7vw, 2.9rem); line-height: 1.04; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+.app-text, .vhead, .crumbs, .rhead { text-shadow: 0 1px 8px rgba(0, 0, 0, .55); }
+a { color: inherit; }
+::selection { background: rgba(224, 168, 78, .35); }
+body::before { background: rgba(20, 17, 15, .72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+
+/* GlassCard (Komponente glass-card.js): Grundaufbau */
+.glass-card { isolation: isolate; }
+:where(.glass-card) { position: relative; }
+.glass-card > .glass-card__surface { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; border-radius: inherit; display: block; }
+:where(.glass-card > :not(.glass-card__surface)) { position: relative; }
+.glass-card > :not(.glass-card__surface) { z-index: 1; }
+/* Matt (Einstellung) und Grundstil: mattes Milchglas mit Unschärfe */
+.gl { background: var(--glass); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border: 1px solid rgba(255, 255, 255, .14); box-shadow: var(--shadow); }
+/* Konvexglas: Fläche, Rand und Glanz kommen ausschliesslich aus dem Shader */
+.glass-card.glass-card--live { background: none !important; border-color: transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.glass-card.glass-card--fallback { background: linear-gradient(170deg, rgba(255, 226, 180, .10), rgba(35, 20, 9, .35)) !important; -webkit-backdrop-filter: blur(7px) brightness(.7) saturate(1.2) !important; backdrop-filter: blur(7px) brightness(.7) saturate(1.2) !important; border: 1px solid rgba(255, 225, 180, .28) !important; }
+.glass-off .glass-card > .glass-card__surface, .glass-card:not(.glass-card--live) > .glass-card__surface { display: none; }
+.gl :is(b, small, p, span, h2, h3, li, label, a, dd, dt) { text-shadow: 0 1px 3px rgba(0, 0, 0, .45); }
+
+/* Knöpfe, Chips, Eingaben */
+.btn { background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .16); color: var(--ink); }
+.btn:hover { border-color: rgba(255, 255, 255, .32); }
+.btn.primary, .btn.accent, .btn.ok { background: var(--gold); color: var(--on-gold); border-color: var(--gold); text-shadow: none; }
+.btn.danger { color: var(--danger); }
+.btn.danger.solid { background: var(--danger); color: #2a0f0c; border-color: var(--danger); }
+.btn.on { background: var(--accent-soft); color: var(--gold2); border-color: rgba(224, 168, 78, .45); }
+.linkish { color: var(--gold); }
+.chip { background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .14); color: var(--ink); font-weight: 600; }
+.chip[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+.chip .n { color: var(--muted); }
+.field input, .field textarea, .ing-row input, .inline-new input, details.bulk textarea, .field select, #f-newtopic, #f-restvon, .key-dialog input {
+  background: rgba(10, 8, 7, .55) !important; border: 1px solid rgba(255, 255, 255, .16) !important; color: var(--ink); border-radius: 12px; }
+.field input:focus, .field textarea:focus, .ing-row input:focus, .inline-new input:focus { border-color: var(--gold) !important; outline: none; }
+::placeholder { color: #85796b; }
+.pill.draft { background: var(--warn-soft); color: var(--warn); }
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.var { background: var(--accent-soft); color: var(--gold2); }
+.badge { background: var(--gold); color: var(--on-gold); }
+
+/* Kopf (Handy) und Navigation */
+.top { position: relative; top: auto; background: none; border-bottom: 0; margin-bottom: 8px; }
+.brand { font-size: 1.55rem; font-weight: 700; text-shadow: 0 1px 8px rgba(0, 0, 0, .5); }
+.brand-mark { background: var(--gold); }
+.brand-mark svg { stroke: var(--on-gold); }
+.plusbtn, .backbtn { background: var(--glass); color: var(--ink); border: 1px solid rgba(255, 255, 255, .16); border-radius: 14px; }
+.plusbtn { color: var(--gold2); }
+.tabbar { left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); border-radius: 22px; padding: 6px 4px; border-top: 1px solid rgba(255, 255, 255, .14); }
+.tab { color: #b6aa9b; font-weight: 700; }
+.tab.on { color: var(--gold); }
+body { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+@media (min-width: 900px) {
+  .side { background: var(--glass); border-right: 0; top: 12px; bottom: 12px; left: 12px; border-radius: 22px; }
+  .side a, .side button.navlink { color: var(--ink); }
+  .side a:hover, .side button.navlink:hover { background: rgba(255, 255, 255, .06); }
+  .side a.on { background: var(--accent-soft); color: var(--gold2); }
+  .side a.on svg { color: var(--gold); }
+  .side .new { background: var(--gold); color: var(--on-gold); }
+  .side .new svg { color: var(--on-gold); }
+  .side .small, .side button.navlink.small { color: var(--muted); }
+  .wrap { margin-left: 260px; padding-left: 28px; }
+}
+
+/* Unterseiten */
+.vhead h1 { font-size: clamp(2rem, 6vw, 2.6rem); }
+.vhead .sub, .eyebrow { color: #d8ccbd; }
+.eyebrow { color: var(--gold); letter-spacing: .18em; font-size: .72rem; }
+.panel, .entry, .morelist, .kt, .shoplist, .lpanel, .seg2, .sfield, .empty, .unknown, .todo, .band, .note-box, .callout, details.fold, .rows-box, .shopsel .it, .key-dialog { border-radius: var(--radius); }
+.panel { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.empty { border: 1px solid rgba(255, 255, 255, .14); background: var(--glass); color: #d8ccbd; }
+.empty h2 { color: var(--ink); }
+.band { background: var(--glass); padding: 14px 16px; }
+.morehead, .group > h2, .browse-sec h2.morehead { font-family: var(--font-body); color: var(--gold); letter-spacing: .18em; font-size: .72rem; text-shadow: 0 1px 6px rgba(0, 0, 0, .7); }
+.gtitle { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.35rem; color: var(--gold); margin: 0 2px 10px; line-height: 1.05; }
+/* Rezeptzeilen: innerhalb einer Glasfläche ohne eigenen Rahmen */
+.rows-box { padding: 6px; }
+.rrow { background: rgba(255, 255, 255, .045); border: 1px solid transparent; border-radius: 14px; }
+.rrow:hover { border-color: rgba(255, 255, 255, .18); }
+.rrow small { color: #cbbfb0; }
+.thumb { background: color-mix(in srgb, var(--cc) 26%, #1d1814); }
+.foldwrap { margin-top: 10px; border-radius: var(--radius); }
+.foldwrap > details.fold { margin-top: 0; background: none; border: 0; }
+details.fold[open] > summary { border-bottom-color: rgba(255, 255, 255, .1); }
+details.fold .fname { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
+details.fold .fcount { color: var(--gold2); background: rgba(224, 168, 78, .14); }
+details.fold .fbody .rrow { background: rgba(255, 255, 255, .045); }
+details.fold.sec { background: rgba(255, 255, 255, .04); border: 0; }
+details.fold.sec .fname { font-family: var(--font-display); font-style: italic; color: var(--gold); border-left: 0; padding-left: 0; font-size: 1.15rem; }
+details.fold.sec .rrow { background: rgba(255, 255, 255, .05); }
+h3.subsec { border-left-color: var(--gold); }
+.sbar { background: none; }
+.sfield { background: var(--glass); border: 1px solid rgba(224, 168, 78, .55); }
+.kt { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.kt > button b { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; }
+.seg2 { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.seg2 a { color: #c9c0b5; }
+.seg2 a.on { background: var(--ink); color: #141210; }
+.morelist { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.morelist a, .morelist button { border-bottom-color: rgba(255, 255, 255, .08); color: var(--ink); }
+.morelist .setrow { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; cursor: default; padding: 12px 16px; }
+.todo { background: var(--glass); color: var(--ink); }
+.todo .big { color: var(--gold); font-family: var(--font-display); font-size: 2.1rem; }
+.unknown { background: var(--glass); border: 1px solid rgba(232, 196, 99, .4); }
+.lpanel { background: var(--glass); }
+.shopsel .it { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.shopsel .stile button, .shopsel .rm { background: rgba(255, 255, 255, .07); border-color: rgba(255, 255, 255, .16); color: var(--ink); }
+.shoplist { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.shoplist li { border-bottom-color: rgba(255, 255, 255, .08); }
+.shoplist .amt { color: var(--gold2); font-weight: 600; }
+.shoplist .alt { color: var(--gold); }
+.shoplist small { color: #b9ad9e; }
+.shopsec.vorrat .shoplist, .shopsec.nicht .shoplist { background: var(--glass); }
+.shophead h2 { font-size: 1.35rem; }
+.shophead span { color: #d8ccbd; }
+.confirm-row { background: var(--danger-soft); }
+.entry { background: var(--glass); border: 1px solid rgba(255, 255, 255, .14); }
+.callout { background: var(--accent-soft); border: 1px solid rgba(224, 168, 78, .35); }
+.form-actions { background: rgba(20, 17, 15, .82); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-top-color: rgba(255, 255, 255, .1); margin-inline: -16px; padding-inline: 16px; }
+.ing-row button { background: rgba(255, 255, 255, .07); border-color: rgba(255, 255, 255, .16); }
+.ing-row.heading input { font-weight: 700; color: var(--gold2); }
+details.bulk { border-color: rgba(255, 255, 255, .2); }
+details.bulk summary { color: var(--gold); }
+.key-dialog { background: var(--surface); border: 1px solid rgba(255, 255, 255, .14); }
+.key-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+.toast { background: #2a221b; color: var(--ink); border: 1px solid rgba(224, 168, 78, .45); }
+.diff .chg .mk { color: var(--gold); }
+.opt { color: #cbbfb0; border-color: rgba(255, 255, 255, .2); }
+.linkbtn { color: var(--muted); }
+
+/* Startseite */
+.start { gap: 14px; }
+.hello { padding: 18px 2px 6px; text-shadow: 0 2px 12px rgba(0, 0, 0, .6); }
+.hello h1 { font-size: clamp(2.2rem, 9vw, 3rem); line-height: 1.02; }
+.hello p { margin: 8px 0 0; color: #ddd3c6; font-size: .95rem; }
+.cook { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: center; padding: 10px 14px; border-radius: 18px; text-decoration: none; color: inherit;
+  background: linear-gradient(135deg, rgba(224, 168, 78, .30), rgba(224, 168, 78, .10)); border: 1px solid rgba(224, 168, 78, .5); }
+.cook .ci { width: 34px; height: 34px; border-radius: 11px; background: var(--gold); color: var(--on-gold); display: grid; place-items: center; }
+.cook .ci svg { width: 20px; height: 20px; }
+.cook b { display: block; color: var(--gold2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02rem; }
+.cook small { display: block; color: #d8ccbd; font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gpanel { padding: 14px 12px 14px; border-radius: 24px; }
+.gpanel .ghead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 4px 10px; }
+.gpanel .ghead .gtitle { margin: 0; }
+.gpanel .ghead a { color: var(--gold); font-weight: 700; font-size: .88rem; text-decoration: none; }
+.chap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 700px) { .chap { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ch { position: relative; display: block; height: 132px; border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit; background: #1d1814; }
+.ch > .glass-source { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ch .lab { position: absolute; left: 7px; right: 7px; bottom: 7px; border-radius: 14px; padding: 7px 10px; font-weight: 800; font-size: .9rem; line-height: 1.2;
+  background: rgba(28, 24, 20, .45); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, .16); }
+.ch .lab small { display: block; font-weight: 500; color: #d8ccbd; font-size: .78rem; }
+.ch:active { transform: scale(.98); }
+.shd { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 800; margin: 14px 4px 8px; }
+.ghead + .shd { margin-top: 0; }
+.tchips { display: flex; flex-wrap: wrap; gap: 7px; }
+.tchips .chip { min-height: 36px; font-size: .9rem; }
+
+/* Rezeptseite */
+.crumbs .path, .crumbs .path a { color: #e2d7c9; }
+.photospace { position: relative; height: 30vh; min-height: 150px; max-height: 320px; }
+.photospace .hintbox { position: absolute; max-width: min(70%, 280px); padding: 10px 14px; border-radius: 16px; font-size: .9rem; line-height: 1.4; font-weight: 700; color: #fbf3e6; transform: rotate(-1.5deg);
+  background: linear-gradient(135deg, rgba(255, 236, 200, .30), rgba(224, 168, 78, .14)); border: 1px solid rgba(255, 240, 215, .38); }
+.photospace .hintbox.unten-rechts { right: 4px; bottom: 8px; } .photospace .hintbox.unten-links { left: 4px; bottom: 8px; }
+.photospace .hintbox.oben-rechts { right: 4px; top: 4px; } .photospace .hintbox.oben-links { left: 4px; top: 4px; }
+.rhead { display: flex; flex-direction: column; gap: 8px; margin: 10px 2px 14px; }
+.rhead .eb { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 800; }
+.rhead h1 { margin: 0; }
+.rhead .lede { margin: 0; color: #e2d7c9; max-width: 62ch; }
+.rhead .tags { color: #e2d7c9; }
+.rhead .status-row .muted { color: #d8ccbd; }
+.rhead a { color: var(--gold2); }
+.info { padding: 12px 14px; margin-bottom: 12px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)); gap: 8px 6px; text-align: center; font-size: .78rem; color: #b9ad9e; }
+.stats b { display: block; color: var(--gold); font-size: 1.02rem; font-weight: 700; }
+.inforow { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, .09); font-size: .92rem; }
+.inforow .lbl { color: #cbbfb0; }
+.stepper2 { display: flex; align-items: center; gap: 10px; }
+.stepper2 button.pm { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold); background: none; font-weight: 800; font-size: 1.15rem; display: grid; place-items: center; padding: 0; cursor: pointer; line-height: 1; }
+.stepper2 .val { font-weight: 700; color: var(--gold2); font-variant-numeric: tabular-nums; }
+.useg { display: flex; border-radius: 12px; padding: 3px; background: rgba(0, 0, 0, .25); border: 1px solid rgba(255, 255, 255, .1); }
+.useg button { background: none; border: 0; border-radius: 9px; padding: 6px 10px; font-size: .82rem; font-weight: 700; color: #c9c0b5; cursor: pointer; }
+.useg button[aria-pressed="true"] { background: var(--ink); color: #141210; }
+.quick { margin: 0 0 12px; }
+.note-box { margin-bottom: 12px; }
+.note-box.draft { background: var(--glass); border: 1px solid rgba(232, 196, 99, .45); }
+.note-box.variant { background: var(--glass); border: 1px solid rgba(224, 168, 78, .4); }
+.note-box b { color: var(--gold2); }
+.rtabs-wrap { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 6px); z-index: 6; padding: 4px 0 10px; }
+.rtabs { display: grid; grid-template-columns: 1fr 1fr; border-radius: 16px; padding: 4px; font-weight: 800; }
+.rtabs button { background: none; border: 0; padding: 10px 8px; border-radius: 12px; color: #c9c0b5; font-weight: 800; font-size: .95rem; cursor: pointer; }
+.rtabs button[aria-selected="true"] { background: var(--ink); color: #141210; text-shadow: none; }
+.rtabs .cnt { font-weight: 600; opacity: .7; margin-left: 4px; }
+.rcols { display: block; }
+.pane[hidden] { display: none; }
+@media (min-width: 1200px) {
+  .rtabs-wrap { display: none; }
+  .rcols { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 18px; align-items: start; }
+  .pane[hidden] { display: block; }
+}
+.progress { display: flex; justify-content: space-between; gap: 10px; margin: 0 4px 10px; font-size: .85rem; color: #d8ccbd; text-shadow: 0 1px 6px rgba(0, 0, 0, .8); }
+.progress button { background: none; border: 0; color: var(--gold); font-weight: 700; padding: 0; cursor: pointer; font-size: .85rem; }
+.itile { margin: 0 0 10px; border-radius: 18px; padding: 10px 14px 6px; }
+.igrp { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.3rem; color: var(--gold); margin: 0 0 2px; line-height: 1.15; }
+.ing-list li { border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.ing-list label { grid-template-columns: 22px 5.8rem minmax(0, 1fr); gap: 10px; align-items: center; padding: 9px 0; }
+.ing-list input[type=checkbox], .cb { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--gold); background: none; margin: 0; transform: none; flex: none; display: grid; place-items: center; padding: 0; cursor: pointer; color: var(--on-gold); }
+.ing-list input[type=checkbox]:checked, .stile.done .cb { background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2320160A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.ing-list .amt { color: var(--gold2); font-weight: 400; }
+.ing-list .amt.cv { font-style: italic; }
+.ing-list .amt .ap { color: var(--gold); margin-right: 2px; font-style: normal; }
+.ing-list .nm small { color: #b9ad9e; }
+.ing-list .nm a { color: var(--gold); text-underline-offset: 3px; }
+.ing-list li.done .amt, .ing-list li.done .nm { opacity: .38; }
+.unote { margin: 2px 4px 10px; font-size: .82rem; color: #d8ccbd; text-shadow: 0 1px 6px rgba(0, 0, 0, .8); }
+.unote .ap { color: var(--gold); }
+.stile { margin: 0 0 9px; border-radius: 18px; padding: 12px 14px; transition: padding .2s; }
+.stile .row { display: grid; grid-template-columns: 22px 28px 22px minmax(0, 1fr); gap: 9px; align-items: start; }
+.stile .row.notip { grid-template-columns: 22px 28px minmax(0, 1fr); }
+.stile .cb { margin-top: 2px; }
+.stile .num { font-family: var(--font-display); font-weight: 700; font-size: 1.75rem; line-height: .95; color: var(--gold); text-align: center; font-variant-numeric: tabular-nums; }
+.stile .txt { min-width: 0; }
+.stile .txt p { margin: 0; }
+.stile .txt a { color: var(--gold); text-underline-offset: 3px; }
+.stile .stepsec { display: block; font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.3rem; line-height: 1.1; color: var(--gold); margin-bottom: 4px; }
+.stile.headonly { padding: 8px 14px; }
+.stile.done { padding-block: 7px; opacity: .58; cursor: pointer; }
+.stile.done .txt p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-decoration: line-through; }
+.stile.done .num { font-size: 1.3rem; }
+.stile.done .stepsec, .stile.done .tipwrap, .stile.done .tipbtn { display: none; }
+.stile.done .row { grid-template-columns: 22px 28px minmax(0, 1fr); }
+.tipbtn { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--gold); background: linear-gradient(135deg, rgba(224, 168, 78, .35), rgba(224, 168, 78, .1)); box-shadow: 0 0 10px rgba(224, 168, 78, .35); color: var(--gold2); font-size: .72rem; font-weight: 900; display: grid; place-items: center; padding: 0; margin-top: 1px; cursor: pointer; }
+.tipbtn[aria-expanded="true"] { background: var(--gold); color: var(--on-gold); }
+.tipwrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+.tipwrap.open { grid-template-rows: 1fr; }
+.tipwrap > div { overflow: hidden; padding: 0 6px 6px 0; }
+.tipwrap.open > div { overflow: visible; }
+.tip { margin: 10px 2px 4px 30px; padding: 12px 14px; border-radius: 18px; transform: rotate(-1deg);
+  background: linear-gradient(135deg, rgba(255, 236, 200, .34) 0%, rgba(240, 196, 120, .22) 38%, rgba(224, 168, 78, .12) 70%, rgba(224, 168, 78, .22) 100%) !important;
+  border: 1px solid rgba(255, 240, 215, .38) !important; box-shadow: 0 10px 26px rgba(0, 0, 0, .35), 0 0 22px rgba(224, 168, 78, .16) !important; }
+.tip.glass-card--live { box-shadow: 0 10px 26px rgba(0, 0, 0, .35), 0 0 22px rgba(224, 168, 78, .16) !important; }
+.tip span { color: #fbf3e6; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+.tip b { display: block; font-family: var(--font-display); font-style: italic; font-size: 1.2rem; color: var(--gold2); line-height: 1.1; margin-bottom: 2px; }
+.notes-tile { padding: 14px 16px; margin: 4px 0 10px; }
+.notes-tile p { margin: 0 0 8px; white-space: pre-wrap; }
+.notes-tile .source { color: #cbbfb0; margin: 8px 0 0; }
+.notes-tile .source a { color: var(--gold); }
+.related { margin-top: 14px; padding: 14px; }
+.related h2 { font-family: var(--font-display); font-style: italic; color: var(--gold); font-size: 1.35rem; margin-bottom: 10px; }
+.related .card { background: rgba(255, 255, 255, .05); border: 1px solid transparent; box-shadow: none; }
+.related .card:hover { border-color: rgba(255, 255, 255, .18); }
+.related .card p, .related .card .meta { color: #cbbfb0; }
+.related > p.muted { color: #cbbfb0; margin: 0; }
+.actions { margin-top: 14px; padding: 14px; border-top: 0; }
+.wake { color: #d8ccbd; }
+.wake input { accent-color: var(--gold); }
+@media (prefers-reduced-motion: reduce) { .tipwrap, .stile { transition: none; } }
 </style>
 </head>
 <body>
-
+<canvas id="stage" aria-hidden="true"></canvas>
 <nav class="side" id="side" aria-label="Hauptmenü"></nav>
 <div class="wrap">
   <header class="top">
@@ -474,7 +719,180 @@ details.fold.sec .rrow { background: var(--surface); }
   <main id="app"><p class="loading">Rezepte werden geladen …</p></main>
 </div>
 <nav class="tabbar" id="tabbar" aria-label="Hauptmenü"></nav>
-
+<script>
+/* ---------- GlassCard: konvexes, dunkles Klarglas (WebGL) ----------
+   Portiert die Referenz «Convex Gloss Glass» (blur 7, refraction 32, gloss 85, tint 20) als Fragment-Shader.
+   Jede Glasfläche (.glass-card) tastet den Teil des Hintergrunds (#stage oder ein Foto daneben) ab, der hinter ihr liegt:
+   Mitte unscharf, zum Rand hin verzerrt, Glanz aus der Wölbung berechnet, warm-dunkel getönt. Ohne WebGL: mattes Glas (CSS). */
+(function (global) {
+  "use strict";
+  const DEF = { blur: 7, refraction: 32, gloss: 85, tint: 20, darken: 35 };
+  const VS = "attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}";
+  const FS = `
+precision highp float;
+uniform sampler2D uTex;
+uniform vec2 uSize; uniform vec2 uCard; uniform vec4 uBg;
+uniform float uDpr, uRadius, uBevel, uBlur, uRef, uGloss, uTint, uH, uDark;
+uniform vec3 uTintCol;
+float sdf(vec2 p, vec2 h, float r){ vec2 q = abs(p) - h + r; return length(max(q,0.)) + min(max(q.x,q.y),0.) - r; }
+vec3 tex(vec2 css){ vec2 uv = (css - uBg.xy) / uBg.zw; return texture2D(uTex, clamp(uv, vec2(0.001), vec2(0.999))).rgb; }
+vec3 blurred(vec2 css){
+  if (uBlur < 0.5) return tex(css);
+  vec3 acc = tex(css); float wsum = 1.;
+  for (int i = 1; i < 28; i++) {
+    float fi = float(i); float r = sqrt(fi / 28.) * uBlur * 2.5; float a = fi * 2.39996;
+    float w = exp(-(r*r) / (2.*uBlur*uBlur));
+    acc += tex(css + vec2(cos(a), sin(a)) * r) * w; wsum += w;
+  }
+  return acc / wsum;
+}
+void main(){
+  vec2 p = vec2(gl_FragCoord.x, uH - gl_FragCoord.y) / uDpr;
+  vec2 hs = uSize * .5; vec2 pc = p - hs;
+  float d = sdf(pc, hs, uRadius);
+  if (d > 0.) { gl_FragColor = vec4(0.); return; }
+  float edge = -d, t = max(0., 1. - edge / uBevel);
+  float nx = sdf(pc + vec2(.5,0.), hs, uRadius) - sdf(pc - vec2(.5,0.), hs, uRadius);
+  float ny = sdf(pc + vec2(0.,.5), hs, uRadius) - sdf(pc - vec2(0.,.5), hs, uRadius);
+  float slope = sin(t * 1.49), nz = sqrt(max(.01, 1. - slope*slope));
+  vec2 dd = vec2(nx, ny) * uRef * pow(t, .8) + pc * .055;
+  vec2 s = uCard + p + dd;
+  float fres = pow(1. - nz, 3.);
+  float spec1 = pow(max(0., nx*slope*(-.43) + ny*slope*(-.79) + nz*.44), 34.);
+  float spec2 = pow(max(0., nx*slope*.46 + ny*slope*.79 + nz*.4), 24.);
+  float rim = exp(-pow((edge - 1.5) / 1.1, 2.));
+  float shine = uGloss * (spec1*.95 + spec2*.65 + fres*.16 + rim*.27);
+  float mixv = min(.88, t*t*.8);
+  vec3 v = blurred(s) * (1. - mixv) + tex(s) * mixv;
+  v = v * (1. - uTint*.7) + uTintCol * uTint;
+  v *= (1. - uDark);
+  v += shine * vec3(255.,215.,157.)/255.;
+  v -= exp(-pow((edge - 5.) / 2.5, 2.)) * 16. / 255.;
+  float alpha = min(1., edge + .5);
+  gl_FragColor = vec4(clamp(v, 0., 1.) * alpha, alpha);
+}`;
+  let gl = null, glCanvas = null, loc = {}, ok = null, enabled = true, maxDim = 4096, raf = 0;
+  const cards = new Set();
+  const texCache = new Map();
+  function initGL() {
+    if (ok !== null) return ok;
+    try {
+      glCanvas = document.createElement("canvas");
+      gl = glCanvas.getContext("webgl", { premultipliedAlpha: true, preserveDrawingBuffer: true, alpha: true });
+      if (!gl) return (ok = false);
+      const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+      const prog = gl.createProgram();
+      gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS));
+      gl.linkProgram(prog); if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error("link");
+      gl.useProgram(prog);
+      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+      const a = gl.getAttribLocation(prog, "a"); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+      ["uTex","uSize","uCard","uBg","uDpr","uRadius","uBevel","uBlur","uRef","uGloss","uTint","uH","uTintCol","uDark"].forEach(n => loc[n] = gl.getUniformLocation(prog, n));
+      const md = gl.getParameter(gl.MAX_VIEWPORT_DIMS); maxDim = Math.min(4096, md ? Math.min(md[0], md[1]) : 4096);
+      glCanvas.addEventListener("webglcontextlost", e => { e.preventDefault(); ok = false; cards.forEach(c => fallback(c, true)); });
+      return (ok = true);
+    } catch (e) { console.warn("GlassCard: WebGL nicht verfügbar, mattes Glas aktiv", e); return (ok = false); }
+  }
+  function textureFor(src) {
+    let e = texCache.get(src);
+    const w = src.naturalWidth || src.width, h = src.naturalHeight || src.height;
+    if (!w || !h) return null;
+    if (!e) { e = { tex: gl.createTexture(), dirty: true, ver: 0 }; texCache.set(src, e); }
+    gl.bindTexture(gl.TEXTURE_2D, e.tex);
+    if (e.dirty) {
+      try { gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src); }
+      catch (err) { console.warn("GlassCard: Hintergrund nicht lesbar", err); return null; }
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      e.dirty = false; e.ver++;
+    }
+    return e;
+  }
+  function resolveSource(card) {
+    if (card._glassSrc) return card._glassSrc;
+    const sel = card.dataset.glassSrc; if (!sel) return null;
+    return sel === "sibling" ? card.parentElement && card.parentElement.querySelector("canvas.glass-source,img.glass-source") : document.querySelector(sel);
+  }
+  function num(card, k) { const v = parseFloat(card.dataset[k]); return isNaN(v) ? DEF[k] : v; }
+  function fallback(card, on) { card.classList.toggle("glass-card--fallback", !!on); if (on) card.classList.remove("glass-card--live"); }
+  function drawCard(card) {
+    const c = card._glassCanvas; if (!c || !enabled || !ok) return;
+    if (c.parentNode !== card) { card.prepend(c); card._key = ""; }   // Inhalt wurde neu geschrieben
+    const br = card.getBoundingClientRect();
+    const ow = card.offsetWidth, oh = card.offsetHeight;
+    const r = { width: ow, height: oh, left: br.left + (br.width - ow) / 2, top: br.top + (br.height - oh) / 2 };
+    if (br.bottom < -50 || br.top > innerHeight + 50 || br.right < 0 || br.left > innerWidth || ow < 2 || oh < 2) return;
+    const src = resolveSource(card); if (!src) return fallback(card, true);
+    const dpr = Math.min(2, devicePixelRatio || 1);
+    const W = Math.round(r.width * dpr), H = Math.round(r.height * dpr);
+    if (W > maxDim || H > maxDim || W * H > 6e6) { card.classList.remove("glass-card--live"); card._key = ""; return; }   // sehr grosse Flächen: mattes Glas
+    const e = textureFor(src); if (!e) return fallback(card, true);
+    card.classList.add("glass-card--live"); card.classList.remove("glass-card--fallback");
+    const bg = src.getBoundingClientRect();
+    const key = [r.left, r.top, W, H, bg.left, bg.top, bg.width, bg.height, e.ver, card.dataset.blur, card.dataset.refraction, card.dataset.gloss, card.dataset.tint, card.dataset.darken].join("|");
+    if (key === card._key) return;          // nichts verändert: nicht neu rechnen
+    if (glCanvas.width < W || glCanvas.height < H) { glCanvas.width = Math.max(glCanvas.width, W); glCanvas.height = Math.max(glCanvas.height, H); }
+    gl.bindTexture(gl.TEXTURE_2D, e.tex);
+    gl.viewport(0, glCanvas.height - H, W, H);
+    gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+    const rad = parseFloat(getComputedStyle(card).borderTopLeftRadius) || 18;
+    const half = Math.min(r.width, r.height) / 2;
+    gl.uniform1i(loc.uTex, 0);
+    gl.uniform2f(loc.uSize, r.width, r.height);
+    gl.uniform2f(loc.uCard, r.left, r.top);
+    gl.uniform4f(loc.uBg, bg.left, bg.top, bg.width, bg.height);
+    gl.uniform1f(loc.uDpr, dpr);
+    gl.uniform1f(loc.uH, glCanvas.height);
+    gl.uniform1f(loc.uRadius, Math.min(rad, half));
+    gl.uniform1f(loc.uBevel, Math.max(8, Math.min(38, half * .8)));
+    gl.uniform1f(loc.uBlur, num(card, "blur"));
+    gl.uniform1f(loc.uRef, num(card, "refraction") * Math.min(1, half / 45));
+    gl.uniform1f(loc.uGloss, num(card, "gloss") / 100);
+    gl.uniform1f(loc.uTint, num(card, "tint") / 100);
+    gl.uniform1f(loc.uDark, num(card, "darken") / 100);
+    const tc = (card.dataset.tintColor || "35,20,9").split(",").map(Number);
+    gl.uniform3f(loc.uTintCol, tc[0] / 255, tc[1] / 255, tc[2] / 255);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    if (c.width !== W || c.height !== H) { c.width = W; c.height = H; }
+    const ctx = c._ctx || (c._ctx = c.getContext("2d"));
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(glCanvas, 0, 0, W, H, 0, 0, W, H);
+    card._key = key;
+  }
+  function frame() {
+    raf = 0; if (!enabled) return;
+    cards.forEach(c => { if (!c.isConnected) { cards.delete(c); if (ro) ro.unobserve(c); return; } drawCard(c); });
+  }
+  function schedule() { if (!raf) raf = requestAnimationFrame(frame); }
+  const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(schedule) : null;
+  function attach(card) {
+    if (cards.has(card)) return;
+    if (!initGL()) { fallback(card, true); return; }
+    cards.add(card);
+    const c = document.createElement("canvas");
+    c.className = "glass-card__surface"; c.setAttribute("aria-hidden", "true");
+    [...card.childNodes].forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) { const sp = document.createElement("span"); n.replaceWith(sp); sp.appendChild(n); } });
+    card.prepend(c); card._glassCanvas = c;
+    if (ro) ro.observe(card);
+    if (enabled) drawCard(card);     // sofort zeichnen, damit beim Neuaufbau nichts flackert
+  }
+  function attachAll(root) { (root || document).querySelectorAll(".glass-card").forEach(attach); }
+  function invalidate(src) { const e = texCache.get(src); if (e) e.dirty = true; schedule(); }
+  function setEnabled(on) {
+    enabled = !!on;
+    document.documentElement.classList.toggle("glass-off", !enabled);
+    cards.forEach(c => { c._key = ""; if (!enabled) c.classList.remove("glass-card--live"); });
+    if (enabled) frame();
+  }
+  addEventListener("scroll", schedule, { capture: true, passive: true });
+  addEventListener("resize", schedule);
+  global.GlassCard = { attach, attachAll, invalidate, setEnabled, refresh: schedule, available: () => initGL(), defaults: DEF };
+})(window);
+</script>
 <script>
 /* ---------- Speicher: Rezepte als JSON-Dateien im GitHub-Repo ----------
    Lesen geht ohne Schlüssel (öffentliche Website). Zum Speichern braucht jedes Gerät
@@ -620,7 +1038,7 @@ function openKeyDialog() {
 }
 
 // Themen: feste, kurze Liste in Gruppen. Gerichtsarten stehen im Kapitel, freie Suchwörter in den Stichwörtern.
-const THEME_GROUPS = [["Gut für", ["Verdauung", "Erkältung"]], ["Küche", ["Chinesisch"]], ["Besonderes", ["Reste-Verwertung"]]];
+const THEME_GROUPS = [["Gut für", ["Verdauung", "Erkältung"]], ["Herkunft", ["Chinesisch"]], ["Besonderes", ["Reste-Verwertung"]]];
 const TOPICS = THEME_GROUPS.flatMap(g => g[1]);
 // Kapitel fürs Buch (Hauptkategorien, in dieser Reihenfolge); Unterkapitel sind frei wählbar
 const CHAPTERS = ["Grundrezepte", "Frühstück", "Vorspeisen & Salate", "Suppen", "Hauptgerichte", "Beilagen", "Süsses & Gebäck", "Getränke"];
@@ -648,7 +1066,6 @@ let Z = null, lists = [], listsLoaded = false;
 const SHOP_KEY = "kochbuch-einkauf", HAVE_KEY = "kochbuch-noch-da";
 let shop = loadShop(), have = loadHave();
 const servingsFor = {};
-const checked = {};
 let builtRoute = null;
 let historyUnsub = null, historyFor = null, historyEntries = [], historyLoaded = false;
 let wakeLock = null;
@@ -859,7 +1276,7 @@ function snap(r) {
   return {
     title: r.title || "", intro: r.intro || "", servings: Number(r.servings) || 0, yieldUnit: r.yieldUnit || "Portionen",
     time: r.time || "", prepTime: r.prepTime || "", restTime: r.restTime || "", cookTime: r.cookTime || "", topics: [...(r.topics || [])], ingredients: (r.ingredients || []).map(i => ({ ...i })),
-    steps: [...(r.steps || [])], tips: r.tips || "", source: r.source || ""
+    steps: [...(r.steps || [])], stepTips: { ...(r.stepTips || {}) }, tips: r.tips || "", source: r.source || ""
   };
 }
 const isHead = s => /^##\s*/.test(s);
@@ -889,6 +1306,12 @@ function diff(a, b) {
     b.steps.forEach((s, idx) => { if (!a.steps.includes(s)) out.push({ kind: "add", label: `Schritt ${idx + 1}`, to: s }); });
     a.steps.forEach((s, idx) => { if (!b.steps.includes(s)) out.push({ kind: "del", label: `Schritt ${idx + 1} (alt)`, from: s }); });
   }
+  const at = a.stepTips || {}, bt = b.stepTips || {};
+  const stepNo = (steps, idx) => steps.slice(0, idx + 1).filter(x => !isHead(x)).length;
+  for (const k of new Set([...Object.keys(at), ...Object.keys(bt)])) if ((at[k] || "") !== (bt[k] || "")) {
+    const label = `Tipp zu Schritt ${stepNo(b.steps, Number(k)) || stepNo(a.steps, Number(k))}`;
+    out.push(!at[k] ? { kind: "add", label, to: bt[k] } : !bt[k] ? { kind: "del", label, from: at[k] } : { kind: "chg", label, from: at[k], to: bt[k] });
+  }
   return out;
 }
 function diffHtml(list) {
@@ -899,6 +1322,117 @@ function diffHtml(list) {
     return `<li class="chg"><span class="mk">~</span><span><span class="lb">${esc(d.label)}:</span> <del>${esc(d.from || "leer")}</del> → <ins>${esc(d.to || "leer")}</ins></span></li>`;
   }).join("")}</ul>`;
 }
+
+/* ---------- Kochstand pro Rezept (nur auf diesem Gerät, 24 Stunden): Abhaken, Reiter, Scrollposition ---------- */
+const COOK_KEY = "kochbuch-kochstand", COOK_TTL = 24 * 3600e3;
+function cookAll() { try { return JSON.parse(localStorage.getItem(COOK_KEY) || "{}") || {}; } catch { return {}; } }
+function cookOf(id) { const c = cookAll()[id]; return c && Date.now() - (c.t || 0) < COOK_TTL ? { ing: c.ing || [], st: c.st || [], tab: c.tab || "zut", y: c.y || {} } : { ing: [], st: [], tab: "zut", y: {} }; }
+function saveCook(id, c) {
+  const all = cookAll(); all[id] = { ...c, t: Date.now() };
+  for (const k in all) if (Date.now() - (all[k].t || 0) > COOK_TTL) delete all[k];
+  try { localStorage.setItem(COOK_KEY, JSON.stringify(all)); } catch {}
+}
+
+/* ---------- Glas: Einstellung Konvexglas / Matt (pro Gerät) ---------- */
+const GLASS_KEY = "kochbuch-glas";
+function glassMode() { try { return localStorage.getItem(GLASS_KEY) === "matt" ? "matt" : "konvex"; } catch { return "konvex"; } }
+function setGlassMode(m) { try { localStorage.setItem(GLASS_KEY, m); } catch {} GlassCard.setEnabled(m === "konvex"); }
+GlassCard.setEnabled(glassMode() === "konvex");
+
+/* ---------- Hintergrund (#stage): Rezeptfoto oder warmes Kerzenlicht ---------- */
+const stage = document.getElementById("stage");
+let stageKey = "", stageImg = null;
+function seeded(str) { let h = 2166136261; for (const ch of String(str)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; }; }
+function cssColor(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "#E0A84E"; }
+function rgba(hex, a) { const m = hex.replace("#", "").match(/../g) || ["e0", "a8", "4e"]; return `rgba(${m.map(x => parseInt(x, 16)).join(",")},${a})`; }
+function paintAmbient(ctx, w, h, seed, tint) {
+  const rnd = seeded(seed), k = Math.max(w, h);
+  ctx.fillStyle = "#14110F"; ctx.fillRect(0, 0, w, h);
+  const glow = (x, y, r, col) => { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, col); g.addColorStop(1, "rgba(20,17,15,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); };
+  glow(w * .88, -h * .04, k * .75, "rgba(224,168,78,.26)");
+  glow(w * .08, h * (.55 + rnd() * .3), k * .6, rgba(tint, .20));
+  glow(w * (.3 + rnd() * .4), h * 1.05, k * .5, "rgba(150,70,30,.22)");
+  // Lichtpunkte wie Kerzen im Hintergrund: geben dem Glas etwas zum Brechen
+  for (let i = 0; i < 26; i++) {
+    const x = rnd() * w, y = rnd() * h, r = (14 + rnd() * 70) * (k / 900), warm = rnd() < .75;
+    const col = warm ? `rgba(${235 + rnd() * 20 | 0},${160 + rnd() * 60 | 0},${70 + rnd() * 50 | 0},${.05 + rnd() * .16})` : rgba(tint, .05 + rnd() * .12);
+    const g = ctx.createRadialGradient(x, y, r * .55, x, y, r); g.addColorStop(0, col); g.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+  }
+  for (let i = 0; i < 7; i++) { const x = rnd() * w, y = rnd() * h * .7, r = (3 + rnd() * 6) * (k / 900); glow(x, y, r * 6, `rgba(255,${200 + rnd() * 40 | 0},140,.18)`); }
+  const v = ctx.createRadialGradient(w / 2, h * .45, k * .3, w / 2, h * .45, k * .85); v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,.45)"); ctx.fillStyle = v; ctx.fillRect(0, 0, w, h);
+}
+function paintPhoto(ctx, w, h, img) {
+  const s = Math.max(w / img.naturalWidth, h / img.naturalHeight), iw = img.naturalWidth * s, ih = img.naturalHeight * s;
+  ctx.fillStyle = "#0F0E0E"; ctx.fillRect(0, 0, w, h);
+  ctx.drawImage(img, (w - iw) / 2, Math.min(0, (h - ih) * .35), iw, ih);
+  const g = ctx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, "rgba(15,14,14,.30)"); g.addColorStop(.45, "rgba(15,14,14,.45)"); g.addColorStop(1, "rgba(15,14,14,.72)");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+}
+function stageWant() {
+  const rt = route();
+  const rec = ["detail", "history", "edit"].includes(rt.view) && rt.id ? byId(rt.id) : null;
+  if (rec) return { seed: rec.id, tint: lookOf(chapterOf(rec))[0], photo: rt.view === "detail" ? (localPhotos[rec.id] || rec.photo || "") : "" };
+  if (rt.view === "chapter") { const ch = chapterBySlug(rt.slug) || ""; return { seed: ch, tint: lookOf(ch)[0], photo: "" }; }
+  if (rt.view === "start") { const p = [...recipes].filter(x => x.photo).sort((a, b) => (b.updatedAt || "").localeCompare(a.updatedAt || ""))[0]; return { seed: "start", tint: "--t1", photo: p ? (localPhotos[p.id] || p.photo) : "" }; }
+  return { seed: rt.view, tint: "--t1", photo: "" };
+}
+function paintStage(force) {
+  const want = stageWant();
+  const rect = stage.getBoundingClientRect();
+  const d = Math.min(1.5, devicePixelRatio || 1), w = Math.round(rect.width * d), h = Math.round(rect.height * d);
+  const key = [want.seed, want.tint, want.photo, w, h].join("|");
+  if (key === stageKey && !force) return;
+  stageKey = key;
+  const draw = img => {
+    if (stageKey !== key) return;
+    stage.width = w; stage.height = h;
+    const ctx = stage.getContext("2d");
+    if (img) paintPhoto(ctx, w, h, img); else paintAmbient(ctx, w, h, want.seed, cssColor(want.tint));
+    GlassCard.invalidate(stage);
+  };
+  if (!want.photo) return draw(null);
+  if (!stage.width) draw(null);
+  const img = new Image(); img.decoding = "async";
+  img.onload = () => draw(img); img.onerror = () => draw(null);
+  img.src = want.photo;
+}
+addEventListener("resize", () => paintStage());
+
+// Kapitelkacheln ohne Foto: gemalter Platzhalter in der Kapitelfarbe mit grossem Symbol
+function paintChapterTile(c) {
+  const r = c.getBoundingClientRect(); if (!r.width) return;
+  const w = Math.round(r.width * 1.5), h = Math.round(r.height * 1.5);
+  if (c.width === w && c.height === h) return;
+  c.width = w; c.height = h;
+  const ctx = c.getContext("2d"), ch = c.dataset.paint, [col, d] = lookOf(ch), hex = cssColor(col), rnd = seeded(ch);
+  ctx.fillStyle = "#1d1814"; ctx.fillRect(0, 0, w, h);
+  let g = ctx.createRadialGradient(w * .72, h * .25, 0, w * .72, h * .25, w * .9); g.addColorStop(0, rgba(hex, .55)); g.addColorStop(1, "rgba(29,24,20,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  for (let i = 0; i < 6; i++) { const x = rnd() * w, y = rnd() * h * .6, rr = 6 + rnd() * 22; g = ctx.createRadialGradient(x, y, rr * .4, x, y, rr); g.addColorStop(0, rgba(hex, .25)); g.addColorStop(1, "rgba(0,0,0,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); }
+  const s = h * .62 / 24; ctx.save(); ctx.translate(w - 24 * s - w * .06, h * .04); ctx.scale(s, s);
+  ctx.strokeStyle = rgba(hex, .9); ctx.lineWidth = 1.5; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.shadowColor = rgba(hex, .8); ctx.shadowBlur = 6;
+  ctx.stroke(new Path2D(d)); ctx.restore();
+}
+
+/* ---------- Glasflächen nach jedem Neuaufbau einschalten ---------- */
+const GLASS_SEL = ".gpanel, .cook, .info, .rtabs, .itile, .stile, .tip, .notes-tile, .related, .actions, .note-box, .lpanel, .todo, .empty, .unknown, .band, .foldwrap, .kt, .seg2, .sfield, .morelist, .shoplist, .shopsel .it, .entry, .rows-box, .panel, .backbtn, .plusbtn, .tabbar, .side, .photospace .hintbox, .ch .lab";
+const GLASS_TUNE = [[".tip, .photospace .hintbox", { tint: 34, tintColor: "150,100,35" }], [".cook", { tint: 30, tintColor: "120,80,25" }]];
+function decorate() {
+  paintStage();
+  app.querySelectorAll(".rows").forEach(el => { if (!el.closest("details, .related")) el.classList.add("rows-box"); });
+  document.querySelectorAll("canvas.glass-source[data-paint]").forEach(paintChapterTile);
+  document.querySelectorAll("img.glass-source").forEach(im => { if (!im._gl) { im._gl = 1; im.addEventListener("load", () => GlassCard.invalidate(im)); } });
+  document.querySelectorAll(GLASS_SEL).forEach(el => {
+    if (!el.classList.contains("gl")) {
+      el.classList.add("gl", "glass-card");
+      if (!el.dataset.glassSrc) el.dataset.glassSrc = "#stage";
+      for (const [sel, p] of GLASS_TUNE) if (el.matches(sel)) Object.assign(el.dataset, p);
+    }
+    GlassCard.attach(el);
+  });
+  GlassCard.refresh();
+}
+new MutationObserver(decorate).observe(document.body, { childList: true, subtree: true });
 
 /* ---------- rendering ---------- */
 function render(force) {
@@ -970,7 +1504,8 @@ function renderNav() {
     <a class="brand" href="#" style="padding:0;font-size:1.15rem"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 11h16a8 8 0 0 1-16 0Z"/><path d="M9 7c0-1.5 1-2 1-3.5M14 7c0-1.5 1-2 1-3.5"/></svg></span>Unser Kochbuch</a>
     <a class="new" href="#neu">${icon(ICONS.plus)}Neues Rezept</a>
     ${tabs.slice(0, 4).map(([k, h, l, d, n]) => `<a class="${t === k && !(k === "rezepte" && location.hash === "#da") ? "on" : ""}" href="${h}">${icon(d)}${l}${n ? ` <span class="badge">${n}</span>` : ""}</a>`).join("")}
-    <a class="${location.hash === "#da" ? "on" : ""}" href="#da">${icon(ICONS.fridge)}Was ist noch da?</a>
+    <a class="${location.hash === "#da" ? "on" : ""}" href="#da">${icon(ICONS.fridge)}Was kann ich damit kochen?</a>
+    <a class="${t === "mehr" ? "on" : ""}" href="#mehr">${icon(ICONS.more)}Mehr</a>
     <a class="${location.hash === "#pruefen" ? "on" : ""}" href="#pruefen">${icon(ICONS.check)}Zu prüfen${drafts ? ` <span class="small">${drafts}</span>` : ""}</a>
     <a class="${location.hash === "#alle" ? "on" : ""}" href="#alle">${icon(ICONS.list)}Alle von A bis Z</a>
     <div class="sep"></div>
@@ -986,19 +1521,20 @@ function renderStart() {
     app.innerHTML = `<div class="empty"><h2>Noch keine Rezepte</h2><p>Schick Claude im Projekt deine Rezepte als Text, Link oder Foto. Oder leg das erste selbst an.</p><a class="btn primary" href="#neu">+ Neues Rezept</a></div>`;
     return;
   }
-  const recent = recentIds().map(byId).filter(Boolean).slice(0, 6);
   const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
-  const themes = TOPICS.map(t => [t, recipes.filter(r => (r.topics || []).includes(t)).length]).filter(x => x[1]);
+  const cnt = t => recipes.filter(r => (r.topics || []).includes(t)).length;
+  const groups = THEME_GROUPS.map(([g, ts]) => [g, ts.map(t => [t, cnt(t)]).filter(x => x[1])]).filter(x => x[1].length);
+  const h = new Date().getHours();
+  const hello = h < 11 ? "Guten Morgen." : h < 17 ? "Guten Tag." : "Guten Abend.";
   app.innerHTML = `<div class="start view-in">
-    <button type="button" class="searchbar" data-action="open-search">${icon(ICONS.search)}<span>Rezept, Zutat oder Stichwort</span></button>
-    <a class="daBtn" href="#da">${icon(ICONS.fridge)}Was ist noch da?</a>
-    ${recent.length ? `<section><div class="sec-h"><h2>Zuletzt angesehen</h2></div>
-      <div class="recent">${recent.map(r => `<a class="rc" href="#r-${esc(r.id)}">${thumbHtml(r)}<b>${esc(r.title)}</b></a>`).join("")}</div></section>` : ""}
-    <section><div class="sec-h"><h2>Kapitel</h2><a href="#alle">Alle von A bis Z</a></div>
-      <div class="tiles">${usedChapters().map(c => { const n = recipes.filter(r => chapterOf(r) === c).length; const [col, d] = lookOf(c);
-        return `<a class="tile" href="${chapterHref(c)}" data-grow style="--cc:var(${col})">${icon(d)}<span><b>${esc(c)}</b><small>${n} ${n === 1 ? "Rezept" : "Rezepte"}</small></span></a>`; }).join("")}</div></section>
-    ${themes.length ? `<section><div class="sec-h"><h2>Themen</h2><a href="#rezepte">Alle Kategorien</a></div>
-      <div class="chips">${themes.map(([t, n]) => `<a class="chip" href="#thema-${slugify(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)} <span class="n">${n}</span></a>`).join("")}</div></section>` : ""}
+    <div class="hello"><h1>${hello}<br>Was kochen wir?</h1><p>${recipes.length} Rezepte${drafts ? ` · ${drafts} ${drafts === 1 ? "wartet" : "warten"} auf Prüfung` : ""}</p></div>
+    <a class="cook" href="#da"><span class="ci">${icon(ICONS.fridge)}</span><span><b>Was kann ich damit kochen?</b><small>Zutaten eingeben, passende Rezepte finden</small></span></a>
+    <section class="gpanel"><div class="ghead"><h2 class="gtitle">Kapitel</h2><a href="#alle">Alle von A bis Z</a></div>
+      <div class="chap">${usedChapters().map(c => { const rs = recipes.filter(r => chapterOf(r) === c); const [col] = lookOf(c);
+        const ph = rs.map(r => localPhotos[r.id] || r.photo).find(Boolean);
+        return `<a class="ch" href="${chapterHref(c)}" data-grow style="--cc:var(${col})">${ph ? `<img class="glass-source" src="${esc(ph)}" alt="">` : `<canvas class="glass-source" data-paint="${esc(c)}" aria-hidden="true"></canvas>`}<span class="lab" data-glass-src="sibling">${esc(c)}<small>${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</small></span></a>`; }).join("")}</div></section>
+    ${groups.length ? `<section class="gpanel"><div class="ghead"><h2 class="gtitle">Themen</h2><a href="#rezepte">Alle Kategorien</a></div>
+      ${groups.map(([g, ts]) => `<div class="shd">${esc(g)}</div><div class="tchips">${ts.map(([t, n]) => `<a class="chip" href="#thema-${slugify(t)}"><span class="dot" style="--dot:${topicColor(t)}"></span>${esc(t)} <span class="n">${n}</span></a>`).join("")}</div>`).join("")}</section>` : ""}
     ${drafts ? `<a class="todo" href="#pruefen"><span class="big">${drafts}</span><span><b>${drafts === 1 ? "Rezept wartet" : "Rezepte warten"} auf Prüfung</b><br>Antippen, um sie durchzugehen</span></a>` : ""}
   </div>`;
 }
@@ -1014,7 +1550,7 @@ function renderChapter(rt) {
     <div class="band"><div class="vhead">${backHtml("#")}<div><h1>${esc(ch)}</h1><div class="sub">${rs.length} ${rs.length === 1 ? "Rezept" : "Rezepte"}</div></div></div>
       ${subs.length > 1 ? `<div class="foldbar"><button type="button" class="btn small" id="fold-all" aria-pressed="false">Alle öffnen</button></div>` : ""}</div>
     ${subs.map(x => { const list = rs.filter(r => (r.subchapter || "Weitere") === x); const open = subs.length === 1 || rt.sub === slugify(x);
-      return `<details class="fold" id="g-${esc(slugify(x))}"${open ? " open" : ""}><summary><span class="fname">${esc(x)}</span><span class="fcount">${list.length}</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fbody">${subBody(list, x)}</div></details>`; }).join("")}
+      return `<div class="foldwrap"><details class="fold" id="g-${esc(slugify(x))}"${open ? " open" : ""}><summary><span class="fname">${esc(x)}</span><span class="fcount">${list.length}</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fbody">${subBody(list, x)}</div></details></div>`; }).join("")}
   </div>`;
   // Unterkapitel als aufklappbare Felder; der Regler öffnet oder schliesst alle auf einmal
   const folds = [...app.querySelectorAll("details.fold:not(.sec)")], btn = document.getElementById("fold-all");
@@ -1041,7 +1577,7 @@ function renderSimple(title, sub, list) {
 function renderBrowse() {
   app.innerHTML = `<div class="view-in">
     <div class="sbar">${backHtml("#")}<label class="sfield">${icon(ICONS.search)}<span class="sr" hidden>Suche</span><input id="q" type="search" placeholder="Rezept, Zutat oder Stichwort" autocomplete="off" enterkeyhint="search" value="${esc(state.q)}"></label></div>
-    <nav class="seg2"><a class="on" href="#rezepte">Nach Name suchen</a><a href="#da">Was ist noch da?</a></nav>
+    <nav class="seg2"><a class="on" href="#rezepte">Suchen</a><a href="#da">Was kann ich damit kochen?</a></nav>
     <div id="results"></div></div>`;
   renderResults();
   if (state.focusSearch) { state.focusSearch = false; const q = document.getElementById("q"); q.focus({ preventScroll: true }); }
@@ -1126,7 +1662,7 @@ function renderDrafts() {
   const list = recipes.filter(x => x.status !== "bestaetigt").sort(byTitle);
   const unk = unknownIngredients();
   app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>Zu prüfen</h1><div class="sub">${list.length} ${list.length === 1 ? "Entwurf" : "Entwürfe"}</div></div></div>
-    ${unk.length ? `<div class="unknown"><h2>Zutaten, die die Zutatenliste noch nicht kennt</h2><p style="margin:0">Schick sie Claude im Projekt, dann werden sie eingeordnet. Bis dahin fehlen sie in Einkaufsliste und „Was ist noch da?“ nicht, werden aber nicht zusammengezählt.</p><ul>${unk.map(([n, t]) => `<li><b>${esc(n)}</b> <span class="muted">in ${esc(t.join(", "))}</span></li>`).join("")}</ul></div>` : ""}
+    ${unk.length ? `<div class="unknown"><h2>Zutaten, die die Zutatenliste noch nicht kennt</h2><p style="margin:0">Schick sie Claude im Projekt, dann werden sie eingeordnet. Bis dahin fehlen sie in Einkaufsliste und „Was kann ich damit kochen?“ nicht, werden aber nicht zusammengezählt.</p><ul>${unk.map(([n, t]) => `<li><b>${esc(n)}</b> <span class="muted">in ${esc(t.join(", "))}</span></li>`).join("")}</ul></div>` : ""}
     ${list.length ? `<div class="rows">${list.map(r => rowHtml(r)).join("")}</div>` : `<div class="empty"><p>Alle Rezepte sind geprüft.</p></div>`}</div>`;
 }
 
@@ -1255,8 +1791,8 @@ function renderHave() {
   const res = have.length ? haveResults() : [];
   const grp = (title, list) => list.length ? `<section class="group"><h2>${title}</h2><div class="rows">${list.map(x => rowHtml(x.r, x.missing.length ? "Fehlt: " + x.missing.join(", ") : `${x.used} deiner Zutaten`)).join("")}</div></section>` : "";
   const groups = [[0, "Alles da"], [1, "Fehlt nur 1 Zutat"], [2, "Fehlen 2 Zutaten"]];
-  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>Was ist noch da?</h1><div class="sub">Gib ein, was du hast. Vorrat wie Salz, Zucker und Öl zählt automatisch.</div></div></div>
-    <nav class="seg2"><a href="#rezepte">Nach Name suchen</a><a class="on" href="#da">Was ist noch da?</a></nav>
+  app.innerHTML = `<div class="view-in"><div class="vhead">${backHtml("#")}<div><h1>Was kann ich damit kochen?</h1><div class="sub">Gib ein, was du hast. Vorrat wie Salz, Zucker und Öl zählt automatisch.</div></div></div>
+    <nav class="seg2"><a href="#rezepte">Suchen</a><a class="on" href="#da">Was kann ich damit kochen?</a></nav>
     <div class="havebox"><div class="inline-new"><input id="have-input" list="zutaten-namen" placeholder="z.B. Satz, Kokosraspeln, Eier" aria-label="Zutat, die du hast" enterkeyhint="done" autocomplete="off"><button type="button" class="btn primary small" data-action="have-add">Hinzufügen</button></div>
       <datalist id="zutaten-namen">${[...zutatNamen(), ...new Set((Z?.zutaten || []).flatMap(oberbegriffe))].map(x => `<option value="${esc(x)}">`).join("")}</datalist>
       ${have.length ? `<div class="chips">${have.map(x => `<button type="button" class="chip" data-action="have-rm" data-have="${esc(x)}">${esc(x)} <span class="x" aria-label="entfernen">×</span></button>`).join("")}<button type="button" class="linkish" data-action="have-clear">Alle entfernen</button></div>` : ""}</div>
@@ -1268,12 +1804,18 @@ function renderHave() {
 /* ---------- Mehr ---------- */
 function renderMore() {
   const drafts = recipes.filter(r => r.status !== "bestaetigt").length;
+  const recent = recentIds().map(byId).filter(Boolean).slice(0, 8);
+  const konvex = glassMode() === "konvex";
   app.innerHTML = `<div class="view-in"><div class="vhead"><h1>Mehr</h1></div>
+    ${recent.length ? `<p class="morehead">Zuletzt angesehen</p><div class="rows" style="margin-bottom:18px">${recent.map(r => rowHtml(r)).join("")}</div>` : ""}
     <p class="morehead">Rezepte</p>
     <div class="morelist"><a href="#alle">Alle Rezepte von A bis Z<small>${recipes.length} Rezepte</small></a><a href="#pruefen">Zu prüfen<small>${drafts} ${drafts === 1 ? "Entwurf" : "Entwürfe"}</small></a><a href="#neu">Neues Rezept anlegen</a></div>
+    <p class="morehead">Darstellung</p>
+    <div class="morelist"><div class="setrow"><span>Glas<small style="display:block">${GlassCard.available() ? "Konvexglas bricht den Hintergrund, Matt ist ruhiger" : "Dieses Gerät zeigt nur mattes Glas"}</small></span>
+      <div class="useg" role="group" aria-label="Glas"><button type="button" data-action="glass-konvex" aria-pressed="${konvex}">Konvexglas</button><button type="button" data-action="glass-matt" aria-pressed="${!konvex}">Matt</button></div></div></div>
     <p class="morehead">Kochbuch</p>
     <div class="morelist"><a href="buch.html">Kochbuch als PDF<small>Alle Rezepte im Buchlayout</small></a><button type="button" data-nav="backup">Sicherung herunterladen<small>Alle Rezepte und der Verlauf als Datei</small></button><button type="button" data-nav="key">GitHub-Schlüssel für dieses Gerät<small>Nur nötig, um zu speichern</small></button></div>
-    <p class="muted" style="font-size:.9rem">Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</p></div>`;
+    <p class="muted app-text" style="font-size:.9rem">Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</p></div>`;
 }
 
 function renderDetail(id) {
@@ -1283,7 +1825,8 @@ function renderDetail(id) {
   const base = Number(r.servings) || 0;
   const cur = servingsFor[id] || base;
   const factor = base ? cur / base : 1;
-  const done = checked[id] || (checked[id] = new Set());
+  const ck = cookOf(id);
+  const doneIng = new Set(ck.ing), doneSt = new Set(ck.st);
   const parent = r.parentId ? byId(r.parentId) : null;
   const kids = recipes.filter(x => x.parentId === id);
   const siblings = parent ? recipes.filter(x => x.parentId === parent.id && x.id !== id) : [];
@@ -1292,27 +1835,27 @@ function renderDetail(id) {
   const uses = [...new Set((r.ingredients || []).map(i => i.recipeId).filter(Boolean))].map(byId).filter(Boolean);
   const usedIn = recipes.filter(x => x.id !== id && (x.ingredients || []).some(i => i.recipeId === id));
   const related = [...new Set([...(parent ? [parent] : []), ...siblings, ...kids, ...(milk ? [milk] : []), ...uses, ...usedIn])];
-  const secs = []; let curSec = null;
-  for (const s of r.steps || []) {
-    if (isHead(s)) { curSec = { title: headText(s), items: [] }; secs.push(curSec); }
-    else { if (!curSec) { curSec = { title: "", items: [] }; secs.push(curSec); } curSec.items.push(s); }
-  }
-  const ingHeads = new Set((r.ingredients || []).filter(i => i.heading != null).map(i => normHead(i.heading)));
-  const colorOf = new Map();
-  secs.filter(x => x.title && ingHeads.has(normHead(x.title))).forEach(x => { if (!colorOf.has(normHead(x.title))) colorOf.set(normHead(x.title), secColor(colorOf.size)); });
   const hasOrig = (r.ingredients || []).some(i => i.orig && (i.orig.amount || i.orig.unit));
   const useOrig = hasOrig && origMode();
-  const amtHtml = i => {
+  // Mengen: «Cups & Löffel» zeigt die Originalangabe, «Gramm & ml» die Umrechnung (mit ≈ und kursiv markiert)
+  const amtCell = i => {
     const metric = qtyText(i.amount, i.unit, factor);
     const o = origText(i.orig, factor);
-    if (!o) return esc(metric);
-    return useOrig ? `${esc(o)}${metric ? `<span class="alt">${esc(metric)}</span>` : ""}` : `${esc(metric || o)}${metric ? `<span class="alt">${esc(o)}</span>` : ""}`;
+    if (o && (useOrig || !metric)) return `<span class="amt">${esc(o)}</span>`;
+    if (o) return `<span class="amt cv"><span class="ap">≈</span>${esc(metric)}</span>`;
+    return `<span class="amt">${esc(metric)}</span>`;
   };
-  const ings = (r.ingredients || []).map((i, idx) => i.heading != null
-    ? (colorOf.get(normHead(i.heading)) ? `<li class="hd has" style="--sec:${colorOf.get(normHead(i.heading))}">${esc(i.heading)}</li>` : `<li class="hd">${esc(i.heading)}</li>`)
-    : `<li class="${done.has(idx) ? "done" : ""}"><label><input type="checkbox" data-ing="${idx}" ${done.has(idx) ? "checked" : ""}>
-        <span class="amt">${amtHtml(i)}</span>
-        <span class="nm">${i.recipeId && byId(i.recipeId) ? `<a href="#r-${esc(i.recipeId)}">${esc(i.name)}</a>` : esc(i.name)}${i.note ? ` <small>${esc(i.note)}</small>` : ""}</span></label></li>`).join("");
+  // Zutaten: eine Glaskachel pro Gruppe (Zwischenüberschrift)
+  const groups = []; let g = null;
+  (r.ingredients || []).forEach((i, idx) => {
+    if (i.heading != null) { g = { title: i.heading, items: [] }; groups.push(g); return; }
+    if (!g) { g = { title: "", items: [] }; groups.push(g); }
+    g.items.push([i, idx]);
+  });
+  const nIng = (r.ingredients || []).filter(i => i.heading == null).length;
+  const ingHtml = groups.map(x => `<div class="itile">${x.title ? `<div class="igrp">${esc(x.title)}</div>` : ""}${x.items.length ? `<ul class="ing-list">${x.items.map(([i, idx]) =>
+    `<li class="${doneIng.has(idx) ? "done" : ""}"><label><input type="checkbox" data-ing="${idx}" ${doneIng.has(idx) ? "checked" : ""}>${amtCell(i)}
+      <span class="nm">${i.recipeId && byId(i.recipeId) ? `<a href="#r-${esc(i.recipeId)}">${esc(i.name)}</a>` : esc(i.name)}${i.note ? ` <small>${esc(i.note)}</small>` : ""}</span></label></li>`).join("")}</ul>` : ""}</div>`).join("");
   const linkIngs = (r.ingredients || []).filter(i => i.recipeId && i.name && byId(i.recipeId));
   const linkStep = s => {
     let h = esc(s);
@@ -1322,50 +1865,71 @@ function renderDetail(id) {
     }
     return h;
   };
-  const steps = secs.map(x => {
-    const c = x.title ? colorOf.get(normHead(x.title)) : null;
-    return `<section class="step-sec${c ? " has" : x.title ? " plain" : ""}"${c ? ` style="--sec:${c}"` : ""}>${x.title ? `<h3>${esc(x.title)}</h3>` : ""}${x.items.length ? `<ol class="steps-list">${x.items.map(s => `<li><p>${linkStep(s)}</p></li>`).join("")}</ol>` : ""}</section>`;
-  }).join("");
+  // Zubereitung: eine Glaskachel pro Schritt; Abschnittstitel steht im ersten Schritt des Abschnitts
+  const tips = r.stepTips || {};
+  let n = 0, pendingHead = "", stHtml = "";
+  const steps = r.steps || [];
+  steps.forEach((s, idx) => {
+    if (isHead(s)) {
+      if (pendingHead) stHtml += `<div class="stile headonly"><span class="stepsec">${esc(pendingHead)}</span></div>`;
+      pendingHead = headText(s); return;
+    }
+    n++;
+    const tip = tips[idx], done = doneSt.has(idx);
+    stHtml += `<div class="stile${done ? " done" : ""}" data-si="${idx}"><div class="row${tip ? "" : " notip"}">
+      <button type="button" class="cb" data-action="step" aria-pressed="${done}" aria-label="Schritt ${n} erledigt"></button>
+      <span class="num">${n}</span>
+      ${tip ? `<button type="button" class="tipbtn" data-action="tip" aria-expanded="false" aria-label="Tipp zu Schritt ${n}">!</button>` : ""}
+      <div class="txt">${pendingHead ? `<span class="stepsec">${esc(pendingHead)}</span>` : ""}<p>${linkStep(s)}</p></div></div>
+      ${tip ? `<div class="tipwrap"><div><div class="tip"><b>Tipp</b><span>${esc(tip)}</span></div></div></div>` : ""}</div>`;
+    pendingHead = "";
+  });
+  if (pendingHead) stHtml += `<div class="stile headonly"><span class="stepsec">${esc(pendingHead)}</span></div>`;
+  const tab = ck.tab === "zub" ? "zub" : "zut";
+  const stats = [
+    r.prepTime && ["Vorbereitung", r.prepTime], r.restTime && ["Ruhezeit", r.restTime], r.cookTime && ["Koch-/Backzeit", r.cookTime],
+    r.time && [r.prepTime || r.restTime || r.cookTime ? "Gesamt" : "Zeit", r.time],
+    ["Status", r.status === "bestaetigt" ? "Bestätigt" : "Entwurf"],
+    r.status === "bestaetigt" && r.confirmedAt && ["Bestätigt am", new Date(r.confirmedAt).toLocaleDateString("de-CH")]
+  ].filter(Boolean);
   const photoUrl = localPhotos[id] || r.photo;
-  app.innerHTML = `
+  const inShop = shop.items.find(x => x.id === id);
+  const nLists = lists.filter(l => (l.recipeIds || []).includes(id)).length;
+  app.innerHTML = `<div class="rpage">
     <nav class="crumbs">${backHtml(chapterHref(chapterOf(r)))}<span class="path"><a href="${chapterHref(chapterOf(r))}">${esc(chapterOf(r))}</a>${r.subchapter ? ` › <a href="${chapterHref(chapterOf(r), r.subchapter)}">${esc(r.subchapter)}</a>` : ""}${r.subchapter && r.section ? ` › ${esc(r.section)}` : ""}</span></nav>
     <article>
-      ${photoUrl ? `<figure class="hero"><img src="${esc(photoUrl)}" alt="${esc(r.title)}">${r.photoNote ? `<div class="hintbox ${esc(r.photoNotePos || "unten-rechts")}">${esc(r.photoNote)}</div>` : ""}</figure>` : ""}
-      <header class="recipe-head">
+      ${photoUrl ? `<div class="photospace">${r.photoNote ? `<div class="hintbox ${esc(r.photoNotePos || "unten-rechts")}">${esc(r.photoNote)}</div>` : ""}</div>` : ""}
+      <header class="rhead">
         <div class="status-row">${statusPill(r)}${parent ? `<span class="pill var">Variante</span><span class="muted">von <a href="#r-${esc(parent.id)}">${esc(parent.title)}</a></span>` : ""}${milk ? `<span class="pill var">Satz-Rezept</span><span class="muted">aus dem Satz von <a href="#r-${esc(milk.id)}">${esc(milk.title)}</a></span>` : ""}</div>
         <h1>${esc(r.title || "Ohne Titel")}</h1>
         ${r.intro ? `<p class="lede">${esc(r.intro)}</p>` : ""}
-        <div class="tags">${tagsHtml(r.topics)}</div>
-        <dl class="facts">
-          ${r.prepTime ? `<div><dt>Vorbereitung</dt><dd>${esc(r.prepTime)}</dd></div>` : ""}
-          ${r.restTime ? `<div><dt>Ruhezeit</dt><dd>${esc(r.restTime)}</dd></div>` : ""}
-          ${r.cookTime ? `<div><dt>Koch-/Backzeit</dt><dd>${esc(r.cookTime)}</dd></div>` : ""}
-          ${r.time ? `<div><dt>${r.prepTime || r.restTime || r.cookTime ? "Gesamt" : "Zeit"}</dt><dd>${esc(r.time)}</dd></div>` : ""}
-          ${base ? `<div><dt>Ergibt</dt><dd>${base} ${esc(r.yieldUnit || "Portionen")}</dd></div>` : ""}
-          ${r.status === "bestaetigt" && r.confirmedAt ? `<div><dt>Bestätigt am</dt><dd>${esc(new Date(r.confirmedAt).toLocaleDateString("de-CH"))}</dd></div>` : ""}
-        </dl>
+        ${(r.topics || []).length ? `<div class="tags">${tagsHtml(r.topics)}</div>` : ""}
       </header>
+      <section class="info">
+        <div class="stats">${stats.map(([k, v]) => `<div>${esc(k)}<b>${esc(v)}</b></div>`).join("")}</div>
+        ${base ? `<div class="inforow"><span class="lbl">Menge</span><span class="stepper2"><button type="button" class="pm" data-action="less" aria-label="Weniger">−</button><span class="val">${cur} ${esc(r.yieldUnit || "Portionen")}</span><button type="button" class="pm" data-action="more" aria-label="Mehr">+</button></span>${cur !== base ? `<button type="button" class="linkish" data-action="base">zurück auf ${base}</button>` : ""}</div>` : ""}
+        ${hasOrig ? `<div class="inforow"><span class="lbl">Masse</span><div class="useg" role="group" aria-label="Mengenangaben"><button type="button" data-action="units-orig" aria-pressed="${useOrig}">Cups &amp; Löffel</button><button type="button" data-action="units-metric" aria-pressed="${!useOrig}">Gramm &amp; ml</button></div></div>` : ""}
+      </section>
       <div class="quick">
-        <button type="button" class="btn small${shop.items.some(x => x.id === id) ? " on" : ""}" data-action="shop-add" data-servings="${cur}">${icon(ICONS.cart).replace("<svg", '<svg width="18" height="18"')}${shop.items.some(x => x.id === id) ? `Auf der Einkaufsliste (${shop.items.find(x => x.id === id).servings})` : "Auf die Einkaufsliste"}</button>
-        <button type="button" class="btn small" data-action="list-panel" aria-expanded="${state.listPanel}">${icon(ICONS.list).replace("<svg", '<svg width="18" height="18"')}Zu einer Liste${lists.filter(l => (l.recipeIds || []).includes(id)).length ? ` (${lists.filter(l => (l.recipeIds || []).includes(id)).length})` : ""}</button>
+        <button type="button" class="btn small${inShop ? " on" : ""}" data-action="shop-add" data-servings="${cur}">${icon(ICONS.cart).replace("<svg", '<svg width="18" height="18"')}${inShop ? `Auf der Einkaufsliste (${inShop.servings})` : "Auf die Einkaufsliste"}</button>
+        <button type="button" class="btn small" data-action="list-panel" aria-expanded="${state.listPanel}">${icon(ICONS.list).replace("<svg", '<svg width="18" height="18"')}Zu einer Liste${nLists ? ` (${nLists})` : ""}</button>
       </div>
       ${state.listPanel ? `<div class="lpanel"><div class="chips">${lists.map(l => { const on = (l.recipeIds || []).includes(id); return `<button type="button" class="chip" aria-pressed="${on}" data-action="list-toggle" data-list="${esc(l.id)}">${on ? icon(ICONS.check) : ""}${esc(l.title)}</button>`; }).join("") || `<span class="muted">Noch keine Listen.</span>`}</div>
         <div class="inline-new"><input id="new-list-name" placeholder="Neue Liste, z.B. Lieblinge" aria-label="Name der neuen Liste"><button type="button" class="btn small" data-action="list-new" data-with="${esc(id)}">Anlegen</button></div></div>` : ""}
       ${r.variantNote ? `<div class="note-box variant"><p><b>Anders als im Grundrezept</b>${esc(r.variantNote)}</p></div>` : ""}
       ${r.status !== "bestaetigt" ? `<div class="note-box draft"><p><b>Noch ein Entwurf</b>Prüf Mengen und Schritte und korrigiere, was nicht stimmt. Korrekturen im Entwurf landen nicht im Verlauf. Sobald du das Rezept bestätigst, wird jede weitere Änderung festgehalten.</p>
         <button class="btn ok" data-action="confirm">Als korrekt bestätigen</button></div>` : ""}
-      <div class="cols">
-        <section class="panel ing-panel">
-          <h2>Zutaten</h2>
-          ${base ? `<div class="stepper"><button data-action="less" aria-label="Weniger">−</button><span class="val">${cur}</span><button data-action="more" aria-label="Mehr">+</button><span>${esc(r.yieldUnit || "Portionen")}</span>${cur !== base ? `<button class="linkish reset" data-action="base">Original (${base})</button>` : ""}</div>` : ""}
-          ${hasOrig ? `<div class="unit-switch" role="group" aria-label="Mengenangaben"><button type="button" data-action="units-orig" aria-pressed="${useOrig}">Original</button><button type="button" data-action="units-metric" aria-pressed="${!useOrig}">Umgerechnet (g / ml)</button></div>` : ""}
-          <ul class="ing-list">${ings || `<li class="muted">Noch keine Zutaten eingetragen.</li>`}</ul>
+      <div class="rtabs-wrap"><div class="rtabs" role="tablist"><button type="button" role="tab" data-action="tab" data-tab="zut" aria-selected="${tab === "zut"}">Zutaten<span class="cnt">${nIng}</span></button><button type="button" role="tab" data-action="tab" data-tab="zub" aria-selected="${tab === "zub"}">Zubereitung<span class="cnt">${n}</span></button></div></div>
+      <div class="progress" id="cook-progress">${progressText(doneIng.size, nIng, doneSt.size, n)}</div>
+      <div class="rcols">
+        <section class="pane" id="p-zut" ${tab === "zut" ? "" : "hidden"}>
+          ${ingHtml || `<div class="itile"><p class="muted">Noch keine Zutaten eingetragen.</p></div>`}
+          ${hasOrig && !useOrig ? `<p class="unote"><span class="ap">≈</span> umgerechnet. Alles ohne ≈ steht so im Originalrezept.</p>` : ""}
         </section>
-        <section class="panel">
-          <h2>Zubereitung</h2>
-          ${steps ? `<div class="steps-wrap">${steps}</div>` : `<p class="muted">Noch keine Schritte eingetragen.</p>`}
-          ${r.tips ? `<div class="tips"><h3>Tipps &amp; Notizen</h3>${r.tips.split(/\n{2,}/).map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
-          ${r.source ? `<p class="source">Quelle: ${/^https?:\/\//.test(r.source) ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</p>` : ""}
+        <section class="pane" id="p-zub" ${tab === "zub" ? "" : "hidden"}>
+          ${stHtml || `<div class="stile"><p class="muted" style="margin:0">Noch keine Schritte eingetragen.</p></div>`}
+          ${r.tips || r.source ? `<div class="notes-tile">${r.tips ? `<div class="igrp">Tipps &amp; Notizen</div>${r.tips.split(/\n{2,}/).map(p => `<p>${esc(p)}</p>`).join("")}` : ""}
+            ${r.source ? `<p class="source">Quelle: ${/^https?:\/\//.test(r.source) ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</p>` : ""}</div>` : ""}
         </section>
       </div>
       ${satzKids.length ? `<section class="related"><h2>Was du mit dem Satz machen kannst</h2><div class="rel-list">${satzKids.map(x => cardHtml(x)).join("")}</div></section>` : ""}
@@ -1384,7 +1948,11 @@ function renderDetail(id) {
           ? `<div class="confirm-row"><span>Rezept wirklich löschen?${r.status === "bestaetigt" ? " Der Verlauf wird mit gelöscht." : ""}</span><button class="btn danger solid small" data-action="delete-yes">Ja, löschen</button><button class="btn small" data-action="delete-no">Abbrechen</button></div>`
           : `<button class="btn danger" data-action="delete">Löschen</button>`}
       </div>
-    </article>`;
+    </article></div>`;
+}
+function progressText(ia, ib, sa, sb) {
+  if (!ia && !sa) return "";
+  return `<span>${ia} von ${ib} Zutaten · ${sa} von ${sb} Schritten erledigt</span><button type="button" data-action="cook-reset">Zurücksetzen</button>`;
 }
 
 /* ---------- editor ---------- */
@@ -1444,7 +2012,7 @@ function renderEditor(r, key) {
           <button type="button" class="btn small" data-action="bulk" style="margin-top:8px">Übernehmen</button>
         </details>
       </div>
-      <div class="field"><label for="f-steps">Zubereitung</label><p class="hint">Ein Schritt pro Zeile. Eine Zeile mit Doppelpunkt am Ende wird zur farbigen Zwischenüberschrift, z.B. „Trockene Zutaten:“. Heisst eine Zwischenüberschrift bei den Zutaten gleich (z.B. „Für das Frosting“ und „Frosting:“), bekommen beide dieselbe Farbe.</p><textarea id="f-steps" rows="10">${esc(d.steps.map(s => isHead(s) ? headText(s) + ":" : s).join("\n"))}</textarea></div>
+      <div class="field"><label for="f-steps">Zubereitung</label><p class="hint">Ein Schritt pro Zeile. Eine Zeile mit Doppelpunkt am Ende wird zur goldenen Zwischenüberschrift, z.B. „Trockene Zutaten:“. Eine Zeile, die mit „Tipp:“ beginnt, wird zum Tipp für den Schritt direkt darüber (goldenes Quadrat beim Schritt).</p><textarea id="f-steps" rows="10">${esc(d.steps.map((s, k) => (isHead(s) ? headText(s) + ":" : s) + (d.stepTips[k] ? "\nTipp: " + d.stepTips[k] : "")).join("\n"))}</textarea></div>
       <div class="field"><label for="f-tips">Tipps &amp; Notizen</label><textarea id="f-tips" rows="4">${esc(d.tips)}</textarea></div>
       <div class="field"><label for="f-restvon">Aus dem Satz (Rest) von</label><p class="hint">Für Reste-Rezepte: wähle das Rezept, bei dem der Rest anfällt. Beide Rezepte verweisen dann aufeinander.</p>
         <select id="f-restvon" style="min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:var(--surface)"><option value="">Kein Reste-Rezept</option>${recipes.filter(x => !src || x.id !== src.id || r.mode === "variant").sort((a, b) => (a.title || "").localeCompare(b.title || "", "de")).map(x => `<option value="${esc(x.id)}" ${(src?.restVon || "") === x.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></div>
@@ -1489,6 +2057,16 @@ function parseIngLine(line) {
   const [name, ...note] = rest.split(",");
   return { amount, unit, name: name.trim(), note: note.join(",").trim() };
 }
+// Zubereitung aus dem Textfeld: «Titel:» = Abschnitt, «Tipp: …» = Tipp zum Schritt darüber
+function parseSteps(text) {
+  const steps = [], stepTips = {};
+  for (const line of text.split("\n").map(x => x.trim()).filter(Boolean)) {
+    const tm = line.match(/^tipp\s*:\s*(.+)$/i);
+    if (tm && steps.length && !isHead(steps[steps.length - 1])) { const k = steps.length - 1; stepTips[k] = stepTips[k] ? stepTips[k] + " " + tm[1] : tm[1]; continue; }
+    steps.push(/:$/.test(line) && line.length < 60 ? "## " + line.replace(/:$/, "").trim() : line);
+  }
+  return { steps, stepTips };
+}
 function collectForm() {
   const v = id => (document.getElementById(id)?.value || "").trim();
   const ingredients = [...document.querySelectorAll("#f-ings .ing-row")].map(row => {
@@ -1504,7 +2082,7 @@ function collectForm() {
     time: v("f-time"), prepTime: v("f-prep"), restTime: v("f-rest"), cookTime: v("f-cook"),
     chapter: v("f-chapter"), subchapter: v("f-sub"), section: v("f-sub") ? v("f-section") : "", keywords: v("f-keywords").split(",").map(x => x.trim()).filter(Boolean),
     photoNote: v("f-pnote"), photoNotePos: v("f-ppos") || "unten-rechts", topics: [...document.querySelectorAll("#f-topics [aria-pressed=true]")].map(b => b.dataset.tgl),
-    ingredients, steps: v("f-steps").split("\n").map(s => s.trim()).filter(Boolean).map(s => /:$/.test(s) && s.length < 60 ? "## " + s.replace(/:$/, "").trim() : s), tips: v("f-tips"), source: v("f-source"),
+    ingredients, ...parseSteps(v("f-steps")), tips: v("f-tips"), source: v("f-source"),
     restVon: v("f-restvon")
   };
 }
@@ -1660,6 +2238,11 @@ app.addEventListener("click", async ev => {
   if (a === "have-clear") { have = []; saveHave(); return renderHave(); }
   if (a === "kt") { const k = t.closest(".kt"); k.classList.toggle("open"); t.setAttribute("aria-expanded", k.classList.contains("open")); return; }
   const rec = r.id ? byId(r.id) : null;
+  if (a === "glass-konvex" || a === "glass-matt") { setGlassMode(a === "glass-konvex" ? "konvex" : "matt"); return renderMore(); }
+  if (a === "tab") return switchTab(r.id, t.dataset.tab);
+  if (a === "step") return toggleStep(r.id, t.closest(".stile"));
+  if (a === "tip") { const w = t.closest(".stile").querySelector(".tipwrap"); const open = !w.classList.contains("open"); w.classList.toggle("open", open); t.setAttribute("aria-expanded", open); return; }
+  if (a === "cook-reset") { const c = cookOf(r.id); c.ing = []; c.st = []; saveCook(r.id, c); return renderDetail(r.id); }
   if (a === "units-metric" || a === "units-orig") { setOrigMode(a === "units-orig"); return renderDetail(r.id); }
   if (a === "less" || a === "more" || a === "base") {
     const base = Number(rec.servings) || 1, cur = servingsFor[r.id] || base;
@@ -1703,6 +2286,43 @@ app.addEventListener("click", ev => {
   const j = ev.target.closest("a[data-jump]");
   if (j) { ev.preventDefault(); document.getElementById("g-" + j.dataset.jump)?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" }); }
 }, true);
+/* ---------- Rezept beim Kochen: Reiter, Abhaken, Position ---------- */
+function updateProgress(id) {
+  const el = document.getElementById("cook-progress"); if (!el) return;
+  const c = cookOf(id);
+  el.innerHTML = progressText(c.ing.length, app.querySelectorAll("#p-zut input[data-ing]").length, c.st.length, app.querySelectorAll("#p-zub .stile[data-si]").length);
+}
+function toggleStep(id, st) {
+  if (!st) return;
+  const i = Number(st.dataset.si), c = cookOf(id), s = new Set(c.st);
+  const done = !s.has(i); done ? s.add(i) : s.delete(i);
+  c.st = [...s]; saveCook(id, c);
+  st.classList.toggle("done", done); st.querySelector(".cb")?.setAttribute("aria-pressed", done);
+  if (done) { st.querySelector(".tipwrap")?.classList.remove("open"); st.querySelector(".tipbtn")?.setAttribute("aria-expanded", "false"); }
+  updateProgress(id);
+}
+// Erledigten Schritt antippen holt ihn zurück
+app.addEventListener("click", ev => {
+  const st = ev.target.closest(".stile.done");
+  if (!st || ev.target.closest("a, button")) return;
+  toggleStep(route().id, st);
+});
+function tabsTop() { const w = app.querySelector(".rtabs-wrap"); return w ? w.getBoundingClientRect().top + scrollY - 6 : 0; }
+function switchTab(id, tab) {
+  const c = cookOf(id); if (c.tab === tab) return;
+  c.y[c.tab] = scrollY; c.tab = tab; saveCook(id, c);
+  app.querySelectorAll(".rtabs [data-tab]").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
+  document.getElementById("p-zut").hidden = tab !== "zut"; document.getElementById("p-zub").hidden = tab !== "zub";
+  const top = tabsTop(), y = c.y[tab];
+  window.scrollTo(0, y != null ? Math.max(y, Math.min(scrollY, top)) : Math.min(scrollY, top));
+}
+// Position im aktiven Reiter merken
+let ySave = 0;
+addEventListener("scroll", () => {
+  clearTimeout(ySave);
+  ySave = setTimeout(() => { const rt = route(); if (rt.view !== "detail" || !app.querySelector(".rtabs")) return; const c = cookOf(rt.id); c.y[c.tab] = scrollY; saveCook(rt.id, c); }, 250);
+}, { passive: true });
+
 function navAction(t) {
   if (t.dataset.nav === "backup") return backup(t);
   if (t.dataset.nav === "key") return openKeyDialog();
@@ -1716,8 +2336,8 @@ app.addEventListener("change", ev => {
   const t = ev.target;
   if (t.dataset.shop != null) { t.checked ? shop.checked[t.dataset.shop] = true : delete shop.checked[t.dataset.shop]; saveShop(); t.closest("li").classList.toggle("done", t.checked); return; }
   if (t.dataset.ing != null) {
-    const id = route().id; const s = checked[id] || (checked[id] = new Set()); const i = Number(t.dataset.ing);
-    t.checked ? s.add(i) : s.delete(i); t.closest("li").classList.toggle("done", t.checked);
+    const id = route().id; const c = cookOf(id); const s = new Set(c.ing); const i = Number(t.dataset.ing);
+    t.checked ? s.add(i) : s.delete(i); c.ing = [...s]; saveCook(id, c); t.closest("li").classList.toggle("done", t.checked); updateProgress(id);
   }
   if (t.id === "wake") setWake(t.checked);
   if (t.id === "f-photo" && t.files?.[0]) preparePhoto(t.files[0]);
@@ -1751,7 +2371,9 @@ let inAppNav = 0;
 try { if (typeof history.state?.d !== "number") history.replaceState({ d: 0 }, ""); else inAppNav = history.state.d; } catch {}
 window.addEventListener("hashchange", () => {
   try { if (typeof history.state?.d === "number") inAppNav = history.state.d; else { inAppNav++; history.replaceState({ d: inAppNav }, ""); } } catch {}
-  builtRoute = null; confirmDelete = false; render(); window.scrollTo(0, 0);
+  builtRoute = null; confirmDelete = false; render();
+  const rt = route(); const y = rt.view === "detail" ? cookOf(rt.id).y[cookOf(rt.id).tab] : 0;
+  window.scrollTo(0, y || 0);
 });
 
 /* ---------- boot ---------- */
