@@ -1434,8 +1434,8 @@ const hexOf = c => "#" + c.split(",").map(n => (+n).toString(16).padStart(2, "0"
 const rgbOf = h => [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16)).join(",");
 const tuneKey = () => isDay() ? "tag-" + dayVariant() : nightVariant() === "bordeaux" ? "nacht-bordeaux" : "nacht";
 function tuneBase() {
-  return isDay() ? { blur: 7, refraction: 32, gloss: 85, tint: 14, darken: 0, tipTint: 30, bg: 150, color: hexOf(DAY_GLASS[dayVariant()]) }
-    : { blur: 7, refraction: 32, gloss: 85, tint: nightVariant() === "bordeaux" ? 24 : 20, darken: 35, tipTint: 34, bg: 100, color: hexOf(nightVariant() === "bordeaux" ? "48,10,18" : "35,20,9") };
+  return isDay() ? { blur: 7, refraction: 32, gloss: 90, tint: 11, darken: 0, tipTint: 30, bg: 150, color: hexOf(DAY_GLASS[dayVariant()]) }
+    : { blur: 7, refraction: 32, gloss: 85, tint: nightVariant() === "bordeaux" ? 12 : 20, darken: 35, tipTint: 34, bg: 100, color: hexOf(nightVariant() === "bordeaux" ? "48,10,18" : "35,20,9") };
 }
 function tuneOf() { let o = {}; try { o = JSON.parse(localStorage.getItem("kochbuch-regler-" + tuneKey()) || "{}"); } catch {} return Object.assign(tuneBase(), o); }
 function saveTune(v) { try { localStorage.setItem("kochbuch-regler-" + tuneKey(), JSON.stringify(v)); } catch {} }
