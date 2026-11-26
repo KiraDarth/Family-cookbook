@@ -51,12 +51,41 @@
   --t1: #C07A1A; --t2: #3E7FA8; --t3: #B23B3B; --t4: #6A8F3A; --t5: #8A6A4A; --t6: #B0558C; --t7: #2E8A86; --t8: #6B5FA8;
   --shadow: 0 10px 26px rgba(70, 45, 20, .16);
 }
-:root[data-theme="day"][data-day="b"] { --bg: #E2EADC; --glow: 205, 228, 175; --ink: #1F2A22; --ink2: #4A5A4D; --ink3: #6B7A6D; --muted: #6B7A6D; --wl: 30, 50, 35; --line: rgba(30, 50, 35, .14);
-  --gold: #8C6A1C; --accent: #8C6A1C; --gold2: #5E4610; --glass: rgba(250, 252, 246, .55); --tile-bg: #D3DDCB; --bar-bg: rgba(226, 234, 220, .8); --tip-ink: #2E2A12; }
-:root[data-theme="day"][data-day="c"] { --bg: #E8EDF3; --glow: 190, 215, 248; --ink: #1E2330; --ink2: #4A5163; --ink3: #6E7487; --muted: #6E7487; --wl: 30, 35, 50; --line: rgba(30, 35, 50, .13);
-  --gold: #B4532A; --accent: #B4532A; --gold2: #8A3A18; --accent-soft: rgba(180, 83, 42, .12); --glass: rgba(255, 255, 255, .58); --tile-bg: #DCE3EC; --bar-bg: rgba(232, 237, 243, .82); --tip-ink: #3A1E10; --surface: #FFFFFF; }
-:root[data-theme="day"][data-day="d"] { --bg: #F8E3D6; --glow: 255, 178, 150; --ink: #2E1F1A; --ink2: #5E4A42; --ink3: #806A60; --muted: #806A60; --wl: 70, 35, 20; --line: rgba(70, 35, 20, .13);
-  --gold: #B0562E; --accent: #B0562E; --gold2: #82381A; --accent-soft: rgba(176, 86, 46, .13); --glass: rgba(255, 248, 243, .56); --tile-bg: #F0D6C8; --bar-bg: rgba(248, 227, 214, .8); --tip-ink: #3A1A0E; }
+:root { --gilt: var(--gold); }
+/* Abendküche «Bordeaux & Gold»: Weinrot für Knöpfe und aktive Elemente, Gold bleibt für Schrift und Details */
+:root[data-night="bordeaux"] { --bg: #130B0D; --wine: #7E1F2E; --wine2: #9A2B3C; --line: rgba(243, 217, 169, .14); }
+:root[data-night="bordeaux"] :is(.btn.primary, .btn.accent, .btn.ok, .chip[aria-pressed="true"], .badge, .side .new, .cook .ci, .tipbtn[aria-expanded="true"], .ing-list input[type=checkbox]:checked, .stile.done .cb) { background-color: var(--wine) !important; border-color: var(--wine2) !important; color: #F3D9A9 !important; }
+:root[data-night="bordeaux"] .brand-mark { background: var(--wine); color: #F3D9A9; }
+:root[data-night="bordeaux"] .side a.on, :root[data-night="bordeaux"] .useg button[aria-pressed="true"] { background: rgba(126, 31, 46, .55) !important; color: #F3D9A9 !important; }
+/* Morgenküche «Salbei & Bordeaux»: Salbeigrün, Weinrot für Titel und Bedienung, Altgold für feine Details */
+:root[data-theme="day"][data-day="b"] { --bg: #DFE6DA; --glow: 200, 222, 186; --ink: #1B241D; --ink2: #3F4D42; --ink3: #607063; --muted: #5E6E61; --wl: 28, 45, 32; --line: rgba(28, 45, 32, .14);
+  --gold: #7B1E2C; --accent: #7B1E2C; --gold2: #5A1320; --on-gold: #FBF4EE; --accent-soft: rgba(123, 30, 44, .1); --gilt: #9A7428;
+  --glass: rgba(246, 250, 242, .55); --surface: #F7FAF4; --tile-bg: #D2DCCB; --bar-bg: rgba(223, 230, 218, .82); --tip-ink: #2A1A12; --seg-on: #FBF4EE; --toast-bg: #F7FAF4; }
+/* Morgenküche «Porzellan & Kobalt»: Porzellanweiss, Kobaltblau für Titel und Bedienung, Altgold für feine Details */
+:root[data-theme="day"][data-day="c"] { --bg: #E6ECF3; --glow: 188, 208, 240; --ink: #131B2C; --ink2: #3C465C; --ink3: #5E6880; --muted: #5C6680; --wl: 22, 32, 58; --line: rgba(22, 32, 58, .13);
+  --gold: #1F3F8A; --accent: #1F3F8A; --gold2: #142C66; --on-gold: #F6F8FD; --accent-soft: rgba(31, 63, 138, .1); --gilt: #A07D32;
+  --glass: rgba(250, 252, 255, .58); --surface: #FFFFFF; --tile-bg: #D9E1EC; --bar-bg: rgba(230, 236, 243, .84); --tip-ink: #2A1E0E; --seg-on: #F6F8FD; --toast-bg: #FFFFFF; }
+/* Goldene Details (Nummern, Aufzählungspunkte, kleine Überschriften, Ränder) */
+.stile .num, .tiplist li::marker, .stats b, .eyebrow, .morehead, .group > h2, .browse-sec h2.morehead, .rhead .eb, .ing-list .amt .ap, .unote .ap, .todo .big { color: var(--gilt); }
+.stepper2 button.pm, .ing-list input[type=checkbox], .cb, .tipbtn { border-color: var(--gilt); }
+.stepper2 button.pm { color: var(--gilt); }
+:root[data-theme="day"] .tipbtn { background: linear-gradient(135deg, rgba(200, 160, 80, .3), rgba(200, 160, 80, .08)); color: var(--gilt); }
+:root[data-theme="day"] .tipbtn[aria-expanded="true"] { background: var(--gilt); color: #fff; }
+
+#tuner { position: fixed; left: 10px; right: 10px; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); z-index: 100; max-width: 420px; margin-left: auto; background: rgba(30, 24, 18, .93); color: #f3e6d3; border-radius: 20px; padding: 14px 16px 12px; font: 500 14px/1.3 var(--font-body); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); max-height: 42vh; overflow: auto; }
+#tuner h3 { font: 700 15px/1.2 var(--font-body); margin: 0 0 4px; display: flex; justify-content: space-between; align-items: center; color: #f3e6d3; }
+#tuner h3 button { background: none; border: 0; color: #f3e6d3; font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px; }
+#tuner .hint { font-size: 12px; opacity: .7; margin: 0 0 10px; }
+#tuner label { display: block; margin: 9px 0 0; }
+#tuner label span { display: flex; justify-content: space-between; font-size: 13px; }
+#tuner label small { display: block; font-size: 11.5px; opacity: .65; }
+#tuner input[type=range] { width: 100%; accent-color: #E0A84E; margin: 4px 0 0; }
+#tuner input[type=color] { width: 100%; height: 30px; border: 0; border-radius: 8px; background: none; padding: 0; margin-top: 4px; }
+#tuner .acts { display: flex; gap: 8px; margin-top: 12px; }
+#tuner .acts button { flex: 1; border: 0; border-radius: 999px; padding: 9px; font: 700 13px/1 var(--font-body); cursor: pointer; background: #f3e6d3; color: #1d1814; }
+#tuner .acts button.sec { background: rgba(255, 255, 255, .12); color: #f3e6d3; }
+#tuner pre { white-space: pre-wrap; font: 12px/1.4 ui-monospace, monospace; background: rgba(255, 255, 255, .08); padding: 8px; border-radius: 10px; margin: 10px 0 0; user-select: all; }
+@media (min-width: 900px) { #tuner { bottom: 20px; right: 20px; left: auto; width: 380px; max-height: 70vh; } }
 
 * { box-sizing: border-box; }
 body {
@@ -1379,34 +1408,86 @@ function setGlassMode(m) { try { localStorage.setItem(GLASS_KEY, m); } catch {} 
 GlassCard.setEnabled(glassMode() === "konvex");
 
 /* ---------- Tag / Nacht (Morgenküche / Abendküche), pro Gerät ---------- */
-const THEME_KEY = "kochbuch-thema", DAY_KEY = "kochbuch-tagvariante";
-const DAY_GLASS = { a: "255,247,232", b: "246,251,240", c: "250,252,255", d: "255,243,235" };
+const THEME_KEY = "kochbuch-thema", DAY_KEY = "kochbuch-tagvariante", NIGHT_KEY = "kochbuch-nachtvariante";
+function nightVariant() { try { return localStorage.getItem(NIGHT_KEY) === "bordeaux" ? "bordeaux" : "gold"; } catch { return "gold"; } }
+const DAY_GLASS = { b: "246,251,240", c: "250,252,255" };
 function themeSetting() { try { return localStorage.getItem(THEME_KEY) || "auto"; } catch { return "auto"; } }
-function dayVariant() { try { return localStorage.getItem(DAY_KEY) || "a"; } catch { return "a"; } }
+function dayVariant() { let v = "b"; try { v = localStorage.getItem(DAY_KEY) || "b"; } catch {} return DAY_GLASS[v] ? v : "b"; }
 const darkMQ = matchMedia("(prefers-color-scheme: dark)");
 const isDay = () => document.documentElement.dataset.theme === "day";
 function applyTheme() {
   const t = themeSetting(), day = t === "tag" || (t === "auto" && !darkMQ.matches);
   const root = document.documentElement;
-  if (day) { root.dataset.theme = "day"; root.dataset.day = dayVariant(); } else { delete root.dataset.theme; delete root.dataset.day; }
-  document.querySelector('meta[name="theme-color"]').content = day ? cssColor("--bg") : "#14110F";
-  GlassCard.setDefaults(day ? { tint: 38, darken: 0, tintColor: DAY_GLASS[dayVariant()] || DAY_GLASS.a } : { tint: 20, darken: 35, tintColor: "35,20,9" });
+  if (day) { root.dataset.theme = "day"; root.dataset.day = dayVariant(); delete root.dataset.night; } else { delete root.dataset.theme; delete root.dataset.day; if (nightVariant() === "bordeaux") root.dataset.night = "bordeaux"; else delete root.dataset.night; }
+  document.querySelector('meta[name="theme-color"]').content = cssColor("--bg");
+  applyTune();
   try { stageKey = ""; } catch {}
   document.querySelectorAll("canvas.glass-source[data-paint]").forEach(c => { c.width = 0; });
 }
-function setTheme(t, v) { try { if (t) localStorage.setItem(THEME_KEY, t); if (v) localStorage.setItem(DAY_KEY, v); } catch {} applyTheme(); if (loaded) render(true); }
+/* Glas-Feineinstellung (Regler unter «Mehr»), pro Gerät und pro Darstellung */
+const TUNE_SL = [
+  ["blur", "Unschärfe", "wie stark der Hintergrund verwischt", 0, 30, 1],
+  ["refraction", "Lichtbrechung", "wie stark die Wölbung verzerrt", 0, 80, 1],
+  ["gloss", "Glanz", "helle Lichtkanten am Rand", 0, 100, 1],
+  ["tint", "Milchigkeit", "wie dicht die Farbe das Glas füllt", 0, 100, 1],
+  ["darken", "Abdunkeln", "plus = dunkler, minus = heller", -40, 70, 1],
+  ["tipTint", "Tönung Tipps & Kochen", "goldene Felder bei Tipps", 0, 100, 1],
+  ["bg", "Hintergrund-Stärke", "Lichtflecken hinter dem Glas (nur Morgenküche)", 0, 300, 5],
+];
+const hexOf = c => "#" + c.split(",").map(n => (+n).toString(16).padStart(2, "0")).join("");
+const rgbOf = h => [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16)).join(",");
+const tuneKey = () => isDay() ? "tag-" + dayVariant() : nightVariant() === "bordeaux" ? "nacht-bordeaux" : "nacht";
+function tuneBase() {
+  return isDay() ? { blur: 7, refraction: 32, gloss: 85, tint: 14, darken: 0, tipTint: 30, bg: 150, color: hexOf(DAY_GLASS[dayVariant()]) }
+    : { blur: 7, refraction: 32, gloss: 85, tint: nightVariant() === "bordeaux" ? 24 : 20, darken: 35, tipTint: 34, bg: 100, color: hexOf(nightVariant() === "bordeaux" ? "48,10,18" : "35,20,9") };
+}
+function tuneOf() { let o = {}; try { o = JSON.parse(localStorage.getItem("kochbuch-regler-" + tuneKey()) || "{}"); } catch {} return Object.assign(tuneBase(), o); }
+function saveTune(v) { try { localStorage.setItem("kochbuch-regler-" + tuneKey(), JSON.stringify(v)); } catch {} }
+let tuneBgT = 0;
+function applyTune(v = tuneOf()) {
+  GlassCard.setDefaults({ blur: v.blur, refraction: v.refraction, gloss: v.gloss, tint: v.tint, darken: v.darken, tintColor: rgbOf(v.color) });
+  [...GLASS_TUNE_DAY, ...GLASS_TUNE_NIGHT].forEach(([, p]) => { delete p.blur; });
+  (isDay() ? GLASS_TUNE_DAY : GLASS_TUNE_NIGHT).forEach(([, p]) => { p.tint = v.tipTint; });
+  document.querySelectorAll(".tip.glass-card, .hintbox.glass-card, .cook.glass-card").forEach(el => { el.dataset.tint = v.tipTint; });
+  if (DAY_LOOK.bg !== v.bg / 100) { DAY_LOOK.bg = v.bg / 100; clearTimeout(tuneBgT); tuneBgT = setTimeout(() => { try { stageKey = ""; paintStage(true); } catch {} }, 120); }
+  GlassCard.refresh();
+}
+function tunerHtml() {
+  const v = tuneOf(), name = isDay() ? (dayVariant() === "c" ? "Porzellan & Kobalt" : "Salbei & Bordeaux") : nightVariant() === "bordeaux" ? "Abendküche Bordeaux" : "Abendküche Gold";
+  return `<h3><span>Glas: ${name}</span><button type="button" data-action="tuner-close" aria-label="Schliessen">×</button></h3>
+    <p class="hint">Gilt für diese Darstellung und bleibt auf diesem Gerät gespeichert.</p>
+    ${TUNE_SL.map(([k, l, h, mi, ma, st]) => `<label><span>${l}<b data-v="${k}">${v[k]}${k === "bg" ? " %" : ""}</b></span><small>${h}</small><input type="range" data-tune="${k}" min="${mi}" max="${ma}" step="${st}" value="${v[k]}"></label>`).join("")}
+    <label><span>Glasfarbe<b data-v="color">${v.color}</b></span><small>Farbe der Tönung</small><input type="color" data-tune="color" value="${v.color}"></label>
+    <div class="acts"><button type="button" class="sec" data-action="tuner-reset">Zurücksetzen</button><button type="button" data-action="tuner-show">Werte anzeigen</button></div>
+    <pre hidden></pre>`;
+}
+function openTuner() {
+  let p = document.getElementById("tuner");
+  if (!p) { p = document.createElement("div"); p.id = "tuner"; document.body.append(p);
+    p.addEventListener("input", e => { const k = e.target.dataset.tune; if (!k) return; const v = tuneOf(); v[k] = k === "color" ? e.target.value : +e.target.value;
+      p.querySelector(`[data-v="${k}"]`).textContent = v[k] + (k === "bg" ? " %" : ""); saveTune(v); applyTune(v); if (!p.querySelector("pre").hidden) tunerValues(); });
+    p.addEventListener("click", e => { const a = e.target.closest("[data-action]")?.dataset.action; if (!a) return; e.stopPropagation();
+      if (a === "tuner-close") p.remove();
+      if (a === "tuner-reset") { try { localStorage.removeItem("kochbuch-regler-" + tuneKey()); } catch {} applyTune(); p.innerHTML = tunerHtml(); }
+      if (a === "tuner-show") tunerValues(); });
+  }
+  p.innerHTML = tunerHtml();
+}
+function tunerValues() { const p = document.getElementById("tuner"), v = tuneOf(), pre = p.querySelector("pre"); pre.hidden = false;
+  pre.textContent = tuneKey() + ": " + TUNE_SL.map(([k, l]) => l.split(" ")[0] + " " + v[k]).join(", ") + ", Farbe " + v.color; }
+
+function setTheme(t, v, n) { try { if (t) localStorage.setItem(THEME_KEY, t); if (v) localStorage.setItem(DAY_KEY, v); if (n) localStorage.setItem(NIGHT_KEY, n); } catch {} applyTheme(); if (loaded) render(true); if (document.getElementById("tuner")) openTuner(); }
 darkMQ.addEventListener?.("change", () => { if (themeSetting() === "auto") { applyTheme(); if (loaded) render(true); } });
 
 /* ---------- Hintergrund (#stage): Rezeptfoto oder warmes Kerzenlicht ---------- */
 const stage = document.getElementById("stage");
 let stageKey = "", stageImg = null;
-applyTheme();
 function seeded(str) { let h = 2166136261; for (const ch of String(str)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; }; }
 function cssColor(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "#E0A84E"; }
 function rgba(hex, a) { const m = hex.replace("#", "").match(/../g) || ["e0", "a8", "4e"]; return `rgba(${m.map(x => parseInt(x, 16)).join(",")},${a})`; }
 const DAY_LOOK = { bg: 1 };
 function paintAmbientDay(ctx, w, h, seed, tint) {
-  const K = DAY_LOOK.bg, A = a => Math.min(1, a * K), rnd = seeded(seed), k = Math.max(w, h), bg = cssColor("--bg"), gold = cssColor("--gold");
+  const K = DAY_LOOK.bg, A = a => Math.min(1, a * K), rnd = seeded(seed), k = Math.max(w, h), bg = cssColor("--bg"), gold = cssColor("--gilt");
   ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
   const glow = (x, y, r, col) => { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, col); g.addColorStop(1, rgba(bg, 0)); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); };
   const gl = getComputedStyle(document.documentElement).getPropertyValue("--glow").trim() || "255,205,125";
@@ -1424,6 +1505,14 @@ function paintAmbientDay(ctx, w, h, seed, tint) {
 }
 function paintAmbient(ctx, w, h, seed, tint) {
   if (isDay()) return paintAmbientDay(ctx, w, h, seed, tint);
+  paintAmbientNight(ctx, w, h, seed, tint);
+  if (document.documentElement.dataset.night === "bordeaux") {
+    const rnd = seeded(seed + "w"), k = Math.max(w, h);
+    const glow = (x, y, r, a) => { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(120,22,38,${a})`); g.addColorStop(1, "rgba(120,22,38,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); };
+    glow(w * .1, h * .15, k * .6, .45); glow(w * (.6 + rnd() * .3), h * (.6 + rnd() * .3), k * .55, .38);
+  }
+}
+function paintAmbientNight(ctx, w, h, seed, tint) {
   const rnd = seeded(seed), k = Math.max(w, h);
   ctx.fillStyle = "#14110F"; ctx.fillRect(0, 0, w, h);
   const glow = (x, y, r, col) => { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, col); g.addColorStop(1, "rgba(20,17,15,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); };
@@ -1498,6 +1587,7 @@ function paintChapterTile(c) {
 const GLASS_SEL = ".gpanel, .cook, .info, .rtabs, .itile, .stile, .tip, .notes-tile, .related, .actions, .note-box, .lpanel, .todo, .empty, .unknown, .band, .foldwrap, .kt, .seg2, .sfield, .morelist, .shoplist, .shopsel .it, .entry, .rows-box, .panel, .backbtn, .plusbtn, .tabbar, .side, .photospace .hintbox, .ch .lab";
 const GLASS_TUNE_NIGHT = [[".tip, .photospace .hintbox", { tint: 34, tintColor: "150,100,35" }], [".cook", { tint: 30, tintColor: "120,80,25" }]];
 const GLASS_TUNE_DAY = [[".tip, .photospace .hintbox", { tint: 40, tintColor: "255,226,170" }], [".cook", { tint: 40, tintColor: "255,222,165" }]];
+applyTheme();
 function decorate() {
   paintStage();
   app.querySelectorAll(".rows").forEach(el => { if (!el.closest("details, .related")) el.classList.add("rows-box"); });
@@ -1911,7 +2001,12 @@ function renderMore() {
     <div class="morelist"><div class="setrow"><span>Glas<small style="display:block">${GlassCard.available() ? "Konvexglas bricht den Hintergrund, Matt ist ruhiger" : "Dieses Gerät zeigt nur mattes Glas"}</small></span>
       <div class="useg" role="group" aria-label="Glas"><button type="button" data-action="glass-konvex" aria-pressed="${konvex}">Konvexglas</button><button type="button" data-action="glass-matt" aria-pressed="${!konvex}">Matt</button></div></div>
       <div class="setrow"><span>Tag und Nacht<small style="display:block">Automatisch folgt der Einstellung des Handys</small></span>
-      <div class="useg" role="group" aria-label="Tag und Nacht">${[["auto", "Automatisch"], ["tag", "Morgenküche"], ["nacht", "Abendküche"]].map(([k, l]) => `<button type="button" data-action="theme-${k}" aria-pressed="${themeSetting() === k}">${l}</button>`).join("")}</div></div></div>
+      <div class="useg" role="group" aria-label="Tag und Nacht">${[["auto", "Automatisch"], ["tag", "Morgenküche"], ["nacht", "Abendküche"]].map(([k, l]) => `<button type="button" data-action="theme-${k}" aria-pressed="${themeSetting() === k}">${l}</button>`).join("")}</div></div>
+      <div class="setrow"><span>Farbe der Morgenküche</span>
+      <div class="useg" role="group" aria-label="Farbe der Morgenküche">${[["b", "Salbei & Bordeaux"], ["c", "Porzellan & Kobalt"]].map(([k, l]) => `<button type="button" data-action="day-${k}" aria-pressed="${dayVariant() === k}">${l}</button>`).join("")}</div></div>
+      <div class="setrow"><span>Farbe der Abendküche</span>
+      <div class="useg" role="group" aria-label="Farbe der Abendküche">${[["gold", "Gold"], ["bordeaux", "Bordeaux & Gold"]].map(([k, l]) => `<button type="button" data-action="night-${k}" aria-pressed="${nightVariant() === k}">${l}</button>`).join("")}</div></div>
+      <button type="button" data-action="tuner">Glas fein einstellen<small>Regler für Unschärfe, Glanz, Milchigkeit und mehr</small></button></div>
     <p class="morehead">Kochbuch</p>
     <div class="morelist"><a href="buch.html">Kochbuch als PDF<small>Alle Rezepte im Buchlayout</small></a><button type="button" data-nav="backup">Sicherung herunterladen<small>Alle Rezepte und der Verlauf als Datei</small></button><button type="button" data-nav="key">GitHub-Schlüssel für dieses Gerät<small>Nur nötig, um zu speichern</small></button></div>
     <p class="muted app-text" style="font-size:.9rem">Neue Rezepte, Fotos und Sprachnachrichten schickst du Claude im Projekt „Kochbuch“.</p></div>`;
@@ -2347,6 +2442,9 @@ app.addEventListener("click", async ev => {
   if (a === "kt") { const k = t.closest(".kt"); k.classList.toggle("open"); t.setAttribute("aria-expanded", k.classList.contains("open")); return; }
   const rec = r.id ? byId(r.id) : null;
   if (a.startsWith("theme-")) { setTheme(a.slice(6)); return renderMore(); }
+  if (a.startsWith("night-")) { setTheme(null, null, a.slice(6)); return renderMore(); }
+  if (a.startsWith("day-")) { setTheme(null, a.slice(4)); return renderMore(); }
+  if (a === "tuner") return openTuner();
   if (a === "glass-konvex" || a === "glass-matt") { setGlassMode(a === "glass-konvex" ? "konvex" : "matt"); return renderMore(); }
   if (a === "tab") return switchTab(r.id, t.dataset.tab);
   if (a === "step") return toggleStep(r.id, t.closest(".stile"));
