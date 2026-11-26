@@ -61,10 +61,6 @@
 :root[data-theme="day"][data-day="b"] { --bg: #DFE6DA; --glow: 200, 222, 186; --ink: #1B241D; --ink2: #3F4D42; --ink3: #607063; --muted: #5E6E61; --wl: 28, 45, 32; --line: rgba(28, 45, 32, .14);
   --gold: #7B1E2C; --accent: #7B1E2C; --gold2: #5A1320; --on-gold: #FBF4EE; --accent-soft: rgba(123, 30, 44, .1); --gilt: #9A7428;
   --glass: rgba(246, 250, 242, .55); --surface: #F7FAF4; --tile-bg: #D2DCCB; --bar-bg: rgba(223, 230, 218, .82); --tip-ink: #2A1A12; --seg-on: #FBF4EE; --toast-bg: #F7FAF4; }
-/* Morgenküche «Porzellan & Kobalt»: Porzellanweiss, Kobaltblau für Titel und Bedienung, Altgold für feine Details */
-:root[data-theme="day"][data-day="c"] { --bg: #E6ECF3; --glow: 188, 208, 240; --ink: #131B2C; --ink2: #3C465C; --ink3: #5E6880; --muted: #5C6680; --wl: 22, 32, 58; --line: rgba(22, 32, 58, .13);
-  --gold: #1F3F8A; --accent: #1F3F8A; --gold2: #142C66; --on-gold: #F6F8FD; --accent-soft: rgba(31, 63, 138, .1); --gilt: #A07D32;
-  --glass: rgba(250, 252, 255, .58); --surface: #FFFFFF; --tile-bg: #D9E1EC; --bar-bg: rgba(230, 236, 243, .84); --tip-ink: #2A1E0E; --seg-on: #F6F8FD; --toast-bg: #FFFFFF; }
 /* Goldene Details (Nummern, Aufzählungspunkte, kleine Überschriften, Ränder) */
 .stile .num, .tiplist li::marker, .stats b, .eyebrow, .morehead, .group > h2, .browse-sec h2.morehead, .rhead .eb, .ing-list .amt .ap, .unote .ap, .todo .big { color: var(--gilt); }
 .stepper2 button.pm, .ing-list input[type=checkbox], .cb, .tipbtn { border-color: var(--gilt); }
@@ -1409,8 +1405,8 @@ GlassCard.setEnabled(glassMode() === "konvex");
 
 /* ---------- Tag / Nacht (Morgenküche / Abendküche), pro Gerät ---------- */
 const THEME_KEY = "kochbuch-thema", DAY_KEY = "kochbuch-tagvariante", NIGHT_KEY = "kochbuch-nachtvariante";
-function nightVariant() { try { return localStorage.getItem(NIGHT_KEY) === "bordeaux" ? "bordeaux" : "gold"; } catch { return "gold"; } }
-const DAY_GLASS = { b: "246,251,240", c: "250,252,255" };
+function nightVariant() { return "bordeaux"; }
+const DAY_GLASS = { b: "246,251,240" };
 function themeSetting() { try { return localStorage.getItem(THEME_KEY) || "auto"; } catch { return "auto"; } }
 function dayVariant() { let v = "b"; try { v = localStorage.getItem(DAY_KEY) || "b"; } catch {} return DAY_GLASS[v] ? v : "b"; }
 const darkMQ = matchMedia("(prefers-color-scheme: dark)");
@@ -1453,7 +1449,7 @@ function applyTune(v = tuneOf()) {
   GlassCard.refresh();
 }
 function tunerHtml() {
-  const v = tuneOf(), name = isDay() ? (dayVariant() === "c" ? "Porzellan & Kobalt" : "Salbei & Bordeaux") : nightVariant() === "bordeaux" ? "Abendküche Bordeaux" : "Abendküche Gold";
+  const v = tuneOf(), name = isDay() ? "Morgenküche" : "Abendküche";
   return `<h3><span>Glas: ${name}</span><button type="button" data-action="tuner-close" aria-label="Schliessen">×</button></h3>
     <p class="hint">Gilt für diese Darstellung und bleibt auf diesem Gerät gespeichert.</p>
     ${TUNE_SL.map(([k, l, h, mi, ma, st]) => `<label><span>${l}<b data-v="${k}">${v[k]}${k === "bg" ? " %" : ""}</b></span><small>${h}</small><input type="range" data-tune="${k}" min="${mi}" max="${ma}" step="${st}" value="${v[k]}"></label>`).join("")}
@@ -2002,10 +1998,6 @@ function renderMore() {
       <div class="useg" role="group" aria-label="Glas"><button type="button" data-action="glass-konvex" aria-pressed="${konvex}">Konvexglas</button><button type="button" data-action="glass-matt" aria-pressed="${!konvex}">Matt</button></div></div>
       <div class="setrow"><span>Tag und Nacht<small style="display:block">Automatisch folgt der Einstellung des Handys</small></span>
       <div class="useg" role="group" aria-label="Tag und Nacht">${[["auto", "Automatisch"], ["tag", "Morgenküche"], ["nacht", "Abendküche"]].map(([k, l]) => `<button type="button" data-action="theme-${k}" aria-pressed="${themeSetting() === k}">${l}</button>`).join("")}</div></div>
-      <div class="setrow"><span>Farbe der Morgenküche</span>
-      <div class="useg" role="group" aria-label="Farbe der Morgenküche">${[["b", "Salbei & Bordeaux"], ["c", "Porzellan & Kobalt"]].map(([k, l]) => `<button type="button" data-action="day-${k}" aria-pressed="${dayVariant() === k}">${l}</button>`).join("")}</div></div>
-      <div class="setrow"><span>Farbe der Abendküche</span>
-      <div class="useg" role="group" aria-label="Farbe der Abendküche">${[["gold", "Gold"], ["bordeaux", "Bordeaux & Gold"]].map(([k, l]) => `<button type="button" data-action="night-${k}" aria-pressed="${nightVariant() === k}">${l}</button>`).join("")}</div></div>
       <button type="button" data-action="tuner">Glas fein einstellen<small>Regler für Unschärfe, Glanz, Milchigkeit und mehr</small></button></div>
     <p class="morehead">Kochbuch</p>
     <div class="morelist"><a href="buch.html">Kochbuch als PDF<small>Alle Rezepte im Buchlayout</small></a><button type="button" data-nav="backup">Sicherung herunterladen<small>Alle Rezepte und der Verlauf als Datei</small></button><button type="button" data-nav="key">GitHub-Schlüssel für dieses Gerät<small>Nur nötig, um zu speichern</small></button></div>
@@ -2442,8 +2434,6 @@ app.addEventListener("click", async ev => {
   if (a === "kt") { const k = t.closest(".kt"); k.classList.toggle("open"); t.setAttribute("aria-expanded", k.classList.contains("open")); return; }
   const rec = r.id ? byId(r.id) : null;
   if (a.startsWith("theme-")) { setTheme(a.slice(6)); return renderMore(); }
-  if (a.startsWith("night-")) { setTheme(null, null, a.slice(6)); return renderMore(); }
-  if (a.startsWith("day-")) { setTheme(null, a.slice(4)); return renderMore(); }
   if (a === "tuner") return openTuner();
   if (a === "glass-konvex" || a === "glass-matt") { setGlassMode(a === "glass-konvex" ? "konvex" : "matt"); return renderMore(); }
   if (a === "tab") return switchTab(r.id, t.dataset.tab);
